@@ -122,29 +122,29 @@
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtKDLicenseNumber = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtKDFirstName = new System.Windows.Forms.TextBox();
+            this.txtKDMiddleName = new System.Windows.Forms.TextBox();
+            this.txtKDLastName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.controlNavigator3 = new DevExpress.XtraEditors.ControlNavigator();
+            this.txtKDKinName = new System.Windows.Forms.TextBox();
+            this.txtKDKinContact = new System.Windows.Forms.TextBox();
+            this.controlNavigatorKD = new DevExpress.XtraEditors.ControlNavigator();
             this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
             this.label28 = new System.Windows.Forms.Label();
-            this.searchControl3 = new DevExpress.XtraEditors.SearchControl();
-            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.searchControlKD = new DevExpress.XtraEditors.SearchControl();
+            this.gridControlKD = new DevExpress.XtraGrid.GridControl();
+            this.gridViewKD = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.statusStrip3 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelKD = new System.Windows.Forms.ToolStripStatusLabel();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
@@ -280,6 +280,10 @@
             this.groupControl13 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl8 = new DevExpress.XtraGrid.GridControl();
             this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colKDName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKDLicenseNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKinName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKinContact = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tabPersonalInformation.SuspendLayout();
@@ -333,9 +337,9 @@
             this.groupControl4.SuspendLayout();
             this.tableLayoutPanel24.SuspendLayout();
             this.tableLayoutPanel25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControlKD.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlKD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewKD)).BeginInit();
             this.statusStrip3.SuspendLayout();
             this.xtraTabPage4.SuspendLayout();
             this.tableLayoutPanel26.SuspendLayout();
@@ -1411,6 +1415,7 @@
             // 
             // searchControlCI
             // 
+            this.searchControlCI.Client = this.gridControlCI;
             this.searchControlCI.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchControlCI.Location = new System.Drawing.Point(178, 3);
             this.searchControlCI.Name = "searchControlCI";
@@ -1419,6 +1424,7 @@
             this.searchControlCI.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
+            this.searchControlCI.Properties.Client = this.gridControlCI;
             this.searchControlCI.Size = new System.Drawing.Size(1568, 34);
             this.searchControlCI.TabIndex = 8;
             // 
@@ -1565,9 +1571,9 @@
             this.tableLayoutPanel14.ColumnCount = 1;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel15, 0, 2);
-            this.tableLayoutPanel14.Controls.Add(this.controlNavigator3, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.controlNavigatorKD, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel25, 0, 1);
-            this.tableLayoutPanel14.Controls.Add(this.gridControl3, 0, 3);
+            this.tableLayoutPanel14.Controls.Add(this.gridControlKD, 0, 3);
             this.tableLayoutPanel14.Controls.Add(this.statusStrip3, 0, 4);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(0, 0);
@@ -1669,14 +1675,14 @@
             this.tableLayoutPanel19.ColumnCount = 2;
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.80952F));
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.19048F));
-            this.tableLayoutPanel19.Controls.Add(this.textBox13, 1, 3);
+            this.tableLayoutPanel19.Controls.Add(this.txtKDLicenseNumber, 1, 3);
             this.tableLayoutPanel19.Controls.Add(this.label19, 0, 0);
             this.tableLayoutPanel19.Controls.Add(this.label20, 0, 1);
             this.tableLayoutPanel19.Controls.Add(this.label22, 0, 2);
             this.tableLayoutPanel19.Controls.Add(this.label23, 0, 3);
-            this.tableLayoutPanel19.Controls.Add(this.textBox14, 1, 0);
-            this.tableLayoutPanel19.Controls.Add(this.textBox15, 1, 1);
-            this.tableLayoutPanel19.Controls.Add(this.textBox16, 1, 2);
+            this.tableLayoutPanel19.Controls.Add(this.txtKDFirstName, 1, 0);
+            this.tableLayoutPanel19.Controls.Add(this.txtKDMiddleName, 1, 1);
+            this.tableLayoutPanel19.Controls.Add(this.txtKDLastName, 1, 2);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel19.Location = new System.Drawing.Point(3, 30);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
@@ -1688,15 +1694,15 @@
             this.tableLayoutPanel19.Size = new System.Drawing.Size(777, 168);
             this.tableLayoutPanel19.TabIndex = 0;
             // 
-            // textBox13
+            // txtKDLicenseNumber
             // 
-            this.textBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox13.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(187, 129);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(587, 32);
-            this.textBox13.TabIndex = 18;
+            this.txtKDLicenseNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtKDLicenseNumber.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKDLicenseNumber.Location = new System.Drawing.Point(187, 129);
+            this.txtKDLicenseNumber.Name = "txtKDLicenseNumber";
+            this.txtKDLicenseNumber.ReadOnly = true;
+            this.txtKDLicenseNumber.Size = new System.Drawing.Size(587, 32);
+            this.txtKDLicenseNumber.TabIndex = 18;
             // 
             // label19
             // 
@@ -1746,35 +1752,35 @@
             this.label23.Text = "License No.:";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox14
+            // txtKDFirstName
             // 
-            this.textBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox14.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(187, 3);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(587, 32);
-            this.textBox14.TabIndex = 15;
+            this.txtKDFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtKDFirstName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKDFirstName.Location = new System.Drawing.Point(187, 3);
+            this.txtKDFirstName.Name = "txtKDFirstName";
+            this.txtKDFirstName.ReadOnly = true;
+            this.txtKDFirstName.Size = new System.Drawing.Size(587, 32);
+            this.txtKDFirstName.TabIndex = 15;
             // 
-            // textBox15
+            // txtKDMiddleName
             // 
-            this.textBox15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox15.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(187, 45);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(587, 32);
-            this.textBox15.TabIndex = 16;
+            this.txtKDMiddleName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtKDMiddleName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKDMiddleName.Location = new System.Drawing.Point(187, 45);
+            this.txtKDMiddleName.Name = "txtKDMiddleName";
+            this.txtKDMiddleName.ReadOnly = true;
+            this.txtKDMiddleName.Size = new System.Drawing.Size(587, 32);
+            this.txtKDMiddleName.TabIndex = 16;
             // 
-            // textBox16
+            // txtKDLastName
             // 
-            this.textBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox16.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(187, 87);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.ReadOnly = true;
-            this.textBox16.Size = new System.Drawing.Size(587, 32);
-            this.textBox16.TabIndex = 17;
+            this.txtKDLastName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtKDLastName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKDLastName.Location = new System.Drawing.Point(187, 87);
+            this.txtKDLastName.Name = "txtKDLastName";
+            this.txtKDLastName.ReadOnly = true;
+            this.txtKDLastName.Size = new System.Drawing.Size(587, 32);
+            this.txtKDLastName.TabIndex = 17;
             // 
             // tableLayoutPanel23
             // 
@@ -1807,8 +1813,8 @@
             this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.43445F));
             this.tableLayoutPanel24.Controls.Add(this.label25, 0, 0);
             this.tableLayoutPanel24.Controls.Add(this.label26, 0, 1);
-            this.tableLayoutPanel24.Controls.Add(this.textBox17, 1, 0);
-            this.tableLayoutPanel24.Controls.Add(this.textBox18, 1, 1);
+            this.tableLayoutPanel24.Controls.Add(this.txtKDKinName, 1, 0);
+            this.tableLayoutPanel24.Controls.Add(this.txtKDKinContact, 1, 1);
             this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel24.Location = new System.Drawing.Point(3, 30);
             this.tableLayoutPanel24.Name = "tableLayoutPanel24";
@@ -1845,49 +1851,51 @@
             this.label26.Text = "Contact:";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox17
+            // txtKDKinName
             // 
-            this.textBox17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox17.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(163, 3);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(614, 32);
-            this.textBox17.TabIndex = 15;
+            this.txtKDKinName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtKDKinName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKDKinName.Location = new System.Drawing.Point(163, 3);
+            this.txtKDKinName.Name = "txtKDKinName";
+            this.txtKDKinName.Size = new System.Drawing.Size(614, 32);
+            this.txtKDKinName.TabIndex = 15;
             // 
-            // textBox18
+            // txtKDKinContact
             // 
-            this.textBox18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox18.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(163, 45);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(614, 32);
-            this.textBox18.TabIndex = 16;
+            this.txtKDKinContact.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtKDKinContact.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKDKinContact.Location = new System.Drawing.Point(163, 45);
+            this.txtKDKinContact.Name = "txtKDKinContact";
+            this.txtKDKinContact.Size = new System.Drawing.Size(614, 32);
+            this.txtKDKinContact.TabIndex = 16;
             // 
-            // controlNavigator3
+            // controlNavigatorKD
             // 
-            this.controlNavigator3.Buttons.Append.Visible = false;
-            this.controlNavigator3.Buttons.CancelEdit.Visible = false;
-            this.controlNavigator3.Buttons.Edit.Visible = false;
-            this.controlNavigator3.Buttons.EndEdit.Visible = false;
-            this.controlNavigator3.Buttons.NextPage.Visible = false;
-            this.controlNavigator3.Buttons.PrevPage.Visible = false;
-            this.controlNavigator3.Buttons.Remove.Visible = false;
-            this.controlNavigator3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.controlNavigator3.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
+            this.controlNavigatorKD.Buttons.Append.Visible = false;
+            this.controlNavigatorKD.Buttons.CancelEdit.Visible = false;
+            this.controlNavigatorKD.Buttons.Edit.Visible = false;
+            this.controlNavigatorKD.Buttons.EndEdit.Visible = false;
+            this.controlNavigatorKD.Buttons.NextPage.Visible = false;
+            this.controlNavigatorKD.Buttons.PrevPage.Visible = false;
+            this.controlNavigatorKD.Buttons.Remove.Visible = false;
+            this.controlNavigatorKD.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.controlNavigatorKD.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
             new DevExpress.XtraEditors.NavigatorCustomButton(0, 6, true, true, "Add", "Add"),
             new DevExpress.XtraEditors.NavigatorCustomButton(1, 8, true, true, "Edit", "Edit"),
             new DevExpress.XtraEditors.NavigatorCustomButton(2, 9, true, true, "Save", "Save"),
             new DevExpress.XtraEditors.NavigatorCustomButton(3, 10, true, true, "Cancel", "Cancel"),
             new DevExpress.XtraEditors.NavigatorCustomButton(4, 11, true, true, "Switch View", "Switch"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 12, true, true, "Refresh", "Refresh")});
-            this.controlNavigator3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlNavigator3.Location = new System.Drawing.Point(3, 3);
-            this.controlNavigator3.Name = "controlNavigator3";
-            this.controlNavigator3.Size = new System.Drawing.Size(1837, 43);
-            this.controlNavigator3.TabIndex = 8;
-            this.controlNavigator3.Text = "controlNavigator3";
-            this.controlNavigator3.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
-            this.controlNavigator3.TextStringFormat = " {0} of {1}";
+            this.controlNavigatorKD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlNavigatorKD.Location = new System.Drawing.Point(3, 3);
+            this.controlNavigatorKD.Name = "controlNavigatorKD";
+            this.controlNavigatorKD.NavigatableControl = this.gridControlKD;
+            this.controlNavigatorKD.Size = new System.Drawing.Size(1837, 43);
+            this.controlNavigatorKD.TabIndex = 8;
+            this.controlNavigatorKD.Text = "controlNavigator3";
+            this.controlNavigatorKD.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
+            this.controlNavigatorKD.TextStringFormat = " {0} of {1}";
+            this.controlNavigatorKD.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.controlNavigatorKD_ButtonClick);
             // 
             // tableLayoutPanel25
             // 
@@ -1896,7 +1904,7 @@
             this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
             this.tableLayoutPanel25.Controls.Add(this.label28, 0, 0);
-            this.tableLayoutPanel25.Controls.Add(this.searchControl3, 1, 0);
+            this.tableLayoutPanel25.Controls.Add(this.searchControlKD, 1, 0);
             this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel25.Location = new System.Drawing.Point(3, 52);
             this.tableLayoutPanel25.Name = "tableLayoutPanel25";
@@ -1918,52 +1926,68 @@
             this.label28.Text = "Search:";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // searchControl3
+            // searchControlKD
             // 
-            this.searchControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchControl3.Location = new System.Drawing.Point(178, 3);
-            this.searchControl3.Name = "searchControl3";
-            this.searchControl3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchControl3.Properties.Appearance.Options.UseFont = true;
-            this.searchControl3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.searchControlKD.Client = this.gridControlKD;
+            this.searchControlKD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchControlKD.Location = new System.Drawing.Point(178, 3);
+            this.searchControlKD.Name = "searchControlKD";
+            this.searchControlKD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchControlKD.Properties.Appearance.Options.UseFont = true;
+            this.searchControlKD.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.searchControl3.Size = new System.Drawing.Size(1568, 34);
-            this.searchControl3.TabIndex = 8;
+            this.searchControlKD.Properties.Client = this.gridControlKD;
+            this.searchControlKD.Size = new System.Drawing.Size(1568, 34);
+            this.searchControlKD.TabIndex = 8;
             // 
-            // gridControl3
+            // gridControlKD
             // 
-            this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl3.Location = new System.Drawing.Point(3, 323);
-            this.gridControl3.MainView = this.gridView3;
-            this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(1837, 740);
-            this.gridControl3.TabIndex = 10;
-            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
+            this.gridControlKD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlKD.Location = new System.Drawing.Point(3, 323);
+            this.gridControlKD.MainView = this.gridViewKD;
+            this.gridControlKD.Name = "gridControlKD";
+            this.gridControlKD.Size = new System.Drawing.Size(1837, 740);
+            this.gridControlKD.TabIndex = 10;
+            this.gridControlKD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewKD});
             // 
-            // gridView3
+            // gridViewKD
             // 
-            this.gridView3.GridControl = this.gridControl3;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.gridViewKD.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewKD.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewKD.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewKD.Appearance.Row.Options.UseFont = true;
+            this.gridViewKD.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colKDName,
+            this.colKDLicenseNo,
+            this.colKinName,
+            this.colKinContact});
+            this.gridViewKD.GridControl = this.gridControlKD;
+            this.gridViewKD.Name = "gridViewKD";
+            this.gridViewKD.OptionsBehavior.Editable = false;
+            this.gridViewKD.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridViewKD.OptionsView.EnableAppearanceOddRow = true;
+            this.gridViewKD.OptionsView.ShowGroupPanel = false;
+            this.gridViewKD.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewKD_RowClick);
+            this.gridViewKD.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewKD_FocusedRowChanged);
             // 
             // statusStrip3
             // 
             this.statusStrip3.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel3});
+            this.toolStripStatusLabelKD});
             this.statusStrip3.Location = new System.Drawing.Point(0, 1066);
             this.statusStrip3.Name = "statusStrip3";
             this.statusStrip3.Size = new System.Drawing.Size(1843, 30);
             this.statusStrip3.TabIndex = 11;
             this.statusStrip3.Text = "statusStrip3";
             // 
-            // toolStripStatusLabel3
+            // toolStripStatusLabelKD
             // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(55, 25);
-            this.toolStripStatusLabel3.Text = "Done";
+            this.toolStripStatusLabelKD.Name = "toolStripStatusLabelKD";
+            this.toolStripStatusLabelKD.Size = new System.Drawing.Size(55, 25);
+            this.toolStripStatusLabelKD.Text = "Done";
             // 
             // xtraTabPage4
             // 
@@ -3701,6 +3725,38 @@
             this.gridView8.Name = "gridView8";
             this.gridView8.OptionsView.ShowGroupPanel = false;
             // 
+            // colKDName
+            // 
+            this.colKDName.Caption = "Name";
+            this.colKDName.FieldName = "Name";
+            this.colKDName.Name = "colKDName";
+            this.colKDName.Visible = true;
+            this.colKDName.VisibleIndex = 0;
+            // 
+            // colKDLicenseNo
+            // 
+            this.colKDLicenseNo.Caption = "License Number";
+            this.colKDLicenseNo.FieldName = "LicenseNumber";
+            this.colKDLicenseNo.Name = "colKDLicenseNo";
+            this.colKDLicenseNo.Visible = true;
+            this.colKDLicenseNo.VisibleIndex = 1;
+            // 
+            // colKinName
+            // 
+            this.colKinName.Caption = "Kin Name";
+            this.colKinName.FieldName = "KinName";
+            this.colKinName.Name = "colKinName";
+            this.colKinName.Visible = true;
+            this.colKinName.VisibleIndex = 2;
+            // 
+            // colKinContact
+            // 
+            this.colKinContact.Caption = "Kin Contact";
+            this.colKinContact.FieldName = "KinContact";
+            this.colKinContact.Name = "colKinContact";
+            this.colKinContact.Visible = true;
+            this.colKinContact.VisibleIndex = 3;
+            // 
             // FrmManageAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -3777,9 +3833,9 @@
             this.tableLayoutPanel24.PerformLayout();
             this.tableLayoutPanel25.ResumeLayout(false);
             this.tableLayoutPanel25.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControlKD.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlKD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewKD)).EndInit();
             this.statusStrip3.ResumeLayout(false);
             this.statusStrip3.PerformLayout();
             this.xtraTabPage4.ResumeLayout(false);
@@ -3970,29 +4026,29 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtKDLicenseNumber;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txtKDFirstName;
+        private System.Windows.Forms.TextBox txtKDMiddleName;
+        private System.Windows.Forms.TextBox txtKDLastName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private DevExpress.XtraEditors.ControlNavigator controlNavigator3;
+        private System.Windows.Forms.TextBox txtKDKinName;
+        private System.Windows.Forms.TextBox txtKDKinContact;
+        private DevExpress.XtraEditors.ControlNavigator controlNavigatorKD;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
         private System.Windows.Forms.Label label28;
-        private DevExpress.XtraEditors.SearchControl searchControl3;
-        private DevExpress.XtraGrid.GridControl gridControl3;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraEditors.SearchControl searchControlKD;
+        private DevExpress.XtraGrid.GridControl gridControlKD;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewKD;
         private System.Windows.Forms.StatusStrip statusStrip3;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelKD;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
@@ -4143,5 +4199,9 @@
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.ControlNavigator controlNavigatorCI;
         private DevExpress.XtraGrid.Columns.GridColumn colLicenseNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn colKDName;
+        private DevExpress.XtraGrid.Columns.GridColumn colKDLicenseNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colKinName;
+        private DevExpress.XtraGrid.Columns.GridColumn colKinContact;
     }
 }
