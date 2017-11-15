@@ -137,7 +137,7 @@ namespace LISAGManager {
                     Misc.connOpen();
                     string memberID = sqlcmd.ExecuteScalar().ToString();
 
-                    sqlcmd = new SqlCommand("UPDATE Member SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, Gender = @Gender, DateOfBirth = @DateOfBirth, MaritalStatus = @MaritalStatus, Hometown = @Hometown, LicenseNumber = @LicenseNumber, InductionYear = @InductionYear, GoodStanding = @GoodStanding, Acitve = @Active WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                    sqlcmd = new SqlCommand("UPDATE Member SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, Gender = @Gender, DateOfBirth = @DateOfBirth, MaritalStatus = @MaritalStatus, Hometown = @Hometown, LicenseNumber = @LicenseNumber, InductionYear = @InductionYear, GoodStanding = @GoodStanding, Active = @Active WHERE MemberID = '" + memberID + "' ", Misc.getConn());
 
                 } else if (actionState == "a") {
                     toolStripStatusLabel1.Text = "Saving...";
@@ -239,6 +239,17 @@ namespace LISAGManager {
 
         private void setTabState(bool status) {
             // enable/disable tab page selection
+            //xtraTabControl1.TabPages[0].PageEnabled = status;
+            xtraTabControl1.TabPages[1].PageEnabled = status;
+            xtraTabControl1.TabPages[2].PageEnabled = status;
+            xtraTabControl1.TabPages[3].PageEnabled = status;
+            xtraTabControl1.TabPages[4].PageEnabled = status;
+            xtraTabControl1.TabPages[5].PageEnabled = status;
+            xtraTabControl1.TabPages[6].PageEnabled = status;
+        }
+
+        private void SetTabStateWithIndex(bool status, int index) {
+            xtraTabControl1.TabPages[0].PageEnabled = status;
             xtraTabControl1.TabPages[1].PageEnabled = status;
             xtraTabControl1.TabPages[2].PageEnabled = status;
             xtraTabControl1.TabPages[3].PageEnabled = status;
@@ -312,6 +323,14 @@ namespace LISAGManager {
                 actionState = "e";
                 setControlStateCI(true);
 
+                xtraTabControl1.TabPages[0].PageEnabled = false;
+                xtraTabControl1.TabPages[1].PageEnabled = true;
+                xtraTabControl1.TabPages[2].PageEnabled = false;
+                xtraTabControl1.TabPages[3].PageEnabled = false;
+                xtraTabControl1.TabPages[4].PageEnabled = false;
+                xtraTabControl1.TabPages[5].PageEnabled = false;
+                xtraTabControl1.TabPages[6].PageEnabled = false;
+
                 txtCIPhoneNumber1.Focus();
                 BtnCIEdit.Enabled = false;
                 BtnCISave.Enabled = true;
@@ -331,41 +350,16 @@ namespace LISAGManager {
 
                 if (actionState == "e") {
                     toolStripStatusLabelCI.Text = "Editing...";
-                    sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtLicenseNo.Text + "' ", Misc.getConn());
+                    sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtCILicenseNumber.Text + "' ", Misc.getConn());
                     Misc.connOpen();
-                    string memberID = sqlcmd.ExecuteScalar().ToString();
+                    int memberID = (int)sqlcmd.ExecuteScalar();
 
-                    sqlcmd = new SqlCommand("UPDATE Member SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, Gender = @Gender, DateOfBirth = @DateOfBirth, MaritalStatus = @MaritalStatus, Hometown = @Hometown, LicenseNumber = @LicenseNumber, InductionYear = @InductionYear, GoodStanding = @GoodStanding, Acitve = @Active WHERE MemberID = '" + memberID + "' ", Misc.getConn());
-
-                } else if (actionState == "a") {
-                    toolStripStatusLabelCI.Text = "Saving...";
-
-                    if (!verifyInput())
-                        return;
-
-                    sqlcmd = new SqlCommand("INSERT INTO Member (FirstName, MiddleName, LastName, Gender, DateOfBirth, MaritalStatus, Hometown, KinName, KinContact, LicenseNumber, PhoneNumber1, PhoneNumber2, EmailAddress, CityID, BusinessAddress, ResidentialAddress, LISAGBankID, InductionYear, GoodStanding, Active) VALUES (@FirstName, @MiddleName, @LastName, @Gender, @DateOfBirth, @MaritalStatus, @Hometown, @KinName, @KinContact, @LicenseNumber, @PhoneNumber1, @PhoneNumber2, @EmailAddress, @CityID, @BusinessAddress, @ResidentialAddress, @LISAGBankID, @InductionYear, @GoodStanding, @Active)", Misc.getConn());
+                    sqlcmd = new SqlCommand("UPDATE Member SET PhoneNumber1 = @PhoneNumber1, PhoneNumber2 = @PhoneNumber2, EmailAddress = @EmailAddress WHERE MemberID = '" + memberID + "' ", Misc.getConn());
                 }
 
-                sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
-                sqlcmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
-                sqlcmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
-                sqlcmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
-                sqlcmd.Parameters.AddWithValue("@DateOfBirth", deDOB.DateTime);
-                sqlcmd.Parameters.AddWithValue("@MaritalStatus", cmbMaritalStatus.Text);
-                sqlcmd.Parameters.AddWithValue("@Hometown", txtHometown.Text);
-                sqlcmd.Parameters.AddWithValue("@KinName", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@KinContact", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@LicenseNumber", txtLicenseNo.Text);
-                sqlcmd.Parameters.AddWithValue("@PhoneNumber1", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@PhoneNumber2", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@EmailAddress", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@CityID", 5);
-                sqlcmd.Parameters.AddWithValue("@BusinessAddress", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@ResidentialAddress", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@LISAGBankID", 1);
-                sqlcmd.Parameters.AddWithValue("@InductionYear", txtInductionYear.Text);
-                sqlcmd.Parameters.AddWithValue("@GoodStanding", cbGoodStanding.Checked);
-                sqlcmd.Parameters.AddWithValue("@Active", cbActive.Checked);
+                sqlcmd.Parameters.AddWithValue("@PhoneNumber1", txtCIPhoneNumber1.Text);
+                sqlcmd.Parameters.AddWithValue("@PhoneNumber2", txtCIPhoneNumber2.Text);
+                sqlcmd.Parameters.AddWithValue("@EmailAddress", txtCIEmailAddress.Text);
 
                 Misc.connOpen();
                 sqlcmd.ExecuteNonQuery();
@@ -391,12 +385,8 @@ namespace LISAGManager {
                 searchControlCI.Enabled = true;
                 gridControlCI.Enabled = true;
                 setTabState(true);
+                gridControlCI.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
                 toolStripStatusLabelCI.Text = "Saved";
-
-                appUser.firstName = txtFirstName.Text;
-                appUser.middleName = txtMiddleName.Text;
-                appUser.lastName = txtLastName.Text;
-                appUser.licenseNumber = txtLicenseNo.Text;
 
             } else if (e.Button.Tag.ToString() == "Cancel") {
                 setControlStateCI(false);
@@ -416,12 +406,13 @@ namespace LISAGManager {
 
                 searchControlCI.Enabled = true;
                 gridControlCI.Enabled = true;
+                setTabState(true);
 
                 toolStripStatusLabelCI.Text = "Done";
 
             } else if (e.Button.Tag.ToString() == "Refresh") {
                 toolStripStatusLabelCI.Text = "Refreshing...";
-                gridControlCI.DataSource = Misc.loadDataSource(sqlQuery, "Region");
+                gridControlCI.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
                 toolStripStatusLabelCI.Text = "Done";
 
             } else if (e.Button.Tag.ToString() == "Switch") {
