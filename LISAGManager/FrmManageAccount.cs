@@ -16,9 +16,12 @@ namespace LISAGManager {
         NavigatorCustomButton BtnAdd, BtnEdit, BtnSave, BtnCancel, BtnSwitch, BtnRefresh;
         NavigatorCustomButton BtnCIAdd, BtnCIEdit, BtnCISave, BtnCICancel, BtnCISwitch, BtnCIRefresh;
         NavigatorCustomButton BtnKDAdd, BtnKDEdit, BtnKDSave, BtnKDCancel, BtnKDSwitch, BtnKDRefresh;
+        NavigatorCustomButton BtnLocAdd, BtnLocEdit, BtnLocSave, BtnLocCancel, BtnLocSwitch, BtnLocRefresh;
 
         private string actionState = "a";
         private string sqlQuery = "SELECT Name, Gender, DateOfBirth, MaritalStatus, Hometown, LicenseNumber, InductionYear, GoodStanding, Active FROM vwMember ORDER BY Name";
+        private string sqlQueryRegion = "SELECT Name FROM Region WHERE Active = 'True'";
+
         AppUser appUser = new AppUser();
         SqlCommand sqlcmd = new SqlCommand();
 
@@ -28,7 +31,8 @@ namespace LISAGManager {
 
         private void FrmManageAccount_Load(object sender, EventArgs e) {
             loadForm();
-
+            cmbLocRegion.DataSource = Misc.loadDataSource(sqlQueryRegion, "Region");
+            cmbLocRegion.DisplayMember = "Name";
         }
 
         private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e) {
@@ -45,7 +49,10 @@ namespace LISAGManager {
                 sqlQuery = "SELECT Name, LicenseNumber, KinName, KinContact FROM vwMember ORDER BY Name";
                 gridControlKD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
             } else if (xtraTabControl1.SelectedTabPage.Text == "Location") {
-                searchControl4.Text = "";
+                searchControlLoc.Text = "";
+                loadLocation();
+                sqlQuery = "SELECT Name, LicenseNumber, RegionName, CityName, BusinessAddress, ResidentialAddress FROM vwMember ORDER BY Name";
+                gridControlLoc.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
             } else if (xtraTabControl1.SelectedTabPage.Text == "Bank Details") {
                 searchControl5.Text = "";
             } else if (xtraTabControl1.SelectedTabPage.Text == "Account Details") {
@@ -302,6 +309,142 @@ namespace LISAGManager {
             setControlValuesKD();
         }
 
+        private void controlNavigatorLoc_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
+            //try {
+
+            if (e.Button.Tag.ToString() == "Edit") {
+                if (tableLayoutPanel26.RowStyles[2].Height == 1)
+                    tableLayoutPanel26.RowStyles[2].Height = 234;
+                actionState = "e";
+                setControlStateLoc(true);
+
+                xtraTabControl1.TabPages[0].PageEnabled = false;
+                xtraTabControl1.TabPages[1].PageEnabled = false;
+                xtraTabControl1.TabPages[2].PageEnabled = false;
+                xtraTabControl1.TabPages[3].PageEnabled = true;
+                xtraTabControl1.TabPages[4].PageEnabled = false;
+                xtraTabControl1.TabPages[5].PageEnabled = false;
+                xtraTabControl1.TabPages[6].PageEnabled = false;
+
+                cmbLocRegion.Focus();
+                BtnLocEdit.Enabled = false;
+                BtnLocSave.Enabled = true;
+                BtnLocCancel.Enabled = true;
+                BtnLocSwitch.Enabled = false;
+                BtnLocRefresh.Enabled = false;
+                btnPic.Enabled = true;
+
+                controlNavigatorLoc.Buttons.First.Enabled = false;
+                controlNavigatorLoc.Buttons.Next.Enabled = false;
+                controlNavigatorLoc.Buttons.Prev.Enabled = false;
+                controlNavigatorLoc.Buttons.Last.Enabled = false;
+
+                searchControlLoc.Enabled = false;
+                gridControlLoc.Enabled = false;
+            } else if (e.Button.Tag.ToString() == "Save") {
+
+                if (actionState == "e") {
+                    toolStripStatusLabelLoc.Text = "Editing...";
+                    sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtLocLicenseNumber.Text + "' ", Misc.getConn());
+                    Misc.connOpen();
+                    int memberID = (int)sqlcmd.ExecuteScalar();
+
+                    sqlcmd = new SqlCommand("SELECT RegionID FROM Region WHERE Name = '" + cmbLocRegion.Text + "' ", Misc.getConn());
+                    int regionID = (int)sqlcmd.ExecuteScalar();
+
+                    sqlcmd = new SqlCommand("SELECT CityID FROM City WHERE Name = '" + cmbLocCity.Text + "' AND RegionID = '" + regionID + "' ", Misc.getConn());
+                    int cityID = (int)sqlcmd.ExecuteScalar();
+
+                    sqlcmd = new SqlCommand("UPDATE Member SET CityID = @CityID, BusinessAddress = @BusinessAddress, ResidentialAddress=@ResidentialAddress WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+
+                    sqlcmd.Parameters.AddWithValue("@CityID", cityID);
+                    sqlcmd.Parameters.AddWithValue("@BusinessAddress", txtBusinessAddress.Text);
+                    sqlcmd.Parameters.AddWithValue("@ResidentialAddress", txtResidentialAddress.Text);
+                }
+
+
+                Misc.connOpen();
+                sqlcmd.ExecuteNonQuery();
+                sqlcmd.Dispose();
+
+                actionState = "a";
+
+                gridControlLoc.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                setControlState(false);
+                BtnLocSave.Enabled = false;
+                BtnLocEdit.Enabled = true;
+                BtnLocAdd.Enabled = true;
+                BtnLocCancel.Enabled = false;
+                BtnLocSwitch.Enabled = true;
+                BtnLocRefresh.Enabled = true;
+                btnPic.Enabled = false;
+
+                controlNavigatorLoc.Buttons.First.Enabled = true;
+                controlNavigatorLoc.Buttons.Next.Enabled = true;
+                controlNavigatorLoc.Buttons.Prev.Enabled = true;
+                controlNavigatorLoc.Buttons.Last.Enabled = true;
+
+                searchControlLoc.Enabled = true;
+                gridControlLoc.Enabled = true;
+                setTabState(true);
+                gridControlLoc.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                toolStripStatusLabelLoc.Text = "Saved";
+
+            } else if (e.Button.Tag.ToString() == "Cancel") {
+                setControlStateLoc(false);
+                actionState = "a";
+                BtnLocAdd.Enabled = false;
+                BtnLocEdit.Enabled = true;
+                BtnLocSave.Enabled = false;
+                BtnLocCancel.Enabled = false;
+                BtnLocSwitch.Enabled = true;
+                BtnLocRefresh.Enabled = true;
+                btnPic.Enabled = false;
+
+                controlNavigatorLoc.Buttons.First.Enabled = true;
+                controlNavigatorLoc.Buttons.Next.Enabled = true;
+                controlNavigatorLoc.Buttons.Prev.Enabled = true;
+                controlNavigatorLoc.Buttons.Last.Enabled = true;
+
+                searchControlLoc.Enabled = true;
+                gridControlLoc.Enabled = true;
+                setTabState(true);
+
+                toolStripStatusLabelLoc.Text = "Done";
+
+            } else if (e.Button.Tag.ToString() == "Refresh") {
+                toolStripStatusLabelLoc.Text = "Refreshing...";
+                gridControlLoc.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                cmbLocRegion.DataSource = Misc.loadDataSource(sqlQueryRegion, "Region");
+                toolStripStatusLabelLoc.Text = "Done";
+
+            } else if (e.Button.Tag.ToString() == "Switch") {
+                if (tableLayoutPanel26.RowStyles[2].Height == 234) {
+                    tableLayoutPanel26.RowStyles[2].Height = 1;
+                } else {
+                    tableLayoutPanel26.RowStyles[2].Height = 234;
+                }
+            }
+            //} catch {
+
+            //}
+        }
+
+        private void gridViewLoc_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
+            selectionChangedLoc();
+            setControlValuesLoc();
+        }
+
+        private void gridViewLoc_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
+            selectionChangedLoc();
+            setControlValuesLoc();
+        }
+
+        private void cmbLocRegion_SelectedIndexChanged(object sender, EventArgs e) {
+            cmbLocCity.DataSource = Misc.loadDataSource("SELECT Name FROM vwCity WHERE Region = '" + cmbLocRegion.Text + "' ", "vwCity");
+            cmbLocCity.DisplayMember = "Name";
+        }
+
         private void controlNavigatorKD_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
             //try {
 
@@ -424,6 +567,13 @@ namespace LISAGManager {
         private void setControlStateKD(bool status) {
             txtKDKinName.Enabled = status;
             txtKDKinContact.Enabled = status;
+        }
+
+        private void setControlStateLoc(bool status) {
+            cmbLocRegion.Enabled = status;
+            cmbLocCity.Enabled = status;
+            txtBusinessAddress.Enabled = status;
+            txtResidentialAddress.Enabled = status;
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
@@ -608,6 +758,19 @@ namespace LISAGManager {
             btnPic.Enabled = true;
         }
 
+        private void selectionChangedLoc() {
+            setTabState(true);
+            setControlStateLoc(false);
+
+            BtnLocAdd.Enabled = false;
+            BtnLocEdit.Enabled = true;
+            BtnLocSave.Enabled = false;
+            BtnLocCancel.Enabled = false;
+            BtnLocSwitch.Enabled = true;
+            BtnLocRefresh.Enabled = true;
+            btnPic.Enabled = true;
+        }
+
         private void setControlValues() {
             string firstName = "";
             string middleName = "";
@@ -684,6 +847,31 @@ namespace LISAGManager {
             txtKDKinContact.Text = gridViewKD.GetRowCellValue(gridViewKD.FocusedRowHandle, "KinContact").ToString();
         }
 
+        private void setControlValuesLoc() {
+            string firstName = "";
+            string middleName = "";
+            string lastName = "";
+            string licenseNumber = gridViewLoc.GetRowCellValue(gridViewLoc.FocusedRowHandle, "LicenseNumber").ToString();
+            sqlcmd = new SqlCommand("SELECT FirstName, MiddleName, LastName FROM Member WHERE LicenseNumber = '" + licenseNumber + "' ", Misc.getConn());
+            SqlDataReader dReader = sqlcmd.ExecuteReader();
+            Misc.connOpen();
+            while (dReader.Read()) {
+                firstName = dReader.GetString(0);
+                middleName = dReader.GetString(1);
+                lastName = dReader.GetString(2);
+            }
+            dReader.Close();
+
+            txtLocFirstName.Text = firstName;
+            txtLocMiddleName.Text = middleName;
+            txtLocLastName.Text = lastName;
+            txtLocLicenseNumber.Text = licenseNumber;
+            cmbLocRegion.Text = gridViewLoc.GetRowCellValue(gridViewLoc.FocusedRowHandle, "RegionName").ToString();
+            cmbLocCity.Text = gridViewLoc.GetRowCellValue(gridViewLoc.FocusedRowHandle, "CityName").ToString();
+            txtResidentialAddress.Text = gridViewLoc.GetRowCellValue(gridViewLoc.FocusedRowHandle, "ResidentialAddress").ToString();
+            txtBusinessAddress.Text = gridViewLoc.GetRowCellValue(gridViewLoc.FocusedRowHandle, "BusinessAddress").ToString();
+        }
+
         private void loadContactInformation() {
             BtnCIAdd = controlNavigatorCI.Buttons.CustomButtons[0];
             BtnCIEdit = controlNavigatorCI.Buttons.CustomButtons[1];
@@ -715,6 +903,23 @@ namespace LISAGManager {
             BtnKDCancel.Enabled = false;
             BtnKDSwitch.Enabled = true;
             BtnKDRefresh.Enabled = true;
+            btnPic.Enabled = true;
+        }
+
+        private void loadLocation() {
+            BtnLocAdd = controlNavigatorLoc.Buttons.CustomButtons[0];
+            BtnLocEdit = controlNavigatorLoc.Buttons.CustomButtons[1];
+            BtnLocSave = controlNavigatorLoc.Buttons.CustomButtons[2];
+            BtnLocCancel = controlNavigatorLoc.Buttons.CustomButtons[3];
+            BtnLocSwitch = controlNavigatorLoc.Buttons.CustomButtons[4];
+            BtnLocRefresh = controlNavigatorLoc.Buttons.CustomButtons[5];
+
+            BtnLocAdd.Enabled = false;
+            BtnLocEdit.Enabled = true;
+            BtnLocSave.Enabled = false;
+            BtnLocCancel.Enabled = false;
+            BtnLocSwitch.Enabled = true;
+            BtnLocRefresh.Enabled = true;
             btnPic.Enabled = true;
         }
 

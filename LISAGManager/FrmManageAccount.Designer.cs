@@ -154,14 +154,14 @@
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel31 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.txtLocLicenseNumber = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.txtLocFirstName = new System.Windows.Forms.TextBox();
+            this.txtLocMiddleName = new System.Windows.Forms.TextBox();
+            this.txtLocLastName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel32 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel33 = new System.Windows.Forms.TableLayoutPanel();
@@ -169,18 +169,17 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.controlNavigator4 = new DevExpress.XtraEditors.ControlNavigator();
+            this.txtBusinessAddress = new System.Windows.Forms.TextBox();
+            this.txtResidentialAddress = new System.Windows.Forms.TextBox();
+            this.cmbLocCity = new System.Windows.Forms.ComboBox();
+            this.controlNavigatorLoc = new DevExpress.XtraEditors.ControlNavigator();
             this.tableLayoutPanel34 = new System.Windows.Forms.TableLayoutPanel();
             this.label35 = new System.Windows.Forms.Label();
-            this.searchControl4 = new DevExpress.XtraEditors.SearchControl();
-            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.searchControlLoc = new DevExpress.XtraEditors.SearchControl();
+            this.gridControlLoc = new DevExpress.XtraGrid.GridControl();
+            this.gridViewLoc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.statusStrip4 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelLoc = new System.Windows.Forms.ToolStripStatusLabel();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel35 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel36 = new System.Windows.Forms.TableLayoutPanel();
@@ -284,6 +283,13 @@
             this.colKDLicenseNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKinName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKinContact = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLocName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLocLicenseNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRegion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBusinessAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResidentialAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmbLocRegion = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tabPersonalInformation.SuspendLayout();
@@ -356,9 +362,9 @@
             this.groupControl6.SuspendLayout();
             this.tableLayoutPanel33.SuspendLayout();
             this.tableLayoutPanel34.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControlLoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlLoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewLoc)).BeginInit();
             this.statusStrip4.SuspendLayout();
             this.xtraTabPage5.SuspendLayout();
             this.tableLayoutPanel35.SuspendLayout();
@@ -2001,9 +2007,9 @@
             this.tableLayoutPanel26.ColumnCount = 1;
             this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel26.Controls.Add(this.tableLayoutPanel27, 0, 2);
-            this.tableLayoutPanel26.Controls.Add(this.controlNavigator4, 0, 0);
+            this.tableLayoutPanel26.Controls.Add(this.controlNavigatorLoc, 0, 0);
             this.tableLayoutPanel26.Controls.Add(this.tableLayoutPanel34, 0, 1);
-            this.tableLayoutPanel26.Controls.Add(this.gridControl4, 0, 3);
+            this.tableLayoutPanel26.Controls.Add(this.gridControlLoc, 0, 3);
             this.tableLayoutPanel26.Controls.Add(this.statusStrip4, 0, 4);
             this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel26.Location = new System.Drawing.Point(0, 0);
@@ -2109,14 +2115,14 @@
             this.tableLayoutPanel31.ColumnCount = 2;
             this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.36536F));
             this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.63464F));
-            this.tableLayoutPanel31.Controls.Add(this.textBox20, 1, 3);
+            this.tableLayoutPanel31.Controls.Add(this.txtLocLicenseNumber, 1, 3);
             this.tableLayoutPanel31.Controls.Add(this.label27, 0, 0);
             this.tableLayoutPanel31.Controls.Add(this.label29, 0, 1);
             this.tableLayoutPanel31.Controls.Add(this.label30, 0, 2);
             this.tableLayoutPanel31.Controls.Add(this.label31, 0, 3);
-            this.tableLayoutPanel31.Controls.Add(this.textBox21, 1, 0);
-            this.tableLayoutPanel31.Controls.Add(this.textBox22, 1, 1);
-            this.tableLayoutPanel31.Controls.Add(this.textBox23, 1, 2);
+            this.tableLayoutPanel31.Controls.Add(this.txtLocFirstName, 1, 0);
+            this.tableLayoutPanel31.Controls.Add(this.txtLocMiddleName, 1, 1);
+            this.tableLayoutPanel31.Controls.Add(this.txtLocLastName, 1, 2);
             this.tableLayoutPanel31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel31.Location = new System.Drawing.Point(3, 30);
             this.tableLayoutPanel31.Name = "tableLayoutPanel31";
@@ -2135,15 +2141,15 @@
             this.tableLayoutPanel31.Size = new System.Drawing.Size(710, 303);
             this.tableLayoutPanel31.TabIndex = 0;
             // 
-            // textBox20
+            // txtLocLicenseNumber
             // 
-            this.textBox20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox20.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox20.Location = new System.Drawing.Point(197, 123);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(510, 32);
-            this.textBox20.TabIndex = 18;
+            this.txtLocLicenseNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLocLicenseNumber.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocLicenseNumber.Location = new System.Drawing.Point(197, 123);
+            this.txtLocLicenseNumber.Name = "txtLocLicenseNumber";
+            this.txtLocLicenseNumber.ReadOnly = true;
+            this.txtLocLicenseNumber.Size = new System.Drawing.Size(510, 32);
+            this.txtLocLicenseNumber.TabIndex = 18;
             // 
             // label27
             // 
@@ -2193,35 +2199,35 @@
             this.label31.Text = "License No.:";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox21
+            // txtLocFirstName
             // 
-            this.textBox21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox21.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox21.Location = new System.Drawing.Point(197, 3);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.ReadOnly = true;
-            this.textBox21.Size = new System.Drawing.Size(510, 32);
-            this.textBox21.TabIndex = 15;
+            this.txtLocFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLocFirstName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocFirstName.Location = new System.Drawing.Point(197, 3);
+            this.txtLocFirstName.Name = "txtLocFirstName";
+            this.txtLocFirstName.ReadOnly = true;
+            this.txtLocFirstName.Size = new System.Drawing.Size(510, 32);
+            this.txtLocFirstName.TabIndex = 15;
             // 
-            // textBox22
+            // txtLocMiddleName
             // 
-            this.textBox22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox22.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox22.Location = new System.Drawing.Point(197, 43);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.ReadOnly = true;
-            this.textBox22.Size = new System.Drawing.Size(510, 32);
-            this.textBox22.TabIndex = 16;
+            this.txtLocMiddleName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLocMiddleName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocMiddleName.Location = new System.Drawing.Point(197, 43);
+            this.txtLocMiddleName.Name = "txtLocMiddleName";
+            this.txtLocMiddleName.ReadOnly = true;
+            this.txtLocMiddleName.Size = new System.Drawing.Size(510, 32);
+            this.txtLocMiddleName.TabIndex = 16;
             // 
-            // textBox23
+            // txtLocLastName
             // 
-            this.textBox23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox23.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox23.Location = new System.Drawing.Point(197, 83);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.ReadOnly = true;
-            this.textBox23.Size = new System.Drawing.Size(510, 32);
-            this.textBox23.TabIndex = 17;
+            this.txtLocLastName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLocLastName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocLastName.Location = new System.Drawing.Point(197, 83);
+            this.txtLocLastName.Name = "txtLocLastName";
+            this.txtLocLastName.ReadOnly = true;
+            this.txtLocLastName.Size = new System.Drawing.Size(510, 32);
+            this.txtLocLastName.TabIndex = 17;
             // 
             // tableLayoutPanel32
             // 
@@ -2256,10 +2262,10 @@
             this.tableLayoutPanel33.Controls.Add(this.label33, 0, 2);
             this.tableLayoutPanel33.Controls.Add(this.label34, 0, 1);
             this.tableLayoutPanel33.Controls.Add(this.label36, 0, 0);
-            this.tableLayoutPanel33.Controls.Add(this.textBox24, 1, 2);
-            this.tableLayoutPanel33.Controls.Add(this.textBox25, 1, 3);
-            this.tableLayoutPanel33.Controls.Add(this.comboBox3, 1, 0);
-            this.tableLayoutPanel33.Controls.Add(this.comboBox4, 1, 1);
+            this.tableLayoutPanel33.Controls.Add(this.txtBusinessAddress, 1, 2);
+            this.tableLayoutPanel33.Controls.Add(this.txtResidentialAddress, 1, 3);
+            this.tableLayoutPanel33.Controls.Add(this.cmbLocCity, 1, 1);
+            this.tableLayoutPanel33.Controls.Add(this.cmbLocRegion, 1, 0);
             this.tableLayoutPanel33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel33.Location = new System.Drawing.Point(3, 30);
             this.tableLayoutPanel33.Name = "tableLayoutPanel33";
@@ -2319,73 +2325,64 @@
             this.label36.Text = "Region:";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox24
+            // txtBusinessAddress
             // 
-            this.textBox24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox24.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(195, 88);
-            this.textBox24.Multiline = true;
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(594, 88);
-            this.textBox24.TabIndex = 5;
+            this.txtBusinessAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBusinessAddress.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusinessAddress.Location = new System.Drawing.Point(195, 88);
+            this.txtBusinessAddress.Multiline = true;
+            this.txtBusinessAddress.Name = "txtBusinessAddress";
+            this.txtBusinessAddress.Size = new System.Drawing.Size(594, 88);
+            this.txtBusinessAddress.TabIndex = 5;
             // 
-            // textBox25
+            // txtResidentialAddress
             // 
-            this.textBox25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox25.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(195, 182);
-            this.textBox25.Multiline = true;
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(594, 118);
-            this.textBox25.TabIndex = 6;
+            this.txtResidentialAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtResidentialAddress.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResidentialAddress.Location = new System.Drawing.Point(195, 182);
+            this.txtResidentialAddress.Multiline = true;
+            this.txtResidentialAddress.Name = "txtResidentialAddress";
+            this.txtResidentialAddress.Size = new System.Drawing.Size(594, 118);
+            this.txtResidentialAddress.TabIndex = 6;
             // 
-            // comboBox3
+            // cmbLocCity
             // 
-            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(195, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(594, 32);
-            this.comboBox3.TabIndex = 7;
+            this.cmbLocCity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbLocCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLocCity.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLocCity.FormattingEnabled = true;
+            this.cmbLocCity.Location = new System.Drawing.Point(195, 45);
+            this.cmbLocCity.Name = "cmbLocCity";
+            this.cmbLocCity.Size = new System.Drawing.Size(594, 32);
+            this.cmbLocCity.TabIndex = 8;
             // 
-            // comboBox4
+            // controlNavigatorLoc
             // 
-            this.comboBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(195, 45);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(594, 32);
-            this.comboBox4.TabIndex = 8;
-            // 
-            // controlNavigator4
-            // 
-            this.controlNavigator4.Buttons.Append.Visible = false;
-            this.controlNavigator4.Buttons.CancelEdit.Visible = false;
-            this.controlNavigator4.Buttons.Edit.Visible = false;
-            this.controlNavigator4.Buttons.EndEdit.Visible = false;
-            this.controlNavigator4.Buttons.NextPage.Visible = false;
-            this.controlNavigator4.Buttons.PrevPage.Visible = false;
-            this.controlNavigator4.Buttons.Remove.Visible = false;
-            this.controlNavigator4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.controlNavigator4.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
+            this.controlNavigatorLoc.Buttons.Append.Visible = false;
+            this.controlNavigatorLoc.Buttons.CancelEdit.Visible = false;
+            this.controlNavigatorLoc.Buttons.Edit.Visible = false;
+            this.controlNavigatorLoc.Buttons.EndEdit.Visible = false;
+            this.controlNavigatorLoc.Buttons.NextPage.Visible = false;
+            this.controlNavigatorLoc.Buttons.PrevPage.Visible = false;
+            this.controlNavigatorLoc.Buttons.Remove.Visible = false;
+            this.controlNavigatorLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.controlNavigatorLoc.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
             new DevExpress.XtraEditors.NavigatorCustomButton(0, 6, true, true, "Add", "Add"),
             new DevExpress.XtraEditors.NavigatorCustomButton(1, 8, true, true, "Edit", "Edit"),
             new DevExpress.XtraEditors.NavigatorCustomButton(2, 9, true, true, "Save", "Save"),
             new DevExpress.XtraEditors.NavigatorCustomButton(3, 10, true, true, "Cancel", "Cancel"),
             new DevExpress.XtraEditors.NavigatorCustomButton(4, 11, true, true, "Switch View", "Switch"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 12, true, true, "Refresh", "Refresh")});
-            this.controlNavigator4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlNavigator4.Location = new System.Drawing.Point(3, 3);
-            this.controlNavigator4.Name = "controlNavigator4";
-            this.controlNavigator4.Size = new System.Drawing.Size(1837, 43);
-            this.controlNavigator4.TabIndex = 8;
-            this.controlNavigator4.Text = "controlNavigator4";
-            this.controlNavigator4.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
-            this.controlNavigator4.TextStringFormat = " {0} of {1}";
+            this.controlNavigatorLoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlNavigatorLoc.Location = new System.Drawing.Point(3, 3);
+            this.controlNavigatorLoc.Name = "controlNavigatorLoc";
+            this.controlNavigatorLoc.NavigatableControl = this.gridControlLoc;
+            this.controlNavigatorLoc.Size = new System.Drawing.Size(1837, 43);
+            this.controlNavigatorLoc.TabIndex = 8;
+            this.controlNavigatorLoc.Text = "controlNavigator4";
+            this.controlNavigatorLoc.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
+            this.controlNavigatorLoc.TextStringFormat = " {0} of {1}";
+            this.controlNavigatorLoc.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.controlNavigatorLoc_ButtonClick);
             // 
             // tableLayoutPanel34
             // 
@@ -2394,7 +2391,7 @@
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
             this.tableLayoutPanel34.Controls.Add(this.label35, 0, 0);
-            this.tableLayoutPanel34.Controls.Add(this.searchControl4, 1, 0);
+            this.tableLayoutPanel34.Controls.Add(this.searchControlLoc, 1, 0);
             this.tableLayoutPanel34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel34.Location = new System.Drawing.Point(3, 52);
             this.tableLayoutPanel34.Name = "tableLayoutPanel34";
@@ -2416,52 +2413,70 @@
             this.label35.Text = "Search:";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // searchControl4
+            // searchControlLoc
             // 
-            this.searchControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchControl4.Location = new System.Drawing.Point(178, 3);
-            this.searchControl4.Name = "searchControl4";
-            this.searchControl4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchControl4.Properties.Appearance.Options.UseFont = true;
-            this.searchControl4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.searchControlLoc.Client = this.gridControlLoc;
+            this.searchControlLoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchControlLoc.Location = new System.Drawing.Point(178, 3);
+            this.searchControlLoc.Name = "searchControlLoc";
+            this.searchControlLoc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchControlLoc.Properties.Appearance.Options.UseFont = true;
+            this.searchControlLoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.searchControl4.Size = new System.Drawing.Size(1568, 34);
-            this.searchControl4.TabIndex = 8;
+            this.searchControlLoc.Properties.Client = this.gridControlLoc;
+            this.searchControlLoc.Size = new System.Drawing.Size(1568, 34);
+            this.searchControlLoc.TabIndex = 8;
             // 
-            // gridControl4
+            // gridControlLoc
             // 
-            this.gridControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl4.Location = new System.Drawing.Point(3, 458);
-            this.gridControl4.MainView = this.gridView4;
-            this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(1837, 605);
-            this.gridControl4.TabIndex = 10;
-            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView4});
+            this.gridControlLoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlLoc.Location = new System.Drawing.Point(3, 458);
+            this.gridControlLoc.MainView = this.gridViewLoc;
+            this.gridControlLoc.Name = "gridControlLoc";
+            this.gridControlLoc.Size = new System.Drawing.Size(1837, 605);
+            this.gridControlLoc.TabIndex = 10;
+            this.gridControlLoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewLoc});
             // 
-            // gridView4
+            // gridViewLoc
             // 
-            this.gridView4.GridControl = this.gridControl4;
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsView.ShowGroupPanel = false;
+            this.gridViewLoc.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewLoc.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewLoc.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewLoc.Appearance.Row.Options.UseFont = true;
+            this.gridViewLoc.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colLocName,
+            this.colLocLicenseNo,
+            this.colRegion,
+            this.colCity,
+            this.colBusinessAddress,
+            this.colResidentialAddress});
+            this.gridViewLoc.GridControl = this.gridControlLoc;
+            this.gridViewLoc.Name = "gridViewLoc";
+            this.gridViewLoc.OptionsBehavior.Editable = false;
+            this.gridViewLoc.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridViewLoc.OptionsView.EnableAppearanceOddRow = true;
+            this.gridViewLoc.OptionsView.ShowGroupPanel = false;
+            this.gridViewLoc.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewLoc_RowClick);
+            this.gridViewLoc.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewLoc_FocusedRowChanged);
             // 
             // statusStrip4
             // 
             this.statusStrip4.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel4});
+            this.toolStripStatusLabelLoc});
             this.statusStrip4.Location = new System.Drawing.Point(0, 1066);
             this.statusStrip4.Name = "statusStrip4";
             this.statusStrip4.Size = new System.Drawing.Size(1843, 30);
             this.statusStrip4.TabIndex = 11;
             this.statusStrip4.Text = "statusStrip4";
             // 
-            // toolStripStatusLabel4
+            // toolStripStatusLabelLoc
             // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(55, 25);
-            this.toolStripStatusLabel4.Text = "Done";
+            this.toolStripStatusLabelLoc.Name = "toolStripStatusLabelLoc";
+            this.toolStripStatusLabelLoc.Size = new System.Drawing.Size(55, 25);
+            this.toolStripStatusLabelLoc.Text = "Done";
             // 
             // xtraTabPage5
             // 
@@ -3757,6 +3772,66 @@
             this.colKinContact.Visible = true;
             this.colKinContact.VisibleIndex = 3;
             // 
+            // colLocName
+            // 
+            this.colLocName.Caption = "Name";
+            this.colLocName.FieldName = "Name";
+            this.colLocName.Name = "colLocName";
+            this.colLocName.Visible = true;
+            this.colLocName.VisibleIndex = 0;
+            // 
+            // colLocLicenseNo
+            // 
+            this.colLocLicenseNo.Caption = "License Number";
+            this.colLocLicenseNo.FieldName = "LicenseNumber";
+            this.colLocLicenseNo.Name = "colLocLicenseNo";
+            this.colLocLicenseNo.Visible = true;
+            this.colLocLicenseNo.VisibleIndex = 1;
+            // 
+            // colRegion
+            // 
+            this.colRegion.Caption = "Region";
+            this.colRegion.FieldName = "RegionName";
+            this.colRegion.Name = "colRegion";
+            this.colRegion.Visible = true;
+            this.colRegion.VisibleIndex = 2;
+            // 
+            // colCity
+            // 
+            this.colCity.Caption = "City";
+            this.colCity.FieldName = "CityName";
+            this.colCity.Name = "colCity";
+            this.colCity.Visible = true;
+            this.colCity.VisibleIndex = 3;
+            // 
+            // colBusinessAddress
+            // 
+            this.colBusinessAddress.Caption = "Business Address";
+            this.colBusinessAddress.FieldName = "BusinessAddress";
+            this.colBusinessAddress.Name = "colBusinessAddress";
+            this.colBusinessAddress.Visible = true;
+            this.colBusinessAddress.VisibleIndex = 4;
+            // 
+            // colResidentialAddress
+            // 
+            this.colResidentialAddress.Caption = "Residential Address";
+            this.colResidentialAddress.FieldName = "ResidentialAddress";
+            this.colResidentialAddress.Name = "colResidentialAddress";
+            this.colResidentialAddress.Visible = true;
+            this.colResidentialAddress.VisibleIndex = 5;
+            // 
+            // cmbLocRegion
+            // 
+            this.cmbLocRegion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbLocRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLocRegion.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLocRegion.FormattingEnabled = true;
+            this.cmbLocRegion.Location = new System.Drawing.Point(195, 3);
+            this.cmbLocRegion.Name = "cmbLocRegion";
+            this.cmbLocRegion.Size = new System.Drawing.Size(594, 32);
+            this.cmbLocRegion.TabIndex = 13;
+            this.cmbLocRegion.SelectedIndexChanged += new System.EventHandler(this.cmbLocRegion_SelectedIndexChanged);
+            // 
             // FrmManageAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -3857,9 +3932,9 @@
             this.tableLayoutPanel33.PerformLayout();
             this.tableLayoutPanel34.ResumeLayout(false);
             this.tableLayoutPanel34.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControlLoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlLoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewLoc)).EndInit();
             this.statusStrip4.ResumeLayout(false);
             this.statusStrip4.PerformLayout();
             this.xtraTabPage5.ResumeLayout(false);
@@ -4057,33 +4132,32 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel30;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel31;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox txtLocLicenseNumber;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox txtLocFirstName;
+        private System.Windows.Forms.TextBox txtLocMiddleName;
+        private System.Windows.Forms.TextBox txtLocLastName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel32;
-        private DevExpress.XtraEditors.ControlNavigator controlNavigator4;
+        private DevExpress.XtraEditors.ControlNavigator controlNavigatorLoc;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel34;
         private System.Windows.Forms.Label label35;
-        private DevExpress.XtraEditors.SearchControl searchControl4;
-        private DevExpress.XtraGrid.GridControl gridControl4;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraEditors.SearchControl searchControlLoc;
+        private DevExpress.XtraGrid.GridControl gridControlLoc;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewLoc;
         private System.Windows.Forms.StatusStrip statusStrip4;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelLoc;
         private DevExpress.XtraEditors.GroupControl groupControl6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox txtBusinessAddress;
+        private System.Windows.Forms.TextBox txtResidentialAddress;
+        private System.Windows.Forms.ComboBox cmbLocCity;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel35;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel36;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel37;
@@ -4203,5 +4277,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn colKDLicenseNo;
         private DevExpress.XtraGrid.Columns.GridColumn colKinName;
         private DevExpress.XtraGrid.Columns.GridColumn colKinContact;
+        private DevExpress.XtraGrid.Columns.GridColumn colLocName;
+        private DevExpress.XtraGrid.Columns.GridColumn colLocLicenseNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colRegion;
+        private DevExpress.XtraGrid.Columns.GridColumn colCity;
+        private DevExpress.XtraGrid.Columns.GridColumn colBusinessAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn colResidentialAddress;
+        private System.Windows.Forms.ComboBox cmbLocRegion;
     }
 }
