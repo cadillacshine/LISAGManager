@@ -17,10 +17,12 @@ namespace LISAGManager {
         NavigatorCustomButton BtnCIAdd, BtnCIEdit, BtnCISave, BtnCICancel, BtnCISwitch, BtnCIRefresh;
         NavigatorCustomButton BtnKDAdd, BtnKDEdit, BtnKDSave, BtnKDCancel, BtnKDSwitch, BtnKDRefresh;
         NavigatorCustomButton BtnLocAdd, BtnLocEdit, BtnLocSave, BtnLocCancel, BtnLocSwitch, BtnLocRefresh;
+        NavigatorCustomButton BtnBDAdd, BtnBDEdit, BtnBDSave, BtnBDCancel, BtnBDSwitch, BtnBDRefresh;
 
         private string actionState = "a";
         private string sqlQuery = "SELECT Name, Gender, DateOfBirth, MaritalStatus, Hometown, LicenseNumber, InductionYear, GoodStanding, Active FROM vwMember ORDER BY Name";
         private string sqlQueryRegion = "SELECT Name FROM Region WHERE Active = 'True'";
+        private string sqlQueryBank = "SELECT Name FROM Bank WHERE Active = 'True'";
 
         AppUser appUser = new AppUser();
         SqlCommand sqlcmd = new SqlCommand();
@@ -31,8 +33,6 @@ namespace LISAGManager {
 
         private void FrmManageAccount_Load(object sender, EventArgs e) {
             loadForm();
-            cmbLocRegion.DataSource = Misc.loadDataSource(sqlQueryRegion, "Region");
-            cmbLocRegion.DisplayMember = "Name";
         }
 
         private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e) {
@@ -54,7 +54,10 @@ namespace LISAGManager {
                 sqlQuery = "SELECT Name, LicenseNumber, RegionName, CityName, BusinessAddress, ResidentialAddress FROM vwMember ORDER BY Name";
                 gridControlLoc.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
             } else if (xtraTabControl1.SelectedTabPage.Text == "Bank Details") {
-                searchControl5.Text = "";
+                searchControlBD.Text = "";
+                loadBankDetails();
+                sqlQuery = "SELECT Name, LicenseNumber, BankName, BankBranchName, AccountName, AccountNumber FROM vwMember ORDER BY Name";
+                gridControlBD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
             } else if (xtraTabControl1.SelectedTabPage.Text == "Account Details") {
                 searchControl6.Text = "";
             } else if (xtraTabControl1.SelectedTabPage.Text == "Access Rights") {
@@ -91,7 +94,7 @@ namespace LISAGManager {
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
             //try {
 
-          
+            int memberID = 0;
             if (e.Button.Tag.ToString() == "Add") {
                 toolStripStatusLabel1.Text = "Adding...";
                 if (tableLayoutPanel2.RowStyles[2].Height == 1)
@@ -146,9 +149,24 @@ namespace LISAGManager {
                     toolStripStatusLabel1.Text = "Editing...";
                     sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtLicenseNo.Text + "' ", Misc.getConn());
                     Misc.connOpen();
-                    string memberID = sqlcmd.ExecuteScalar().ToString();
+                    memberID = (int)sqlcmd.ExecuteScalar();
 
                     sqlcmd = new SqlCommand("UPDATE Member SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, Gender = @Gender, DateOfBirth = @DateOfBirth, MaritalStatus = @MaritalStatus, Hometown = @Hometown, LicenseNumber = @LicenseNumber, InductionYear = @InductionYear, GoodStanding = @GoodStanding, Active = @Active WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+
+                    sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
+                    sqlcmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
+                    sqlcmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
+                    sqlcmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
+                    sqlcmd.Parameters.AddWithValue("@DateOfBirth", deDOB.DateTime);
+                    sqlcmd.Parameters.AddWithValue("@MaritalStatus", cmbMaritalStatus.Text);
+                    sqlcmd.Parameters.AddWithValue("@Hometown", txtHometown.Text);
+                    sqlcmd.Parameters.AddWithValue("@LicenseNumber", txtLicenseNo.Text);
+                    sqlcmd.Parameters.AddWithValue("@InductionYear", txtInductionYear.Text);
+                    sqlcmd.Parameters.AddWithValue("@GoodStanding", cbGoodStanding.Checked);
+                    sqlcmd.Parameters.AddWithValue("@Active", cbActive.Checked);
+                    Misc.connOpen();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
 
                 } else if (actionState == "a") {
                     toolStripStatusLabel1.Text = "Saving...";
@@ -156,32 +174,63 @@ namespace LISAGManager {
                     if (!verifyInput()) return;
 
                     sqlcmd = new SqlCommand("INSERT INTO Member (FirstName, MiddleName, LastName, Gender, DateOfBirth, MaritalStatus, Hometown, KinName, KinContact, LicenseNumber, PhoneNumber1, PhoneNumber2, EmailAddress, CityID, BusinessAddress, ResidentialAddress, LISAGBankID, InductionYear, GoodStanding, Active) VALUES (@FirstName, @MiddleName, @LastName, @Gender, @DateOfBirth, @MaritalStatus, @Hometown, @KinName, @KinContact, @LicenseNumber, @PhoneNumber1, @PhoneNumber2, @EmailAddress, @CityID, @BusinessAddress, @ResidentialAddress, @LISAGBankID, @InductionYear, @GoodStanding, @Active)", Misc.getConn());
+
+                    sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
+                    sqlcmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
+                    sqlcmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
+                    sqlcmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
+                    sqlcmd.Parameters.AddWithValue("@DateOfBirth", deDOB.DateTime);
+                    sqlcmd.Parameters.AddWithValue("@MaritalStatus", cmbMaritalStatus.Text);
+                    sqlcmd.Parameters.AddWithValue("@Hometown", txtHometown.Text);
+                    sqlcmd.Parameters.AddWithValue("@KinName", "Unassigned");
+                    sqlcmd.Parameters.AddWithValue("@KinContact", "Unassigned");
+                    sqlcmd.Parameters.AddWithValue("@LicenseNumber", txtLicenseNo.Text);
+                    sqlcmd.Parameters.AddWithValue("@PhoneNumber1", "Unassigned");
+                    sqlcmd.Parameters.AddWithValue("@PhoneNumber2", "Unassigned");
+                    sqlcmd.Parameters.AddWithValue("@EmailAddress", "Unassigned");
+                    sqlcmd.Parameters.AddWithValue("@CityID", 5);
+                    sqlcmd.Parameters.AddWithValue("@BusinessAddress", "Unassigned");
+                    sqlcmd.Parameters.AddWithValue("@ResidentialAddress", "Unassigned");
+                    sqlcmd.Parameters.AddWithValue("@LISAGBankID", 1);
+                    sqlcmd.Parameters.AddWithValue("@InductionYear", txtInductionYear.Text);
+                    sqlcmd.Parameters.AddWithValue("@GoodStanding", cbGoodStanding.Checked);
+                    sqlcmd.Parameters.AddWithValue("@Active", cbActive.Checked);
+                    Misc.connOpen();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
+
+                    sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtLicenseNo.Text + "' ", Misc.getConn());
+                    Misc.connOpen();
+                    memberID = (int)sqlcmd.ExecuteScalar();
+
+                    sqlcmd = new SqlCommand("INSERT INTO UserAccount (MemberID, Username, Password, Active) VALUES (@MemberID, @Username, @Password, @Active)", Misc.getConn());
+                    sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
+                    sqlcmd.Parameters.AddWithValue("@Username", txtFirstName.Text + "." + txtLastName.Text);
+                    sqlcmd.Parameters.AddWithValue("@Password", "Passw0rd");
+                    sqlcmd.Parameters.AddWithValue("@Active", false);
+                    Misc.connOpen();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
+
+                    sqlcmd = new SqlCommand("INSERT INTO LISAGBank (MemberID, BankBranchID, AccountName, AccountNumber) VALUES(@MemberID, @BankBranchID, @AccountName, @AccountNumber) ", Misc.getConn());
+                    sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
+                    sqlcmd.Parameters.AddWithValue("@BankBranchID", 2);
+                    sqlcmd.Parameters.AddWithValue("@AccountName", "Unassigned");
+                    sqlcmd.Parameters.AddWithValue("@AccountNumber", "Unassigned");
+                    Misc.connOpen();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
+
+                    sqlcmd = new SqlCommand("SELECT LISAGBankID FROM LISAGBank WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                    Misc.connOpen();
+                    int lisagBankID = (int)sqlcmd.ExecuteScalar();
+
+                    sqlcmd = new SqlCommand("UPDATE Member SET LISAGBankID = @LISAGBankID WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                    sqlcmd.Parameters.AddWithValue("@LISAGBankID", lisagBankID);
+                    Misc.connOpen();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
                 }
-
-                sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
-                sqlcmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
-                sqlcmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
-                sqlcmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
-                sqlcmd.Parameters.AddWithValue("@DateOfBirth", deDOB.DateTime);
-                sqlcmd.Parameters.AddWithValue("@MaritalStatus", cmbMaritalStatus.Text);
-                sqlcmd.Parameters.AddWithValue("@Hometown", txtHometown.Text);
-                sqlcmd.Parameters.AddWithValue("@KinName", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@KinContact", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@LicenseNumber", txtLicenseNo.Text);
-                sqlcmd.Parameters.AddWithValue("@PhoneNumber1", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@PhoneNumber2", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@EmailAddress", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@CityID", 5);
-                sqlcmd.Parameters.AddWithValue("@BusinessAddress", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@ResidentialAddress", "Unassigned");
-                sqlcmd.Parameters.AddWithValue("@LISAGBankID", 1);
-                sqlcmd.Parameters.AddWithValue("@InductionYear", txtInductionYear.Text);
-                sqlcmd.Parameters.AddWithValue("@GoodStanding", cbGoodStanding.Checked);
-                sqlcmd.Parameters.AddWithValue("@Active", cbActive.Checked);
-
-                Misc.connOpen();
-                sqlcmd.ExecuteNonQuery();
-                sqlcmd.Dispose();
 
                 actionState = "a";
 
@@ -440,6 +489,131 @@ namespace LISAGManager {
             setControlValuesLoc();
         }
 
+        private void cmbBDBankName_SelectedIndexChanged(object sender, EventArgs e) {
+            cmbBDBranchName.DataSource = Misc.loadDataSource("SELECT Name FROM vwBankBranch WHERE Bank = '" + cmbBDBankName.Text + "' ", "vwBankBranch");
+            cmbBDBranchName.DisplayMember = "Name";
+        }
+
+        private void controlNavigatorBD_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
+            //try {
+
+            if (e.Button.Tag.ToString() == "Edit") {
+                if (tableLayoutPanel35.RowStyles[2].Height == 1)
+                    tableLayoutPanel35.RowStyles[2].Height = 146;
+                actionState = "e";
+                setControlStateBD(true);
+
+                xtraTabControl1.TabPages[0].PageEnabled = false;
+                xtraTabControl1.TabPages[1].PageEnabled = false;
+                xtraTabControl1.TabPages[2].PageEnabled = false;
+                xtraTabControl1.TabPages[3].PageEnabled = false;
+                xtraTabControl1.TabPages[4].PageEnabled = true;
+                xtraTabControl1.TabPages[5].PageEnabled = false;
+                xtraTabControl1.TabPages[6].PageEnabled = false;
+
+                cmbBDBankName.Focus();
+                BtnBDEdit.Enabled = false;
+                BtnBDSave.Enabled = true;
+                BtnBDCancel.Enabled = true;
+                BtnBDSwitch.Enabled = false;
+                BtnBDRefresh.Enabled = false;
+                btnPic.Enabled = true;
+
+                controlNavigatorBD.Buttons.First.Enabled = false;
+                controlNavigatorBD.Buttons.Next.Enabled = false;
+                controlNavigatorBD.Buttons.Prev.Enabled = false;
+                controlNavigatorBD.Buttons.Last.Enabled = false;
+
+                searchControlBD.Enabled = false;
+                gridControlBD.Enabled = false;
+            } else if (e.Button.Tag.ToString() == "Save") {
+
+                if (actionState == "e") {
+                    toolStripStatusLabelBD.Text = "Editing...";
+                    sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtBDLicenseNumber.Text + "' ", Misc.getConn());
+                    Misc.connOpen();
+                    int memberID = (int)sqlcmd.ExecuteScalar();
+
+                    sqlcmd = new SqlCommand("SELECT LISAGBankID FROM LISAGBank WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                    Misc.connOpen();
+                    int lisagBankID = (int)sqlcmd.ExecuteScalar();
+
+                    sqlcmd = new SqlCommand("SELECT BankBranchID FROM vwBankBranch WHERE Bank = '" + cmbBDBankName.Text + "' ", Misc.getConn());
+                    Misc.connOpen();
+                    int bankBranchID = (int)sqlcmd.ExecuteScalar();
+
+                    sqlcmd = new SqlCommand("UPDATE LISAGBank SET BankBranchID = @BankBranchID, AccountName = @AccountName, AccountNumber = @AccountNumber WHERE LISAGBankID = '" + lisagBankID + "' ", Misc.getConn());
+
+                    sqlcmd.Parameters.AddWithValue("@BankBranchID", bankBranchID);
+                    sqlcmd.Parameters.AddWithValue("@AccountName", txtBDAccountName.Text);
+                    sqlcmd.Parameters.AddWithValue("@AccountNumber", txtBDAccountNumber.Text);
+                    Misc.connOpen();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
+                }
+
+                actionState = "a";
+
+                gridControlBD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                setControlState(false);
+                BtnKDSave.Enabled = false;
+                BtnKDEdit.Enabled = true;
+                BtnKDAdd.Enabled = true;
+                BtnKDCancel.Enabled = false;
+                BtnKDSwitch.Enabled = true;
+                BtnKDRefresh.Enabled = true;
+                btnPic.Enabled = false;
+
+                controlNavigatorKD.Buttons.First.Enabled = true;
+                controlNavigatorKD.Buttons.Next.Enabled = true;
+                controlNavigatorKD.Buttons.Prev.Enabled = true;
+                controlNavigatorKD.Buttons.Last.Enabled = true;
+
+                searchControlKD.Enabled = true;
+                gridControlKD.Enabled = true;
+                setTabState(true);
+                gridControlKD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                toolStripStatusLabelKD.Text = "Saved";
+
+            } else if (e.Button.Tag.ToString() == "Cancel") {
+                setControlStateKD(false);
+                actionState = "a";
+                BtnKDAdd.Enabled = false;
+                BtnKDEdit.Enabled = true;
+                BtnKDSave.Enabled = false;
+                BtnKDCancel.Enabled = false;
+                BtnKDSwitch.Enabled = true;
+                BtnKDRefresh.Enabled = true;
+                btnPic.Enabled = false;
+
+                controlNavigatorKD.Buttons.First.Enabled = true;
+                controlNavigatorKD.Buttons.Next.Enabled = true;
+                controlNavigatorKD.Buttons.Prev.Enabled = true;
+                controlNavigatorKD.Buttons.Last.Enabled = true;
+
+                searchControlKD.Enabled = true;
+                gridControlKD.Enabled = true;
+                setTabState(true);
+
+                toolStripStatusLabelKD.Text = "Done";
+
+            } else if (e.Button.Tag.ToString() == "Refresh") {
+                toolStripStatusLabelKD.Text = "Refreshing...";
+                gridControlKD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                toolStripStatusLabelKD.Text = "Done";
+
+            } else if (e.Button.Tag.ToString() == "Switch") {
+                if (tableLayoutPanel14.RowStyles[2].Height == 146) {
+                    tableLayoutPanel14.RowStyles[2].Height = 1;
+                } else {
+                    tableLayoutPanel14.RowStyles[2].Height = 146;
+                }
+            }
+            //} catch {
+
+            //}
+        }
+
         private void cmbLocRegion_SelectedIndexChanged(object sender, EventArgs e) {
             cmbLocCity.DataSource = Misc.loadDataSource("SELECT Name FROM vwCity WHERE Region = '" + cmbLocRegion.Text + "' ", "vwCity");
             cmbLocCity.DisplayMember = "Name";
@@ -574,6 +748,12 @@ namespace LISAGManager {
             cmbLocCity.Enabled = status;
             txtBusinessAddress.Enabled = status;
             txtResidentialAddress.Enabled = status;
+        }
+        private void setControlStateBD(bool status) {
+            cmbBDBankName.Enabled = status;
+            cmbBDBranchName.Enabled = status;
+            txtBDAccountName.Enabled = status;
+            txtBDAccountNumber.Enabled = status;
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
@@ -771,6 +951,19 @@ namespace LISAGManager {
             btnPic.Enabled = true;
         }
 
+        private void selectionChangedBD() {
+            setTabState(true);
+            setControlStateBD(false);
+
+            BtnBDAdd.Enabled = false;
+            BtnBDEdit.Enabled = true;
+            BtnBDSave.Enabled = false;
+            BtnBDCancel.Enabled = false;
+            BtnBDSwitch.Enabled = true;
+            BtnBDRefresh.Enabled = true;
+            btnPic.Enabled = true;
+        }
+
         private void setControlValues() {
             string firstName = "";
             string middleName = "";
@@ -872,6 +1065,31 @@ namespace LISAGManager {
             txtBusinessAddress.Text = gridViewLoc.GetRowCellValue(gridViewLoc.FocusedRowHandle, "BusinessAddress").ToString();
         }
 
+        private void setControlValuesBD() {
+            string firstName = "";
+            string middleName = "";
+            string lastName = "";
+            string licenseNumber = gridViewBD.GetRowCellValue(gridViewBD.FocusedRowHandle, "LicenseNumber").ToString();
+            sqlcmd = new SqlCommand("SELECT FirstName, MiddleName, LastName FROM Member WHERE LicenseNumber = '" + licenseNumber + "' ", Misc.getConn());
+            SqlDataReader dReader = sqlcmd.ExecuteReader();
+            Misc.connOpen();
+            while (dReader.Read()) {
+                firstName = dReader.GetString(0);
+                middleName = dReader.GetString(1);
+                lastName = dReader.GetString(2);
+            }
+            dReader.Close();
+
+            txtBDFirstName.Text = firstName;
+            txtBDMiddleName.Text = middleName;
+            txtBDLastName.Text = lastName;
+            txtBDLicenseNumber.Text = licenseNumber;
+            cmbBDBankName.Text = gridViewKD.GetRowCellValue(gridViewKD.FocusedRowHandle, "BankName").ToString();
+            cmbBDBranchName.Text = gridViewKD.GetRowCellValue(gridViewKD.FocusedRowHandle, "BankBranchName").ToString();
+            txtBDAccountName.Text = gridViewKD.GetRowCellValue(gridViewKD.FocusedRowHandle, "AccountName").ToString();
+            txtBDAccountNumber.Text = gridViewKD.GetRowCellValue(gridViewKD.FocusedRowHandle, "AccountNumber").ToString();
+        }
+
         private void loadContactInformation() {
             BtnCIAdd = controlNavigatorCI.Buttons.CustomButtons[0];
             BtnCIEdit = controlNavigatorCI.Buttons.CustomButtons[1];
@@ -921,6 +1139,29 @@ namespace LISAGManager {
             BtnLocSwitch.Enabled = true;
             BtnLocRefresh.Enabled = true;
             btnPic.Enabled = true;
+
+            cmbLocRegion.DataSource = Misc.loadDataSource(sqlQueryRegion, "Region");
+            cmbLocRegion.DisplayMember = "Name";
+        }
+
+        private void loadBankDetails() {
+            BtnBDAdd = controlNavigatorKD.Buttons.CustomButtons[0];
+            BtnBDEdit = controlNavigatorKD.Buttons.CustomButtons[1];
+            BtnBDSave = controlNavigatorKD.Buttons.CustomButtons[2];
+            BtnBDCancel = controlNavigatorKD.Buttons.CustomButtons[3];
+            BtnBDSwitch = controlNavigatorKD.Buttons.CustomButtons[4];
+            BtnBDRefresh = controlNavigatorKD.Buttons.CustomButtons[5];
+
+            BtnBDAdd.Enabled = false;
+            BtnBDEdit.Enabled = true;
+            BtnBDSave.Enabled = false;
+            BtnBDCancel.Enabled = false;
+            BtnBDSwitch.Enabled = true;
+            BtnBDRefresh.Enabled = true;
+            btnPic.Enabled = true;
+
+            cmbBDBankName.DataSource = Misc.loadDataSource(sqlQueryBank, "Bank");
+            cmbBDBankName.DisplayMember = "Name";
         }
 
         private bool verifyInput() {

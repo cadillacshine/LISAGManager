@@ -189,14 +189,14 @@
             this.tableLayoutPanel39 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel40 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.txtBDLicenseNumber = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.txtBDFirstName = new System.Windows.Forms.TextBox();
+            this.txtBDMiddleName = new System.Windows.Forms.TextBox();
+            this.txtBDLastName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel41 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel42 = new System.Windows.Forms.TableLayoutPanel();
@@ -204,18 +204,18 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.controlNavigator5 = new DevExpress.XtraEditors.ControlNavigator();
+            this.txtBDAccountName = new System.Windows.Forms.TextBox();
+            this.txtBDAccountNumber = new System.Windows.Forms.TextBox();
+            this.cmbBDBankName = new System.Windows.Forms.ComboBox();
+            this.cmbBDBranchName = new System.Windows.Forms.ComboBox();
+            this.controlNavigatorBD = new DevExpress.XtraEditors.ControlNavigator();
             this.tableLayoutPanel43 = new System.Windows.Forms.TableLayoutPanel();
             this.label43 = new System.Windows.Forms.Label();
-            this.searchControl5 = new DevExpress.XtraEditors.SearchControl();
-            this.gridControl5 = new DevExpress.XtraGrid.GridControl();
-            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.searchControlBD = new DevExpress.XtraEditors.SearchControl();
+            this.gridControlBD = new DevExpress.XtraGrid.GridControl();
+            this.gridViewBD = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.statusStrip5 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelBD = new System.Windows.Forms.ToolStripStatusLabel();
             this.xtraTabPage7 = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel52 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel53 = new System.Windows.Forms.TableLayoutPanel();
@@ -290,6 +290,12 @@
             this.colBusinessAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colResidentialAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmbLocRegion = new System.Windows.Forms.ComboBox();
+            this.colBDName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBDLicenseNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBDBank = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBankBranch = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBDAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBDAccountNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tabPersonalInformation.SuspendLayout();
@@ -381,9 +387,9 @@
             this.groupControl8.SuspendLayout();
             this.tableLayoutPanel42.SuspendLayout();
             this.tableLayoutPanel43.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControlBD.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlBD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewBD)).BeginInit();
             this.statusStrip5.SuspendLayout();
             this.xtraTabPage7.SuspendLayout();
             this.tableLayoutPanel52.SuspendLayout();
@@ -2490,9 +2496,9 @@
             this.tableLayoutPanel35.ColumnCount = 1;
             this.tableLayoutPanel35.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel35.Controls.Add(this.tableLayoutPanel36, 0, 2);
-            this.tableLayoutPanel35.Controls.Add(this.controlNavigator5, 0, 0);
+            this.tableLayoutPanel35.Controls.Add(this.controlNavigatorBD, 0, 0);
             this.tableLayoutPanel35.Controls.Add(this.tableLayoutPanel43, 0, 1);
-            this.tableLayoutPanel35.Controls.Add(this.gridControl5, 0, 3);
+            this.tableLayoutPanel35.Controls.Add(this.gridControlBD, 0, 3);
             this.tableLayoutPanel35.Controls.Add(this.statusStrip5, 0, 4);
             this.tableLayoutPanel35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel35.Location = new System.Drawing.Point(0, 0);
@@ -2594,14 +2600,14 @@
             this.tableLayoutPanel40.ColumnCount = 2;
             this.tableLayoutPanel40.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.67533F));
             this.tableLayoutPanel40.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.32468F));
-            this.tableLayoutPanel40.Controls.Add(this.textBox26, 1, 3);
+            this.tableLayoutPanel40.Controls.Add(this.txtBDLicenseNumber, 1, 3);
             this.tableLayoutPanel40.Controls.Add(this.label37, 0, 0);
             this.tableLayoutPanel40.Controls.Add(this.label38, 0, 1);
             this.tableLayoutPanel40.Controls.Add(this.label39, 0, 2);
             this.tableLayoutPanel40.Controls.Add(this.label40, 0, 3);
-            this.tableLayoutPanel40.Controls.Add(this.textBox27, 1, 0);
-            this.tableLayoutPanel40.Controls.Add(this.textBox28, 1, 1);
-            this.tableLayoutPanel40.Controls.Add(this.textBox29, 1, 2);
+            this.tableLayoutPanel40.Controls.Add(this.txtBDFirstName, 1, 0);
+            this.tableLayoutPanel40.Controls.Add(this.txtBDMiddleName, 1, 1);
+            this.tableLayoutPanel40.Controls.Add(this.txtBDLastName, 1, 2);
             this.tableLayoutPanel40.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel40.Location = new System.Drawing.Point(3, 30);
             this.tableLayoutPanel40.Name = "tableLayoutPanel40";
@@ -2613,15 +2619,15 @@
             this.tableLayoutPanel40.Size = new System.Drawing.Size(693, 165);
             this.tableLayoutPanel40.TabIndex = 0;
             // 
-            // textBox26
+            // txtBDLicenseNumber
             // 
-            this.textBox26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox26.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox26.Location = new System.Drawing.Point(174, 126);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.ReadOnly = true;
-            this.textBox26.Size = new System.Drawing.Size(516, 32);
-            this.textBox26.TabIndex = 18;
+            this.txtBDLicenseNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBDLicenseNumber.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBDLicenseNumber.Location = new System.Drawing.Point(174, 126);
+            this.txtBDLicenseNumber.Name = "txtBDLicenseNumber";
+            this.txtBDLicenseNumber.ReadOnly = true;
+            this.txtBDLicenseNumber.Size = new System.Drawing.Size(516, 32);
+            this.txtBDLicenseNumber.TabIndex = 18;
             // 
             // label37
             // 
@@ -2671,35 +2677,35 @@
             this.label40.Text = "License No.:";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox27
+            // txtBDFirstName
             // 
-            this.textBox27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox27.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox27.Location = new System.Drawing.Point(174, 3);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.ReadOnly = true;
-            this.textBox27.Size = new System.Drawing.Size(516, 32);
-            this.textBox27.TabIndex = 15;
+            this.txtBDFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBDFirstName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBDFirstName.Location = new System.Drawing.Point(174, 3);
+            this.txtBDFirstName.Name = "txtBDFirstName";
+            this.txtBDFirstName.ReadOnly = true;
+            this.txtBDFirstName.Size = new System.Drawing.Size(516, 32);
+            this.txtBDFirstName.TabIndex = 15;
             // 
-            // textBox28
+            // txtBDMiddleName
             // 
-            this.textBox28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox28.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox28.Location = new System.Drawing.Point(174, 44);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.ReadOnly = true;
-            this.textBox28.Size = new System.Drawing.Size(516, 32);
-            this.textBox28.TabIndex = 16;
+            this.txtBDMiddleName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBDMiddleName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBDMiddleName.Location = new System.Drawing.Point(174, 44);
+            this.txtBDMiddleName.Name = "txtBDMiddleName";
+            this.txtBDMiddleName.ReadOnly = true;
+            this.txtBDMiddleName.Size = new System.Drawing.Size(516, 32);
+            this.txtBDMiddleName.TabIndex = 16;
             // 
-            // textBox29
+            // txtBDLastName
             // 
-            this.textBox29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox29.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox29.Location = new System.Drawing.Point(174, 85);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.ReadOnly = true;
-            this.textBox29.Size = new System.Drawing.Size(516, 32);
-            this.textBox29.TabIndex = 17;
+            this.txtBDLastName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBDLastName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBDLastName.Location = new System.Drawing.Point(174, 85);
+            this.txtBDLastName.Name = "txtBDLastName";
+            this.txtBDLastName.ReadOnly = true;
+            this.txtBDLastName.Size = new System.Drawing.Size(516, 32);
+            this.txtBDLastName.TabIndex = 17;
             // 
             // tableLayoutPanel41
             // 
@@ -2734,10 +2740,10 @@
             this.tableLayoutPanel42.Controls.Add(this.label42, 0, 2);
             this.tableLayoutPanel42.Controls.Add(this.label44, 0, 1);
             this.tableLayoutPanel42.Controls.Add(this.label45, 0, 0);
-            this.tableLayoutPanel42.Controls.Add(this.textBox30, 1, 2);
-            this.tableLayoutPanel42.Controls.Add(this.textBox31, 1, 3);
-            this.tableLayoutPanel42.Controls.Add(this.comboBox5, 1, 0);
-            this.tableLayoutPanel42.Controls.Add(this.comboBox6, 1, 1);
+            this.tableLayoutPanel42.Controls.Add(this.txtBDAccountName, 1, 2);
+            this.tableLayoutPanel42.Controls.Add(this.txtBDAccountNumber, 1, 3);
+            this.tableLayoutPanel42.Controls.Add(this.cmbBDBankName, 1, 0);
+            this.tableLayoutPanel42.Controls.Add(this.cmbBDBranchName, 1, 1);
             this.tableLayoutPanel42.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel42.Location = new System.Drawing.Point(3, 30);
             this.tableLayoutPanel42.Name = "tableLayoutPanel42";
@@ -2797,71 +2803,74 @@
             this.label45.Text = "Name:";
             this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox30
+            // txtBDAccountName
             // 
-            this.textBox30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox30.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox30.Location = new System.Drawing.Point(270, 86);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(591, 32);
-            this.textBox30.TabIndex = 9;
+            this.txtBDAccountName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBDAccountName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBDAccountName.Location = new System.Drawing.Point(270, 86);
+            this.txtBDAccountName.Name = "txtBDAccountName";
+            this.txtBDAccountName.Size = new System.Drawing.Size(591, 32);
+            this.txtBDAccountName.TabIndex = 9;
             // 
-            // textBox31
+            // txtBDAccountNumber
             // 
-            this.textBox31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox31.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox31.Location = new System.Drawing.Point(270, 127);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(591, 32);
-            this.textBox31.TabIndex = 10;
+            this.txtBDAccountNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBDAccountNumber.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBDAccountNumber.Location = new System.Drawing.Point(270, 127);
+            this.txtBDAccountNumber.Name = "txtBDAccountNumber";
+            this.txtBDAccountNumber.Size = new System.Drawing.Size(591, 32);
+            this.txtBDAccountNumber.TabIndex = 10;
             // 
-            // comboBox5
+            // cmbBDBankName
             // 
-            this.comboBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(270, 3);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(591, 32);
-            this.comboBox5.TabIndex = 11;
+            this.cmbBDBankName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbBDBankName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBDBankName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBDBankName.FormattingEnabled = true;
+            this.cmbBDBankName.Location = new System.Drawing.Point(270, 3);
+            this.cmbBDBankName.Name = "cmbBDBankName";
+            this.cmbBDBankName.Size = new System.Drawing.Size(591, 32);
+            this.cmbBDBankName.TabIndex = 11;
+            this.cmbBDBankName.SelectedIndexChanged += new System.EventHandler(this.cmbBDBankName_SelectedIndexChanged);
             // 
-            // comboBox6
+            // cmbBDBranchName
             // 
-            this.comboBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(270, 44);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(591, 32);
-            this.comboBox6.TabIndex = 12;
+            this.cmbBDBranchName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbBDBranchName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBDBranchName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBDBranchName.FormattingEnabled = true;
+            this.cmbBDBranchName.Location = new System.Drawing.Point(270, 44);
+            this.cmbBDBranchName.Name = "cmbBDBranchName";
+            this.cmbBDBranchName.Size = new System.Drawing.Size(591, 32);
+            this.cmbBDBranchName.TabIndex = 12;
             // 
-            // controlNavigator5
+            // controlNavigatorBD
             // 
-            this.controlNavigator5.Buttons.Append.Visible = false;
-            this.controlNavigator5.Buttons.CancelEdit.Visible = false;
-            this.controlNavigator5.Buttons.Edit.Visible = false;
-            this.controlNavigator5.Buttons.EndEdit.Visible = false;
-            this.controlNavigator5.Buttons.NextPage.Visible = false;
-            this.controlNavigator5.Buttons.PrevPage.Visible = false;
-            this.controlNavigator5.Buttons.Remove.Visible = false;
-            this.controlNavigator5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.controlNavigator5.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
+            this.controlNavigatorBD.Buttons.Append.Visible = false;
+            this.controlNavigatorBD.Buttons.CancelEdit.Visible = false;
+            this.controlNavigatorBD.Buttons.Edit.Visible = false;
+            this.controlNavigatorBD.Buttons.EndEdit.Visible = false;
+            this.controlNavigatorBD.Buttons.NextPage.Visible = false;
+            this.controlNavigatorBD.Buttons.PrevPage.Visible = false;
+            this.controlNavigatorBD.Buttons.Remove.Visible = false;
+            this.controlNavigatorBD.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.controlNavigatorBD.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
             new DevExpress.XtraEditors.NavigatorCustomButton(0, 6, true, true, "Add", "Add"),
             new DevExpress.XtraEditors.NavigatorCustomButton(1, 8, true, true, "Edit", "Edit"),
             new DevExpress.XtraEditors.NavigatorCustomButton(2, 9, true, true, "Save", "Save"),
             new DevExpress.XtraEditors.NavigatorCustomButton(3, 10, true, true, "Cancel", "Cancel"),
             new DevExpress.XtraEditors.NavigatorCustomButton(4, 11, true, true, "Switch View", "Switch"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 12, true, true, "Refresh", "Refresh")});
-            this.controlNavigator5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlNavigator5.Location = new System.Drawing.Point(3, 3);
-            this.controlNavigator5.Name = "controlNavigator5";
-            this.controlNavigator5.Size = new System.Drawing.Size(1837, 43);
-            this.controlNavigator5.TabIndex = 8;
-            this.controlNavigator5.Text = "controlNavigator5";
-            this.controlNavigator5.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
-            this.controlNavigator5.TextStringFormat = " {0} of {1}";
+            this.controlNavigatorBD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlNavigatorBD.Location = new System.Drawing.Point(3, 3);
+            this.controlNavigatorBD.Name = "controlNavigatorBD";
+            this.controlNavigatorBD.NavigatableControl = this.gridControlBD;
+            this.controlNavigatorBD.Size = new System.Drawing.Size(1837, 43);
+            this.controlNavigatorBD.TabIndex = 8;
+            this.controlNavigatorBD.Text = "controlNavigator5";
+            this.controlNavigatorBD.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
+            this.controlNavigatorBD.TextStringFormat = " {0} of {1}";
+            this.controlNavigatorBD.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.controlNavigatorBD_ButtonClick);
             // 
             // tableLayoutPanel43
             // 
@@ -2870,7 +2879,7 @@
             this.tableLayoutPanel43.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel43.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
             this.tableLayoutPanel43.Controls.Add(this.label43, 0, 0);
-            this.tableLayoutPanel43.Controls.Add(this.searchControl5, 1, 0);
+            this.tableLayoutPanel43.Controls.Add(this.searchControlBD, 1, 0);
             this.tableLayoutPanel43.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel43.Location = new System.Drawing.Point(3, 52);
             this.tableLayoutPanel43.Name = "tableLayoutPanel43";
@@ -2892,52 +2901,68 @@
             this.label43.Text = "Search:";
             this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // searchControl5
+            // searchControlBD
             // 
-            this.searchControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchControl5.Location = new System.Drawing.Point(178, 3);
-            this.searchControl5.Name = "searchControl5";
-            this.searchControl5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchControl5.Properties.Appearance.Options.UseFont = true;
-            this.searchControl5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.searchControlBD.Client = this.gridControlBD;
+            this.searchControlBD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchControlBD.Location = new System.Drawing.Point(178, 3);
+            this.searchControlBD.Name = "searchControlBD";
+            this.searchControlBD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchControlBD.Properties.Appearance.Options.UseFont = true;
+            this.searchControlBD.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.searchControl5.Size = new System.Drawing.Size(1568, 34);
-            this.searchControl5.TabIndex = 8;
+            this.searchControlBD.Properties.Client = this.gridControlBD;
+            this.searchControlBD.Size = new System.Drawing.Size(1568, 34);
+            this.searchControlBD.TabIndex = 8;
             // 
-            // gridControl5
+            // gridControlBD
             // 
-            this.gridControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl5.Location = new System.Drawing.Point(3, 320);
-            this.gridControl5.MainView = this.gridView5;
-            this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(1837, 743);
-            this.gridControl5.TabIndex = 10;
-            this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView5});
+            this.gridControlBD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlBD.Location = new System.Drawing.Point(3, 320);
+            this.gridControlBD.MainView = this.gridViewBD;
+            this.gridControlBD.Name = "gridControlBD";
+            this.gridControlBD.Size = new System.Drawing.Size(1837, 743);
+            this.gridControlBD.TabIndex = 10;
+            this.gridControlBD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewBD});
             // 
-            // gridView5
+            // gridViewBD
             // 
-            this.gridView5.GridControl = this.gridControl5;
-            this.gridView5.Name = "gridView5";
-            this.gridView5.OptionsView.ShowGroupPanel = false;
+            this.gridViewBD.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewBD.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewBD.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewBD.Appearance.Row.Options.UseFont = true;
+            this.gridViewBD.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colBDName,
+            this.colBDLicenseNumber,
+            this.colBDBank,
+            this.colBankBranch,
+            this.colBDAccountName,
+            this.colBDAccountNumber});
+            this.gridViewBD.GridControl = this.gridControlBD;
+            this.gridViewBD.Name = "gridViewBD";
+            this.gridViewBD.OptionsBehavior.Editable = false;
+            this.gridViewBD.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridViewBD.OptionsView.EnableAppearanceOddRow = true;
+            this.gridViewBD.OptionsView.ShowGroupPanel = false;
             // 
             // statusStrip5
             // 
             this.statusStrip5.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel5});
+            this.toolStripStatusLabelBD});
             this.statusStrip5.Location = new System.Drawing.Point(0, 1066);
             this.statusStrip5.Name = "statusStrip5";
             this.statusStrip5.Size = new System.Drawing.Size(1843, 30);
             this.statusStrip5.TabIndex = 11;
             this.statusStrip5.Text = "statusStrip5";
             // 
-            // toolStripStatusLabel5
+            // toolStripStatusLabelBD
             // 
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(55, 25);
-            this.toolStripStatusLabel5.Text = "Done";
+            this.toolStripStatusLabelBD.Name = "toolStripStatusLabelBD";
+            this.toolStripStatusLabelBD.Size = new System.Drawing.Size(55, 25);
+            this.toolStripStatusLabelBD.Text = "Done";
             // 
             // xtraTabPage7
             // 
@@ -3832,6 +3857,54 @@
             this.cmbLocRegion.TabIndex = 13;
             this.cmbLocRegion.SelectedIndexChanged += new System.EventHandler(this.cmbLocRegion_SelectedIndexChanged);
             // 
+            // colBDName
+            // 
+            this.colBDName.Caption = "Name";
+            this.colBDName.FieldName = "Name";
+            this.colBDName.Name = "colBDName";
+            this.colBDName.Visible = true;
+            this.colBDName.VisibleIndex = 0;
+            // 
+            // colBDLicenseNumber
+            // 
+            this.colBDLicenseNumber.Caption = "License Number";
+            this.colBDLicenseNumber.FieldName = "LicenseNumber";
+            this.colBDLicenseNumber.Name = "colBDLicenseNumber";
+            this.colBDLicenseNumber.Visible = true;
+            this.colBDLicenseNumber.VisibleIndex = 1;
+            // 
+            // colBDBank
+            // 
+            this.colBDBank.Caption = "Bank";
+            this.colBDBank.FieldName = "BankName";
+            this.colBDBank.Name = "colBDBank";
+            this.colBDBank.Visible = true;
+            this.colBDBank.VisibleIndex = 2;
+            // 
+            // colBankBranch
+            // 
+            this.colBankBranch.Caption = "Branch";
+            this.colBankBranch.FieldName = "BankBranchName";
+            this.colBankBranch.Name = "colBankBranch";
+            this.colBankBranch.Visible = true;
+            this.colBankBranch.VisibleIndex = 3;
+            // 
+            // colBDAccountName
+            // 
+            this.colBDAccountName.Caption = "Account Name";
+            this.colBDAccountName.FieldName = "AccountName";
+            this.colBDAccountName.Name = "colBDAccountName";
+            this.colBDAccountName.Visible = true;
+            this.colBDAccountName.VisibleIndex = 4;
+            // 
+            // colBDAccountNumber
+            // 
+            this.colBDAccountNumber.Caption = "Account Number";
+            this.colBDAccountNumber.FieldName = "AccountNumber";
+            this.colBDAccountNumber.Name = "colBDAccountNumber";
+            this.colBDAccountNumber.Visible = true;
+            this.colBDAccountNumber.VisibleIndex = 5;
+            // 
             // FrmManageAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -3956,9 +4029,9 @@
             this.tableLayoutPanel42.PerformLayout();
             this.tableLayoutPanel43.ResumeLayout(false);
             this.tableLayoutPanel43.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControlBD.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlBD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewBD)).EndInit();
             this.statusStrip5.ResumeLayout(false);
             this.statusStrip5.PerformLayout();
             this.xtraTabPage7.ResumeLayout(false);
@@ -4166,33 +4239,33 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel39;
         private DevExpress.XtraEditors.GroupControl groupControl7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel40;
-        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.TextBox txtBDLicenseNumber;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.TextBox txtBDFirstName;
+        private System.Windows.Forms.TextBox txtBDMiddleName;
+        private System.Windows.Forms.TextBox txtBDLastName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel41;
-        private DevExpress.XtraEditors.ControlNavigator controlNavigator5;
+        private DevExpress.XtraEditors.ControlNavigator controlNavigatorBD;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel43;
         private System.Windows.Forms.Label label43;
-        private DevExpress.XtraEditors.SearchControl searchControl5;
-        private DevExpress.XtraGrid.GridControl gridControl5;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraEditors.SearchControl searchControlBD;
+        private DevExpress.XtraGrid.GridControl gridControlBD;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewBD;
         private System.Windows.Forms.StatusStrip statusStrip5;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelBD;
         private DevExpress.XtraEditors.GroupControl groupControl8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel42;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.TextBox txtBDAccountName;
+        private System.Windows.Forms.TextBox txtBDAccountNumber;
+        private System.Windows.Forms.ComboBox cmbBDBankName;
+        private System.Windows.Forms.ComboBox cmbBDBranchName;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel52;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel53;
@@ -4284,5 +4357,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colBusinessAddress;
         private DevExpress.XtraGrid.Columns.GridColumn colResidentialAddress;
         private System.Windows.Forms.ComboBox cmbLocRegion;
+        private DevExpress.XtraGrid.Columns.GridColumn colBDName;
+        private DevExpress.XtraGrid.Columns.GridColumn colBDLicenseNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn colBDBank;
+        private DevExpress.XtraGrid.Columns.GridColumn colBankBranch;
+        private DevExpress.XtraGrid.Columns.GridColumn colBDAccountName;
+        private DevExpress.XtraGrid.Columns.GridColumn colBDAccountNumber;
     }
 }
