@@ -138,11 +138,15 @@
             this.txtKDKinName = new System.Windows.Forms.TextBox();
             this.txtKDKinContact = new System.Windows.Forms.TextBox();
             this.controlNavigatorKD = new DevExpress.XtraEditors.ControlNavigator();
+            this.gridControlKD = new DevExpress.XtraGrid.GridControl();
+            this.gridViewKD = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colKDName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKDLicenseNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKinName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKinContact = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
             this.label28 = new System.Windows.Forms.Label();
             this.searchControlKD = new DevExpress.XtraEditors.SearchControl();
-            this.gridControlKD = new DevExpress.XtraGrid.GridControl();
-            this.gridViewKD = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.statusStrip3 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelKD = new System.Windows.Forms.ToolStripStatusLabel();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
@@ -172,12 +176,19 @@
             this.txtBusinessAddress = new System.Windows.Forms.TextBox();
             this.txtResidentialAddress = new System.Windows.Forms.TextBox();
             this.cmbLocCity = new System.Windows.Forms.ComboBox();
+            this.cmbLocRegion = new System.Windows.Forms.ComboBox();
             this.controlNavigatorLoc = new DevExpress.XtraEditors.ControlNavigator();
+            this.gridControlLoc = new DevExpress.XtraGrid.GridControl();
+            this.gridViewLoc = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colLocName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLocLicenseNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRegion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBusinessAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResidentialAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel34 = new System.Windows.Forms.TableLayoutPanel();
             this.label35 = new System.Windows.Forms.Label();
             this.searchControlLoc = new DevExpress.XtraEditors.SearchControl();
-            this.gridControlLoc = new DevExpress.XtraGrid.GridControl();
-            this.gridViewLoc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.statusStrip4 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelLoc = new System.Windows.Forms.ToolStripStatusLabel();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
@@ -209,11 +220,17 @@
             this.cmbBDBankName = new System.Windows.Forms.ComboBox();
             this.cmbBDBranchName = new System.Windows.Forms.ComboBox();
             this.controlNavigatorBD = new DevExpress.XtraEditors.ControlNavigator();
+            this.gridControlBD = new DevExpress.XtraGrid.GridControl();
+            this.gridViewBD = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colBDName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBDLicenseNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBDBank = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBankBranch = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBDAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBDAccountNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel43 = new System.Windows.Forms.TableLayoutPanel();
             this.label43 = new System.Windows.Forms.Label();
             this.searchControlBD = new DevExpress.XtraEditors.SearchControl();
-            this.gridControlBD = new DevExpress.XtraGrid.GridControl();
-            this.gridViewBD = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.statusStrip5 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelBD = new System.Windows.Forms.ToolStripStatusLabel();
             this.xtraTabPage7 = new DevExpress.XtraTab.XtraTabPage();
@@ -279,23 +296,6 @@
             this.groupControl13 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl8 = new DevExpress.XtraGrid.GridControl();
             this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colKDName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKDLicenseNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKinName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKinContact = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLocName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLocLicenseNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRegion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCity = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBusinessAddress = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colResidentialAddress = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmbLocRegion = new System.Windows.Forms.ComboBox();
-            this.colBDName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBDLicenseNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBDBank = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBankBranch = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBDAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBDAccountNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tabPersonalInformation.SuspendLayout();
@@ -348,10 +348,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             this.tableLayoutPanel24.SuspendLayout();
-            this.tableLayoutPanel25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControlKD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlKD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewKD)).BeginInit();
+            this.tableLayoutPanel25.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControlKD.Properties)).BeginInit();
             this.statusStrip3.SuspendLayout();
             this.xtraTabPage4.SuspendLayout();
             this.tableLayoutPanel26.SuspendLayout();
@@ -367,10 +367,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
             this.tableLayoutPanel33.SuspendLayout();
-            this.tableLayoutPanel34.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControlLoc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlLoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewLoc)).BeginInit();
+            this.tableLayoutPanel34.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControlLoc.Properties)).BeginInit();
             this.statusStrip4.SuspendLayout();
             this.xtraTabPage5.SuspendLayout();
             this.tableLayoutPanel35.SuspendLayout();
@@ -386,10 +386,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
             this.groupControl8.SuspendLayout();
             this.tableLayoutPanel42.SuspendLayout();
-            this.tableLayoutPanel43.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControlBD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewBD)).BeginInit();
+            this.tableLayoutPanel43.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchControlBD.Properties)).BeginInit();
             this.statusStrip5.SuspendLayout();
             this.xtraTabPage7.SuspendLayout();
             this.tableLayoutPanel52.SuspendLayout();
@@ -544,7 +544,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.33693F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.66307F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 223F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 646F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 648F));
             this.tableLayoutPanel5.Controls.Add(this.label10, 2, 4);
             this.tableLayoutPanel5.Controls.Add(this.label9, 2, 3);
             this.tableLayoutPanel5.Controls.Add(this.label8, 2, 2);
@@ -583,7 +583,7 @@
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(726, 167);
+            this.label10.Location = new System.Drawing.Point(724, 167);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(217, 41);
             this.label10.TabIndex = 19;
@@ -595,7 +595,7 @@
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(726, 124);
+            this.label9.Location = new System.Drawing.Point(724, 124);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(217, 43);
             this.label9.TabIndex = 18;
@@ -607,7 +607,7 @@
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(726, 82);
+            this.label8.Location = new System.Drawing.Point(724, 82);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(217, 42);
             this.label8.TabIndex = 17;
@@ -619,7 +619,7 @@
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(726, 41);
+            this.label7.Location = new System.Drawing.Point(724, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(217, 41);
             this.label7.TabIndex = 16;
@@ -631,7 +631,7 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(726, 0);
+            this.label6.Location = new System.Drawing.Point(724, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(217, 41);
             this.label6.TabIndex = 15;
@@ -642,36 +642,36 @@
             // 
             this.txtFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFirstName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(186, 3);
+            this.txtFirstName.Location = new System.Drawing.Point(185, 3);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(534, 32);
+            this.txtFirstName.Size = new System.Drawing.Size(533, 32);
             this.txtFirstName.TabIndex = 0;
             // 
             // txtMiddleName
             // 
             this.txtMiddleName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMiddleName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMiddleName.Location = new System.Drawing.Point(186, 44);
+            this.txtMiddleName.Location = new System.Drawing.Point(185, 44);
             this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(534, 32);
+            this.txtMiddleName.Size = new System.Drawing.Size(533, 32);
             this.txtMiddleName.TabIndex = 1;
             // 
             // txtLastName
             // 
             this.txtLastName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLastName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.Location = new System.Drawing.Point(186, 85);
+            this.txtLastName.Location = new System.Drawing.Point(185, 85);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(534, 32);
+            this.txtLastName.Size = new System.Drawing.Size(533, 32);
             this.txtLastName.TabIndex = 2;
             // 
             // txtHometown
             // 
             this.txtHometown.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtHometown.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHometown.Location = new System.Drawing.Point(949, 44);
+            this.txtHometown.Location = new System.Drawing.Point(947, 44);
             this.txtHometown.Name = "txtHometown";
-            this.txtHometown.Size = new System.Drawing.Size(641, 32);
+            this.txtHometown.Size = new System.Drawing.Size(643, 32);
             this.txtHometown.TabIndex = 4;
             // 
             // cmbGender
@@ -683,16 +683,16 @@
             this.cmbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cmbGender.Location = new System.Drawing.Point(186, 127);
+            this.cmbGender.Location = new System.Drawing.Point(185, 127);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(534, 32);
+            this.cmbGender.Size = new System.Drawing.Size(533, 32);
             this.cmbGender.TabIndex = 5;
             // 
             // deDOB
             // 
             this.deDOB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.deDOB.EditValue = null;
-            this.deDOB.Location = new System.Drawing.Point(186, 170);
+            this.deDOB.Location = new System.Drawing.Point(185, 170);
             this.deDOB.Name = "deDOB";
             this.deDOB.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deDOB.Properties.Appearance.Options.UseFont = true;
@@ -703,16 +703,16 @@
             this.deDOB.Properties.DisplayFormat.FormatString = "D";
             this.deDOB.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.deDOB.Properties.Mask.EditMask = "D";
-            this.deDOB.Size = new System.Drawing.Size(534, 30);
+            this.deDOB.Size = new System.Drawing.Size(533, 30);
             this.deDOB.TabIndex = 6;
             // 
             // txtLicenseNo
             // 
             this.txtLicenseNo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLicenseNo.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLicenseNo.Location = new System.Drawing.Point(949, 85);
+            this.txtLicenseNo.Location = new System.Drawing.Point(947, 85);
             this.txtLicenseNo.Name = "txtLicenseNo";
-            this.txtLicenseNo.Size = new System.Drawing.Size(641, 32);
+            this.txtLicenseNo.Size = new System.Drawing.Size(643, 32);
             this.txtLicenseNo.TabIndex = 3;
             // 
             // cmbMaritalStatus
@@ -725,18 +725,18 @@
             "Single",
             "Married",
             "Divorced"});
-            this.cmbMaritalStatus.Location = new System.Drawing.Point(949, 3);
+            this.cmbMaritalStatus.Location = new System.Drawing.Point(947, 3);
             this.cmbMaritalStatus.Name = "cmbMaritalStatus";
-            this.cmbMaritalStatus.Size = new System.Drawing.Size(641, 32);
+            this.cmbMaritalStatus.Size = new System.Drawing.Size(643, 32);
             this.cmbMaritalStatus.TabIndex = 7;
             // 
             // txtInductionYear
             // 
             this.txtInductionYear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtInductionYear.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInductionYear.Location = new System.Drawing.Point(949, 127);
+            this.txtInductionYear.Location = new System.Drawing.Point(947, 127);
             this.txtInductionYear.Name = "txtInductionYear";
-            this.txtInductionYear.Size = new System.Drawing.Size(641, 32);
+            this.txtInductionYear.Size = new System.Drawing.Size(643, 32);
             this.txtInductionYear.TabIndex = 8;
             // 
             // tableLayoutPanel6
@@ -744,16 +744,16 @@
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.735849F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 92.26415F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel6.Controls.Add(this.cbActive, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.label11, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.cbGoodStanding, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(949, 170);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(947, 170);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(641, 35);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(643, 35);
             this.tableLayoutPanel6.TabIndex = 9;
             // 
             // cbActive
@@ -765,7 +765,7 @@
             this.cbActive.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbActive.Location = new System.Drawing.Point(569, 3);
             this.cbActive.Name = "cbActive";
-            this.cbActive.Size = new System.Drawing.Size(69, 29);
+            this.cbActive.Size = new System.Drawing.Size(71, 29);
             this.cbActive.TabIndex = 2;
             this.cbActive.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbActive.UseVisualStyleBackColor = true;
@@ -803,7 +803,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 41);
+            this.label1.Size = new System.Drawing.Size(176, 41);
             this.label1.TabIndex = 10;
             this.label1.Text = "First Name:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -815,7 +815,7 @@
             this.label2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 41);
+            this.label2.Size = new System.Drawing.Size(176, 41);
             this.label2.TabIndex = 11;
             this.label2.Text = "Middle Name:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -827,7 +827,7 @@
             this.label3.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(177, 42);
+            this.label3.Size = new System.Drawing.Size(176, 42);
             this.label3.TabIndex = 12;
             this.label3.Text = "Last Name:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -839,7 +839,7 @@
             this.label4.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 124);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 43);
+            this.label4.Size = new System.Drawing.Size(176, 43);
             this.label4.TabIndex = 13;
             this.label4.Text = "Gender:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -851,7 +851,7 @@
             this.label5.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 167);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(177, 41);
+            this.label5.Size = new System.Drawing.Size(176, 41);
             this.label5.TabIndex = 14;
             this.label5.Text = "Date of Birth:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1909,6 +1909,69 @@
             this.controlNavigatorKD.TextStringFormat = " {0} of {1}";
             this.controlNavigatorKD.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.controlNavigatorKD_ButtonClick);
             // 
+            // gridControlKD
+            // 
+            this.gridControlKD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlKD.Location = new System.Drawing.Point(3, 323);
+            this.gridControlKD.MainView = this.gridViewKD;
+            this.gridControlKD.Name = "gridControlKD";
+            this.gridControlKD.Size = new System.Drawing.Size(1837, 740);
+            this.gridControlKD.TabIndex = 10;
+            this.gridControlKD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewKD});
+            // 
+            // gridViewKD
+            // 
+            this.gridViewKD.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewKD.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewKD.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewKD.Appearance.Row.Options.UseFont = true;
+            this.gridViewKD.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colKDName,
+            this.colKDLicenseNo,
+            this.colKinName,
+            this.colKinContact});
+            this.gridViewKD.GridControl = this.gridControlKD;
+            this.gridViewKD.Name = "gridViewKD";
+            this.gridViewKD.OptionsBehavior.Editable = false;
+            this.gridViewKD.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridViewKD.OptionsView.EnableAppearanceOddRow = true;
+            this.gridViewKD.OptionsView.ShowGroupPanel = false;
+            this.gridViewKD.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewKD_RowClick);
+            this.gridViewKD.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewKD_FocusedRowChanged);
+            // 
+            // colKDName
+            // 
+            this.colKDName.Caption = "Name";
+            this.colKDName.FieldName = "Name";
+            this.colKDName.Name = "colKDName";
+            this.colKDName.Visible = true;
+            this.colKDName.VisibleIndex = 0;
+            // 
+            // colKDLicenseNo
+            // 
+            this.colKDLicenseNo.Caption = "License Number";
+            this.colKDLicenseNo.FieldName = "LicenseNumber";
+            this.colKDLicenseNo.Name = "colKDLicenseNo";
+            this.colKDLicenseNo.Visible = true;
+            this.colKDLicenseNo.VisibleIndex = 1;
+            // 
+            // colKinName
+            // 
+            this.colKinName.Caption = "Kin Name";
+            this.colKinName.FieldName = "KinName";
+            this.colKinName.Name = "colKinName";
+            this.colKinName.Visible = true;
+            this.colKinName.VisibleIndex = 2;
+            // 
+            // colKinContact
+            // 
+            this.colKinContact.Caption = "Kin Contact";
+            this.colKinContact.FieldName = "KinContact";
+            this.colKinContact.Name = "colKinContact";
+            this.colKinContact.Visible = true;
+            this.colKinContact.VisibleIndex = 3;
+            // 
             // tableLayoutPanel25
             // 
             this.tableLayoutPanel25.ColumnCount = 3;
@@ -1952,37 +2015,6 @@
             this.searchControlKD.Properties.Client = this.gridControlKD;
             this.searchControlKD.Size = new System.Drawing.Size(1568, 34);
             this.searchControlKD.TabIndex = 8;
-            // 
-            // gridControlKD
-            // 
-            this.gridControlKD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlKD.Location = new System.Drawing.Point(3, 323);
-            this.gridControlKD.MainView = this.gridViewKD;
-            this.gridControlKD.Name = "gridControlKD";
-            this.gridControlKD.Size = new System.Drawing.Size(1837, 740);
-            this.gridControlKD.TabIndex = 10;
-            this.gridControlKD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewKD});
-            // 
-            // gridViewKD
-            // 
-            this.gridViewKD.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridViewKD.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridViewKD.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridViewKD.Appearance.Row.Options.UseFont = true;
-            this.gridViewKD.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colKDName,
-            this.colKDLicenseNo,
-            this.colKinName,
-            this.colKinContact});
-            this.gridViewKD.GridControl = this.gridControlKD;
-            this.gridViewKD.Name = "gridViewKD";
-            this.gridViewKD.OptionsBehavior.Editable = false;
-            this.gridViewKD.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridViewKD.OptionsView.EnableAppearanceOddRow = true;
-            this.gridViewKD.OptionsView.ShowGroupPanel = false;
-            this.gridViewKD.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewKD_RowClick);
-            this.gridViewKD.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewKD_FocusedRowChanged);
             // 
             // statusStrip3
             // 
@@ -2362,6 +2394,18 @@
             this.cmbLocCity.Size = new System.Drawing.Size(594, 32);
             this.cmbLocCity.TabIndex = 8;
             // 
+            // cmbLocRegion
+            // 
+            this.cmbLocRegion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbLocRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLocRegion.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLocRegion.FormattingEnabled = true;
+            this.cmbLocRegion.Location = new System.Drawing.Point(195, 3);
+            this.cmbLocRegion.Name = "cmbLocRegion";
+            this.cmbLocRegion.Size = new System.Drawing.Size(594, 32);
+            this.cmbLocRegion.TabIndex = 13;
+            this.cmbLocRegion.SelectedIndexChanged += new System.EventHandler(this.cmbLocRegion_SelectedIndexChanged);
+            // 
             // controlNavigatorLoc
             // 
             this.controlNavigatorLoc.Buttons.Append.Visible = false;
@@ -2389,6 +2433,87 @@
             this.controlNavigatorLoc.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
             this.controlNavigatorLoc.TextStringFormat = " {0} of {1}";
             this.controlNavigatorLoc.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.controlNavigatorLoc_ButtonClick);
+            // 
+            // gridControlLoc
+            // 
+            this.gridControlLoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlLoc.Location = new System.Drawing.Point(3, 458);
+            this.gridControlLoc.MainView = this.gridViewLoc;
+            this.gridControlLoc.Name = "gridControlLoc";
+            this.gridControlLoc.Size = new System.Drawing.Size(1837, 605);
+            this.gridControlLoc.TabIndex = 10;
+            this.gridControlLoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewLoc});
+            // 
+            // gridViewLoc
+            // 
+            this.gridViewLoc.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewLoc.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewLoc.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewLoc.Appearance.Row.Options.UseFont = true;
+            this.gridViewLoc.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colLocName,
+            this.colLocLicenseNo,
+            this.colRegion,
+            this.colCity,
+            this.colBusinessAddress,
+            this.colResidentialAddress});
+            this.gridViewLoc.GridControl = this.gridControlLoc;
+            this.gridViewLoc.Name = "gridViewLoc";
+            this.gridViewLoc.OptionsBehavior.Editable = false;
+            this.gridViewLoc.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridViewLoc.OptionsView.EnableAppearanceOddRow = true;
+            this.gridViewLoc.OptionsView.ShowGroupPanel = false;
+            this.gridViewLoc.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewLoc_RowClick);
+            this.gridViewLoc.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewLoc_FocusedRowChanged);
+            // 
+            // colLocName
+            // 
+            this.colLocName.Caption = "Name";
+            this.colLocName.FieldName = "Name";
+            this.colLocName.Name = "colLocName";
+            this.colLocName.Visible = true;
+            this.colLocName.VisibleIndex = 0;
+            // 
+            // colLocLicenseNo
+            // 
+            this.colLocLicenseNo.Caption = "License Number";
+            this.colLocLicenseNo.FieldName = "LicenseNumber";
+            this.colLocLicenseNo.Name = "colLocLicenseNo";
+            this.colLocLicenseNo.Visible = true;
+            this.colLocLicenseNo.VisibleIndex = 1;
+            // 
+            // colRegion
+            // 
+            this.colRegion.Caption = "Region";
+            this.colRegion.FieldName = "RegionName";
+            this.colRegion.Name = "colRegion";
+            this.colRegion.Visible = true;
+            this.colRegion.VisibleIndex = 2;
+            // 
+            // colCity
+            // 
+            this.colCity.Caption = "City";
+            this.colCity.FieldName = "CityName";
+            this.colCity.Name = "colCity";
+            this.colCity.Visible = true;
+            this.colCity.VisibleIndex = 3;
+            // 
+            // colBusinessAddress
+            // 
+            this.colBusinessAddress.Caption = "Business Address";
+            this.colBusinessAddress.FieldName = "BusinessAddress";
+            this.colBusinessAddress.Name = "colBusinessAddress";
+            this.colBusinessAddress.Visible = true;
+            this.colBusinessAddress.VisibleIndex = 4;
+            // 
+            // colResidentialAddress
+            // 
+            this.colResidentialAddress.Caption = "Residential Address";
+            this.colResidentialAddress.FieldName = "ResidentialAddress";
+            this.colResidentialAddress.Name = "colResidentialAddress";
+            this.colResidentialAddress.Visible = true;
+            this.colResidentialAddress.VisibleIndex = 5;
             // 
             // tableLayoutPanel34
             // 
@@ -2433,39 +2558,6 @@
             this.searchControlLoc.Properties.Client = this.gridControlLoc;
             this.searchControlLoc.Size = new System.Drawing.Size(1568, 34);
             this.searchControlLoc.TabIndex = 8;
-            // 
-            // gridControlLoc
-            // 
-            this.gridControlLoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlLoc.Location = new System.Drawing.Point(3, 458);
-            this.gridControlLoc.MainView = this.gridViewLoc;
-            this.gridControlLoc.Name = "gridControlLoc";
-            this.gridControlLoc.Size = new System.Drawing.Size(1837, 605);
-            this.gridControlLoc.TabIndex = 10;
-            this.gridControlLoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewLoc});
-            // 
-            // gridViewLoc
-            // 
-            this.gridViewLoc.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridViewLoc.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridViewLoc.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridViewLoc.Appearance.Row.Options.UseFont = true;
-            this.gridViewLoc.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colLocName,
-            this.colLocLicenseNo,
-            this.colRegion,
-            this.colCity,
-            this.colBusinessAddress,
-            this.colResidentialAddress});
-            this.gridViewLoc.GridControl = this.gridControlLoc;
-            this.gridViewLoc.Name = "gridViewLoc";
-            this.gridViewLoc.OptionsBehavior.Editable = false;
-            this.gridViewLoc.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridViewLoc.OptionsView.EnableAppearanceOddRow = true;
-            this.gridViewLoc.OptionsView.ShowGroupPanel = false;
-            this.gridViewLoc.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewLoc_RowClick);
-            this.gridViewLoc.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewLoc_FocusedRowChanged);
             // 
             // statusStrip4
             // 
@@ -2872,6 +2964,85 @@
             this.controlNavigatorBD.TextStringFormat = " {0} of {1}";
             this.controlNavigatorBD.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.controlNavigatorBD_ButtonClick);
             // 
+            // gridControlBD
+            // 
+            this.gridControlBD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlBD.Location = new System.Drawing.Point(3, 320);
+            this.gridControlBD.MainView = this.gridViewBD;
+            this.gridControlBD.Name = "gridControlBD";
+            this.gridControlBD.Size = new System.Drawing.Size(1837, 743);
+            this.gridControlBD.TabIndex = 10;
+            this.gridControlBD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewBD});
+            // 
+            // gridViewBD
+            // 
+            this.gridViewBD.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewBD.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewBD.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewBD.Appearance.Row.Options.UseFont = true;
+            this.gridViewBD.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colBDName,
+            this.colBDLicenseNumber,
+            this.colBDBank,
+            this.colBankBranch,
+            this.colBDAccountName,
+            this.colBDAccountNumber});
+            this.gridViewBD.GridControl = this.gridControlBD;
+            this.gridViewBD.Name = "gridViewBD";
+            this.gridViewBD.OptionsBehavior.Editable = false;
+            this.gridViewBD.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridViewBD.OptionsView.EnableAppearanceOddRow = true;
+            this.gridViewBD.OptionsView.ShowGroupPanel = false;
+            // 
+            // colBDName
+            // 
+            this.colBDName.Caption = "Name";
+            this.colBDName.FieldName = "Name";
+            this.colBDName.Name = "colBDName";
+            this.colBDName.Visible = true;
+            this.colBDName.VisibleIndex = 0;
+            // 
+            // colBDLicenseNumber
+            // 
+            this.colBDLicenseNumber.Caption = "License Number";
+            this.colBDLicenseNumber.FieldName = "LicenseNumber";
+            this.colBDLicenseNumber.Name = "colBDLicenseNumber";
+            this.colBDLicenseNumber.Visible = true;
+            this.colBDLicenseNumber.VisibleIndex = 1;
+            // 
+            // colBDBank
+            // 
+            this.colBDBank.Caption = "Bank";
+            this.colBDBank.FieldName = "BankName";
+            this.colBDBank.Name = "colBDBank";
+            this.colBDBank.Visible = true;
+            this.colBDBank.VisibleIndex = 2;
+            // 
+            // colBankBranch
+            // 
+            this.colBankBranch.Caption = "Branch";
+            this.colBankBranch.FieldName = "BankBranchName";
+            this.colBankBranch.Name = "colBankBranch";
+            this.colBankBranch.Visible = true;
+            this.colBankBranch.VisibleIndex = 3;
+            // 
+            // colBDAccountName
+            // 
+            this.colBDAccountName.Caption = "Account Name";
+            this.colBDAccountName.FieldName = "AccountName";
+            this.colBDAccountName.Name = "colBDAccountName";
+            this.colBDAccountName.Visible = true;
+            this.colBDAccountName.VisibleIndex = 4;
+            // 
+            // colBDAccountNumber
+            // 
+            this.colBDAccountNumber.Caption = "Account Number";
+            this.colBDAccountNumber.FieldName = "AccountNumber";
+            this.colBDAccountNumber.Name = "colBDAccountNumber";
+            this.colBDAccountNumber.Visible = true;
+            this.colBDAccountNumber.VisibleIndex = 5;
+            // 
             // tableLayoutPanel43
             // 
             this.tableLayoutPanel43.ColumnCount = 3;
@@ -2915,37 +3086,6 @@
             this.searchControlBD.Properties.Client = this.gridControlBD;
             this.searchControlBD.Size = new System.Drawing.Size(1568, 34);
             this.searchControlBD.TabIndex = 8;
-            // 
-            // gridControlBD
-            // 
-            this.gridControlBD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlBD.Location = new System.Drawing.Point(3, 320);
-            this.gridControlBD.MainView = this.gridViewBD;
-            this.gridControlBD.Name = "gridControlBD";
-            this.gridControlBD.Size = new System.Drawing.Size(1837, 743);
-            this.gridControlBD.TabIndex = 10;
-            this.gridControlBD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewBD});
-            // 
-            // gridViewBD
-            // 
-            this.gridViewBD.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridViewBD.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridViewBD.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridViewBD.Appearance.Row.Options.UseFont = true;
-            this.gridViewBD.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colBDName,
-            this.colBDLicenseNumber,
-            this.colBDBank,
-            this.colBankBranch,
-            this.colBDAccountName,
-            this.colBDAccountNumber});
-            this.gridViewBD.GridControl = this.gridControlBD;
-            this.gridViewBD.Name = "gridViewBD";
-            this.gridViewBD.OptionsBehavior.Editable = false;
-            this.gridViewBD.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridViewBD.OptionsView.EnableAppearanceOddRow = true;
-            this.gridViewBD.OptionsView.ShowGroupPanel = false;
             // 
             // statusStrip5
             // 
@@ -3765,146 +3905,6 @@
             this.gridView8.Name = "gridView8";
             this.gridView8.OptionsView.ShowGroupPanel = false;
             // 
-            // colKDName
-            // 
-            this.colKDName.Caption = "Name";
-            this.colKDName.FieldName = "Name";
-            this.colKDName.Name = "colKDName";
-            this.colKDName.Visible = true;
-            this.colKDName.VisibleIndex = 0;
-            // 
-            // colKDLicenseNo
-            // 
-            this.colKDLicenseNo.Caption = "License Number";
-            this.colKDLicenseNo.FieldName = "LicenseNumber";
-            this.colKDLicenseNo.Name = "colKDLicenseNo";
-            this.colKDLicenseNo.Visible = true;
-            this.colKDLicenseNo.VisibleIndex = 1;
-            // 
-            // colKinName
-            // 
-            this.colKinName.Caption = "Kin Name";
-            this.colKinName.FieldName = "KinName";
-            this.colKinName.Name = "colKinName";
-            this.colKinName.Visible = true;
-            this.colKinName.VisibleIndex = 2;
-            // 
-            // colKinContact
-            // 
-            this.colKinContact.Caption = "Kin Contact";
-            this.colKinContact.FieldName = "KinContact";
-            this.colKinContact.Name = "colKinContact";
-            this.colKinContact.Visible = true;
-            this.colKinContact.VisibleIndex = 3;
-            // 
-            // colLocName
-            // 
-            this.colLocName.Caption = "Name";
-            this.colLocName.FieldName = "Name";
-            this.colLocName.Name = "colLocName";
-            this.colLocName.Visible = true;
-            this.colLocName.VisibleIndex = 0;
-            // 
-            // colLocLicenseNo
-            // 
-            this.colLocLicenseNo.Caption = "License Number";
-            this.colLocLicenseNo.FieldName = "LicenseNumber";
-            this.colLocLicenseNo.Name = "colLocLicenseNo";
-            this.colLocLicenseNo.Visible = true;
-            this.colLocLicenseNo.VisibleIndex = 1;
-            // 
-            // colRegion
-            // 
-            this.colRegion.Caption = "Region";
-            this.colRegion.FieldName = "RegionName";
-            this.colRegion.Name = "colRegion";
-            this.colRegion.Visible = true;
-            this.colRegion.VisibleIndex = 2;
-            // 
-            // colCity
-            // 
-            this.colCity.Caption = "City";
-            this.colCity.FieldName = "CityName";
-            this.colCity.Name = "colCity";
-            this.colCity.Visible = true;
-            this.colCity.VisibleIndex = 3;
-            // 
-            // colBusinessAddress
-            // 
-            this.colBusinessAddress.Caption = "Business Address";
-            this.colBusinessAddress.FieldName = "BusinessAddress";
-            this.colBusinessAddress.Name = "colBusinessAddress";
-            this.colBusinessAddress.Visible = true;
-            this.colBusinessAddress.VisibleIndex = 4;
-            // 
-            // colResidentialAddress
-            // 
-            this.colResidentialAddress.Caption = "Residential Address";
-            this.colResidentialAddress.FieldName = "ResidentialAddress";
-            this.colResidentialAddress.Name = "colResidentialAddress";
-            this.colResidentialAddress.Visible = true;
-            this.colResidentialAddress.VisibleIndex = 5;
-            // 
-            // cmbLocRegion
-            // 
-            this.cmbLocRegion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbLocRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbLocRegion.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLocRegion.FormattingEnabled = true;
-            this.cmbLocRegion.Location = new System.Drawing.Point(195, 3);
-            this.cmbLocRegion.Name = "cmbLocRegion";
-            this.cmbLocRegion.Size = new System.Drawing.Size(594, 32);
-            this.cmbLocRegion.TabIndex = 13;
-            this.cmbLocRegion.SelectedIndexChanged += new System.EventHandler(this.cmbLocRegion_SelectedIndexChanged);
-            // 
-            // colBDName
-            // 
-            this.colBDName.Caption = "Name";
-            this.colBDName.FieldName = "Name";
-            this.colBDName.Name = "colBDName";
-            this.colBDName.Visible = true;
-            this.colBDName.VisibleIndex = 0;
-            // 
-            // colBDLicenseNumber
-            // 
-            this.colBDLicenseNumber.Caption = "License Number";
-            this.colBDLicenseNumber.FieldName = "LicenseNumber";
-            this.colBDLicenseNumber.Name = "colBDLicenseNumber";
-            this.colBDLicenseNumber.Visible = true;
-            this.colBDLicenseNumber.VisibleIndex = 1;
-            // 
-            // colBDBank
-            // 
-            this.colBDBank.Caption = "Bank";
-            this.colBDBank.FieldName = "BankName";
-            this.colBDBank.Name = "colBDBank";
-            this.colBDBank.Visible = true;
-            this.colBDBank.VisibleIndex = 2;
-            // 
-            // colBankBranch
-            // 
-            this.colBankBranch.Caption = "Branch";
-            this.colBankBranch.FieldName = "BankBranchName";
-            this.colBankBranch.Name = "colBankBranch";
-            this.colBankBranch.Visible = true;
-            this.colBankBranch.VisibleIndex = 3;
-            // 
-            // colBDAccountName
-            // 
-            this.colBDAccountName.Caption = "Account Name";
-            this.colBDAccountName.FieldName = "AccountName";
-            this.colBDAccountName.Name = "colBDAccountName";
-            this.colBDAccountName.Visible = true;
-            this.colBDAccountName.VisibleIndex = 4;
-            // 
-            // colBDAccountNumber
-            // 
-            this.colBDAccountNumber.Caption = "Account Number";
-            this.colBDAccountNumber.FieldName = "AccountNumber";
-            this.colBDAccountNumber.Name = "colBDAccountNumber";
-            this.colBDAccountNumber.Visible = true;
-            this.colBDAccountNumber.VisibleIndex = 5;
-            // 
             // FrmManageAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -3979,11 +3979,11 @@
             this.groupControl4.ResumeLayout(false);
             this.tableLayoutPanel24.ResumeLayout(false);
             this.tableLayoutPanel24.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlKD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewKD)).EndInit();
             this.tableLayoutPanel25.ResumeLayout(false);
             this.tableLayoutPanel25.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControlKD.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlKD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewKD)).EndInit();
             this.statusStrip3.ResumeLayout(false);
             this.statusStrip3.PerformLayout();
             this.xtraTabPage4.ResumeLayout(false);
@@ -4003,11 +4003,11 @@
             this.groupControl6.ResumeLayout(false);
             this.tableLayoutPanel33.ResumeLayout(false);
             this.tableLayoutPanel33.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlLoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewLoc)).EndInit();
             this.tableLayoutPanel34.ResumeLayout(false);
             this.tableLayoutPanel34.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControlLoc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlLoc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewLoc)).EndInit();
             this.statusStrip4.ResumeLayout(false);
             this.statusStrip4.PerformLayout();
             this.xtraTabPage5.ResumeLayout(false);
@@ -4027,11 +4027,11 @@
             this.groupControl8.ResumeLayout(false);
             this.tableLayoutPanel42.ResumeLayout(false);
             this.tableLayoutPanel42.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlBD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewBD)).EndInit();
             this.tableLayoutPanel43.ResumeLayout(false);
             this.tableLayoutPanel43.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControlBD.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlBD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewBD)).EndInit();
             this.statusStrip5.ResumeLayout(false);
             this.statusStrip5.PerformLayout();
             this.xtraTabPage7.ResumeLayout(false);

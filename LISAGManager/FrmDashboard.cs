@@ -310,5 +310,9 @@ namespace LISAGManager {
         private void nbiSetupAgent_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
             launchAgent();
         }
+
+        private void navBarControl1_Click(object sender, EventArgs e) {
+
+        }
     }
 }

@@ -72,6 +72,9 @@
             // navBarControl1
             // 
             this.navBarControl1.ActiveGroup = this.navBarGroup4;
+            this.navBarControl1.Appearance.Background.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarControl1.Appearance.Background.Options.UseFont = true;
+            this.navBarControl1.BackColor = System.Drawing.Color.Green;
             this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup4,
@@ -104,6 +107,7 @@
             this.navBarControl1.Size = new System.Drawing.Size(302, 1074);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
+            this.navBarControl1.Click += new System.EventHandler(this.navBarControl1_Click);
             // 
             // navBarGroup4
             // 
@@ -319,6 +323,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.ForestGreen;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pbProfilePic);
@@ -331,18 +336,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Tomato;
-            this.label2.Location = new System.Drawing.Point(6, 1);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Location = new System.Drawing.Point(7, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(351, 57);
+            this.label2.Size = new System.Drawing.Size(377, 47);
             this.label2.TabIndex = 2;
-            this.label2.Text = "LISAG Mananger";
+            this.label2.Text = "Application Name";
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(1454, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(380, 40);
@@ -363,6 +370,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Green;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 1140);
             this.panel3.Name = "panel3";
