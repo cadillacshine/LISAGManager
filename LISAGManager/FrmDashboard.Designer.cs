@@ -72,7 +72,9 @@
             // navBarControl1
             // 
             this.navBarControl1.ActiveGroup = this.navBarGroup4;
+            this.navBarControl1.Appearance.Background.BackColor = System.Drawing.Color.Gray;
             this.navBarControl1.Appearance.Background.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarControl1.Appearance.Background.Options.UseBackColor = true;
             this.navBarControl1.Appearance.Background.Options.UseFont = true;
             this.navBarControl1.BackColor = System.Drawing.Color.Green;
             this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Fill;
