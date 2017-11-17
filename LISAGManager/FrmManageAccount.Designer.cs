@@ -2994,6 +2994,8 @@
             this.gridViewBD.OptionsView.EnableAppearanceEvenRow = true;
             this.gridViewBD.OptionsView.EnableAppearanceOddRow = true;
             this.gridViewBD.OptionsView.ShowGroupPanel = false;
+            this.gridViewBD.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewBD_RowClick);
+            this.gridViewBD.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewBD_FocusedRowChanged);
             // 
             // colBDName
             // 

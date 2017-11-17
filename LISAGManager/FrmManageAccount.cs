@@ -614,6 +614,15 @@ namespace LISAGManager {
             //}
         }
 
+        private void gridViewBD_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
+            selectionChangedBD();
+            setControlValuesBD();
+        }
+
+        private void gridViewBD_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
+
+        }
+
         private void cmbLocRegion_SelectedIndexChanged(object sender, EventArgs e) {
             cmbLocCity.DataSource = Misc.loadDataSource("SELECT Name FROM vwCity WHERE Region = '" + cmbLocRegion.Text + "' ", "vwCity");
             cmbLocCity.DisplayMember = "Name";
