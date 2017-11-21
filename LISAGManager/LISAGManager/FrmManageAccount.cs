@@ -203,14 +203,15 @@ namespace LISAGManager {
                     sqlcmd.ExecuteNonQuery();
                     sqlcmd.Dispose();
 
-                    sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtLicenseNo.Text + "' ", Misc.getConn());
+                    sqlcmd = new SqlCommand("SELECT MemberID FROM Member WHERE LicenseNumber = '" + txtLicenseNo.Text + "' ", Misc.getConn());
                     Misc.connOpen();
                     memberID = (int)sqlcmd.ExecuteScalar();
 
-                    sqlcmd = new SqlCommand("INSERT INTO UserAccount (MemberID, Username, Password, Active) VALUES (@MemberID, @Username, @Password, @Active)", Misc.getConn());
+                    sqlcmd = new SqlCommand("INSERT INTO UserAccount (MemberID, Username, Password, Administrator, Active) VALUES (@MemberID, @Username, @Password, @Administrator, @Active)", Misc.getConn());
                     sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
                     sqlcmd.Parameters.AddWithValue("@Username", txtFirstName.Text + "." + txtLastName.Text);
                     sqlcmd.Parameters.AddWithValue("@Password", "Passw0rd");
+                    sqlcmd.Parameters.AddWithValue("@Administrator", false);
                     sqlcmd.Parameters.AddWithValue("@Active", false);
                     Misc.connOpen();
                     sqlcmd.ExecuteNonQuery();
@@ -234,6 +235,8 @@ namespace LISAGManager {
                     Misc.connOpen();
                     sqlcmd.ExecuteNonQuery();
                     sqlcmd.Dispose();
+
+                    insertRights(memberID);
                 }
 
                 actionState = "a";
@@ -301,7 +304,7 @@ namespace LISAGManager {
             //}
         }
 
-        private void insertRights() {
+        private void insertRights(int memberID) {
             List<int> list = new List<int>();
             sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmLogin'", Misc.getConn());
             Misc.connOpen();
@@ -311,40 +314,56 @@ namespace LISAGManager {
             sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmMe'", Misc.getConn());
             Misc.connOpen();
             int frmMeID = (int)sqlcmd.ExecuteScalar();
+            list.Add(frmMeID);
 
             sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmSurveyors'", Misc.getConn());
             Misc.connOpen();
             int frmSurveyorsID = (int)sqlcmd.ExecuteScalar();
+            list.Add(frmSurveyorsID);
 
             sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmRegion'", Misc.getConn());
             Misc.connOpen();
-            int frmRegionnID = (int)sqlcmd.ExecuteScalar();
+            int frmRegionID = (int)sqlcmd.ExecuteScalar();
+            list.Add(frmRegionID);
 
             sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmCity'", Misc.getConn());
             Misc.connOpen();
             int frmCityID = (int)sqlcmd.ExecuteScalar();
+            list.Add(frmCityID);
 
             sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmBank'", Misc.getConn());
             Misc.connOpen();
             int frmBankID = (int)sqlcmd.ExecuteScalar();
+            list.Add(frmBankID);
 
             sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmBankBranch'", Misc.getConn());
             Misc.connOpen();
             int frmBankBranchID = (int)sqlcmd.ExecuteScalar();
+            list.Add(frmBankBranchID);
 
             sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmChangePassword'", Misc.getConn());
             Misc.connOpen();
             int frmChangePasswordID = (int)sqlcmd.ExecuteScalar();
+            list.Add(frmChangePasswordID);
 
             sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmActivityLog'", Misc.getConn());
             Misc.connOpen();
             int frmActivityLogID = (int)sqlcmd.ExecuteScalar();
+            list.Add(frmActivityLogID);
 
             sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmAgent'", Misc.getConn());
             Misc.connOpen();
             int frmAgentID = (int)sqlcmd.ExecuteScalar();
+            list.Add(frmAgentID);
 
-
+            foreach (var item in list) {
+                sqlcmd = new SqlCommand("INSERT INTO AppAccess(FormID, MemberID, Access) VALUES(@FormID, @MemberID, @Access)", Misc.getConn());
+                sqlcmd.Parameters.AddWithValue("@FormID", item);
+                sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
+                sqlcmd.Parameters.AddWithValue("@Access", false);
+                sqlcmd.ExecuteNonQuery();
+                sqlcmd.Dispose();
+            }
         }
 
         private void setTabState(bool status) {
@@ -841,6 +860,12 @@ namespace LISAGManager {
             setControlValuesAR();
         }
 
+        private void controlNavigatorAR_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
+            if (e.Button.Tag.ToString() == "Save") {
+                bool login = 
+            }
+        }
+
         private void gridViewAD_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
             selectionChangedAD();
             setControlValuesAD();
@@ -1002,7 +1027,7 @@ namespace LISAGManager {
         }
 
         private void setControlStateAR(bool status) {
-            gridControlARAccessRights.Enabled = status;
+            //gridControlARAccessRights.Enabled = status;
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
@@ -1231,8 +1256,8 @@ namespace LISAGManager {
             setControlStateAR(false);
 
             BtnARAdd.Enabled = false;
-            BtnAREdit.Enabled = true;
-            BtnARSave.Enabled = false;
+            BtnAREdit.Enabled = false;
+            BtnARSave.Enabled = true;
             BtnARCancel.Enabled = false;
             BtnARSwitch.Enabled = true;
             BtnARRefresh.Enabled = true;
@@ -1394,6 +1419,8 @@ namespace LISAGManager {
         private void setControlValuesAR() {
             txtARLicenseNumber.Text = gridViewARUsers.GetRowCellValue(gridViewARUsers.FocusedRowHandle, "LicenseNumber").ToString();
             txtARUsername.Text = gridViewARUsers.GetRowCellValue(gridViewARUsers.FocusedRowHandle, "Username").ToString();
+
+            gridControlARAccessRights.DataSource = Misc.loadDataSource("SELECT DisplayName, FormDescription, Access FROM vwAppAccess WHERE LicenseNumber = '" + txtARLicenseNumber.Text + "' ", "vwAppAccess");
         }
 
         private void loadContactInformation() {
@@ -1496,8 +1523,8 @@ namespace LISAGManager {
             BtnARRefresh = controlNavigatorAR.Buttons.CustomButtons[5];
 
             BtnARAdd.Enabled = false;
-            BtnAREdit.Enabled = true;
-            BtnARSave.Enabled = false;
+            BtnAREdit.Enabled = false;
+            BtnARSave.Enabled = true;
             BtnARCancel.Enabled = false;
             BtnARSwitch.Enabled = true;
             BtnARRefresh.Enabled = true;

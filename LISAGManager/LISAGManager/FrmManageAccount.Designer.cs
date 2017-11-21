@@ -4156,6 +4156,7 @@
             this.controlNavigatorAR.Text = "controlNavigator6";
             this.controlNavigatorAR.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
             this.controlNavigatorAR.TextStringFormat = " {0} of {1}";
+            this.controlNavigatorAR.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.controlNavigatorAR_ButtonClick);
             // 
             // gridControlARUsers
             // 
@@ -4336,9 +4337,9 @@
             // 
             // gridViewARAccessRights
             // 
-            this.gridViewARAccessRights.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewARAccessRights.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.gridViewARAccessRights.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridViewARAccessRights.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewARAccessRights.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.gridViewARAccessRights.Appearance.Row.Options.UseFont = true;
             this.gridViewARAccessRights.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colARFeature,
@@ -4346,6 +4347,7 @@
             this.colARAccess});
             this.gridViewARAccessRights.GridControl = this.gridControlARAccessRights;
             this.gridViewARAccessRights.Name = "gridViewARAccessRights";
+            this.gridViewARAccessRights.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridViewARAccessRights.OptionsView.EnableAppearanceEvenRow = true;
             this.gridViewARAccessRights.OptionsView.EnableAppearanceOddRow = true;
             this.gridViewARAccessRights.OptionsView.ShowGroupPanel = false;
@@ -4356,18 +4358,21 @@
             this.colARFeature.FieldName = "DisplayName";
             this.colARFeature.Name = "colARFeature";
             this.colARFeature.OptionsColumn.AllowEdit = false;
+            this.colARFeature.OptionsColumn.ReadOnly = true;
             this.colARFeature.Visible = true;
             this.colARFeature.VisibleIndex = 0;
-            this.colARFeature.Width = 344;
+            this.colARFeature.Width = 411;
             // 
             // colARDescription
             // 
             this.colARDescription.Caption = "Description";
             this.colARDescription.FieldName = "FormDescription";
             this.colARDescription.Name = "colARDescription";
+            this.colARDescription.OptionsColumn.AllowEdit = false;
+            this.colARDescription.OptionsColumn.ReadOnly = true;
             this.colARDescription.Visible = true;
             this.colARDescription.VisibleIndex = 1;
-            this.colARDescription.Width = 489;
+            this.colARDescription.Width = 764;
             // 
             // colARAccess
             // 
@@ -4376,7 +4381,7 @@
             this.colARAccess.Name = "colARAccess";
             this.colARAccess.Visible = true;
             this.colARAccess.VisibleIndex = 2;
-            this.colARAccess.Width = 201;
+            this.colARAccess.Width = 61;
             // 
             // FrmManageAccount
             // 
