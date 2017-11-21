@@ -26,7 +26,6 @@ namespace LISAGManager {
 
         private void FrmManageAccount_Load(object sender, EventArgs e) {
             loadForm();
-
         }
 
         private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e) {
