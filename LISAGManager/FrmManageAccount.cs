@@ -12,6 +12,7 @@ namespace LISAGManager {
         NavigatorCustomButton BtnLocAdd, BtnLocEdit, BtnLocSave, BtnLocCancel, BtnLocSwitch, BtnLocRefresh;
         NavigatorCustomButton BtnBDAdd, BtnBDEdit, BtnBDSave, BtnBDCancel, BtnBDSwitch, BtnBDRefresh;
         NavigatorCustomButton BtnADAdd, BtnADEdit, BtnADSave, BtnADCancel, BtnADSwitch, BtnADRefresh;
+        NavigatorCustomButton BtnARAdd, BtnAREdit, BtnARSave, BtnARCancel, BtnARSwitch, BtnARRefresh;
 
         private string actionState = "a";
         private string sqlQuery = "SELECT Name, Gender, DateOfBirth, MaritalStatus, Hometown, LicenseNumber, InductionYear, GoodStanding, Active FROM vwMember ORDER BY Name";
@@ -20,6 +21,8 @@ namespace LISAGManager {
 
         AppUser appUser = new AppUser();
         SqlCommand sqlcmd = new SqlCommand();
+
+        
 
         public FrmManageAccount() {
             InitializeComponent();
@@ -55,10 +58,13 @@ namespace LISAGManager {
             } else if (xtraTabControl1.SelectedTabPage.Text == "Account Details") {
                 searchControlAD.Text = "";
                 loadAccountDetails();
-                sqlQuery = "SELECT Name, LicenseNumber, Username, Administrator, Active FROM vwMember ORDER BY Name";
+                sqlQuery = "SELECT Name, LicenseNumber, Username, Administrator, AccountActive FROM vwMember ORDER BY Name";
                 gridControlAD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
             } else if (xtraTabControl1.SelectedTabPage.Text == "Access Rights") {
-                searchControlAD.Text = "";
+                searchControlAR.Text = "";
+                loadAccessRights();
+                sqlQuery = "SELECT Name, LicenseNumber, Username FROM vwMember ORDER BY Name";
+                gridControlARUsers.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
             }
         }
 
@@ -292,6 +298,50 @@ namespace LISAGManager {
             //} catch {
 
             //}
+        }
+
+        private void insertRights() {
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmLogin'", Misc.getConn());
+            Misc.connOpen();
+            int frmLoginID = (int)sqlcmd.ExecuteScalar();
+
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmMe'", Misc.getConn());
+            Misc.connOpen();
+            int frmMeID = (int)sqlcmd.ExecuteScalar();
+
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmSurveyors'", Misc.getConn());
+            Misc.connOpen();
+            int frmSurveyorsID = (int)sqlcmd.ExecuteScalar();
+
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmRegion'", Misc.getConn());
+            Misc.connOpen();
+            int frmRegionnID = (int)sqlcmd.ExecuteScalar();
+
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmCity'", Misc.getConn());
+            Misc.connOpen();
+            int frmCityID = (int)sqlcmd.ExecuteScalar();
+
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmBank'", Misc.getConn());
+            Misc.connOpen();
+            int frmBankID = (int)sqlcmd.ExecuteScalar();
+
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmBankBranch'", Misc.getConn());
+            Misc.connOpen();
+            int frmBankBranchID = (int)sqlcmd.ExecuteScalar();
+
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmChangePassword'", Misc.getConn());
+            Misc.connOpen();
+            int frmChangePasswordID = (int)sqlcmd.ExecuteScalar();
+
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmActivityLog'", Misc.getConn());
+            Misc.connOpen();
+            int frmActivityLogID = (int)sqlcmd.ExecuteScalar();
+
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmAgent'", Misc.getConn());
+            Misc.connOpen();
+            int frmAgentID = (int)sqlcmd.ExecuteScalar();
+
+
         }
 
         private void setTabState(bool status) {
@@ -672,32 +722,40 @@ namespace LISAGManager {
                         return;
                     }
 
-                    if (txtADPassword.Text.Trim() == "") {
-                        MessageBox.Show("Password cannot be empty!", "Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtADPassword.Focus();
-                        return;
-                    }
+                    if (cbADChangePassword.Checked) {
+                        if (txtADPassword.Text.Trim() == "") {
+                            MessageBox.Show("Password cannot be empty!", "Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtADPassword.Focus();
+                            return;
+                        }
 
-                    if (txtADConfirmPassword.Text.Trim() == "") {
-                        MessageBox.Show("Enter password to confirm!", "Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtADConfirmPassword.Focus();
-                        return;
-                    }
+                        if (txtADConfirmPassword.Text.Trim() == "") {
+                            MessageBox.Show("Enter password to confirm!", "Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtADConfirmPassword.Focus();
+                            return;
+                        }
 
-                    if (!txtADPassword.Text.Equals(txtADConfirmPassword.Text)) {
-                        MessageBox.Show("Passwords do not match!", "Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtADPassword.SelectAll();
-                        txtADPassword.Focus();
-                        return;
-                    }
+                        if (!txtADPassword.Text.Equals(txtADConfirmPassword.Text)) {
+                            MessageBox.Show("Passwords do not match!", "Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtADPassword.SelectAll();
+                            txtADPassword.Focus();
+                            return;
+                        }
 
-                    sqlcmd = new SqlCommand("UPDATE UserAccount SET Username = @Username, Password = @Password, Administrator = @Administrator, Active = @Active WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                        sqlcmd = new SqlCommand("UPDATE UserAccount SET Username = @Username, Password = @Password, Administrator = @Administrator, Active = @Active WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+
+                        sqlcmd.Parameters.AddWithValue("@Username", txtADUsername.Text);
+                        sqlcmd.Parameters.AddWithValue("@Password", txtADPassword.Text);
+                        sqlcmd.Parameters.AddWithValue("@Administrator", cbADAdministrator.Checked);
+                        sqlcmd.Parameters.AddWithValue("@Active", cbADAccountActive.Checked);
+                    } else {
+                        sqlcmd = new SqlCommand("UPDATE UserAccount SET Username = @Username, Administrator = @Administrator, Active = @Active WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+
+                        sqlcmd.Parameters.AddWithValue("@Username", txtADUsername.Text);
+                        sqlcmd.Parameters.AddWithValue("@Administrator", cbADAdministrator.Checked);
+                        sqlcmd.Parameters.AddWithValue("@Active", cbADAccountActive.Checked);
+                    }      
                 }
-
-                sqlcmd.Parameters.AddWithValue("@Username", txtADUsername.Text);
-                sqlcmd.Parameters.AddWithValue("@Password", txtADPassword.Text);
-                sqlcmd.Parameters.AddWithValue("@Administrator", cbADAdministrator.Checked);
-                sqlcmd.Parameters.AddWithValue("@Active", cbADAccountActive.Checked);
 
                 Misc.connOpen();
                 sqlcmd.ExecuteNonQuery();
@@ -768,6 +826,16 @@ namespace LISAGManager {
         private void gridViewAD_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
             selectionChangedAD();
             setControlValuesAD();
+        }
+
+        private void gridViewARUsers_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
+            selectionChangedAR();
+            setControlValuesAR();
+        }
+
+        private void gridViewARUsers_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
+            selectionChangedAR();
+            setControlValuesAR();
         }
 
         private void gridViewAD_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
@@ -928,6 +996,10 @@ namespace LISAGManager {
             txtADConfirmPassword.Enabled = status;
             cbADAdministrator.Enabled = status;
             cbADAccountActive.Enabled = status;
+        }
+
+        private void setControlStateAR(bool status) {
+            gridControlARAccessRights.Enabled = status;
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
@@ -1151,6 +1223,19 @@ namespace LISAGManager {
             btnPic.Enabled = true;
         }
 
+        private void selectionChangedAR() {
+            setTabState(true);
+            setControlStateAR(false);
+
+            BtnARAdd.Enabled = false;
+            BtnAREdit.Enabled = true;
+            BtnARSave.Enabled = false;
+            BtnARCancel.Enabled = false;
+            BtnARSwitch.Enabled = true;
+            BtnARRefresh.Enabled = true;
+            btnPic.Enabled = true;
+        }
+
         private void setControlValues() {
             string firstName = "";
             string middleName = "";
@@ -1300,7 +1385,12 @@ namespace LISAGManager {
             txtADPassword.Text = "ThisIsMyPassword";
             txtADConfirmPassword.Text = "ThisIsMyPassword";
             cbADAdministrator.Checked = (bool)gridViewAD.GetRowCellValue(gridViewAD.FocusedRowHandle, "Administrator");
-            cbADAccountActive.Checked = (bool)gridViewAD.GetRowCellValue(gridViewAD.FocusedRowHandle, "Active");
+            cbADAccountActive.Checked = (bool)gridViewAD.GetRowCellValue(gridViewAD.FocusedRowHandle, "AccountActive");
+        }
+
+        private void setControlValuesAR() {
+            txtARLicenseNumber.Text = gridViewARUsers.GetRowCellValue(gridViewARUsers.FocusedRowHandle, "LicenseNumber").ToString();
+            txtARUsername.Text = gridViewARUsers.GetRowCellValue(gridViewARUsers.FocusedRowHandle, "Username").ToString();
         }
 
         private void loadContactInformation() {
@@ -1391,6 +1481,23 @@ namespace LISAGManager {
             BtnADCancel.Enabled = false;
             BtnADSwitch.Enabled = true;
             BtnADRefresh.Enabled = true;
+            btnPic.Enabled = true;
+        }
+
+        private void loadAccessRights() {
+            BtnARAdd = controlNavigatorAR.Buttons.CustomButtons[0];
+            BtnAREdit = controlNavigatorAR.Buttons.CustomButtons[1];
+            BtnARSave = controlNavigatorAR.Buttons.CustomButtons[2];
+            BtnARCancel = controlNavigatorAR.Buttons.CustomButtons[3];
+            BtnARSwitch = controlNavigatorAR.Buttons.CustomButtons[4];
+            BtnARRefresh = controlNavigatorAR.Buttons.CustomButtons[5];
+
+            BtnARAdd.Enabled = false;
+            BtnAREdit.Enabled = true;
+            BtnARSave.Enabled = false;
+            BtnARCancel.Enabled = false;
+            BtnARSwitch.Enabled = true;
+            BtnARRefresh.Enabled = true;
             btnPic.Enabled = true;
         }
 
