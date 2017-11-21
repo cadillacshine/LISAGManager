@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -861,8 +862,16 @@ namespace LISAGManager {
         }
 
         private void controlNavigatorAR_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
+            
             if (e.Button.Tag.ToString() == "Save") {
-                bool login = 
+                DataRow[] rows = new DataRow[gridViewARAccessRights.RowCount];
+                for (int j = 0; j < gridViewARAccessRights.RowCount; j++) {
+                    rows[j] = gridViewARAccessRights.GetDataRow(j);
+                    //if ((bool)rows[j]["Access"] == true) {
+                       // MessageBox.Show(rows[j]["DisplayName"].ToString());
+                    MessageBox.Show(rows[j]["DisplayName"].ToString());                   
+                    //}
+                }
             }
         }
 
