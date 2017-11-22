@@ -24,6 +24,8 @@ namespace LISAGManager {
         AppUser appUser = new AppUser();
         SqlCommand sqlcmd = new SqlCommand();
 
+        private int memberIDforAccessRight = 0;
+
         
 
         public FrmManageAccount() {
@@ -835,10 +837,10 @@ namespace LISAGManager {
                 toolStripStatusLabelAD.Text = "Done";
 
             } else if (e.Button.Tag.ToString() == "Switch") {
-                if (tableLayoutPanel52.RowStyles[2].Height == 144) {
-                    tableLayoutPanel52.RowStyles[2].Height = 1;
+                if (tableLayoutPanel51.RowStyles[2].Height == 144) {
+                    tableLayoutPanel51.RowStyles[2].Height = 1;
                 } else {
-                    tableLayoutPanel52.RowStyles[2].Height = 144;
+                    tableLayoutPanel51.RowStyles[2].Height = 144;
                 }
             }
             //} catch {
@@ -862,16 +864,41 @@ namespace LISAGManager {
         }
 
         private void controlNavigatorAR_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            
+
             if (e.Button.Tag.ToString() == "Save") {
+                toolStripStatusLabelAR.Text = "Saving...";
                 DataRow[] rows = new DataRow[gridViewARAccessRights.RowCount];
                 for (int j = 0; j < gridViewARAccessRights.RowCount; j++) {
                     rows[j] = gridViewARAccessRights.GetDataRow(j);
-                    //if ((bool)rows[j]["Access"] == true) {
-                       // MessageBox.Show(rows[j]["DisplayName"].ToString());
-                    MessageBox.Show(rows[j]["DisplayName"].ToString());                   
-                    //}
+
+                    // end editing of gridview
+                    if (gridViewARAccessRights.IsEditing)
+                        gridViewARAccessRights.CloseEditor();
+
+                    bool access = (bool)rows[j]["Access"];
+                    string displayName = rows[j]["DisplayName"].ToString();
+
+                    sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE DisplayName = '" + displayName + "' ", Misc.getConn());
+                    Misc.connOpen();
+                    int formID = (int)sqlcmd.ExecuteScalar();
+
+                    sqlcmd = new SqlCommand("UPDATE AppAccess SET Access = '" + access + "' WHERE FormID = '" + formID + "' AND MemberID = '" + memberIDforAccessRight + "' ", Misc.getConn());
+                    Misc.connOpen();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
+
+                    toolStripStatusLabelAR.Text = "Saved";
                 }
+            } else if (e.Button.Tag.ToString() == "Switch") {
+                if (tableLayoutPanel1.RowStyles[2].Height == 94) {
+                    tableLayoutPanel1.RowStyles[2].Height = 1;
+                } else {
+                    tableLayoutPanel1.RowStyles[2].Height = 94;
+                }
+            } else if (e.Button.Tag.ToString() == "Refresh") {
+                toolStripStatusLabelAR.Text = "Refreshing...";
+                gridControlARUsers.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                toolStripStatusLabelAR.Text = "Done";
             }
         }
 
@@ -1430,6 +1457,10 @@ namespace LISAGManager {
             txtARUsername.Text = gridViewARUsers.GetRowCellValue(gridViewARUsers.FocusedRowHandle, "Username").ToString();
 
             gridControlARAccessRights.DataSource = Misc.loadDataSource("SELECT DisplayName, FormDescription, Access FROM vwAppAccess WHERE LicenseNumber = '" + txtARLicenseNumber.Text + "' ", "vwAppAccess");
+
+            sqlcmd = new SqlCommand("SELECT MemberID FROM Member WHERE LicenseNumber = '" + txtARLicenseNumber.Text + "' ", Misc.getConn());
+            Misc.connOpen();
+            memberIDforAccessRight = (int)sqlcmd.ExecuteScalar();
         }
 
         private void loadContactInformation() {
