@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace LISAGManager {
@@ -96,6 +98,8 @@ namespace LISAGManager {
 
             setTabState(true);
             setControlState(false);
+
+            
         }
 
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
@@ -127,6 +131,8 @@ namespace LISAGManager {
 
                 searchControl1.Enabled = false;
                 gridControl1.Enabled = false;
+
+                pictureBoxPI.Image = Properties.Resources.User;
 
             } else if (e.Button.Tag.ToString() == "Edit") {
                 if (tableLayoutPanel2.RowStyles[2].Height == 1)
@@ -209,6 +215,10 @@ namespace LISAGManager {
                     sqlcmd = new SqlCommand("SELECT MemberID FROM Member WHERE LicenseNumber = '" + txtLicenseNo.Text + "' ", Misc.getConn());
                     Misc.connOpen();
                     memberID = (int)sqlcmd.ExecuteScalar();
+
+                    Misc.connOpen();
+                    string image = openFileDialog1.FileName;
+                    Misc.saveImage(memberID, image);
 
                     sqlcmd = new SqlCommand("INSERT INTO UserAccount (MemberID, Username, Password, Administrator, Active) VALUES (@MemberID, @Username, @Password, @Administrator, @Active)", Misc.getConn());
                     sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
@@ -902,6 +912,13 @@ namespace LISAGManager {
             }
         }
 
+        private void btnPic_Click(object sender, EventArgs e) {
+            openFileDialog1.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK) {
+                pictureBoxPI.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
         private void gridViewAD_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
             selectionChangedAD();
             setControlValuesAD();
@@ -1319,6 +1336,7 @@ namespace LISAGManager {
             txtMiddleName.Text = middleName;
             txtLastName.Text = lastName;
 
+            pictureBoxPI.Image = Misc.loadImage(licenseNumber);
             txtLicenseNo.Text = licenseNumber;
             cmbGender.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Gender").ToString();
             deDOB.DateTime = (DateTime)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "DateOfBirth");
@@ -1344,6 +1362,7 @@ namespace LISAGManager {
             }
             dReader.Close();
 
+            pictureBoxCI.Image = Misc.loadImage(licenseNumber);
             txtCIFirstName.Text = firstName;
             txtCIMiddleName.Text = middleName;
             txtCILastName.Text = lastName;
@@ -1368,6 +1387,7 @@ namespace LISAGManager {
             }
             dReader.Close();
 
+            pictureBoxKD.Image = Misc.loadImage(licenseNumber);
             txtKDFirstName.Text = firstName;
             txtKDMiddleName.Text = middleName;
             txtKDLastName.Text = lastName;
@@ -1391,6 +1411,7 @@ namespace LISAGManager {
             }
             dReader.Close();
 
+            pictureBoxLoc.Image = Misc.loadImage(licenseNumber);
             txtLocFirstName.Text = firstName;
             txtLocMiddleName.Text = middleName;
             txtLocLastName.Text = lastName;
@@ -1416,6 +1437,7 @@ namespace LISAGManager {
             }
             dReader.Close();
 
+            pictureBoxBD.Image = Misc.loadImage(licenseNumber);
             txtBDFirstName.Text = firstName;
             txtBDMiddleName.Text = middleName;
             txtBDLastName.Text = lastName;
@@ -1441,6 +1463,7 @@ namespace LISAGManager {
             }
             dReader.Close();
 
+            pictureBoxAD.Image = Misc.loadImage(licenseNumber);
             txtADFirstName.Text = firstName;
             txtADMiddleName.Text = middleName;
             txtADLastName.Text = lastName;
@@ -1461,6 +1484,7 @@ namespace LISAGManager {
             sqlcmd = new SqlCommand("SELECT MemberID FROM Member WHERE LicenseNumber = '" + txtARLicenseNumber.Text + "' ", Misc.getConn());
             Misc.connOpen();
             memberIDforAccessRight = (int)sqlcmd.ExecuteScalar();
+            pictureBoxAR.Image = Misc.loadImage(txtARLicenseNumber.Text);
         }
 
         private void loadContactInformation() {

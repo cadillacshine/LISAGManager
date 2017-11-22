@@ -48,19 +48,20 @@ namespace LISAGManager {
                 if (string.Equals(password, txtPassword.Text)) {
                     fDashboard = new FrmDashboard();
                     fDashboard.Show();
-                    this.Hide();
-                    //MessageBox.Show("Authenticated!");
 
-                    sqlcmd = new SqlCommand("SELECT UserAccountID FROM UserAccount WHERE Username = '" + txtUsername.Text + "' AND Active = 'True'", Misc.getConn());
+                    this.Hide();
+
+
+                    sqlcmd = new SqlCommand("SELECT MemberID FROM UserAccount WHERE Username = '" + txtUsername.Text + "' AND Active = 'True'", Misc.getConn());
                     Misc.connOpen();
-                    int userID = (int)sqlcmd.ExecuteScalar();
+                    int memberID = (int)sqlcmd.ExecuteScalar();
 
                     string fName = "", mName = "", lName = "", licenseNumber = "", gender = "", maritalStatus = "", hometown = "", kinName = "", kinContact = "", phoneNumber1 = "", phoneNumber2 = "", region = "", city = "", businessAddress = "", residentialAddress = "", bankbranch = "", bank = "", accountName = "", accountNumber = "", emailAddress = "";
                     int inductionYear = 0;
                     DateTime dateOfBirth = DateTime.Now;
                     bool goodStanding = true, active = true;
 
-        sqlcmd = new SqlCommand("SELECT FirstName, MiddleName, LastName, LicenseNumber, Gender, DateOfBirth, Hometown, MaritalStatus, KinName, KinContact, phoneNumber1, phoneNumber2, emailAddress, regionName, cityName, businessAddress, residentialAddress, bankBranchName, bankName, accountName, accountNumber, inductionYear, goodStanding, active FROM vwMember WHERE MemberID = '" + userID + "' ", Misc.getConn());
+                    sqlcmd = new SqlCommand("SELECT FirstName, MiddleName, LastName, LicenseNumber, Gender, DateOfBirth, Hometown, MaritalStatus, KinName, KinContact, phoneNumber1, phoneNumber2, emailAddress, regionName, cityName, businessAddress, residentialAddress, bankBranchName, bankName, accountName, accountNumber, inductionYear, goodStanding, active FROM vwMember WHERE MemberID = '" + memberID + "' ", Misc.getConn());
                     Misc.connOpen();
                     SqlDataReader dReader = sqlcmd.ExecuteReader();
 
@@ -89,12 +90,12 @@ namespace LISAGManager {
                         inductionYear = dReader.GetInt32(21);
                         goodStanding = dReader.GetBoolean(22);
                         active = dReader.GetBoolean(23);
-                        
+
                     }
 
                     AppUser appUser = new AppUser() {
                         username = txtUsername.Text,
-                        appUserID = userID,
+                        appUserID = memberID,
                         firstName = fName,
                         middleName = mName,
                         lastName = lName,
@@ -104,7 +105,7 @@ namespace LISAGManager {
                         hometown = hometown,
                         kinName = kinName,
                         kinContact = kinContact,
-                        phoneNumber1 = phoneNumber1, 
+                        phoneNumber1 = phoneNumber1,
                         phoneNumber2 = phoneNumber2,
                         emailAddress = emailAddress,
                         region = region,
@@ -118,21 +119,102 @@ namespace LISAGManager {
                         inductionYear = inductionYear,
                         goodStanding = goodStanding,
                         active = active
-                };
+                    };
                     dReader.Close();
 
+                    List<Misc.strAccess> formIDs = Misc.formIDs();
+                    appUser.access = new Access();
+
+                    foreach (var item in formIDs) {
+
+                        
+
+                        if (item.name == "FrmLogin") {
+                            sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmLogin' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
+                            
+                            Misc.connOpen();
+                            appUser.access.login = (bool)sqlcmd.ExecuteScalar();
+                        }
+
+                        if (item.name == "FrmMe") {
+                            sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmMe' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
+                            
+                            Misc.connOpen();
+                            appUser.access.me = (bool)sqlcmd.ExecuteScalar();
+                        }
+
+                        if (item.name == "FrmSurveyors") {
+                            sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmSurveyors' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
+                            
+                            Misc.connOpen();
+                            appUser.access.surveyors = (bool)sqlcmd.ExecuteScalar();
+                        }
+
+                        if (item.name == "FrmRegion") {
+                            sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmRegion' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
+                            
+                            Misc.connOpen();
+                            appUser.access.region = (bool)sqlcmd.ExecuteScalar();
+                        }
+
+                        if (item.name == "FrmCity") {
+                            sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmCity' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
+                            
+                            Misc.connOpen();
+                            appUser.access.city = (bool)sqlcmd.ExecuteScalar();
+                        }
+
+                        if (item.name == "FrmBank") {
+                            sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmBank' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
+                            
+                            Misc.connOpen();
+                            appUser.access.bank = (bool)sqlcmd.ExecuteScalar();
+                        }
+
+                        if (item.name == "FrmBankBranch") {
+                            sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmBankBranch' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
+                            
+                            Misc.connOpen();
+                            appUser.access.bankBranch = (bool)sqlcmd.ExecuteScalar();
+                        }
+
+                        if (item.name == "FrmChangePassword") {
+                            sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmChangePassword' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
+                            
+                            Misc.connOpen();
+                            appUser.access.changePassword = (bool)sqlcmd.ExecuteScalar();
+                        }
+
+                        if (item.name == "FrmActivityLog") {
+                            sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmActivityLog' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
+                            
+                            Misc.connOpen();
+                            appUser.access.activityLog = (bool)sqlcmd.ExecuteScalar();
+                        }
+
+                        if (item.name == "FrmAgent") {
+                            sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmAgent' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
+                            
+                            Misc.connOpen();
+                            appUser.access.agents = (bool)sqlcmd.ExecuteScalar();
+                        }
+                    }
+
                     Misc.setUser(appUser);
+                    fDashboard.setUserDetails();
+                    fDashboard.allAccessRights();
                     Misc.logActivity(appUser.appUserID, "logged in");
+                    
+                } else {
+                    MessageBox.Show("Username/ Password Incorrect!", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUsername.SelectAll();
+                    return;
+                }
             } else {
                 MessageBox.Show("Username/ Password Incorrect!", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtUsername.SelectAll();
                 return;
             }
-        } else {
-                MessageBox.Show("Username/ Password Incorrect!", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUsername.SelectAll();
-                return;
-            }
-}
+        }
     }
 }

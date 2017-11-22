@@ -29,7 +29,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPI = new System.Windows.Forms.PictureBox();
             this.btnPic = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
@@ -77,7 +77,7 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCI = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -117,7 +117,7 @@
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxKD = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
@@ -153,7 +153,7 @@
             this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoc = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel29 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
@@ -195,7 +195,7 @@
             this.tableLayoutPanel35 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel36 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel37 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBD = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel38 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel39 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
@@ -237,7 +237,7 @@
             this.tableLayoutPanel52 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel53 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel54 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxAD = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel55 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel56 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl11 = new DevExpress.XtraEditors.GroupControl();
@@ -283,7 +283,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel44 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel45 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxAR = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel46 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel47 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
@@ -312,13 +312,14 @@
             this.colARFeature = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colARDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colARAccess = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tabPersonalInformation.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPI)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deDOB.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deDOB.Properties)).BeginInit();
@@ -334,7 +335,7 @@
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCI)).BeginInit();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -354,7 +355,7 @@
             this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKD)).BeginInit();
             this.tableLayoutPanel17.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -373,7 +374,7 @@
             this.tableLayoutPanel26.SuspendLayout();
             this.tableLayoutPanel27.SuspendLayout();
             this.tableLayoutPanel28.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoc)).BeginInit();
             this.tableLayoutPanel29.SuspendLayout();
             this.tableLayoutPanel30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -392,7 +393,7 @@
             this.tableLayoutPanel35.SuspendLayout();
             this.tableLayoutPanel36.SuspendLayout();
             this.tableLayoutPanel37.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBD)).BeginInit();
             this.tableLayoutPanel38.SuspendLayout();
             this.tableLayoutPanel39.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
@@ -411,7 +412,7 @@
             this.tableLayoutPanel52.SuspendLayout();
             this.tableLayoutPanel53.SuspendLayout();
             this.tableLayoutPanel54.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAD)).BeginInit();
             this.tableLayoutPanel55.SuspendLayout();
             this.tableLayoutPanel56.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).BeginInit();
@@ -431,7 +432,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel44.SuspendLayout();
             this.tableLayoutPanel45.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAR)).BeginInit();
             this.tableLayoutPanel46.SuspendLayout();
             this.tableLayoutPanel47.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
@@ -524,7 +525,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.2069F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.43104F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.93103F));
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.pictureBoxPI, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.btnPic, 1, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 2);
@@ -537,17 +538,17 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(133, 135);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
-            // pictureBox1
+            // pictureBoxPI
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::LISAGManager.Properties.Resources.User;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 9);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 92);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxPI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxPI.Image = global::LISAGManager.Properties.Resources.User;
+            this.pictureBoxPI.Location = new System.Drawing.Point(16, 9);
+            this.pictureBoxPI.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxPI.Name = "pictureBoxPI";
+            this.pictureBoxPI.Size = new System.Drawing.Size(96, 92);
+            this.pictureBoxPI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPI.TabIndex = 0;
+            this.pictureBoxPI.TabStop = false;
             // 
             // btnPic
             // 
@@ -561,6 +562,7 @@
             this.btnPic.Text = "Picture";
             this.btnPic.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnPic.UseVisualStyleBackColor = true;
+            this.btnPic.Click += new System.EventHandler(this.btnPic_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -568,7 +570,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.33693F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.66307F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 436F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 437F));
             this.tableLayoutPanel5.Controls.Add(this.label10, 2, 4);
             this.tableLayoutPanel5.Controls.Add(this.label9, 2, 3);
             this.tableLayoutPanel5.Controls.Add(this.label8, 2, 2);
@@ -608,7 +610,7 @@
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(329, 107);
+            this.label10.Location = new System.Drawing.Point(328, 107);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(145, 28);
@@ -621,7 +623,7 @@
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(329, 79);
+            this.label9.Location = new System.Drawing.Point(328, 79);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(145, 28);
@@ -634,7 +636,7 @@
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(329, 52);
+            this.label8.Location = new System.Drawing.Point(328, 52);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(145, 27);
@@ -647,7 +649,7 @@
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(329, 26);
+            this.label7.Location = new System.Drawing.Point(328, 26);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(145, 26);
@@ -660,7 +662,7 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(329, 0);
+            this.label6.Location = new System.Drawing.Point(328, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 26);
@@ -672,7 +674,7 @@
             // 
             this.txtFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFirstName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(85, 2);
+            this.txtFirstName.Location = new System.Drawing.Point(84, 2);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(240, 24);
@@ -682,7 +684,7 @@
             // 
             this.txtMiddleName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMiddleName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMiddleName.Location = new System.Drawing.Point(85, 28);
+            this.txtMiddleName.Location = new System.Drawing.Point(84, 28);
             this.txtMiddleName.Margin = new System.Windows.Forms.Padding(2);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(240, 24);
@@ -692,7 +694,7 @@
             // 
             this.txtLastName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLastName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.Location = new System.Drawing.Point(85, 54);
+            this.txtLastName.Location = new System.Drawing.Point(84, 54);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(240, 24);
@@ -702,10 +704,10 @@
             // 
             this.txtHometown.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtHometown.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHometown.Location = new System.Drawing.Point(478, 28);
+            this.txtHometown.Location = new System.Drawing.Point(477, 28);
             this.txtHometown.Margin = new System.Windows.Forms.Padding(2);
             this.txtHometown.Name = "txtHometown";
-            this.txtHometown.Size = new System.Drawing.Size(433, 24);
+            this.txtHometown.Size = new System.Drawing.Size(434, 24);
             this.txtHometown.TabIndex = 4;
             // 
             // cmbGender
@@ -717,7 +719,7 @@
             this.cmbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cmbGender.Location = new System.Drawing.Point(85, 81);
+            this.cmbGender.Location = new System.Drawing.Point(84, 81);
             this.cmbGender.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(240, 24);
@@ -727,7 +729,7 @@
             // 
             this.deDOB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.deDOB.EditValue = null;
-            this.deDOB.Location = new System.Drawing.Point(85, 109);
+            this.deDOB.Location = new System.Drawing.Point(84, 109);
             this.deDOB.Margin = new System.Windows.Forms.Padding(2);
             this.deDOB.Name = "deDOB";
             this.deDOB.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -746,10 +748,10 @@
             // 
             this.txtLicenseNo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLicenseNo.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLicenseNo.Location = new System.Drawing.Point(478, 54);
+            this.txtLicenseNo.Location = new System.Drawing.Point(477, 54);
             this.txtLicenseNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtLicenseNo.Name = "txtLicenseNo";
-            this.txtLicenseNo.Size = new System.Drawing.Size(433, 24);
+            this.txtLicenseNo.Size = new System.Drawing.Size(434, 24);
             this.txtLicenseNo.TabIndex = 3;
             // 
             // cmbMaritalStatus
@@ -762,10 +764,10 @@
             "Single",
             "Married",
             "Divorced"});
-            this.cmbMaritalStatus.Location = new System.Drawing.Point(478, 2);
+            this.cmbMaritalStatus.Location = new System.Drawing.Point(477, 2);
             this.cmbMaritalStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMaritalStatus.Name = "cmbMaritalStatus";
-            this.cmbMaritalStatus.Size = new System.Drawing.Size(433, 24);
+            this.cmbMaritalStatus.Size = new System.Drawing.Size(434, 24);
             this.cmbMaritalStatus.TabIndex = 7;
             this.cmbMaritalStatus.SelectedIndexChanged += new System.EventHandler(this.cmbMaritalStatus_SelectedIndexChanged);
             // 
@@ -773,10 +775,10 @@
             // 
             this.txtInductionYear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtInductionYear.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInductionYear.Location = new System.Drawing.Point(478, 81);
+            this.txtInductionYear.Location = new System.Drawing.Point(477, 81);
             this.txtInductionYear.Margin = new System.Windows.Forms.Padding(2);
             this.txtInductionYear.Name = "txtInductionYear";
-            this.txtInductionYear.Size = new System.Drawing.Size(433, 24);
+            this.txtInductionYear.Size = new System.Drawing.Size(434, 24);
             this.txtInductionYear.TabIndex = 8;
             // 
             // tableLayoutPanel6
@@ -784,17 +786,17 @@
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.735849F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 92.26415F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tableLayoutPanel6.Controls.Add(this.cbActive, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.label11, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.cbGoodStanding, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(478, 109);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(477, 109);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(433, 24);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(434, 24);
             this.tableLayoutPanel6.TabIndex = 9;
             // 
             // cbActive
@@ -807,7 +809,7 @@
             this.cbActive.Location = new System.Drawing.Point(379, 2);
             this.cbActive.Margin = new System.Windows.Forms.Padding(2);
             this.cbActive.Name = "cbActive";
-            this.cbActive.Size = new System.Drawing.Size(52, 20);
+            this.cbActive.Size = new System.Drawing.Size(53, 20);
             this.cbActive.TabIndex = 2;
             this.cbActive.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbActive.UseVisualStyleBackColor = true;
@@ -848,7 +850,7 @@
             this.label1.Location = new System.Drawing.Point(2, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 26);
+            this.label1.Size = new System.Drawing.Size(78, 26);
             this.label1.TabIndex = 10;
             this.label1.Text = "First Name:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -861,7 +863,7 @@
             this.label2.Location = new System.Drawing.Point(2, 26);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 26);
+            this.label2.Size = new System.Drawing.Size(78, 26);
             this.label2.TabIndex = 11;
             this.label2.Text = "Middle Name:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -874,7 +876,7 @@
             this.label3.Location = new System.Drawing.Point(2, 52);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 27);
+            this.label3.Size = new System.Drawing.Size(78, 27);
             this.label3.TabIndex = 12;
             this.label3.Text = "Last Name:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -887,7 +889,7 @@
             this.label4.Location = new System.Drawing.Point(2, 79);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 28);
+            this.label4.Size = new System.Drawing.Size(78, 28);
             this.label4.TabIndex = 13;
             this.label4.Text = "Gender:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -900,7 +902,7 @@
             this.label5.Location = new System.Drawing.Point(2, 107);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 28);
+            this.label5.Size = new System.Drawing.Size(78, 28);
             this.label5.TabIndex = 14;
             this.label5.Text = "Date of Birth:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1172,7 +1174,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.441559F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.14286F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.415585F));
-            this.tableLayoutPanel10.Controls.Add(this.pictureBox2, 1, 1);
+            this.tableLayoutPanel10.Controls.Add(this.pictureBoxCI, 1, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(2, 2);
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(2);
@@ -1184,17 +1186,17 @@
             this.tableLayoutPanel10.Size = new System.Drawing.Size(133, 138);
             this.tableLayoutPanel10.TabIndex = 0;
             // 
-            // pictureBox2
+            // pictureBoxCI
             // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::LISAGManager.Properties.Resources.User;
-            this.pictureBox2.Location = new System.Drawing.Point(13, 16);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(105, 106);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxCI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxCI.Image = global::LISAGManager.Properties.Resources.User;
+            this.pictureBoxCI.Location = new System.Drawing.Point(13, 16);
+            this.pictureBoxCI.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxCI.Name = "pictureBoxCI";
+            this.pictureBoxCI.Size = new System.Drawing.Size(105, 106);
+            this.pictureBoxCI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxCI.TabIndex = 0;
+            this.pictureBoxCI.TabStop = false;
             // 
             // tableLayoutPanel11
             // 
@@ -1714,7 +1716,7 @@
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.441559F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.14286F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.415585F));
-            this.tableLayoutPanel16.Controls.Add(this.pictureBox3, 1, 1);
+            this.tableLayoutPanel16.Controls.Add(this.pictureBoxKD, 1, 1);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel16.Location = new System.Drawing.Point(2, 2);
             this.tableLayoutPanel16.Margin = new System.Windows.Forms.Padding(2);
@@ -1726,17 +1728,17 @@
             this.tableLayoutPanel16.Size = new System.Drawing.Size(133, 138);
             this.tableLayoutPanel16.TabIndex = 0;
             // 
-            // pictureBox3
+            // pictureBoxKD
             // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Image = global::LISAGManager.Properties.Resources.User;
-            this.pictureBox3.Location = new System.Drawing.Point(13, 16);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(105, 106);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.pictureBoxKD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxKD.Image = global::LISAGManager.Properties.Resources.User;
+            this.pictureBoxKD.Location = new System.Drawing.Point(13, 16);
+            this.pictureBoxKD.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxKD.Name = "pictureBoxKD";
+            this.pictureBoxKD.Size = new System.Drawing.Size(105, 106);
+            this.pictureBoxKD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxKD.TabIndex = 0;
+            this.pictureBoxKD.TabStop = false;
             // 
             // tableLayoutPanel17
             // 
@@ -2207,7 +2209,7 @@
             this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.441559F));
             this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.14286F));
             this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.415585F));
-            this.tableLayoutPanel28.Controls.Add(this.pictureBox4, 1, 1);
+            this.tableLayoutPanel28.Controls.Add(this.pictureBoxLoc, 1, 1);
             this.tableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel28.Location = new System.Drawing.Point(2, 2);
             this.tableLayoutPanel28.Margin = new System.Windows.Forms.Padding(2);
@@ -2223,17 +2225,17 @@
             this.tableLayoutPanel28.Size = new System.Drawing.Size(164, 226);
             this.tableLayoutPanel28.TabIndex = 0;
             // 
-            // pictureBox4
+            // pictureBoxLoc
             // 
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox4.Image = global::LISAGManager.Properties.Resources.User;
-            this.pictureBox4.Location = new System.Drawing.Point(15, 20);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(130, 135);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.pictureBoxLoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxLoc.Image = global::LISAGManager.Properties.Resources.User;
+            this.pictureBoxLoc.Location = new System.Drawing.Point(15, 20);
+            this.pictureBoxLoc.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxLoc.Name = "pictureBoxLoc";
+            this.pictureBoxLoc.Size = new System.Drawing.Size(130, 135);
+            this.pictureBoxLoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLoc.TabIndex = 0;
+            this.pictureBoxLoc.TabStop = false;
             // 
             // tableLayoutPanel29
             // 
@@ -2785,7 +2787,7 @@
             this.tableLayoutPanel37.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.441559F));
             this.tableLayoutPanel37.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.14286F));
             this.tableLayoutPanel37.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.415585F));
-            this.tableLayoutPanel37.Controls.Add(this.pictureBox5, 1, 1);
+            this.tableLayoutPanel37.Controls.Add(this.pictureBoxBD, 1, 1);
             this.tableLayoutPanel37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel37.Location = new System.Drawing.Point(2, 2);
             this.tableLayoutPanel37.Margin = new System.Windows.Forms.Padding(2);
@@ -2797,17 +2799,17 @@
             this.tableLayoutPanel37.Size = new System.Drawing.Size(133, 136);
             this.tableLayoutPanel37.TabIndex = 0;
             // 
-            // pictureBox5
+            // pictureBoxBD
             // 
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox5.Image = global::LISAGManager.Properties.Resources.User;
-            this.pictureBox5.Location = new System.Drawing.Point(13, 16);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(105, 105);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
+            this.pictureBoxBD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxBD.Image = global::LISAGManager.Properties.Resources.User;
+            this.pictureBoxBD.Location = new System.Drawing.Point(13, 16);
+            this.pictureBoxBD.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxBD.Name = "pictureBoxBD";
+            this.pictureBoxBD.Size = new System.Drawing.Size(105, 105);
+            this.pictureBoxBD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBD.TabIndex = 0;
+            this.pictureBoxBD.TabStop = false;
             // 
             // tableLayoutPanel38
             // 
@@ -3350,7 +3352,7 @@
             this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.441559F));
             this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.14286F));
             this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.415585F));
-            this.tableLayoutPanel54.Controls.Add(this.pictureBox7, 1, 1);
+            this.tableLayoutPanel54.Controls.Add(this.pictureBoxAD, 1, 1);
             this.tableLayoutPanel54.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel54.Location = new System.Drawing.Point(2, 2);
             this.tableLayoutPanel54.Margin = new System.Windows.Forms.Padding(2);
@@ -3362,17 +3364,17 @@
             this.tableLayoutPanel54.Size = new System.Drawing.Size(133, 136);
             this.tableLayoutPanel54.TabIndex = 0;
             // 
-            // pictureBox7
+            // pictureBoxAD
             // 
-            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox7.Image = global::LISAGManager.Properties.Resources.User;
-            this.pictureBox7.Location = new System.Drawing.Point(13, 16);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(105, 105);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 0;
-            this.pictureBox7.TabStop = false;
+            this.pictureBoxAD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxAD.Image = global::LISAGManager.Properties.Resources.User;
+            this.pictureBoxAD.Location = new System.Drawing.Point(13, 16);
+            this.pictureBoxAD.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxAD.Name = "pictureBoxAD";
+            this.pictureBoxAD.Size = new System.Drawing.Size(105, 105);
+            this.pictureBoxAD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxAD.TabIndex = 0;
+            this.pictureBoxAD.TabStop = false;
             // 
             // tableLayoutPanel55
             // 
@@ -3983,7 +3985,7 @@
             this.tableLayoutPanel45.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.125F));
             this.tableLayoutPanel45.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.75F));
             this.tableLayoutPanel45.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.125F));
-            this.tableLayoutPanel45.Controls.Add(this.pictureBox6, 1, 1);
+            this.tableLayoutPanel45.Controls.Add(this.pictureBoxAR, 1, 1);
             this.tableLayoutPanel45.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel45.Location = new System.Drawing.Point(2, 2);
             this.tableLayoutPanel45.Margin = new System.Windows.Forms.Padding(2);
@@ -3995,17 +3997,17 @@
             this.tableLayoutPanel45.Size = new System.Drawing.Size(91, 86);
             this.tableLayoutPanel45.TabIndex = 0;
             // 
-            // pictureBox6
+            // pictureBoxAR
             // 
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox6.Image = global::LISAGManager.Properties.Resources.User;
-            this.pictureBox6.Location = new System.Drawing.Point(13, 10);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(63, 65);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
+            this.pictureBoxAR.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxAR.Image = global::LISAGManager.Properties.Resources.User;
+            this.pictureBoxAR.Location = new System.Drawing.Point(13, 10);
+            this.pictureBoxAR.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxAR.Name = "pictureBoxAR";
+            this.pictureBoxAR.Size = new System.Drawing.Size(63, 65);
+            this.pictureBoxAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxAR.TabIndex = 0;
+            this.pictureBoxAR.TabStop = false;
             // 
             // tableLayoutPanel46
             // 
@@ -4279,7 +4281,7 @@
             // toolStripStatusLabelAR
             // 
             this.toolStripStatusLabelAR.Name = "toolStripStatusLabelAR";
-            this.toolStripStatusLabelAR.Size = new System.Drawing.Size(35, 14);
+            this.toolStripStatusLabelAR.Size = new System.Drawing.Size(35, 16);
             this.toolStripStatusLabelAR.Text = "Done";
             // 
             // splitContainerControl1
@@ -4383,6 +4385,10 @@
             this.colARAccess.VisibleIndex = 2;
             this.colARAccess.Width = 61;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // FrmManageAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4400,7 +4406,7 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPI)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deDOB.Properties.CalendarTimeProperties)).EndInit();
@@ -4421,7 +4427,7 @@
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCI)).EndInit();
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -4446,7 +4452,7 @@
             this.tableLayoutPanel14.PerformLayout();
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKD)).EndInit();
             this.tableLayoutPanel17.ResumeLayout(false);
             this.tableLayoutPanel18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
@@ -4470,7 +4476,7 @@
             this.tableLayoutPanel26.PerformLayout();
             this.tableLayoutPanel27.ResumeLayout(false);
             this.tableLayoutPanel28.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoc)).EndInit();
             this.tableLayoutPanel29.ResumeLayout(false);
             this.tableLayoutPanel30.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
@@ -4494,7 +4500,7 @@
             this.tableLayoutPanel35.PerformLayout();
             this.tableLayoutPanel36.ResumeLayout(false);
             this.tableLayoutPanel37.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBD)).EndInit();
             this.tableLayoutPanel38.ResumeLayout(false);
             this.tableLayoutPanel39.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
@@ -4518,7 +4524,7 @@
             this.tableLayoutPanel52.PerformLayout();
             this.tableLayoutPanel53.ResumeLayout(false);
             this.tableLayoutPanel54.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAD)).EndInit();
             this.tableLayoutPanel55.ResumeLayout(false);
             this.tableLayoutPanel56.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).EndInit();
@@ -4544,7 +4550,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel44.ResumeLayout(false);
             this.tableLayoutPanel45.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAR)).EndInit();
             this.tableLayoutPanel46.ResumeLayout(false);
             this.tableLayoutPanel47.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).EndInit();
@@ -4588,7 +4594,7 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtLicenseNo;
         private System.Windows.Forms.TextBox txtHometown;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxPI;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -4618,7 +4624,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxCI;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private DevExpress.XtraEditors.GroupControl groupControl1;
@@ -4650,7 +4656,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBoxKD;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
         private DevExpress.XtraEditors.GroupControl groupControl3;
@@ -4681,7 +4687,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBoxLoc;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel29;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel30;
         private DevExpress.XtraEditors.GroupControl groupControl5;
@@ -4715,7 +4721,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel35;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel36;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel37;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBoxBD;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel38;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel39;
         private DevExpress.XtraEditors.GroupControl groupControl7;
@@ -4751,7 +4757,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel52;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel53;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel54;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBoxAD;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel55;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel56;
         private DevExpress.XtraEditors.GroupControl groupControl11;
@@ -4786,7 +4792,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel44;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel45;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBoxAR;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel46;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel47;
         private DevExpress.XtraEditors.GroupControl groupControl9;
@@ -4860,5 +4866,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colARFeature;
         private DevExpress.XtraGrid.Columns.GridColumn colARDescription;
         private DevExpress.XtraGrid.Columns.GridColumn colARAccess;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

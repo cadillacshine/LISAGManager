@@ -255,8 +255,28 @@ namespace LISAGManager {
             }
         }
 
-        private void FrmDashboard_Load(object sender, EventArgs e) {
+        public void setUserDetails() {
+            lblUsername.Text = Misc.getUser().username;
+            pbProfilePic.Image = Misc.loadImage(Misc.getUser().appUserID);
+        }
 
+        public void allAccessRights() {
+
+            nbiMyProfile.Enabled = Misc.getUser().access.me;
+            nbiChangePassword.Enabled = Misc.getUser().access.changePassword;
+            nbiActivityLog.Enabled = Misc.getUser().access.activityLog;
+            nbiSurveyors.Enabled = Misc.getUser().access.surveyors;
+            nbiSetupAgent.Enabled = Misc.getUser().access.agents;
+            nbiRegion.Enabled = Misc.getUser().access.region;
+            nbiCity.Enabled = Misc.getUser().access.city;
+            nbiBank.Enabled = Misc.getUser().access.bank;
+            nbiBankBranch.Enabled = Misc.getUser().access.bankBranch;
+
+            
+        }
+
+        private void FrmDashboard_Load(object sender, EventArgs e) {
+            
         }
 
         private void nbiSurveyors_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {

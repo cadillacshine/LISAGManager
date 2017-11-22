@@ -50,13 +50,15 @@
             this.nbiBank = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiBankBranch = new DevExpress.XtraNavBar.NavBarItem();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.pbProfilePic = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,9 +66,10 @@
             // 
             this.panel1.Controls.Add(this.navBarControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 66);
+            this.panel1.Location = new System.Drawing.Point(0, 43);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(302, 1074);
+            this.panel1.Size = new System.Drawing.Size(201, 512);
             this.panel1.TabIndex = 0;
             // 
             // navBarControl1
@@ -104,9 +107,10 @@
             this.nbiSetupAgent,
             this.navBarSeparatorItem6});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
+            this.navBarControl1.Margin = new System.Windows.Forms.Padding(2);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 302;
-            this.navBarControl1.Size = new System.Drawing.Size(302, 1074);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 201;
+            this.navBarControl1.Size = new System.Drawing.Size(201, 512);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             this.navBarControl1.Click += new System.EventHandler(this.navBarControl1_Click);
@@ -325,69 +329,88 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel2.BackColor = System.Drawing.Color.DarkGreen;
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lblUsername);
             this.panel2.Controls.Add(this.pbProfilePic);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1904, 66);
+            this.panel2.Size = new System.Drawing.Size(1064, 43);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LISAGManager.Properties.Resources.LISAG2;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(177, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(7, 10);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label2.Location = new System.Drawing.Point(448, 7);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 6, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(377, 47);
+            this.label2.Size = new System.Drawing.Size(233, 33);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Application Name";
+            this.label2.Text = "LISAG Manager";
             // 
-            // label1
+            // lblUsername
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(1454, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(380, 40);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Administrator";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblUsername.Location = new System.Drawing.Point(764, 9);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(253, 26);
+            this.lblUsername.TabIndex = 1;
+            this.lblUsername.Text = "Administrator";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pbProfilePic
             // 
             this.pbProfilePic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbProfilePic.Image = global::LISAGManager.Properties.Resources.User;
-            this.pbProfilePic.Location = new System.Drawing.Point(1842, 3);
+            this.pbProfilePic.Location = new System.Drawing.Point(1023, 2);
+            this.pbProfilePic.Margin = new System.Windows.Forms.Padding(2);
             this.pbProfilePic.Name = "pbProfilePic";
-            this.pbProfilePic.Size = new System.Drawing.Size(60, 60);
+            this.pbProfilePic.Size = new System.Drawing.Size(40, 39);
             this.pbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbProfilePic.TabIndex = 0;
             this.pbProfilePic.TabStop = false;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Green;
+            this.panel3.BackColor = System.Drawing.Color.DarkGreen;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 1140);
+            this.panel3.Location = new System.Drawing.Point(0, 555);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1904, 18);
+            this.panel3.Size = new System.Drawing.Size(1064, 12);
             this.panel3.TabIndex = 3;
             // 
             // FrmDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1904, 1158);
+            this.ClientSize = new System.Drawing.Size(1064, 567);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmDashboard";
             this.Text = "LISAG - Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -396,6 +419,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();
             this.ResumeLayout(false);
 
@@ -409,7 +433,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.PictureBox pbProfilePic;
         private DevExpress.XtraNavBar.NavBarItem nbiSurveyors;
         private DevExpress.XtraNavBar.NavBarItem nbiAgents;
@@ -433,5 +457,6 @@
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraNavBar.NavBarItem nbiSetupAgent;
         private DevExpress.XtraNavBar.NavBarSeparatorItem navBarSeparatorItem6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
