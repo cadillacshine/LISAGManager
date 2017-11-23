@@ -107,6 +107,9 @@ namespace LISAGManager {
                 sqlcmd.ExecuteNonQuery();
                 sqlcmd.Dispose();
 
+                string image = openFileDialog1.FileName;
+                Misc.updateImage(memberID, image);
+
                 actionState = "a";
 
                 setControlState(false);
@@ -153,6 +156,13 @@ namespace LISAGManager {
             }
         }
 
+        private void btnPicture_Click(object sender, EventArgs e) {
+            openFileDialog1.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK) {
+                pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
         private void loadForm() {
             cmbRegion.DataSource = Misc.loadDataSource(sqlQueryRegion, regionTableOrView);
             cmbRegion.DisplayMember = "Name";
@@ -194,6 +204,7 @@ namespace LISAGManager {
             cmbBankName.Enabled = status;
             txtAccountName.Enabled = status;
             txtAccountNumber.Enabled = status;
+            btnPicture.Enabled = status;
         }
 
         private void setControlValues() {

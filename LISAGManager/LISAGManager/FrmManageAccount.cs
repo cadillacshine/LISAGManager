@@ -372,6 +372,21 @@ namespace LISAGManager {
             int frmAgentID = (int)sqlcmd.ExecuteScalar();
             list.Add(frmAgentID);
 
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmAgents'", Misc.getConn());
+            Misc.connOpen();
+            int frmAgentsID = (int)sqlcmd.ExecuteScalar();
+            list.Add(frmAgentsID);
+
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmMyAgents'", Misc.getConn());
+            Misc.connOpen();
+            int frmMyAgentsID = (int)sqlcmd.ExecuteScalar();
+            list.Add(frmMyAgentsID);
+
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmManageAccount'", Misc.getConn());
+            Misc.connOpen();
+            int frmManageAccountID = (int)sqlcmd.ExecuteScalar();
+            list.Add(frmManageAccountID);
+
             foreach (var item in list) {
                 sqlcmd = new SqlCommand("INSERT INTO AppAccess(FormID, MemberID, Access) VALUES(@FormID, @MemberID, @Access)", Misc.getConn());
                 sqlcmd.Parameters.AddWithValue("@FormID", item);
@@ -580,7 +595,7 @@ namespace LISAGManager {
         }
 
         private void controlNavigatorBD_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            try {
+            //try {
 
             if (e.Button.Tag.ToString() == "Edit") {
                 if (tableLayoutPanel35.RowStyles[2].Height == 1)
@@ -696,9 +711,9 @@ namespace LISAGManager {
                     tableLayoutPanel35.RowStyles[2].Height = 144;
                 }
             }
-            } catch {
+            //} catch {
 
-            }
+            //}
         }
 
         private void gridViewBD_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
