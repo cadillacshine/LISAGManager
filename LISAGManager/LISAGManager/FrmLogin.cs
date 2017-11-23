@@ -126,9 +126,6 @@ namespace LISAGManager {
                     appUser.access = new Access();
 
                     foreach (var item in formIDs) {
-
-                        
-
                         if (item.name == "FrmLogin") {
                             sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmLogin' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
                             
@@ -196,7 +193,28 @@ namespace LISAGManager {
                             sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmAgent' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
                             
                             Misc.connOpen();
+                            appUser.access.setupAgent = (bool)sqlcmd.ExecuteScalar();
+                        }
+
+                        if (item.name == "FrmAgents") {
+                            sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmAgents' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
+
+                            Misc.connOpen();
                             appUser.access.agents = (bool)sqlcmd.ExecuteScalar();
+                        }
+
+                        if (item.name == "FrmMyAgents") {
+                            sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmMyAgents' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
+
+                            Misc.connOpen();
+                            appUser.access.myAgents = (bool)sqlcmd.ExecuteScalar();
+                        }
+
+                        if (item.name == "FrmManageAccount") {
+                            sqlcmd = new SqlCommand("SELECT Access FROM vwAppAccess WHERE Name = 'FrmManageAccount' AND LicenseNumber = '" + appUser.licenseNumber + "' ", Misc.getConn());
+
+                            Misc.connOpen();
+                            appUser.access.manageAccount = (bool)sqlcmd.ExecuteScalar();
                         }
                     }
 

@@ -15,7 +15,7 @@ namespace LISAGManager {
 
         NavigatorCustomButton BtnAdd, BtnEdit, BtnSave, BtnCancel, BtnSwitch, BtnRefresh;
         private string actionState = "a";
-        private string sqlQuery = "SELECT Name, SurveyorName, Active FROM vwAgent ORDER BY Name";
+        private string sqlQuery = "SELECT Name, SurveyorName, LicenseNumber, Active FROM vwAgent ORDER BY Name";
         private string tableOrView = "vwAgent";
         int agentID = 0;
 
@@ -25,14 +25,13 @@ namespace LISAGManager {
 
         private void FrmAgent_Load(object sender, EventArgs e) {
             loadForm();
-            MessageBox.Show(tableLayoutPanel1.RowStyles[2].Height.ToString());
         }
 
         private void loadForm() {
-
-            gridControl1.DataSource = Misc.loadDataSource(sqlQuery, tableOrView);
             cmbSurveyor.DataSource = Misc.loadDataSource("SELECT Name FROM vwMember WHERE Active = 'True' ORDER BY Name", "vwMember");
             cmbSurveyor.ValueMember = "Name";
+
+            gridControl1.DataSource = Misc.loadDataSource(sqlQuery, tableOrView);
 
             BtnAdd = controlNavigator1.Buttons.CustomButtons[0];
             BtnEdit = controlNavigator1.Buttons.CustomButtons[1];
@@ -244,16 +243,18 @@ namespace LISAGManager {
         }
 
         private void setControlValues() {
-
+            MessageBox.Show("Test");
             string name = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Name").ToString();
             cmbSurveyor.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "SurveyorName").ToString();
             cbActive.Checked = (bool)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Active");
+            string licenseNumber = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "LicenseNumber").ToString();
 
-            SqlCommand sqlcmd = new SqlCommand("SELECT AgentID FROM vwAgent WHERE Name = '" + name + "' AND SurveyorName = '" + cmbSurveyor.Text + "' ", Misc.getConn());
+            SqlCommand sqlcmd = new SqlCommand("SELECT AgentID FROM vwAgent WHERE Name = '" + name + "' AND LicenseNumber = '" + licenseNumber + "' ", Misc.getConn());
             Misc.connOpen();
             int myAgentID = (int)sqlcmd.ExecuteScalar();
 
             sqlcmd = new SqlCommand("SELECT FirstName, MiddleName, LastName, PhoneNumber1, PhoneNumber2, EmailAddress FROM vwAgent WHERE AgentID = '" + agentID + "' ", Misc.getConn());
+            Misc.connOpen();
             SqlDataReader dReader = sqlcmd.ExecuteReader();
 
             while (dReader.Read()) {

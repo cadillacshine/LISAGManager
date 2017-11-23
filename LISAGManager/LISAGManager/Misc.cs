@@ -152,6 +152,30 @@ namespace LISAGManager {
                 ID = frmAgentID
             });
 
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmManageAccount'", Misc.getConn());
+            Misc.connOpen();
+            int frmManageAccountID = (int)sqlcmd.ExecuteScalar();
+            list.Add(new strAccess {
+                name = "FrmManageAccount",
+                ID = frmManageAccountID
+            });
+
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmMyAgents'", Misc.getConn());
+            Misc.connOpen();
+            int frmMyAgentsID = (int)sqlcmd.ExecuteScalar();
+            list.Add(new strAccess {
+                name = "FrmMyAgents",
+                ID = frmMyAgentsID
+            });
+
+            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmAgents'", Misc.getConn());
+            Misc.connOpen();
+            int frmAgentsID = (int)sqlcmd.ExecuteScalar();
+            list.Add(new strAccess {
+                name = "FrmAgents",
+                ID = frmAgentsID
+            });
+
             return list;
         }
 
@@ -162,6 +186,19 @@ namespace LISAGManager {
             fs.Read(bimage, 0, Convert.ToInt32(fs.Length));
             fs.Close();
             SqlCommand sqlcmd = new SqlCommand("INSERT INTO MemberImage(MemberID, MemberImage) values(@MemberID, @MemberImage)", Misc.getConn());
+            sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
+            sqlcmd.Parameters.AddWithValue("@MemberImage", SqlDbType.Image).Value = bimage;
+            Misc.connOpen();
+            sqlcmd.ExecuteNonQuery();
+        }
+
+        public static void updateImage(int memberID, string image) {
+            Bitmap bmp = new Bitmap(image);
+            FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read);
+            byte[] bimage = new byte[fs.Length];
+            fs.Read(bimage, 0, Convert.ToInt32(fs.Length));
+            fs.Close();
+            SqlCommand sqlcmd = new SqlCommand("UPDATE MemberImage SET MemberImage = @MemberImage WHERE MemberID = @MemberID", Misc.getConn());
             sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
             sqlcmd.Parameters.AddWithValue("@MemberImage", SqlDbType.Image).Value = bimage;
             Misc.connOpen();
@@ -201,7 +238,7 @@ namespace LISAGManager {
         public string firstName { get; set; }
         public string middleName { get; set; }
         public string lastName { get; set; }
-        public string licenseNumber { get; set; }
+        public string licenseNumber { get; set; } 
         public string gender { get; set; }
         public DateTime dateOfBirth { get; set; }
         public string maritalStatus { get; set; }
@@ -237,5 +274,8 @@ namespace LISAGManager {
         public bool changePassword { get; set; }
         public bool activityLog { get; set; }
         public bool agents { get; set; }
+        public bool setupAgent { get; set; }
+        public bool manageAccount { get; set; }
+        public bool myAgents { get; set; }
     }
 }

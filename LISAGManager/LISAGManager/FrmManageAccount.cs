@@ -181,6 +181,9 @@ namespace LISAGManager {
                     sqlcmd.ExecuteNonQuery();
                     sqlcmd.Dispose();
 
+                    string image = openFileDialog1.FileName;
+                    Misc.updateImage(memberID, image);
+
                 } else if (actionState == "a") {
                     toolStripStatusLabel1.Text = "Saving...";
 
@@ -1479,7 +1482,7 @@ namespace LISAGManager {
             txtARLicenseNumber.Text = gridViewARUsers.GetRowCellValue(gridViewARUsers.FocusedRowHandle, "LicenseNumber").ToString();
             txtARUsername.Text = gridViewARUsers.GetRowCellValue(gridViewARUsers.FocusedRowHandle, "Username").ToString();
 
-            gridControlARAccessRights.DataSource = Misc.loadDataSource("SELECT DisplayName, FormDescription, Access FROM vwAppAccess WHERE LicenseNumber = '" + txtARLicenseNumber.Text + "' ", "vwAppAccess");
+            gridControlARAccessRights.DataSource = Misc.loadDataSource("SELECT DisplayName, FormDescription, Access FROM vwAppAccess WHERE LicenseNumber = '" + txtARLicenseNumber.Text + "' AND Active = 'True'", "vwAppAccess");
 
             sqlcmd = new SqlCommand("SELECT MemberID FROM Member WHERE LicenseNumber = '" + txtARLicenseNumber.Text + "' ", Misc.getConn());
             Misc.connOpen();

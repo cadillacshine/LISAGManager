@@ -261,18 +261,18 @@ namespace LISAGManager {
         }
 
         public void allAccessRights() {
-
             nbiMyProfile.Enabled = Misc.getUser().access.me;
             nbiChangePassword.Enabled = Misc.getUser().access.changePassword;
             nbiActivityLog.Enabled = Misc.getUser().access.activityLog;
             nbiSurveyors.Enabled = Misc.getUser().access.surveyors;
-            nbiSetupAgent.Enabled = Misc.getUser().access.agents;
+            nbiSetupAgent.Enabled = Misc.getUser().access.setupAgent;
             nbiRegion.Enabled = Misc.getUser().access.region;
             nbiCity.Enabled = Misc.getUser().access.city;
             nbiBank.Enabled = Misc.getUser().access.bank;
             nbiBankBranch.Enabled = Misc.getUser().access.bankBranch;
-
-            
+            nbiManageAccount.Enabled = Misc.getUser().access.manageAccount;
+            nbiMyAgents.Enabled = Misc.getUser().access.myAgents;
+            nbiAgents.Enabled = Misc.getUser().access.agents;
         }
 
         private void FrmDashboard_Load(object sender, EventArgs e) {

@@ -55,7 +55,7 @@ namespace LISAGManager {
             lblBankDetails.Text = accountName + "\n" + bankName + "\n" + bankBranchName + "\n" + accountNumber;
             lblLicenseNumber.Text = "License No.: " + licenseNo;
 
-           
+            pbProfilePicture.Image = Misc.loadImage(licenseNo);
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {

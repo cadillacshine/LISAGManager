@@ -30,7 +30,7 @@ namespace LISAGManager {
 
             if (e.Button.Tag.ToString() == "Edit") {
 
-                sqlcmd = new SqlCommand("SELECT UserID FROM UserAccount WHERE Username = '" + Misc.getUser().username + "' ", Misc.getConn());
+                sqlcmd = new SqlCommand("SELECT MemberID FROM UserAccount WHERE Username = '" + Misc.getUser().username + "' ", Misc.getConn());
                 Misc.connOpen();
                 userID = (int)sqlcmd.ExecuteScalar();
 
@@ -57,7 +57,7 @@ namespace LISAGManager {
                 if (actionState == "e") {
                     toolStripStatusLabel1.Text = "Editing...";
 
-                    sqlcmd = new SqlCommand("UPDATE UserAccount SET Password = @Password WHERE UserID = '" + userID + "' ", Misc.getConn());
+                    sqlcmd = new SqlCommand("UPDATE UserAccount SET Password = @Password WHERE MemberID = '" + userID + "' ", Misc.getConn());
                 }
 
                 sqlcmd.Parameters.AddWithValue("@Password", txtPassword.Text);      

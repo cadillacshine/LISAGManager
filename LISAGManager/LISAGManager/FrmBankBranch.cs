@@ -16,8 +16,6 @@ namespace LISAGManager {
         NavigatorCustomButton BtnAdd, BtnEdit, BtnSave, BtnCancel, BtnSwitch, BtnRefresh;
         private string actionState = "a";
 
-       
-
         private string sqlQuery = "SELECT Name, ShortName, Bank, Active FROM vwBankBranch ORDER BY Name";
         private string tableOrView = "vwBankBranch";
         int bankBranchID = 0;
