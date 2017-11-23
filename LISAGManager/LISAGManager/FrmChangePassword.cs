@@ -24,7 +24,7 @@ namespace LISAGManager {
         }
 
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            // try {
+             try {
 
             SqlCommand sqlcmd = new SqlCommand();
 
@@ -105,9 +105,9 @@ namespace LISAGManager {
                 cmbUsername.DataSource = Misc.loadDataSource(sqlQuery, tableOrView);
                 toolStripStatusLabel1.Text = "Done";
             }
-            //} catch {
+            } catch {
 
-            //}
+            }
         }
 
         private void FrmChangePassword_Load(object sender, EventArgs e) {
@@ -161,7 +161,7 @@ namespace LISAGManager {
         }
 
         private void setControlState(bool status) {
-            cmbUsername.Enabled = status;
+            cmbUsername.Enabled = false;
             txtPassword.Enabled = status;
             txtConfirmPassword.Enabled = status;
         }

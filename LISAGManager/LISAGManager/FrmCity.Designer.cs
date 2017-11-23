@@ -62,9 +62,9 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.cbActive, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.txtCity, 1, 1);
@@ -75,13 +75,14 @@
             this.tableLayoutPanel3.Controls.Add(this.cmbRegion, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1557, 154);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1038, 100);
             this.tableLayoutPanel3.TabIndex = 20;
             // 
             // label3
@@ -89,9 +90,10 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 38);
+            this.label3.Location = new System.Drawing.Point(2, 25);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 38);
+            this.label3.Size = new System.Drawing.Size(87, 25);
             this.label3.TabIndex = 13;
             this.label3.Text = "City:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -103,9 +105,10 @@
             this.cbActive.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbActive.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbActive.Location = new System.Drawing.Point(140, 117);
+            this.cbActive.Location = new System.Drawing.Point(93, 77);
+            this.cbActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbActive.Name = "cbActive";
-            this.cbActive.Size = new System.Drawing.Size(1378, 34);
+            this.cbActive.Size = new System.Drawing.Size(919, 21);
             this.cbActive.TabIndex = 22;
             this.cbActive.UseVisualStyleBackColor = true;
             // 
@@ -113,9 +116,10 @@
             // 
             this.txtCity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCity.Location = new System.Drawing.Point(140, 41);
+            this.txtCity.Location = new System.Drawing.Point(93, 27);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(1378, 30);
+            this.txtCity.Size = new System.Drawing.Size(919, 23);
             this.txtCity.TabIndex = 20;
             this.txtCity.TextChanged += new System.EventHandler(this.txtCity_TextChanged);
             // 
@@ -124,9 +128,10 @@
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 76);
+            this.label5.Location = new System.Drawing.Point(2, 50);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 38);
+            this.label5.Size = new System.Drawing.Size(87, 25);
             this.label5.TabIndex = 14;
             this.label5.Text = "Short Name:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -136,9 +141,10 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 114);
+            this.label6.Location = new System.Drawing.Point(2, 75);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 40);
+            this.label6.Size = new System.Drawing.Size(87, 25);
             this.label6.TabIndex = 15;
             this.label6.Text = "Active:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -147,9 +153,10 @@
             // 
             this.txtShortName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtShortName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtShortName.Location = new System.Drawing.Point(140, 79);
+            this.txtShortName.Location = new System.Drawing.Point(93, 52);
+            this.txtShortName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtShortName.Name = "txtShortName";
-            this.txtShortName.Size = new System.Drawing.Size(1378, 30);
+            this.txtShortName.Size = new System.Drawing.Size(919, 23);
             this.txtShortName.TabIndex = 21;
             // 
             // label1
@@ -157,9 +164,10 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(2, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 38);
+            this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 20;
             this.label1.Text = "Region:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -171,9 +179,10 @@
             this.cmbRegion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbRegion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRegion.FormattingEnabled = true;
-            this.cmbRegion.Location = new System.Drawing.Point(140, 3);
+            this.cmbRegion.Location = new System.Drawing.Point(93, 2);
+            this.cmbRegion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbRegion.Name = "cmbRegion";
-            this.cmbRegion.Size = new System.Drawing.Size(1378, 33);
+            this.cmbRegion.Size = new System.Drawing.Size(919, 24);
             this.cmbRegion.TabIndex = 19;
             // 
             // colShortName
@@ -233,13 +242,15 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 256);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl1.Location = new System.Drawing.Point(2, 166);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemCheckEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(1557, 740);
+            this.gridControl1.Size = new System.Drawing.Size(1038, 376);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -254,9 +265,10 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Location = new System.Drawing.Point(2, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 37);
+            this.label2.Size = new System.Drawing.Size(113, 24);
             this.label2.TabIndex = 14;
             this.label2.Text = "Search:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -264,25 +276,27 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.searchControl1, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 53);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 34);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1557, 37);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1038, 24);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // searchControl1
             // 
             this.searchControl1.Client = this.gridControl1;
             this.searchControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchControl1.Location = new System.Drawing.Point(178, 3);
+            this.searchControl1.Location = new System.Drawing.Point(119, 2);
+            this.searchControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchControl1.Name = "searchControl1";
             this.searchControl1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchControl1.Properties.Appearance.Options.UseFont = true;
@@ -290,7 +304,7 @@
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
             this.searchControl1.Properties.Client = this.gridControl1;
-            this.searchControl1.Size = new System.Drawing.Size(1288, 34);
+            this.searchControl1.Size = new System.Drawing.Size(858, 24);
             this.searchControl1.TabIndex = 8;
             // 
             // tableLayoutPanel1
@@ -304,14 +318,15 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1563, 1035);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1042, 567);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // controlNavigator1
@@ -332,10 +347,11 @@
             new DevExpress.XtraEditors.NavigatorCustomButton(4, 11, true, true, "Switch View", "Switch"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 12, true, true, "Refresh", "Refresh")});
             this.controlNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlNavigator1.Location = new System.Drawing.Point(3, 3);
+            this.controlNavigator1.Location = new System.Drawing.Point(2, 2);
+            this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.controlNavigator1.Name = "controlNavigator1";
             this.controlNavigator1.NavigatableControl = this.gridControl1;
-            this.controlNavigator1.Size = new System.Drawing.Size(1557, 44);
+            this.controlNavigator1.Size = new System.Drawing.Size(1038, 28);
             this.controlNavigator1.TabIndex = 7;
             this.controlNavigator1.Text = "controlNavigator1";
             this.controlNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
@@ -346,9 +362,10 @@
             // 
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 96);
+            this.panel1.Location = new System.Drawing.Point(2, 62);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1557, 154);
+            this.panel1.Size = new System.Drawing.Size(1038, 100);
             this.panel1.TabIndex = 0;
             // 
             // statusStrip1
@@ -356,24 +373,26 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1005);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 545);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1563, 30);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1042, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(55, 25);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(35, 17);
             this.toolStripStatusLabel1.Text = "Done";
             // 
             // FrmCity
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1563, 1035);
+            this.ClientSize = new System.Drawing.Size(1042, 567);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmCity";
             this.Text = "LISAG - City";
             this.Load += new System.EventHandler(this.FrmCity_Load);

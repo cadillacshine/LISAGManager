@@ -100,7 +100,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(552, 23);
-            this.txtPassword.TabIndex = 17;
+            this.txtPassword.TabIndex = 22;
             // 
             // label5
             // 
@@ -124,7 +124,7 @@
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(552, 23);
-            this.txtConfirmPassword.TabIndex = 19;
+            this.txtConfirmPassword.TabIndex = 23;
             // 
             // tableLayoutPanel3
             // 

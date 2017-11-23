@@ -240,7 +240,7 @@
             this.txtBankBranch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBankBranch.Name = "txtBankBranch";
             this.txtBankBranch.Size = new System.Drawing.Size(896, 23);
-            this.txtBankBranch.TabIndex = 17;
+            this.txtBankBranch.TabIndex = 20;
             this.txtBankBranch.TextChanged += new System.EventHandler(this.txtBankBranch_TextChanged);
             // 
             // label5

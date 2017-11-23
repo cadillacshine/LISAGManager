@@ -20,11 +20,15 @@ namespace LISAGManager {
         }
 
         private void controlNavigator1_ButtonClick(object sender, DevExpress.XtraEditors.NavigatorButtonClickEventArgs e) {
-            if (e.Button.Tag.ToString() == "Refresh") {
-                toolStripStatusLabel1.Text = "Refreshing...";
-                searchControl1.Text = "";
-                gridControl1.DataSource = Misc.loadDataSource("SELECT Username, Activity, ActivityTime FROM vwActivityLog ORDER BY ActivityTime DESC", "vwActivityLog");
-                toolStripStatusLabel1.Text = "Done";
+            try {
+                if (e.Button.Tag.ToString() == "Refresh") {
+                    toolStripStatusLabel1.Text = "Refreshing...";
+                    searchControl1.Text = "";
+                    gridControl1.DataSource = Misc.loadDataSource("SELECT Username, Activity, ActivityTime FROM vwActivityLog ORDER BY ActivityTime DESC", "vwActivityLog");
+                    toolStripStatusLabel1.Text = "Done";
+                }
+            } catch {
+
             }
         }
     }

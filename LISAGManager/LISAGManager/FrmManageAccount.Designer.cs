@@ -708,7 +708,7 @@
             this.txtHometown.Margin = new System.Windows.Forms.Padding(2);
             this.txtHometown.Name = "txtHometown";
             this.txtHometown.Size = new System.Drawing.Size(435, 24);
-            this.txtHometown.TabIndex = 4;
+            this.txtHometown.TabIndex = 6;
             // 
             // cmbGender
             // 
@@ -723,7 +723,7 @@
             this.cmbGender.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(239, 24);
-            this.cmbGender.TabIndex = 5;
+            this.cmbGender.TabIndex = 3;
             // 
             // deDOB
             // 
@@ -742,7 +742,7 @@
             this.deDOB.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.deDOB.Properties.Mask.EditMask = "D";
             this.deDOB.Size = new System.Drawing.Size(239, 22);
-            this.deDOB.TabIndex = 6;
+            this.deDOB.TabIndex = 4;
             // 
             // txtLicenseNo
             // 
@@ -752,7 +752,7 @@
             this.txtLicenseNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtLicenseNo.Name = "txtLicenseNo";
             this.txtLicenseNo.Size = new System.Drawing.Size(435, 24);
-            this.txtLicenseNo.TabIndex = 3;
+            this.txtLicenseNo.TabIndex = 7;
             // 
             // cmbMaritalStatus
             // 
@@ -768,7 +768,7 @@
             this.cmbMaritalStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMaritalStatus.Name = "cmbMaritalStatus";
             this.cmbMaritalStatus.Size = new System.Drawing.Size(435, 24);
-            this.cmbMaritalStatus.TabIndex = 7;
+            this.cmbMaritalStatus.TabIndex = 5;
             this.cmbMaritalStatus.SelectedIndexChanged += new System.EventHandler(this.cmbMaritalStatus_SelectedIndexChanged);
             // 
             // txtInductionYear
@@ -810,7 +810,7 @@
             this.cbActive.Margin = new System.Windows.Forms.Padding(2);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(54, 20);
-            this.cbActive.TabIndex = 2;
+            this.cbActive.TabIndex = 10;
             this.cbActive.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbActive.UseVisualStyleBackColor = true;
             // 
@@ -838,7 +838,7 @@
             this.cbGoodStanding.Margin = new System.Windows.Forms.Padding(2);
             this.cbGoodStanding.Name = "cbGoodStanding";
             this.cbGoodStanding.Size = new System.Drawing.Size(25, 20);
-            this.cbGoodStanding.TabIndex = 1;
+            this.cbGoodStanding.TabIndex = 9;
             this.cbGoodStanding.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbGoodStanding.UseVisualStyleBackColor = true;
             // 
@@ -1478,7 +1478,7 @@
             this.txtCIEmailAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtCIEmailAddress.Name = "txtCIEmailAddress";
             this.txtCIEmailAddress.Size = new System.Drawing.Size(323, 24);
-            this.txtCIEmailAddress.TabIndex = 18;
+            this.txtCIEmailAddress.TabIndex = 17;
             // 
             // tableLayoutPanel13
             // 
@@ -2519,7 +2519,7 @@
             this.txtBusinessAddress.Multiline = true;
             this.txtBusinessAddress.Name = "txtBusinessAddress";
             this.txtBusinessAddress.Size = new System.Drawing.Size(396, 56);
-            this.txtBusinessAddress.TabIndex = 5;
+            this.txtBusinessAddress.TabIndex = 15;
             // 
             // txtResidentialAddress
             // 
@@ -2530,7 +2530,7 @@
             this.txtResidentialAddress.Multiline = true;
             this.txtResidentialAddress.Name = "txtResidentialAddress";
             this.txtResidentialAddress.Size = new System.Drawing.Size(396, 76);
-            this.txtResidentialAddress.TabIndex = 6;
+            this.txtResidentialAddress.TabIndex = 16;
             // 
             // cmbLocCity
             // 
@@ -2542,7 +2542,7 @@
             this.cmbLocCity.Margin = new System.Windows.Forms.Padding(2);
             this.cmbLocCity.Name = "cmbLocCity";
             this.cmbLocCity.Size = new System.Drawing.Size(396, 24);
-            this.cmbLocCity.TabIndex = 8;
+            this.cmbLocCity.TabIndex = 14;
             // 
             // cmbLocRegion
             // 
@@ -3085,7 +3085,7 @@
             this.txtBDAccountName.Margin = new System.Windows.Forms.Padding(2);
             this.txtBDAccountName.Name = "txtBDAccountName";
             this.txtBDAccountName.Size = new System.Drawing.Size(394, 24);
-            this.txtBDAccountName.TabIndex = 9;
+            this.txtBDAccountName.TabIndex = 13;
             // 
             // txtBDAccountNumber
             // 
@@ -3095,7 +3095,7 @@
             this.txtBDAccountNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtBDAccountNumber.Name = "txtBDAccountNumber";
             this.txtBDAccountNumber.Size = new System.Drawing.Size(394, 24);
-            this.txtBDAccountNumber.TabIndex = 10;
+            this.txtBDAccountNumber.TabIndex = 14;
             // 
             // cmbBDBankName
             // 
@@ -3662,7 +3662,7 @@
             this.txtADPassword.Name = "txtADPassword";
             this.txtADPassword.PasswordChar = '*';
             this.txtADPassword.Size = new System.Drawing.Size(365, 24);
-            this.txtADPassword.TabIndex = 17;
+            this.txtADPassword.TabIndex = 10;
             // 
             // txtADConfirmPassword
             // 
@@ -3673,7 +3673,7 @@
             this.txtADConfirmPassword.Name = "txtADConfirmPassword";
             this.txtADConfirmPassword.PasswordChar = '*';
             this.txtADConfirmPassword.Size = new System.Drawing.Size(365, 24);
-            this.txtADConfirmPassword.TabIndex = 18;
+            this.txtADConfirmPassword.TabIndex = 11;
             // 
             // tableLayoutPanel50
             // 

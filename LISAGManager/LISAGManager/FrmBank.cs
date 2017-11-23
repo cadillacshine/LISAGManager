@@ -49,7 +49,7 @@ namespace LISAGManager {
         }
 
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-           // try {
+            try {
 
                 SqlCommand sqlcmd = new SqlCommand();
 
@@ -178,9 +178,9 @@ namespace LISAGManager {
                         tableLayoutPanel1.RowStyles[2].Height = 80;
                     }
                 }
-            //} catch {
+            } catch {
 
-            //}
+            }
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
@@ -230,9 +230,13 @@ namespace LISAGManager {
         }
 
         private void setControlValues() {
-            txtBank.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Name").ToString();
-            txtShortName.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ShortName").ToString();
-            cbActive.Checked = (bool)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Active");
+            try {
+                txtBank.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Name").ToString();
+                txtShortName.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ShortName").ToString();
+                cbActive.Checked = (bool)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Active");
+            } catch {
+
+            }
         }
 
         private void verifyInput() {

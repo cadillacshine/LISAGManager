@@ -42,7 +42,7 @@ namespace LISAGManager {
         }
 
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            // try {
+             try {
 
             SqlCommand sqlcmd = new SqlCommand();
 
@@ -148,9 +148,9 @@ namespace LISAGManager {
                 cmbBankName.DataSource = Misc.loadDataSource(sqlQueryBankName, bankTableOrView);
                 toolStripStatusLabel1.Text = "Done";
             }
-            //} catch {
+            } catch {
 
-            //}
+            }
         }
 
         private void loadForm() {
@@ -215,6 +215,7 @@ namespace LISAGManager {
             cmbBankBranch.Text = Misc.getUser().bankBranch;
             cmbBankName.Text = Misc.getUser().bank;
             txtAccountNumber.Text = Misc.getUser().accountNumber;
+            pictureBox1.Image = Misc.loadImage(Misc.getUser().appUserID);
         }
 
         private void verifyInput() {

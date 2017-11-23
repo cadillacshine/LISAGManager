@@ -103,7 +103,7 @@ namespace LISAGManager {
         }
 
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            //try {
+            try {
 
             int memberID = 0;
             if (e.Button.Tag.ToString() == "Add") {
@@ -315,9 +315,9 @@ namespace LISAGManager {
                     tableLayoutPanel2.RowStyles[2].Height = 143;
                 }
             }
-            //} catch {
+            } catch {
 
-            //}
+            }
         }
 
         private void insertRights(int memberID) {
@@ -444,7 +444,7 @@ namespace LISAGManager {
         }
 
         private void controlNavigatorLoc_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            //try {
+            try {
 
             if (e.Button.Tag.ToString() == "Edit") {
                 if (tableLayoutPanel26.RowStyles[2].Height == 1)
@@ -559,9 +559,9 @@ namespace LISAGManager {
                     tableLayoutPanel26.RowStyles[2].Height = 234;
                 }
             }
-            //} catch {
+            } catch {
 
-            //}
+            }
         }
 
         private void gridViewLoc_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
@@ -580,7 +580,7 @@ namespace LISAGManager {
         }
 
         private void controlNavigatorBD_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            //try {
+            try {
 
             if (e.Button.Tag.ToString() == "Edit") {
                 if (tableLayoutPanel35.RowStyles[2].Height == 1)
@@ -696,9 +696,9 @@ namespace LISAGManager {
                     tableLayoutPanel35.RowStyles[2].Height = 144;
                 }
             }
-            //} catch {
+            } catch {
 
-            //}
+            }
         }
 
         private void gridViewBD_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
@@ -712,7 +712,7 @@ namespace LISAGManager {
         }
 
         private void controlNavigatorAD_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            //try {
+            try {
 
             if (e.Button.Tag.ToString() == "Edit") {
                 if (tableLayoutPanel52.RowStyles[2].Height == 1)
@@ -856,9 +856,9 @@ namespace LISAGManager {
                     tableLayoutPanel51.RowStyles[2].Height = 144;
                 }
             }
-            //} catch {
+            } catch {
 
-            //}
+            }
         }
 
         private void gridViewAD_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
@@ -937,7 +937,7 @@ namespace LISAGManager {
         }
 
         private void controlNavigatorKD_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            //try {
+            try {
 
             if (e.Button.Tag.ToString() == "Edit") {
                 if (tableLayoutPanel14.RowStyles[2].Height == 1)
@@ -1043,9 +1043,9 @@ namespace LISAGManager {
                     tableLayoutPanel14.RowStyles[2].Height = 146;
                 }
             }
-            //} catch {
+            } catch {
 
-            //}
+            }
         }
 
         private void setControlStateCI(bool status) {
@@ -1102,7 +1102,7 @@ namespace LISAGManager {
         }
 
         private void controlNavigatorCI_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            //try {
+            try {
 
             if (e.Button.Tag.ToString() == "Edit") {
                 if (tableLayoutPanel8.RowStyles[2].Height == 1)
@@ -1209,9 +1209,9 @@ namespace LISAGManager {
                     tableLayoutPanel8.RowStyles[2].Height = 146;
                 }
             }
-            //} catch {
+            } catch {
 
-            //}
+            }
         }
 
         private void emptyControls() {

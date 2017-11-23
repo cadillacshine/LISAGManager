@@ -27,7 +27,7 @@ namespace LISAGManager {
             loadForm();
         }
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-           // try {
+            try {
 
                 SqlCommand sqlcmd = new SqlCommand();
                 int regionID = 0;
@@ -164,9 +164,9 @@ namespace LISAGManager {
                         tableLayoutPanel1.RowStyles[2].Height = 104;
                     }
                 }
-            //} catch {
+            } catch {
 
-            //}
+            }
         }
         private void loadForm() {
 
@@ -240,10 +240,14 @@ namespace LISAGManager {
         }
 
         private void setControlValues() {
+            try { 
             cmbRegion.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Region").ToString();
             txtCity.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Name").ToString();
             txtShortName.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ShortName").ToString();
             cbActive.Checked = (bool)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Active");
+            } catch {
+
+            }
         }
 
         private void verifyInput() {

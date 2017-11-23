@@ -168,7 +168,7 @@
             // 
             // colSurveyor
             // 
-            this.colSurveyor.Caption = "Surveyor";
+            this.colSurveyor.Caption = "Lic. Surveyor";
             this.colSurveyor.FieldName = "SurveyorName";
             this.colSurveyor.Name = "colSurveyor";
             this.colSurveyor.Visible = true;
@@ -325,7 +325,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 25);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Surveyor:";
+            this.label1.Text = "Lic. Surveyor:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cmbSurveyor
@@ -501,7 +501,7 @@
             // 
             // colSurvLicenseNumber
             // 
-            this.colSurvLicenseNumber.Caption = "Surv. License Number";
+            this.colSurvLicenseNumber.Caption = "Lic. Surv. License Number";
             this.colSurvLicenseNumber.FieldName = "LicenseNumber";
             this.colSurvLicenseNumber.Name = "colSurvLicenseNumber";
             this.colSurvLicenseNumber.Visible = true;
