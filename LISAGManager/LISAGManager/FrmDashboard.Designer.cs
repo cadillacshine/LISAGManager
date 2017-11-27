@@ -156,6 +156,7 @@
             // navBarGroup1
             // 
             this.navBarGroup1.Caption = "Me";
+            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsText;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiMyProfile),
