@@ -15,9 +15,9 @@ namespace LISAGManager {
 
         NavigatorCustomButton BtnAdd, BtnEdit, BtnSave, BtnCancel, BtnSwitch, BtnRefresh;
         private string actionState = "a";
-        private string sqlQuery = "SELECT Name, SurveyorName, LicenseNumber, Active FROM vwAgent ORDER BY Name";
+        private string sqlQuery = "SELECT Name, AgentNumber, SurveyorName, LicenseNumber, Active FROM vwAgent ORDER BY Name";
         private string tableOrView = "vwAgent";
-        int agentID = 0;
+        int myAgentID = 0;
 
         public FrmAgent() {
             InitializeComponent();
@@ -57,7 +57,7 @@ namespace LISAGManager {
             if (e.Button.Tag.ToString() == "Add") {
                 toolStripStatusLabel1.Text = "Adding...";
                 if (tableLayoutPanel1.RowStyles[2].Height == 1)
-                    tableLayoutPanel1.RowStyles[2].Height = 207;
+                    tableLayoutPanel1.RowStyles[2].Height = 159;
                 actionState = "a";
                 setControlState(true);
                 emptyControls();
@@ -83,7 +83,7 @@ namespace LISAGManager {
                 // agentID has been set in setControlValues()
 
                 if (tableLayoutPanel1.RowStyles[2].Height == 1)
-                    tableLayoutPanel1.RowStyles[2].Height = 207;
+                    tableLayoutPanel1.RowStyles[2].Height = 159;
                 actionState = "e";
                 setControlState(true);
 
@@ -110,14 +110,21 @@ namespace LISAGManager {
                 if (actionState == "e") {
                     toolStripStatusLabel1.Text = "Editing...";
 
-                    sqlcmd = new SqlCommand("UPDATE Agent SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, PhoneNumber1 = @PhoneNumber1, PhoneNumber2 = @PhoneNumber2, EmailAddress = @EmailAddress, MemberID = @MemberID, Active = @Active WHERE AgentID = '" + agentID + "' ", Misc.getConn());
+                    string image = openFileDialog1.FileName;
+                    Misc.updateImage(myAgentID, image);
+
+                    sqlcmd = new SqlCommand("UPDATE Agent SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, PhoneNumber1 = @PhoneNumber1, PhoneNumber2 = @PhoneNumber2, EmailAddress = @EmailAddress, MemberID = @MemberID, Active = @Active WHERE AgentID = '" + myAgentID + "' ", Misc.getConn());
 
                 } else if (actionState == "a") {
                     toolStripStatusLabel1.Text = "Saving...";
 
                     verifyInput();
 
+                    string image = openFileDialog1.FileName;
+                    Misc.saveAgentImage(myAgentID, image);
+
                     sqlcmd = new SqlCommand("INSERT INTO Agent (FirstName, MiddleName, LastName, PhoneNumber1, PhoneNumber2, EmailAddress, MemberID, Active) VALUES (@FirstName, @MiddleName, @LastName, @PhoneNumber1, @PhoneNumber2, @EmailAddress, @MemberID, @Active)", Misc.getConn());
+
                 }
 
                 sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
@@ -179,10 +186,10 @@ namespace LISAGManager {
                 toolStripStatusLabel1.Text = "Done";
 
             } else if (e.Button.Tag.ToString() == "Switch") {
-                if (tableLayoutPanel1.RowStyles[2].Height == 207) {
+                if (tableLayoutPanel1.RowStyles[2].Height == 159) {
                     tableLayoutPanel1.RowStyles[2].Height = 1;
                 } else {
-                    tableLayoutPanel1.RowStyles[2].Height = 207;
+                    tableLayoutPanel1.RowStyles[2].Height = 159;
                 }
             }
             //} catch {
@@ -200,6 +207,13 @@ namespace LISAGManager {
             selectionChanged();
         }
 
+        private void btnPicture_Click(object sender, EventArgs e) {
+            openFileDialog1.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK) {
+                pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
         private void setControlState(bool status) {
             // enable/disable all other controls
             cmbSurveyor.Enabled = status;
@@ -209,6 +223,7 @@ namespace LISAGManager {
             txtPhoneNumber1.Enabled = status;
             txtPhoneNumber2.Enabled = status;
             txtEmailAddress.Enabled = status;
+            txtAgentNumber.Enabled = status;
             cbActive.Enabled = status;
         }
 
@@ -221,6 +236,7 @@ namespace LISAGManager {
             txtPhoneNumber1.Text = "";
             txtPhoneNumber2.Text = "";
             txtEmailAddress.Text = "";
+            txtAgentNumber.Text = "";
             cbActive.Checked = true;
         }
 
@@ -243,17 +259,17 @@ namespace LISAGManager {
         }
 
         private void setControlValues() {
-            MessageBox.Show("Test");
             string name = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Name").ToString();
             cmbSurveyor.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "SurveyorName").ToString();
             cbActive.Checked = (bool)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Active");
             string licenseNumber = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "LicenseNumber").ToString();
+            
 
             SqlCommand sqlcmd = new SqlCommand("SELECT AgentID FROM vwAgent WHERE Name = '" + name + "' AND LicenseNumber = '" + licenseNumber + "' ", Misc.getConn());
             Misc.connOpen();
-            int myAgentID = (int)sqlcmd.ExecuteScalar();
+            myAgentID = (int)sqlcmd.ExecuteScalar();
 
-            sqlcmd = new SqlCommand("SELECT FirstName, MiddleName, LastName, PhoneNumber1, PhoneNumber2, EmailAddress FROM vwAgent WHERE AgentID = '" + agentID + "' ", Misc.getConn());
+            sqlcmd = new SqlCommand("SELECT FirstName, MiddleName, LastName, AgentNumber, PhoneNumber1, PhoneNumber2, EmailAddress FROM vwAgent WHERE AgentID = '" + myAgentID + "' ", Misc.getConn());
             Misc.connOpen();
             SqlDataReader dReader = sqlcmd.ExecuteReader();
 
@@ -261,11 +277,13 @@ namespace LISAGManager {
                 txtFirstName.Text = dReader.GetString(0);
                 txtMiddleName.Text = dReader.GetString(1);
                 txtLastName.Text = dReader.GetString(2);
-                txtPhoneNumber1.Text = dReader.GetString(3);
-                txtPhoneNumber2.Text = dReader.GetString(4);
-                txtEmailAddress.Text = dReader.GetString(5);
+                txtAgentNumber.Text = dReader.GetString(3);
+                txtPhoneNumber1.Text = dReader.GetString(4);
+                txtPhoneNumber2.Text = dReader.GetString(5);
+                txtEmailAddress.Text = dReader.GetString(6);
             }
             dReader.Close();
+            pictureBox1.Image = Misc.loadAgentImage(txtAgentNumber.Text);
         }
 
         private void verifyInput() {
@@ -284,6 +302,12 @@ namespace LISAGManager {
             if (txtLastName.Text == "") {
                 MessageBox.Show("Last Name cannot be empty!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtLastName.Focus();
+                return;
+            }
+
+            if (txtAgentNumber.Text == "") {
+                MessageBox.Show("Agent number cannot be empty!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtAgentNumber.Focus();
                 return;
             }
 
