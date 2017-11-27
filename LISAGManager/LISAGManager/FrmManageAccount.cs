@@ -321,85 +321,91 @@ namespace LISAGManager {
         }
 
         private void insertRights(int memberID) {
-            List<int> list = new List<int>();
-            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmLogin'", Misc.getConn());
-            Misc.connOpen();
-            int frmLoginID = (int)sqlcmd.ExecuteScalar();
-            list.Add(frmLoginID);
+            try {
 
-            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmMe'", Misc.getConn());
-            Misc.connOpen();
-            int frmMeID = (int)sqlcmd.ExecuteScalar();
-            list.Add(frmMeID);
 
-            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmSurveyors'", Misc.getConn());
-            Misc.connOpen();
-            int frmSurveyorsID = (int)sqlcmd.ExecuteScalar();
-            list.Add(frmSurveyorsID);
+                List<int> list = new List<int>();
+                sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmLogin'", Misc.getConn());
+                Misc.connOpen();
+                int frmLoginID = (int)sqlcmd.ExecuteScalar();
+                list.Add(frmLoginID);
 
-            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmRegion'", Misc.getConn());
-            Misc.connOpen();
-            int frmRegionID = (int)sqlcmd.ExecuteScalar();
-            list.Add(frmRegionID);
+                sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmMe'", Misc.getConn());
+                Misc.connOpen();
+                int frmMeID = (int)sqlcmd.ExecuteScalar();
+                list.Add(frmMeID);
 
-            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmCity'", Misc.getConn());
-            Misc.connOpen();
-            int frmCityID = (int)sqlcmd.ExecuteScalar();
-            list.Add(frmCityID);
+                sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmSurveyors'", Misc.getConn());
+                Misc.connOpen();
+                int frmSurveyorsID = (int)sqlcmd.ExecuteScalar();
+                list.Add(frmSurveyorsID);
 
-            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmBank'", Misc.getConn());
-            Misc.connOpen();
-            int frmBankID = (int)sqlcmd.ExecuteScalar();
-            list.Add(frmBankID);
+                sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmRegion'", Misc.getConn());
+                Misc.connOpen();
+                int frmRegionID = (int)sqlcmd.ExecuteScalar();
+                list.Add(frmRegionID);
 
-            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmBankBranch'", Misc.getConn());
-            Misc.connOpen();
-            int frmBankBranchID = (int)sqlcmd.ExecuteScalar();
-            list.Add(frmBankBranchID);
+                sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmCity'", Misc.getConn());
+                Misc.connOpen();
+                int frmCityID = (int)sqlcmd.ExecuteScalar();
+                list.Add(frmCityID);
 
-            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmChangePassword'", Misc.getConn());
-            Misc.connOpen();
-            int frmChangePasswordID = (int)sqlcmd.ExecuteScalar();
-            list.Add(frmChangePasswordID);
+                sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmBank'", Misc.getConn());
+                Misc.connOpen();
+                int frmBankID = (int)sqlcmd.ExecuteScalar();
+                list.Add(frmBankID);
 
-            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmActivityLog'", Misc.getConn());
-            Misc.connOpen();
-            int frmActivityLogID = (int)sqlcmd.ExecuteScalar();
-            list.Add(frmActivityLogID);
+                sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmBankBranch'", Misc.getConn());
+                Misc.connOpen();
+                int frmBankBranchID = (int)sqlcmd.ExecuteScalar();
+                list.Add(frmBankBranchID);
 
-            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmAgent'", Misc.getConn());
-            Misc.connOpen();
-            int frmAgentID = (int)sqlcmd.ExecuteScalar();
-            list.Add(frmAgentID);
+                sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmChangePassword'", Misc.getConn());
+                Misc.connOpen();
+                int frmChangePasswordID = (int)sqlcmd.ExecuteScalar();
+                list.Add(frmChangePasswordID);
 
-            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmAgents'", Misc.getConn());
-            Misc.connOpen();
-            int frmAgentsID = (int)sqlcmd.ExecuteScalar();
-            list.Add(frmAgentsID);
+                sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmActivityLog'", Misc.getConn());
+                Misc.connOpen();
+                int frmActivityLogID = (int)sqlcmd.ExecuteScalar();
+                list.Add(frmActivityLogID);
 
-            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmMyAgents'", Misc.getConn());
-            Misc.connOpen();
-            int frmMyAgentsID = (int)sqlcmd.ExecuteScalar();
-            list.Add(frmMyAgentsID);
+                sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmAgent'", Misc.getConn());
+                Misc.connOpen();
+                int frmAgentID = (int)sqlcmd.ExecuteScalar();
+                list.Add(frmAgentID);
 
-            sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmManageAccount'", Misc.getConn());
-            Misc.connOpen();
-            int frmManageAccountID = (int)sqlcmd.ExecuteScalar();
-            list.Add(frmManageAccountID);
+                sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmAgents'", Misc.getConn());
+                Misc.connOpen();
+                int frmAgentsID = (int)sqlcmd.ExecuteScalar();
+                list.Add(frmAgentsID);
 
-            foreach (var item in list) {
-                sqlcmd = new SqlCommand("INSERT INTO AppAccess(FormID, MemberID, Access) VALUES(@FormID, @MemberID, @Access)", Misc.getConn());
-                sqlcmd.Parameters.AddWithValue("@FormID", item);
-                sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
-                sqlcmd.Parameters.AddWithValue("@Access", false);
-                sqlcmd.ExecuteNonQuery();
-                sqlcmd.Dispose();
+                sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmMyAgents'", Misc.getConn());
+                Misc.connOpen();
+                int frmMyAgentsID = (int)sqlcmd.ExecuteScalar();
+                list.Add(frmMyAgentsID);
+
+                sqlcmd = new SqlCommand("SELECT FormID FROM Form WHERE Name = 'FrmManageAccount'", Misc.getConn());
+                Misc.connOpen();
+                int frmManageAccountID = (int)sqlcmd.ExecuteScalar();
+                list.Add(frmManageAccountID);
+
+                foreach (var item in list) {
+                    sqlcmd = new SqlCommand("INSERT INTO AppAccess(FormID, MemberID, Access) VALUES(@FormID, @MemberID, @Access)", Misc.getConn());
+                    sqlcmd.Parameters.AddWithValue("@FormID", item);
+                    sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
+                    sqlcmd.Parameters.AddWithValue("@Access", false);
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
+                }
+            } catch {
+
             }
         }
 
         private void setTabState(bool status) {
             // enable/disable tab page selection
-            //xtraTabControl1.TabPages[0].PageEnabled = status;
+            xtraTabControl1.TabPages[0].PageEnabled = status;
             xtraTabControl1.TabPages[1].PageEnabled = status;
             xtraTabControl1.TabPages[2].PageEnabled = status;
             xtraTabControl1.TabPages[3].PageEnabled = status;
