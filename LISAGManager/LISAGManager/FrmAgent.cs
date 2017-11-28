@@ -29,7 +29,7 @@ namespace LISAGManager {
 
         private void loadForm() {
             cmbSurveyor.DataSource = Misc.loadDataSource("SELECT Name FROM vwMember WHERE Active = 'True' ORDER BY Name", "vwMember");
-            cmbSurveyor.ValueMember = "Name";
+            cmbSurveyor.DisplayMember = "Name";
 
             gridControl1.DataSource = Misc.loadDataSource(sqlQuery, tableOrView);
 
@@ -46,6 +46,7 @@ namespace LISAGManager {
             BtnCancel.Enabled = false;
             BtnSwitch.Enabled = true;
             BtnRefresh.Enabled = true;
+            btnPicture.Enabled = false;
 
             setControlState(false);
         }
@@ -63,12 +64,15 @@ namespace LISAGManager {
                 emptyControls();
                 txtFirstName.Focus();
 
+                pictureBox1.Image = Properties.Resources.User;
+
                 BtnAdd.Enabled = false;
                 BtnEdit.Enabled = false;
                 BtnSave.Enabled = true;
                 BtnCancel.Enabled = true;
                 BtnSwitch.Enabled = false;
                 BtnRefresh.Enabled = false;
+                btnPicture.Enabled = true;
 
                 controlNavigator1.Buttons.First.Enabled = false;
                 controlNavigator1.Buttons.Next.Enabled = false;
@@ -94,6 +98,7 @@ namespace LISAGManager {
                 BtnCancel.Enabled = true;
                 BtnSwitch.Enabled = false;
                 BtnRefresh.Enabled = false;
+                btnPicture.Enabled = true;
 
                 controlNavigator1.Buttons.First.Enabled = false;
                 controlNavigator1.Buttons.Next.Enabled = false;
@@ -111,34 +116,53 @@ namespace LISAGManager {
                     toolStripStatusLabel1.Text = "Editing...";
 
                     string image = openFileDialog1.FileName;
-                    Misc.updateImage(myAgentID, image);
+                    Misc.updateAgentImage(myAgentID, image);
 
-                    sqlcmd = new SqlCommand("UPDATE Agent SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, PhoneNumber1 = @PhoneNumber1, PhoneNumber2 = @PhoneNumber2, EmailAddress = @EmailAddress, MemberID = @MemberID, Active = @Active WHERE AgentID = '" + myAgentID + "' ", Misc.getConn());
+                    sqlcmd = new SqlCommand("UPDATE Agent SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, AgentNumber = @AgentNumber, PhoneNumber1 = @PhoneNumber1, PhoneNumber2 = @PhoneNumber2, EmailAddress = @EmailAddress, MemberID = @MemberID, Active = @Active WHERE AgentID = '" + myAgentID + "' ", Misc.getConn());
+
+                    sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
+                    sqlcmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
+                    sqlcmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
+                    sqlcmd.Parameters.AddWithValue("@AgentNumber", txtAgentNumber.Text);
+                    sqlcmd.Parameters.AddWithValue("@PhoneNumber1", txtPhoneNumber1.Text);
+                    sqlcmd.Parameters.AddWithValue("@PhoneNumber2", txtPhoneNumber2.Text);
+                    sqlcmd.Parameters.AddWithValue("@EmailAddress", txtEmailAddress.Text);
+                    sqlcmd.Parameters.AddWithValue("@MemberID", surveyorID);
+                    sqlcmd.Parameters.AddWithValue("@Active", cbActive.Checked);
+
+                    Misc.connOpen();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
 
                 } else if (actionState == "a") {
                     toolStripStatusLabel1.Text = "Saving...";
 
                     verifyInput();
 
+                    sqlcmd = new SqlCommand("INSERT INTO Agent (FirstName, MiddleName, LastName, AgentNumber, PhoneNumber1, PhoneNumber2, EmailAddress, MemberID, Active) VALUES (@FirstName, @MiddleName, @LastName, @AgentNumber, @PhoneNumber1, @PhoneNumber2, @EmailAddress, @MemberID, @Active)", Misc.getConn());
+
+                    sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
+                    sqlcmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
+                    sqlcmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
+                    sqlcmd.Parameters.AddWithValue("@AgentNumber", txtAgentNumber.Text);
+                    sqlcmd.Parameters.AddWithValue("@PhoneNumber1", txtPhoneNumber1.Text);
+                    sqlcmd.Parameters.AddWithValue("@PhoneNumber2", txtPhoneNumber2.Text);
+                    sqlcmd.Parameters.AddWithValue("@EmailAddress", txtEmailAddress.Text);
+                    sqlcmd.Parameters.AddWithValue("@MemberID", surveyorID);
+                    sqlcmd.Parameters.AddWithValue("@Active", cbActive.Checked);
+
+                    Misc.connOpen();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
+
+                    sqlcmd = new SqlCommand("SELECT AgentID FROM Agent WHERE AgentNumber = '" + txtAgentNumber.Text + "' ", Misc.getConn());
+                    Misc.connOpen();
+                    myAgentID = (int)sqlcmd.ExecuteScalar();
+
+                    Misc.connOpen();
                     string image = openFileDialog1.FileName;
                     Misc.saveAgentImage(myAgentID, image);
-
-                    sqlcmd = new SqlCommand("INSERT INTO Agent (FirstName, MiddleName, LastName, PhoneNumber1, PhoneNumber2, EmailAddress, MemberID, Active) VALUES (@FirstName, @MiddleName, @LastName, @PhoneNumber1, @PhoneNumber2, @EmailAddress, @MemberID, @Active)", Misc.getConn());
-
                 }
-
-                sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
-                sqlcmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
-                sqlcmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
-                sqlcmd.Parameters.AddWithValue("@PhoneNumber1", txtPhoneNumber1.Text);
-                sqlcmd.Parameters.AddWithValue("@PhoneNumber2", txtPhoneNumber2.Text);
-                sqlcmd.Parameters.AddWithValue("@EmailAddress", txtEmailAddress.Text);
-                sqlcmd.Parameters.AddWithValue("@MemberID", surveyorID);
-                sqlcmd.Parameters.AddWithValue("@Active", cbActive.Checked);
-
-                Misc.connOpen();
-                sqlcmd.ExecuteNonQuery();
-                sqlcmd.Dispose();
 
                 actionState = "a";
 
@@ -150,6 +174,7 @@ namespace LISAGManager {
                 BtnCancel.Enabled = false;
                 BtnSwitch.Enabled = true;
                 BtnRefresh.Enabled = true;
+                btnPicture.Enabled = false;
 
                 controlNavigator1.Buttons.First.Enabled = true;
                 controlNavigator1.Buttons.Next.Enabled = true;
@@ -169,6 +194,7 @@ namespace LISAGManager {
                 BtnCancel.Enabled = false;
                 BtnSwitch.Enabled = true;
                 BtnRefresh.Enabled = true;
+                btnPicture.Enabled = false;
 
                 controlNavigator1.Buttons.First.Enabled = true;
                 controlNavigator1.Buttons.Next.Enabled = true;
@@ -256,6 +282,7 @@ namespace LISAGManager {
             BtnCancel.Enabled = false;
             BtnSwitch.Enabled = true;
             BtnRefresh.Enabled = true;
+            btnPicture.Enabled = false;
         }
 
         private void setControlValues() {
