@@ -309,7 +309,7 @@ namespace LISAGManager {
         public string accountName { get; set; }
         public string accountNumber { get; set; }
         public int inductionYear { get; set; }
-        public bool goodStanding { get; set; }
+        public string status { get; set; }
         public Access access { get; set; }
         public bool active { get; set; }
     }

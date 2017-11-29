@@ -19,7 +19,7 @@ namespace LISAGManager {
         NavigatorCustomButton BtnARAdd, BtnAREdit, BtnARSave, BtnARCancel, BtnARSwitch, BtnARRefresh;
 
         private string actionState = "a";
-        private string sqlQuery = "SELECT Name, Gender, DateOfBirth, MaritalStatus, Hometown, LicenseNumber, InductionYear, GoodStanding, Active FROM vwMember ORDER BY Name";
+        private string sqlQuery = "SELECT Name, Gender, DateOfBirth, MaritalStatus, Hometown, LicenseNumber, InductionYear, Status, Active FROM vwMember ORDER BY Name";
         private string sqlQueryRegion = "SELECT Name FROM Region WHERE Active = 'True'";
         private string sqlQueryBank = "SELECT Name FROM Bank WHERE Active = 'True'";
 
@@ -28,7 +28,7 @@ namespace LISAGManager {
 
         private int memberIDforAccessRight = 0;
 
-        
+
 
         public FrmManageAccount() {
             InitializeComponent();
@@ -81,6 +81,9 @@ namespace LISAGManager {
             cmbMaritalStatus.SelectedIndex = -1;
             deDOB.DateTime = new DateTime(1900, 01, 01);
 
+            cmbStatus.DataSource = Misc.loadDataSource("SELECT Status FROM Status WHERE Active ='True'", "Status");
+            cmbStatus.DisplayMember = "Status";
+
             BtnAdd = controlNavigator1.Buttons.CustomButtons[0];
             BtnEdit = controlNavigator1.Buttons.CustomButtons[1];
             BtnSave = controlNavigator1.Buttons.CustomButtons[2];
@@ -99,225 +102,234 @@ namespace LISAGManager {
             setTabState(true);
             setControlState(false);
 
-            
+
         }
 
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            try {
+           // try {
 
-            int memberID = 0;
-            if (e.Button.Tag.ToString() == "Add") {
-                toolStripStatusLabel1.Text = "Adding...";
-                if (tableLayoutPanel2.RowStyles[2].Height == 1)
-                    tableLayoutPanel2.RowStyles[2].Height = 143;
-                actionState = "a";
-                setTabState(false);
-                setControlState(true);
-                emptyControls();
-                txtFirstName.Focus();
+                int memberID = 0;
+                if (e.Button.Tag.ToString() == "Add") {
+                    toolStripStatusLabel1.Text = "Adding...";
+                    if (tableLayoutPanel2.RowStyles[2].Height == 1)
+                        tableLayoutPanel2.RowStyles[2].Height = 143;
+                    actionState = "a";
+                    setTabState(false);
+                    setControlState(true);
+                    emptyControls();
+                    txtFirstName.Focus();
 
-                BtnAdd.Enabled = false;
-                BtnEdit.Enabled = false;
-                BtnSave.Enabled = true;
-                BtnCancel.Enabled = true;
-                BtnSwitch.Enabled = false;
-                BtnRefresh.Enabled = false;
-                btnPic.Enabled = true;
+                    BtnAdd.Enabled = false;
+                    BtnEdit.Enabled = false;
+                    BtnSave.Enabled = true;
+                    BtnCancel.Enabled = true;
+                    BtnSwitch.Enabled = false;
+                    BtnRefresh.Enabled = false;
+                    btnPic.Enabled = true;
 
-                controlNavigator1.Buttons.First.Enabled = false;
-                controlNavigator1.Buttons.Next.Enabled = false;
-                controlNavigator1.Buttons.Prev.Enabled = false;
-                controlNavigator1.Buttons.Last.Enabled = false;
+                    controlNavigator1.Buttons.First.Enabled = false;
+                    controlNavigator1.Buttons.Next.Enabled = false;
+                    controlNavigator1.Buttons.Prev.Enabled = false;
+                    controlNavigator1.Buttons.Last.Enabled = false;
 
-                searchControl1.Enabled = false;
-                gridControl1.Enabled = false;
+                    searchControl1.Enabled = false;
+                    gridControl1.Enabled = false;
 
-                pictureBoxPI.Image = Properties.Resources.User;
+                    pictureBoxPI.Image = Properties.Resources.User;
 
-            } else if (e.Button.Tag.ToString() == "Edit") {
-                if (tableLayoutPanel2.RowStyles[2].Height == 1)
-                    tableLayoutPanel2.RowStyles[2].Height = 143;
-                actionState = "e";
-                setControlState(true);
+                } else if (e.Button.Tag.ToString() == "Edit") {
+                    if (tableLayoutPanel2.RowStyles[2].Height == 1)
+                        tableLayoutPanel2.RowStyles[2].Height = 143;
+                    actionState = "e";
+                    setControlState(true);
 
-                txtFirstName.Focus();
-                BtnAdd.Enabled = false;
-                BtnEdit.Enabled = false;
-                BtnSave.Enabled = true;
-                BtnCancel.Enabled = true;
-                BtnSwitch.Enabled = false;
-                BtnRefresh.Enabled = false;
-                btnPic.Enabled = true;
+                    txtFirstName.Focus();
+                    BtnAdd.Enabled = false;
+                    BtnEdit.Enabled = false;
+                    BtnSave.Enabled = true;
+                    BtnCancel.Enabled = true;
+                    BtnSwitch.Enabled = false;
+                    BtnRefresh.Enabled = false;
+                    btnPic.Enabled = true;
 
-                controlNavigator1.Buttons.First.Enabled = false;
-                controlNavigator1.Buttons.Next.Enabled = false;
-                controlNavigator1.Buttons.Prev.Enabled = false;
-                controlNavigator1.Buttons.Last.Enabled = false;
+                    controlNavigator1.Buttons.First.Enabled = false;
+                    controlNavigator1.Buttons.Next.Enabled = false;
+                    controlNavigator1.Buttons.Prev.Enabled = false;
+                    controlNavigator1.Buttons.Last.Enabled = false;
 
-                searchControl1.Enabled = false;
-                gridControl1.Enabled = false;
-            } else if (e.Button.Tag.ToString() == "Save") {
+                    searchControl1.Enabled = false;
+                    gridControl1.Enabled = false;
+                } else if (e.Button.Tag.ToString() == "Save") {
 
-                if (actionState == "e") {
-                    toolStripStatusLabel1.Text = "Editing...";
-                    sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtLicenseNo.Text + "' ", Misc.getConn());
-                    Misc.connOpen();
-                    memberID = (int)sqlcmd.ExecuteScalar();
+                    if (actionState == "e") {
+                        toolStripStatusLabel1.Text = "Editing...";
+                        sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtLicenseNo.Text + "' ", Misc.getConn());
+                        Misc.connOpen();
+                        memberID = (int)sqlcmd.ExecuteScalar();
 
-                    sqlcmd = new SqlCommand("UPDATE Member SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, Gender = @Gender, DateOfBirth = @DateOfBirth, MaritalStatus = @MaritalStatus, Hometown = @Hometown, LicenseNumber = @LicenseNumber, InductionYear = @InductionYear, GoodStanding = @GoodStanding, Active = @Active WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                        sqlcmd = new SqlCommand("SELECT StatusID FROM Status WHERE Status = '" + cmbStatus.Text + "' AND Active = 'True'", Misc.getConn());
+                        Misc.connOpen();
+                        int statusID = (int)sqlcmd.ExecuteScalar();
 
-                    sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
-                    sqlcmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
-                    sqlcmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
-                    sqlcmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
-                    sqlcmd.Parameters.AddWithValue("@DateOfBirth", deDOB.DateTime);
-                    sqlcmd.Parameters.AddWithValue("@MaritalStatus", cmbMaritalStatus.Text);
-                    sqlcmd.Parameters.AddWithValue("@Hometown", txtHometown.Text);
-                    sqlcmd.Parameters.AddWithValue("@LicenseNumber", txtLicenseNo.Text);
-                    sqlcmd.Parameters.AddWithValue("@InductionYear", txtInductionYear.Text);
-                    sqlcmd.Parameters.AddWithValue("@GoodStanding", cbGoodStanding.Checked);
-                    sqlcmd.Parameters.AddWithValue("@Active", cbActive.Checked);
-                    Misc.connOpen();
-                    sqlcmd.ExecuteNonQuery();
-                    sqlcmd.Dispose();
+                        sqlcmd = new SqlCommand("UPDATE Member SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, Gender = @Gender, DateOfBirth = @DateOfBirth, MaritalStatus = @MaritalStatus, Hometown = @Hometown, LicenseNumber = @LicenseNumber, InductionYear = @InductionYear, StatusID = @StatusID, Active = @Active WHERE MemberID = '" + memberID + "' ", Misc.getConn());
 
-                    string image = openFileDialog1.FileName;
-                    Misc.updateImage(memberID, image);
+                        sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
+                        sqlcmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
+                        sqlcmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
+                        sqlcmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
+                        sqlcmd.Parameters.AddWithValue("@DateOfBirth", deDOB.DateTime);
+                        sqlcmd.Parameters.AddWithValue("@MaritalStatus", cmbMaritalStatus.Text);
+                        sqlcmd.Parameters.AddWithValue("@Hometown", txtHometown.Text);
+                        sqlcmd.Parameters.AddWithValue("@LicenseNumber", txtLicenseNo.Text);
+                        sqlcmd.Parameters.AddWithValue("@InductionYear", txtInductionYear.Text);
+                        sqlcmd.Parameters.AddWithValue("@StatusID", statusID);
+                        sqlcmd.Parameters.AddWithValue("@Active", cbActive.Checked);
+                        Misc.connOpen();
+                        sqlcmd.ExecuteNonQuery();
+                        sqlcmd.Dispose();
 
-                } else if (actionState == "a") {
-                    toolStripStatusLabel1.Text = "Saving...";
+                        string image = openFileDialog1.FileName;
+                        Misc.updateImage(memberID, image);
 
-                    if (!verifyInput()) return;
+                    } else if (actionState == "a") {
+                        toolStripStatusLabel1.Text = "Saving...";
 
-                    sqlcmd = new SqlCommand("INSERT INTO Member (FirstName, MiddleName, LastName, Gender, DateOfBirth, MaritalStatus, Hometown, KinName, KinContact, LicenseNumber, PhoneNumber1, PhoneNumber2, EmailAddress, CityID, BusinessAddress, ResidentialAddress, LISAGBankID, InductionYear, GoodStanding, Active) VALUES (@FirstName, @MiddleName, @LastName, @Gender, @DateOfBirth, @MaritalStatus, @Hometown, @KinName, @KinContact, @LicenseNumber, @PhoneNumber1, @PhoneNumber2, @EmailAddress, @CityID, @BusinessAddress, @ResidentialAddress, @LISAGBankID, @InductionYear, @GoodStanding, @Active)", Misc.getConn());
+                        if (!verifyInput())
+                            return;
 
-                    sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
-                    sqlcmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
-                    sqlcmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
-                    sqlcmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
-                    sqlcmd.Parameters.AddWithValue("@DateOfBirth", deDOB.DateTime);
-                    sqlcmd.Parameters.AddWithValue("@MaritalStatus", cmbMaritalStatus.Text);
-                    sqlcmd.Parameters.AddWithValue("@Hometown", txtHometown.Text);
-                    sqlcmd.Parameters.AddWithValue("@KinName", "Unassigned");
-                    sqlcmd.Parameters.AddWithValue("@KinContact", "Unassigned");
-                    sqlcmd.Parameters.AddWithValue("@LicenseNumber", txtLicenseNo.Text);
-                    sqlcmd.Parameters.AddWithValue("@PhoneNumber1", "Unassigned");
-                    sqlcmd.Parameters.AddWithValue("@PhoneNumber2", "Unassigned");
-                    sqlcmd.Parameters.AddWithValue("@EmailAddress", "Unassigned");
-                    sqlcmd.Parameters.AddWithValue("@CityID", 5);
-                    sqlcmd.Parameters.AddWithValue("@BusinessAddress", "Unassigned");
-                    sqlcmd.Parameters.AddWithValue("@ResidentialAddress", "Unassigned");
-                    sqlcmd.Parameters.AddWithValue("@LISAGBankID", 1);
-                    sqlcmd.Parameters.AddWithValue("@InductionYear", txtInductionYear.Text);
-                    sqlcmd.Parameters.AddWithValue("@GoodStanding", cbGoodStanding.Checked);
-                    sqlcmd.Parameters.AddWithValue("@Active", cbActive.Checked);
-                    Misc.connOpen();
-                    sqlcmd.ExecuteNonQuery();
-                    sqlcmd.Dispose();
+                        sqlcmd = new SqlCommand("SELECT StatusID FROM Status WHERE Status = '" + cmbStatus.Text + "' AND Active = 'True'", Misc.getConn());
+                        Misc.connOpen();
+                        int statusID = (int)sqlcmd.ExecuteScalar();
 
-                    sqlcmd = new SqlCommand("SELECT MemberID FROM Member WHERE LicenseNumber = '" + txtLicenseNo.Text + "' ", Misc.getConn());
-                    Misc.connOpen();
-                    memberID = (int)sqlcmd.ExecuteScalar();
+                        sqlcmd = new SqlCommand("INSERT INTO Member (FirstName, MiddleName, LastName, Gender, DateOfBirth, MaritalStatus, Hometown, KinName, KinContact, LicenseNumber, PhoneNumber1, PhoneNumber2, EmailAddress, CityID, BusinessAddress, ResidentialAddress, LISAGBankID, InductionYear, StatusID, Active) VALUES (@FirstName, @MiddleName, @LastName, @Gender, @DateOfBirth, @MaritalStatus, @Hometown, @KinName, @KinContact, @LicenseNumber, @PhoneNumber1, @PhoneNumber2, @EmailAddress, @CityID, @BusinessAddress, @ResidentialAddress, @LISAGBankID, @InductionYear, @StatusID, @Active)", Misc.getConn());
 
-                    Misc.connOpen();
-                    string image = openFileDialog1.FileName;
-                    Misc.saveImage(memberID, image);
+                        sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
+                        sqlcmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
+                        sqlcmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
+                        sqlcmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
+                        sqlcmd.Parameters.AddWithValue("@DateOfBirth", deDOB.DateTime);
+                        sqlcmd.Parameters.AddWithValue("@MaritalStatus", cmbMaritalStatus.Text);
+                        sqlcmd.Parameters.AddWithValue("@Hometown", txtHometown.Text);
+                        sqlcmd.Parameters.AddWithValue("@KinName", "Unassigned");
+                        sqlcmd.Parameters.AddWithValue("@KinContact", "Unassigned");
+                        sqlcmd.Parameters.AddWithValue("@LicenseNumber", txtLicenseNo.Text);
+                        sqlcmd.Parameters.AddWithValue("@PhoneNumber1", "Unassigned");
+                        sqlcmd.Parameters.AddWithValue("@PhoneNumber2", "Unassigned");
+                        sqlcmd.Parameters.AddWithValue("@EmailAddress", "Unassigned");
+                        sqlcmd.Parameters.AddWithValue("@CityID", 5);
+                        sqlcmd.Parameters.AddWithValue("@BusinessAddress", "Unassigned");
+                        sqlcmd.Parameters.AddWithValue("@ResidentialAddress", "Unassigned");
+                        sqlcmd.Parameters.AddWithValue("@LISAGBankID", 1);
+                        sqlcmd.Parameters.AddWithValue("@InductionYear", txtInductionYear.Text);
+                        sqlcmd.Parameters.AddWithValue("@StatusID", statusID);
+                        sqlcmd.Parameters.AddWithValue("@Active", cbActive.Checked);
+                        Misc.connOpen();
+                        sqlcmd.ExecuteNonQuery();
+                        sqlcmd.Dispose();
 
-                    sqlcmd = new SqlCommand("INSERT INTO UserAccount (MemberID, Username, Password, Administrator, Active) VALUES (@MemberID, @Username, @Password, @Administrator, @Active)", Misc.getConn());
-                    sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
-                    sqlcmd.Parameters.AddWithValue("@Username", txtFirstName.Text + "." + txtLastName.Text);
-                    sqlcmd.Parameters.AddWithValue("@Password", "Passw0rd");
-                    sqlcmd.Parameters.AddWithValue("@Administrator", false);
-                    sqlcmd.Parameters.AddWithValue("@Active", false);
-                    Misc.connOpen();
-                    sqlcmd.ExecuteNonQuery();
-                    sqlcmd.Dispose();
+                        sqlcmd = new SqlCommand("SELECT MemberID FROM Member WHERE LicenseNumber = '" + txtLicenseNo.Text + "' ", Misc.getConn());
+                        Misc.connOpen();
+                        memberID = (int)sqlcmd.ExecuteScalar();
 
-                    sqlcmd = new SqlCommand("INSERT INTO LISAGBank (MemberID, BankBranchID, AccountName, AccountNumber) VALUES(@MemberID, @BankBranchID, @AccountName, @AccountNumber) ", Misc.getConn());
-                    sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
-                    sqlcmd.Parameters.AddWithValue("@BankBranchID", 2);
-                    sqlcmd.Parameters.AddWithValue("@AccountName", "Unassigned");
-                    sqlcmd.Parameters.AddWithValue("@AccountNumber", "Unassigned");
-                    Misc.connOpen();
-                    sqlcmd.ExecuteNonQuery();
-                    sqlcmd.Dispose();
+                        Misc.connOpen();
+                        string image = openFileDialog1.FileName;
+                        Misc.saveImage(memberID, image);
 
-                    sqlcmd = new SqlCommand("SELECT LISAGBankID FROM LISAGBank WHERE MemberID = '" + memberID + "' ", Misc.getConn());
-                    Misc.connOpen();
-                    int lisagBankID = (int)sqlcmd.ExecuteScalar();
+                        sqlcmd = new SqlCommand("INSERT INTO UserAccount (MemberID, Username, Password, Administrator, Active) VALUES (@MemberID, @Username, @Password, @Administrator, @Active)", Misc.getConn());
+                        sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
+                        sqlcmd.Parameters.AddWithValue("@Username", txtFirstName.Text + "." + txtLastName.Text);
+                        sqlcmd.Parameters.AddWithValue("@Password", "Passw0rd");
+                        sqlcmd.Parameters.AddWithValue("@Administrator", false);
+                        sqlcmd.Parameters.AddWithValue("@Active", false);
+                        Misc.connOpen();
+                        sqlcmd.ExecuteNonQuery();
+                        sqlcmd.Dispose();
 
-                    sqlcmd = new SqlCommand("UPDATE Member SET LISAGBankID = @LISAGBankID WHERE MemberID = '" + memberID + "' ", Misc.getConn());
-                    sqlcmd.Parameters.AddWithValue("@LISAGBankID", lisagBankID);
-                    Misc.connOpen();
-                    sqlcmd.ExecuteNonQuery();
-                    sqlcmd.Dispose();
+                        sqlcmd = new SqlCommand("INSERT INTO LISAGBank (MemberID, BankBranchID, AccountName, AccountNumber) VALUES(@MemberID, @BankBranchID, @AccountName, @AccountNumber) ", Misc.getConn());
+                        sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
+                        sqlcmd.Parameters.AddWithValue("@BankBranchID", 2);
+                        sqlcmd.Parameters.AddWithValue("@AccountName", "Unassigned");
+                        sqlcmd.Parameters.AddWithValue("@AccountNumber", "Unassigned");
+                        Misc.connOpen();
+                        sqlcmd.ExecuteNonQuery();
+                        sqlcmd.Dispose();
 
-                    insertRights(memberID);
+                        sqlcmd = new SqlCommand("SELECT LISAGBankID FROM LISAGBank WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                        Misc.connOpen();
+                        int lisagBankID = (int)sqlcmd.ExecuteScalar();
+
+                        sqlcmd = new SqlCommand("UPDATE Member SET LISAGBankID = @LISAGBankID WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                        sqlcmd.Parameters.AddWithValue("@LISAGBankID", lisagBankID);
+                        Misc.connOpen();
+                        sqlcmd.ExecuteNonQuery();
+                        sqlcmd.Dispose();
+
+                        insertRights(memberID);
+                    }
+
+                    actionState = "a";
+
+                    gridControl1.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    setControlState(false);
+                    BtnSave.Enabled = false;
+                    BtnEdit.Enabled = true;
+                    BtnAdd.Enabled = true;
+                    BtnCancel.Enabled = false;
+                    BtnSwitch.Enabled = true;
+                    BtnRefresh.Enabled = true;
+                    btnPic.Enabled = false;
+
+                    controlNavigator1.Buttons.First.Enabled = true;
+                    controlNavigator1.Buttons.Next.Enabled = true;
+                    controlNavigator1.Buttons.Prev.Enabled = true;
+                    controlNavigator1.Buttons.Last.Enabled = true;
+
+                    searchControl1.Enabled = true;
+                    gridControl1.Enabled = true;
+                    setTabState(true);
+                    toolStripStatusLabel1.Text = "Saved";
+
+                    appUser.firstName = txtFirstName.Text;
+                    appUser.middleName = txtMiddleName.Text;
+                    appUser.lastName = txtLastName.Text;
+                    appUser.licenseNumber = txtLicenseNo.Text;
+
+                } else if (e.Button.Tag.ToString() == "Cancel") {
+                    setControlState(false);
+                    actionState = "a";
+                    BtnAdd.Enabled = true;
+                    BtnEdit.Enabled = true;
+                    BtnSave.Enabled = false;
+                    BtnCancel.Enabled = false;
+                    BtnSwitch.Enabled = true;
+                    BtnRefresh.Enabled = true;
+                    btnPic.Enabled = false;
+
+                    controlNavigator1.Buttons.First.Enabled = true;
+                    controlNavigator1.Buttons.Next.Enabled = true;
+                    controlNavigator1.Buttons.Prev.Enabled = true;
+                    controlNavigator1.Buttons.Last.Enabled = true;
+
+                    searchControl1.Enabled = true;
+                    gridControl1.Enabled = true;
+
+                    toolStripStatusLabel1.Text = "Done";
+
+                } else if (e.Button.Tag.ToString() == "Refresh") {
+                    toolStripStatusLabel1.Text = "Refreshing...";
+                    gridControl1.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    toolStripStatusLabel1.Text = "Done";
+
+                } else if (e.Button.Tag.ToString() == "Switch") {
+                    if (tableLayoutPanel2.RowStyles[2].Height == 143) {
+                        tableLayoutPanel2.RowStyles[2].Height = 1;
+                    } else {
+                        tableLayoutPanel2.RowStyles[2].Height = 143;
+                    }
                 }
+            //} catch {
 
-                actionState = "a";
-
-                gridControl1.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                setControlState(false);
-                BtnSave.Enabled = false;
-                BtnEdit.Enabled = true;
-                BtnAdd.Enabled = true;
-                BtnCancel.Enabled = false;
-                BtnSwitch.Enabled = true;
-                BtnRefresh.Enabled = true;
-                btnPic.Enabled = false;
-
-                controlNavigator1.Buttons.First.Enabled = true;
-                controlNavigator1.Buttons.Next.Enabled = true;
-                controlNavigator1.Buttons.Prev.Enabled = true;
-                controlNavigator1.Buttons.Last.Enabled = true;
-
-                searchControl1.Enabled = true;
-                gridControl1.Enabled = true;
-                setTabState(true);
-                toolStripStatusLabel1.Text = "Saved";
-
-                appUser.firstName = txtFirstName.Text;
-                appUser.middleName = txtMiddleName.Text;
-                appUser.lastName = txtLastName.Text;
-                appUser.licenseNumber = txtLicenseNo.Text;
-
-            } else if (e.Button.Tag.ToString() == "Cancel") {
-                setControlState(false);
-                actionState = "a";
-                BtnAdd.Enabled = true;
-                BtnEdit.Enabled = true;
-                BtnSave.Enabled = false;
-                BtnCancel.Enabled = false;
-                BtnSwitch.Enabled = true;
-                BtnRefresh.Enabled = true;
-                btnPic.Enabled = false;
-
-                controlNavigator1.Buttons.First.Enabled = true;
-                controlNavigator1.Buttons.Next.Enabled = true;
-                controlNavigator1.Buttons.Prev.Enabled = true;
-                controlNavigator1.Buttons.Last.Enabled = true;
-
-                searchControl1.Enabled = true;
-                gridControl1.Enabled = true;
-
-                toolStripStatusLabel1.Text = "Done";
-
-            } else if (e.Button.Tag.ToString() == "Refresh") {
-                toolStripStatusLabel1.Text = "Refreshing...";
-                gridControl1.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                toolStripStatusLabel1.Text = "Done";
-
-            } else if (e.Button.Tag.ToString() == "Switch") {
-                if (tableLayoutPanel2.RowStyles[2].Height == 143) {
-                    tableLayoutPanel2.RowStyles[2].Height = 1;
-                } else {
-                    tableLayoutPanel2.RowStyles[2].Height = 143;
-                }
-            }
-            } catch {
-
-            }
+            //}
         }
 
         private void insertRights(int memberID) {
@@ -435,7 +447,7 @@ namespace LISAGManager {
             txtHometown.Enabled = status;
             txtLicenseNo.Enabled = status;
             txtInductionYear.Enabled = status;
-            cbGoodStanding.Enabled = status;
+            cmbStatus.Enabled = status;
             cbActive.Enabled = status;
             btnPic.Enabled = status;
         }
@@ -467,119 +479,119 @@ namespace LISAGManager {
         private void controlNavigatorLoc_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
             try {
 
-            if (e.Button.Tag.ToString() == "Edit") {
-                if (tableLayoutPanel26.RowStyles[2].Height == 1)
-                    tableLayoutPanel26.RowStyles[2].Height = 234;
-                actionState = "e";
-                setControlStateLoc(true);
+                if (e.Button.Tag.ToString() == "Edit") {
+                    if (tableLayoutPanel26.RowStyles[2].Height == 1)
+                        tableLayoutPanel26.RowStyles[2].Height = 234;
+                    actionState = "e";
+                    setControlStateLoc(true);
 
-                xtraTabControl1.TabPages[0].PageEnabled = false;
-                xtraTabControl1.TabPages[1].PageEnabled = false;
-                xtraTabControl1.TabPages[2].PageEnabled = false;
-                xtraTabControl1.TabPages[3].PageEnabled = true;
-                xtraTabControl1.TabPages[4].PageEnabled = false;
-                xtraTabControl1.TabPages[5].PageEnabled = false;
-                xtraTabControl1.TabPages[6].PageEnabled = false;
+                    xtraTabControl1.TabPages[0].PageEnabled = false;
+                    xtraTabControl1.TabPages[1].PageEnabled = false;
+                    xtraTabControl1.TabPages[2].PageEnabled = false;
+                    xtraTabControl1.TabPages[3].PageEnabled = true;
+                    xtraTabControl1.TabPages[4].PageEnabled = false;
+                    xtraTabControl1.TabPages[5].PageEnabled = false;
+                    xtraTabControl1.TabPages[6].PageEnabled = false;
 
-                cmbLocRegion.Focus();
-                BtnLocEdit.Enabled = false;
-                BtnLocSave.Enabled = true;
-                BtnLocCancel.Enabled = true;
-                BtnLocSwitch.Enabled = false;
-                BtnLocRefresh.Enabled = false;
-                btnPic.Enabled = true;
+                    cmbLocRegion.Focus();
+                    BtnLocEdit.Enabled = false;
+                    BtnLocSave.Enabled = true;
+                    BtnLocCancel.Enabled = true;
+                    BtnLocSwitch.Enabled = false;
+                    BtnLocRefresh.Enabled = false;
+                    btnPic.Enabled = true;
 
-                controlNavigatorLoc.Buttons.First.Enabled = false;
-                controlNavigatorLoc.Buttons.Next.Enabled = false;
-                controlNavigatorLoc.Buttons.Prev.Enabled = false;
-                controlNavigatorLoc.Buttons.Last.Enabled = false;
+                    controlNavigatorLoc.Buttons.First.Enabled = false;
+                    controlNavigatorLoc.Buttons.Next.Enabled = false;
+                    controlNavigatorLoc.Buttons.Prev.Enabled = false;
+                    controlNavigatorLoc.Buttons.Last.Enabled = false;
 
-                searchControlLoc.Enabled = false;
-                gridControlLoc.Enabled = false;
-            } else if (e.Button.Tag.ToString() == "Save") {
+                    searchControlLoc.Enabled = false;
+                    gridControlLoc.Enabled = false;
+                } else if (e.Button.Tag.ToString() == "Save") {
 
-                if (actionState == "e") {
-                    toolStripStatusLabelLoc.Text = "Editing...";
-                    sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtLocLicenseNumber.Text + "' ", Misc.getConn());
+                    if (actionState == "e") {
+                        toolStripStatusLabelLoc.Text = "Editing...";
+                        sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtLocLicenseNumber.Text + "' ", Misc.getConn());
+                        Misc.connOpen();
+                        int memberID = (int)sqlcmd.ExecuteScalar();
+
+                        sqlcmd = new SqlCommand("SELECT RegionID FROM Region WHERE Name = '" + cmbLocRegion.Text + "' ", Misc.getConn());
+                        int regionID = (int)sqlcmd.ExecuteScalar();
+
+                        sqlcmd = new SqlCommand("SELECT CityID FROM City WHERE Name = '" + cmbLocCity.Text + "' AND RegionID = '" + regionID + "' ", Misc.getConn());
+                        int cityID = (int)sqlcmd.ExecuteScalar();
+
+                        sqlcmd = new SqlCommand("UPDATE Member SET CityID = @CityID, BusinessAddress = @BusinessAddress, ResidentialAddress=@ResidentialAddress WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+
+                        sqlcmd.Parameters.AddWithValue("@CityID", cityID);
+                        sqlcmd.Parameters.AddWithValue("@BusinessAddress", txtBusinessAddress.Text);
+                        sqlcmd.Parameters.AddWithValue("@ResidentialAddress", txtResidentialAddress.Text);
+                    }
+
+
                     Misc.connOpen();
-                    int memberID = (int)sqlcmd.ExecuteScalar();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
 
-                    sqlcmd = new SqlCommand("SELECT RegionID FROM Region WHERE Name = '" + cmbLocRegion.Text + "' ", Misc.getConn());
-                    int regionID = (int)sqlcmd.ExecuteScalar();
+                    actionState = "a";
 
-                    sqlcmd = new SqlCommand("SELECT CityID FROM City WHERE Name = '" + cmbLocCity.Text + "' AND RegionID = '" + regionID + "' ", Misc.getConn());
-                    int cityID = (int)sqlcmd.ExecuteScalar();
+                    gridControlLoc.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    setControlStateLoc(false);
+                    BtnLocSave.Enabled = false;
+                    BtnLocEdit.Enabled = true;
+                    BtnLocAdd.Enabled = true;
+                    BtnLocCancel.Enabled = false;
+                    BtnLocSwitch.Enabled = true;
+                    BtnLocRefresh.Enabled = true;
+                    btnPic.Enabled = false;
 
-                    sqlcmd = new SqlCommand("UPDATE Member SET CityID = @CityID, BusinessAddress = @BusinessAddress, ResidentialAddress=@ResidentialAddress WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                    controlNavigatorLoc.Buttons.First.Enabled = true;
+                    controlNavigatorLoc.Buttons.Next.Enabled = true;
+                    controlNavigatorLoc.Buttons.Prev.Enabled = true;
+                    controlNavigatorLoc.Buttons.Last.Enabled = true;
 
-                    sqlcmd.Parameters.AddWithValue("@CityID", cityID);
-                    sqlcmd.Parameters.AddWithValue("@BusinessAddress", txtBusinessAddress.Text);
-                    sqlcmd.Parameters.AddWithValue("@ResidentialAddress", txtResidentialAddress.Text);
+                    searchControlLoc.Enabled = true;
+                    gridControlLoc.Enabled = true;
+                    setTabState(true);
+                    gridControlLoc.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    toolStripStatusLabelLoc.Text = "Saved";
+
+                } else if (e.Button.Tag.ToString() == "Cancel") {
+                    setControlStateLoc(false);
+                    actionState = "a";
+                    BtnLocAdd.Enabled = false;
+                    BtnLocEdit.Enabled = true;
+                    BtnLocSave.Enabled = false;
+                    BtnLocCancel.Enabled = false;
+                    BtnLocSwitch.Enabled = true;
+                    BtnLocRefresh.Enabled = true;
+                    btnPic.Enabled = false;
+
+                    controlNavigatorLoc.Buttons.First.Enabled = true;
+                    controlNavigatorLoc.Buttons.Next.Enabled = true;
+                    controlNavigatorLoc.Buttons.Prev.Enabled = true;
+                    controlNavigatorLoc.Buttons.Last.Enabled = true;
+
+                    searchControlLoc.Enabled = true;
+                    gridControlLoc.Enabled = true;
+                    setTabState(true);
+
+                    toolStripStatusLabelLoc.Text = "Done";
+
+                } else if (e.Button.Tag.ToString() == "Refresh") {
+                    toolStripStatusLabelLoc.Text = "Refreshing...";
+                    gridControlLoc.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    cmbLocRegion.DataSource = Misc.loadDataSource(sqlQueryRegion, "Region");
+                    toolStripStatusLabelLoc.Text = "Done";
+
+                } else if (e.Button.Tag.ToString() == "Switch") {
+                    if (tableLayoutPanel26.RowStyles[2].Height == 234) {
+                        tableLayoutPanel26.RowStyles[2].Height = 1;
+                    } else {
+                        tableLayoutPanel26.RowStyles[2].Height = 234;
+                    }
                 }
-
-
-                Misc.connOpen();
-                sqlcmd.ExecuteNonQuery();
-                sqlcmd.Dispose();
-
-                actionState = "a";
-
-                gridControlLoc.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                setControlStateLoc(false);
-                BtnLocSave.Enabled = false;
-                BtnLocEdit.Enabled = true;
-                BtnLocAdd.Enabled = true;
-                BtnLocCancel.Enabled = false;
-                BtnLocSwitch.Enabled = true;
-                BtnLocRefresh.Enabled = true;
-                btnPic.Enabled = false;
-
-                controlNavigatorLoc.Buttons.First.Enabled = true;
-                controlNavigatorLoc.Buttons.Next.Enabled = true;
-                controlNavigatorLoc.Buttons.Prev.Enabled = true;
-                controlNavigatorLoc.Buttons.Last.Enabled = true;
-
-                searchControlLoc.Enabled = true;
-                gridControlLoc.Enabled = true;
-                setTabState(true);
-                gridControlLoc.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                toolStripStatusLabelLoc.Text = "Saved";
-
-            } else if (e.Button.Tag.ToString() == "Cancel") {
-                setControlStateLoc(false);
-                actionState = "a";
-                BtnLocAdd.Enabled = false;
-                BtnLocEdit.Enabled = true;
-                BtnLocSave.Enabled = false;
-                BtnLocCancel.Enabled = false;
-                BtnLocSwitch.Enabled = true;
-                BtnLocRefresh.Enabled = true;
-                btnPic.Enabled = false;
-
-                controlNavigatorLoc.Buttons.First.Enabled = true;
-                controlNavigatorLoc.Buttons.Next.Enabled = true;
-                controlNavigatorLoc.Buttons.Prev.Enabled = true;
-                controlNavigatorLoc.Buttons.Last.Enabled = true;
-
-                searchControlLoc.Enabled = true;
-                gridControlLoc.Enabled = true;
-                setTabState(true);
-
-                toolStripStatusLabelLoc.Text = "Done";
-
-            } else if (e.Button.Tag.ToString() == "Refresh") {
-                toolStripStatusLabelLoc.Text = "Refreshing...";
-                gridControlLoc.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                cmbLocRegion.DataSource = Misc.loadDataSource(sqlQueryRegion, "Region");
-                toolStripStatusLabelLoc.Text = "Done";
-
-            } else if (e.Button.Tag.ToString() == "Switch") {
-                if (tableLayoutPanel26.RowStyles[2].Height == 234) {
-                    tableLayoutPanel26.RowStyles[2].Height = 1;
-                } else {
-                    tableLayoutPanel26.RowStyles[2].Height = 234;
-                }
-            }
             } catch {
 
             }
@@ -735,148 +747,148 @@ namespace LISAGManager {
         private void controlNavigatorAD_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
             try {
 
-            if (e.Button.Tag.ToString() == "Edit") {
-                if (tableLayoutPanel52.RowStyles[2].Height == 1)
-                    tableLayoutPanel52.RowStyles[2].Height = 146;
-                actionState = "e";
-                setControlStateAD(true);
+                if (e.Button.Tag.ToString() == "Edit") {
+                    if (tableLayoutPanel52.RowStyles[2].Height == 1)
+                        tableLayoutPanel52.RowStyles[2].Height = 146;
+                    actionState = "e";
+                    setControlStateAD(true);
 
-                xtraTabControl1.TabPages[0].PageEnabled = false;
-                xtraTabControl1.TabPages[1].PageEnabled = false;
-                xtraTabControl1.TabPages[2].PageEnabled = false;
-                xtraTabControl1.TabPages[3].PageEnabled = false;
-                xtraTabControl1.TabPages[4].PageEnabled = false;
-                xtraTabControl1.TabPages[5].PageEnabled = true;
-                xtraTabControl1.TabPages[6].PageEnabled = false;
+                    xtraTabControl1.TabPages[0].PageEnabled = false;
+                    xtraTabControl1.TabPages[1].PageEnabled = false;
+                    xtraTabControl1.TabPages[2].PageEnabled = false;
+                    xtraTabControl1.TabPages[3].PageEnabled = false;
+                    xtraTabControl1.TabPages[4].PageEnabled = false;
+                    xtraTabControl1.TabPages[5].PageEnabled = true;
+                    xtraTabControl1.TabPages[6].PageEnabled = false;
 
-                txtADUsername.Focus();
-                BtnADEdit.Enabled = false;
-                BtnADSave.Enabled = true;
-                BtnADCancel.Enabled = true;
-                BtnADSwitch.Enabled = false;
-                BtnADRefresh.Enabled = false;
-                btnPic.Enabled = true;
+                    txtADUsername.Focus();
+                    BtnADEdit.Enabled = false;
+                    BtnADSave.Enabled = true;
+                    BtnADCancel.Enabled = true;
+                    BtnADSwitch.Enabled = false;
+                    BtnADRefresh.Enabled = false;
+                    btnPic.Enabled = true;
 
-                controlNavigatorAD.Buttons.First.Enabled = false;
-                controlNavigatorAD.Buttons.Next.Enabled = false;
-                controlNavigatorAD.Buttons.Prev.Enabled = false;
-                controlNavigatorAD.Buttons.Last.Enabled = false;
+                    controlNavigatorAD.Buttons.First.Enabled = false;
+                    controlNavigatorAD.Buttons.Next.Enabled = false;
+                    controlNavigatorAD.Buttons.Prev.Enabled = false;
+                    controlNavigatorAD.Buttons.Last.Enabled = false;
 
-                searchControlAD.Enabled = false;
-                gridControlAD.Enabled = false;
+                    searchControlAD.Enabled = false;
+                    gridControlAD.Enabled = false;
 
-                txtADPassword.Text = "";
-                txtADConfirmPassword.Text = "";
-            } else if (e.Button.Tag.ToString() == "Save") {
+                    txtADPassword.Text = "";
+                    txtADConfirmPassword.Text = "";
+                } else if (e.Button.Tag.ToString() == "Save") {
 
-                if (actionState == "e") {
-                    toolStripStatusLabelAD.Text = "Editing...";
-                    sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtADLicenseNumber.Text + "' ", Misc.getConn());
-                    Misc.connOpen();
-                    int memberID = (int)sqlcmd.ExecuteScalar();
+                    if (actionState == "e") {
+                        toolStripStatusLabelAD.Text = "Editing...";
+                        sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtADLicenseNumber.Text + "' ", Misc.getConn());
+                        Misc.connOpen();
+                        int memberID = (int)sqlcmd.ExecuteScalar();
 
-                    if (txtADUsername.Text.Trim() == "") {
-                        MessageBox.Show("Username cannot be empty!", "Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtADUsername.Focus();
-                        return;
+                        if (txtADUsername.Text.Trim() == "") {
+                            MessageBox.Show("Username cannot be empty!", "Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtADUsername.Focus();
+                            return;
+                        }
+
+                        if (cbADChangePassword.Checked) {
+                            if (txtADPassword.Text.Trim() == "") {
+                                MessageBox.Show("Password cannot be empty!", "Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtADPassword.Focus();
+                                return;
+                            }
+
+                            if (txtADConfirmPassword.Text.Trim() == "") {
+                                MessageBox.Show("Enter password to confirm!", "Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtADConfirmPassword.Focus();
+                                return;
+                            }
+
+                            if (!txtADPassword.Text.Equals(txtADConfirmPassword.Text)) {
+                                MessageBox.Show("Passwords do not match!", "Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtADPassword.SelectAll();
+                                txtADPassword.Focus();
+                                return;
+                            }
+
+                            sqlcmd = new SqlCommand("UPDATE UserAccount SET Username = @Username, Password = @Password, Administrator = @Administrator, Active = @Active WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+
+                            sqlcmd.Parameters.AddWithValue("@Username", txtADUsername.Text);
+                            sqlcmd.Parameters.AddWithValue("@Password", txtADPassword.Text);
+                            sqlcmd.Parameters.AddWithValue("@Administrator", cbADAdministrator.Checked);
+                            sqlcmd.Parameters.AddWithValue("@Active", cbADAccountActive.Checked);
+                        } else {
+                            sqlcmd = new SqlCommand("UPDATE UserAccount SET Username = @Username, Administrator = @Administrator, Active = @Active WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+
+                            sqlcmd.Parameters.AddWithValue("@Username", txtADUsername.Text);
+                            sqlcmd.Parameters.AddWithValue("@Administrator", cbADAdministrator.Checked);
+                            sqlcmd.Parameters.AddWithValue("@Active", cbADAccountActive.Checked);
+                        }
                     }
 
-                    if (cbADChangePassword.Checked) {
-                        if (txtADPassword.Text.Trim() == "") {
-                            MessageBox.Show("Password cannot be empty!", "Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtADPassword.Focus();
-                            return;
-                        }
+                    Misc.connOpen();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
 
-                        if (txtADConfirmPassword.Text.Trim() == "") {
-                            MessageBox.Show("Enter password to confirm!", "Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtADConfirmPassword.Focus();
-                            return;
-                        }
+                    actionState = "a";
 
-                        if (!txtADPassword.Text.Equals(txtADConfirmPassword.Text)) {
-                            MessageBox.Show("Passwords do not match!", "Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtADPassword.SelectAll();
-                            txtADPassword.Focus();
-                            return;
-                        }
+                    gridControlAD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    setControlStateAD(false);
+                    BtnADSave.Enabled = false;
+                    BtnADEdit.Enabled = true;
+                    BtnADAdd.Enabled = true;
+                    BtnADCancel.Enabled = false;
+                    BtnADSwitch.Enabled = true;
+                    BtnADRefresh.Enabled = true;
+                    btnPic.Enabled = false;
 
-                        sqlcmd = new SqlCommand("UPDATE UserAccount SET Username = @Username, Password = @Password, Administrator = @Administrator, Active = @Active WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                    controlNavigatorAD.Buttons.First.Enabled = true;
+                    controlNavigatorAD.Buttons.Next.Enabled = true;
+                    controlNavigatorAD.Buttons.Prev.Enabled = true;
+                    controlNavigatorAD.Buttons.Last.Enabled = true;
 
-                        sqlcmd.Parameters.AddWithValue("@Username", txtADUsername.Text);
-                        sqlcmd.Parameters.AddWithValue("@Password", txtADPassword.Text);
-                        sqlcmd.Parameters.AddWithValue("@Administrator", cbADAdministrator.Checked);
-                        sqlcmd.Parameters.AddWithValue("@Active", cbADAccountActive.Checked);
+                    searchControlAD.Enabled = true;
+                    gridControlAD.Enabled = true;
+                    setTabState(true);
+                    gridControlAD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    toolStripStatusLabelAD.Text = "Saved";
+
+                } else if (e.Button.Tag.ToString() == "Cancel") {
+                    setControlStateAD(false);
+                    actionState = "a";
+                    BtnADAdd.Enabled = false;
+                    BtnADEdit.Enabled = true;
+                    BtnADSave.Enabled = false;
+                    BtnADCancel.Enabled = false;
+                    BtnADSwitch.Enabled = true;
+                    BtnADRefresh.Enabled = true;
+                    btnPic.Enabled = false;
+
+                    controlNavigatorAD.Buttons.First.Enabled = true;
+                    controlNavigatorAD.Buttons.Next.Enabled = true;
+                    controlNavigatorAD.Buttons.Prev.Enabled = true;
+                    controlNavigatorAD.Buttons.Last.Enabled = true;
+
+                    searchControlAD.Enabled = true;
+                    gridControlAD.Enabled = true;
+                    setTabState(true);
+
+                    toolStripStatusLabelAD.Text = "Done";
+
+                } else if (e.Button.Tag.ToString() == "Refresh") {
+                    toolStripStatusLabelAD.Text = "Refreshing...";
+                    gridControlAD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    toolStripStatusLabelAD.Text = "Done";
+
+                } else if (e.Button.Tag.ToString() == "Switch") {
+                    if (tableLayoutPanel51.RowStyles[2].Height == 144) {
+                        tableLayoutPanel51.RowStyles[2].Height = 1;
                     } else {
-                        sqlcmd = new SqlCommand("UPDATE UserAccount SET Username = @Username, Administrator = @Administrator, Active = @Active WHERE MemberID = '" + memberID + "' ", Misc.getConn());
-
-                        sqlcmd.Parameters.AddWithValue("@Username", txtADUsername.Text);
-                        sqlcmd.Parameters.AddWithValue("@Administrator", cbADAdministrator.Checked);
-                        sqlcmd.Parameters.AddWithValue("@Active", cbADAccountActive.Checked);
-                    }      
+                        tableLayoutPanel51.RowStyles[2].Height = 144;
+                    }
                 }
-
-                Misc.connOpen();
-                sqlcmd.ExecuteNonQuery();
-                sqlcmd.Dispose();
-
-                actionState = "a";
-
-                gridControlAD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                setControlStateAD(false);
-                BtnADSave.Enabled = false;
-                BtnADEdit.Enabled = true;
-                BtnADAdd.Enabled = true;
-                BtnADCancel.Enabled = false;
-                BtnADSwitch.Enabled = true;
-                BtnADRefresh.Enabled = true;
-                btnPic.Enabled = false;
-
-                controlNavigatorAD.Buttons.First.Enabled = true;
-                controlNavigatorAD.Buttons.Next.Enabled = true;
-                controlNavigatorAD.Buttons.Prev.Enabled = true;
-                controlNavigatorAD.Buttons.Last.Enabled = true;
-
-                searchControlAD.Enabled = true;
-                gridControlAD.Enabled = true;
-                setTabState(true);
-                gridControlAD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                toolStripStatusLabelAD.Text = "Saved";
-
-            } else if (e.Button.Tag.ToString() == "Cancel") {
-                setControlStateAD(false);
-                actionState = "a";
-                BtnADAdd.Enabled = false;
-                BtnADEdit.Enabled = true;
-                BtnADSave.Enabled = false;
-                BtnADCancel.Enabled = false;
-                BtnADSwitch.Enabled = true;
-                BtnADRefresh.Enabled = true;
-                btnPic.Enabled = false;
-
-                controlNavigatorAD.Buttons.First.Enabled = true;
-                controlNavigatorAD.Buttons.Next.Enabled = true;
-                controlNavigatorAD.Buttons.Prev.Enabled = true;
-                controlNavigatorAD.Buttons.Last.Enabled = true;
-
-                searchControlAD.Enabled = true;
-                gridControlAD.Enabled = true;
-                setTabState(true);
-
-                toolStripStatusLabelAD.Text = "Done";
-
-            } else if (e.Button.Tag.ToString() == "Refresh") {
-                toolStripStatusLabelAD.Text = "Refreshing...";
-                gridControlAD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                toolStripStatusLabelAD.Text = "Done";
-
-            } else if (e.Button.Tag.ToString() == "Switch") {
-                if (tableLayoutPanel51.RowStyles[2].Height == 144) {
-                    tableLayoutPanel51.RowStyles[2].Height = 1;
-                } else {
-                    tableLayoutPanel51.RowStyles[2].Height = 144;
-                }
-            }
             } catch {
 
             }
@@ -949,7 +961,7 @@ namespace LISAGManager {
         }
 
         private void cmbMaritalStatus_SelectedIndexChanged(object sender, EventArgs e) {
-            
+
         }
 
         private void cmbLocRegion_SelectedIndexChanged(object sender, EventArgs e) {
@@ -960,110 +972,110 @@ namespace LISAGManager {
         private void controlNavigatorKD_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
             try {
 
-            if (e.Button.Tag.ToString() == "Edit") {
-                if (tableLayoutPanel14.RowStyles[2].Height == 1)
-                    tableLayoutPanel14.RowStyles[2].Height = 146;
-                actionState = "e";
-                setControlStateKD(true);
+                if (e.Button.Tag.ToString() == "Edit") {
+                    if (tableLayoutPanel14.RowStyles[2].Height == 1)
+                        tableLayoutPanel14.RowStyles[2].Height = 146;
+                    actionState = "e";
+                    setControlStateKD(true);
 
-                xtraTabControl1.TabPages[0].PageEnabled = false;
-                xtraTabControl1.TabPages[1].PageEnabled = false;
-                xtraTabControl1.TabPages[2].PageEnabled = true;
-                xtraTabControl1.TabPages[3].PageEnabled = false;
-                xtraTabControl1.TabPages[4].PageEnabled = false;
-                xtraTabControl1.TabPages[5].PageEnabled = false;
-                xtraTabControl1.TabPages[6].PageEnabled = false;
+                    xtraTabControl1.TabPages[0].PageEnabled = false;
+                    xtraTabControl1.TabPages[1].PageEnabled = false;
+                    xtraTabControl1.TabPages[2].PageEnabled = true;
+                    xtraTabControl1.TabPages[3].PageEnabled = false;
+                    xtraTabControl1.TabPages[4].PageEnabled = false;
+                    xtraTabControl1.TabPages[5].PageEnabled = false;
+                    xtraTabControl1.TabPages[6].PageEnabled = false;
 
-                txtKDKinName.Focus();
-                BtnKDEdit.Enabled = false;
-                BtnKDSave.Enabled = true;
-                BtnKDCancel.Enabled = true;
-                BtnKDSwitch.Enabled = false;
-                BtnKDRefresh.Enabled = false;
-                btnPic.Enabled = true;
+                    txtKDKinName.Focus();
+                    BtnKDEdit.Enabled = false;
+                    BtnKDSave.Enabled = true;
+                    BtnKDCancel.Enabled = true;
+                    BtnKDSwitch.Enabled = false;
+                    BtnKDRefresh.Enabled = false;
+                    btnPic.Enabled = true;
 
-                controlNavigatorKD.Buttons.First.Enabled = false;
-                controlNavigatorKD.Buttons.Next.Enabled = false;
-                controlNavigatorKD.Buttons.Prev.Enabled = false;
-                controlNavigatorKD.Buttons.Last.Enabled = false;
+                    controlNavigatorKD.Buttons.First.Enabled = false;
+                    controlNavigatorKD.Buttons.Next.Enabled = false;
+                    controlNavigatorKD.Buttons.Prev.Enabled = false;
+                    controlNavigatorKD.Buttons.Last.Enabled = false;
 
-                searchControlKD.Enabled = false;
-                gridControlKD.Enabled = false;
-            } else if (e.Button.Tag.ToString() == "Save") {
+                    searchControlKD.Enabled = false;
+                    gridControlKD.Enabled = false;
+                } else if (e.Button.Tag.ToString() == "Save") {
 
-                if (actionState == "e") {
-                    toolStripStatusLabelKD.Text = "Editing...";
-                    sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtKDLicenseNumber.Text + "' ", Misc.getConn());
+                    if (actionState == "e") {
+                        toolStripStatusLabelKD.Text = "Editing...";
+                        sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtKDLicenseNumber.Text + "' ", Misc.getConn());
+                        Misc.connOpen();
+                        int memberID = (int)sqlcmd.ExecuteScalar();
+
+                        sqlcmd = new SqlCommand("UPDATE Member SET KinName = @KinName, KinContact = @KinContact WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                    }
+
+                    sqlcmd.Parameters.AddWithValue("@KinName", txtKDKinName.Text);
+                    sqlcmd.Parameters.AddWithValue("@KinContact", txtKDKinContact.Text);
+
                     Misc.connOpen();
-                    int memberID = (int)sqlcmd.ExecuteScalar();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
 
-                    sqlcmd = new SqlCommand("UPDATE Member SET KinName = @KinName, KinContact = @KinContact WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                    actionState = "a";
+
+                    gridControlKD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    setControlStateKD(false);
+                    BtnKDSave.Enabled = false;
+                    BtnKDEdit.Enabled = true;
+                    BtnKDAdd.Enabled = true;
+                    BtnKDCancel.Enabled = false;
+                    BtnKDSwitch.Enabled = true;
+                    BtnKDRefresh.Enabled = true;
+                    btnPic.Enabled = false;
+
+                    controlNavigatorKD.Buttons.First.Enabled = true;
+                    controlNavigatorKD.Buttons.Next.Enabled = true;
+                    controlNavigatorKD.Buttons.Prev.Enabled = true;
+                    controlNavigatorKD.Buttons.Last.Enabled = true;
+
+                    searchControlKD.Enabled = true;
+                    gridControlKD.Enabled = true;
+                    setTabState(true);
+                    gridControlKD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    toolStripStatusLabelKD.Text = "Saved";
+
+                } else if (e.Button.Tag.ToString() == "Cancel") {
+                    setControlStateKD(false);
+                    actionState = "a";
+                    BtnKDAdd.Enabled = false;
+                    BtnKDEdit.Enabled = true;
+                    BtnKDSave.Enabled = false;
+                    BtnKDCancel.Enabled = false;
+                    BtnKDSwitch.Enabled = true;
+                    BtnKDRefresh.Enabled = true;
+                    btnPic.Enabled = false;
+
+                    controlNavigatorKD.Buttons.First.Enabled = true;
+                    controlNavigatorKD.Buttons.Next.Enabled = true;
+                    controlNavigatorKD.Buttons.Prev.Enabled = true;
+                    controlNavigatorKD.Buttons.Last.Enabled = true;
+
+                    searchControlKD.Enabled = true;
+                    gridControlKD.Enabled = true;
+                    setTabState(true);
+
+                    toolStripStatusLabelKD.Text = "Done";
+
+                } else if (e.Button.Tag.ToString() == "Refresh") {
+                    toolStripStatusLabelKD.Text = "Refreshing...";
+                    gridControlKD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    toolStripStatusLabelKD.Text = "Done";
+
+                } else if (e.Button.Tag.ToString() == "Switch") {
+                    if (tableLayoutPanel14.RowStyles[2].Height == 146) {
+                        tableLayoutPanel14.RowStyles[2].Height = 1;
+                    } else {
+                        tableLayoutPanel14.RowStyles[2].Height = 146;
+                    }
                 }
-
-                sqlcmd.Parameters.AddWithValue("@KinName", txtKDKinName.Text);
-                sqlcmd.Parameters.AddWithValue("@KinContact", txtKDKinContact.Text);
-
-                Misc.connOpen();
-                sqlcmd.ExecuteNonQuery();
-                sqlcmd.Dispose();
-
-                actionState = "a";
-
-                gridControlKD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                setControlStateKD(false);
-                BtnKDSave.Enabled = false;
-                BtnKDEdit.Enabled = true;
-                BtnKDAdd.Enabled = true;
-                BtnKDCancel.Enabled = false;
-                BtnKDSwitch.Enabled = true;
-                BtnKDRefresh.Enabled = true;
-                btnPic.Enabled = false;
-
-                controlNavigatorKD.Buttons.First.Enabled = true;
-                controlNavigatorKD.Buttons.Next.Enabled = true;
-                controlNavigatorKD.Buttons.Prev.Enabled = true;
-                controlNavigatorKD.Buttons.Last.Enabled = true;
-
-                searchControlKD.Enabled = true;
-                gridControlKD.Enabled = true;
-                setTabState(true);
-                gridControlKD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                toolStripStatusLabelKD.Text = "Saved";
-
-            } else if (e.Button.Tag.ToString() == "Cancel") {
-                setControlStateKD(false);
-                actionState = "a";
-                BtnKDAdd.Enabled = false;
-                BtnKDEdit.Enabled = true;
-                BtnKDSave.Enabled = false;
-                BtnKDCancel.Enabled = false;
-                BtnKDSwitch.Enabled = true;
-                BtnKDRefresh.Enabled = true;
-                btnPic.Enabled = false;
-
-                controlNavigatorKD.Buttons.First.Enabled = true;
-                controlNavigatorKD.Buttons.Next.Enabled = true;
-                controlNavigatorKD.Buttons.Prev.Enabled = true;
-                controlNavigatorKD.Buttons.Last.Enabled = true;
-
-                searchControlKD.Enabled = true;
-                gridControlKD.Enabled = true;
-                setTabState(true);
-
-                toolStripStatusLabelKD.Text = "Done";
-
-            } else if (e.Button.Tag.ToString() == "Refresh") {
-                toolStripStatusLabelKD.Text = "Refreshing...";
-                gridControlKD.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                toolStripStatusLabelKD.Text = "Done";
-
-            } else if (e.Button.Tag.ToString() == "Switch") {
-                if (tableLayoutPanel14.RowStyles[2].Height == 146) {
-                    tableLayoutPanel14.RowStyles[2].Height = 1;
-                } else {
-                    tableLayoutPanel14.RowStyles[2].Height = 146;
-                }
-            }
             } catch {
 
             }
@@ -1119,117 +1131,117 @@ namespace LISAGManager {
             } catch {
 
             }
-            
+
         }
 
         private void controlNavigatorCI_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
             try {
 
-            if (e.Button.Tag.ToString() == "Edit") {
-                if (tableLayoutPanel8.RowStyles[2].Height == 1)
-                    tableLayoutPanel8.RowStyles[2].Height = 146;
-                actionState = "e";
-                setControlStateCI(true);
+                if (e.Button.Tag.ToString() == "Edit") {
+                    if (tableLayoutPanel8.RowStyles[2].Height == 1)
+                        tableLayoutPanel8.RowStyles[2].Height = 146;
+                    actionState = "e";
+                    setControlStateCI(true);
 
-                xtraTabControl1.TabPages[0].PageEnabled = false;
-                xtraTabControl1.TabPages[1].PageEnabled = true;
-                xtraTabControl1.TabPages[2].PageEnabled = false;
-                xtraTabControl1.TabPages[3].PageEnabled = false;
-                xtraTabControl1.TabPages[4].PageEnabled = false;
-                xtraTabControl1.TabPages[5].PageEnabled = false;
-                xtraTabControl1.TabPages[6].PageEnabled = false;
+                    xtraTabControl1.TabPages[0].PageEnabled = false;
+                    xtraTabControl1.TabPages[1].PageEnabled = true;
+                    xtraTabControl1.TabPages[2].PageEnabled = false;
+                    xtraTabControl1.TabPages[3].PageEnabled = false;
+                    xtraTabControl1.TabPages[4].PageEnabled = false;
+                    xtraTabControl1.TabPages[5].PageEnabled = false;
+                    xtraTabControl1.TabPages[6].PageEnabled = false;
 
-                txtCIPhoneNumber1.Focus();
-                BtnCIEdit.Enabled = false;
-                BtnCISave.Enabled = true;
-                BtnCICancel.Enabled = true;
-                BtnCISwitch.Enabled = false;
-                BtnCIRefresh.Enabled = false;
-                btnPic.Enabled = true;
+                    txtCIPhoneNumber1.Focus();
+                    BtnCIEdit.Enabled = false;
+                    BtnCISave.Enabled = true;
+                    BtnCICancel.Enabled = true;
+                    BtnCISwitch.Enabled = false;
+                    BtnCIRefresh.Enabled = false;
+                    btnPic.Enabled = true;
 
-                controlNavigatorCI.Buttons.First.Enabled = false;
-                controlNavigatorCI.Buttons.Next.Enabled = false;
-                controlNavigatorCI.Buttons.Prev.Enabled = false;
-                controlNavigatorCI.Buttons.Last.Enabled = false;
+                    controlNavigatorCI.Buttons.First.Enabled = false;
+                    controlNavigatorCI.Buttons.Next.Enabled = false;
+                    controlNavigatorCI.Buttons.Prev.Enabled = false;
+                    controlNavigatorCI.Buttons.Last.Enabled = false;
 
-                searchControlCI.Enabled = false;
-                gridControlCI.Enabled = false;
-            } else if (e.Button.Tag.ToString() == "Save") {
+                    searchControlCI.Enabled = false;
+                    gridControlCI.Enabled = false;
+                } else if (e.Button.Tag.ToString() == "Save") {
 
-                if (actionState == "e") {
-                    toolStripStatusLabelCI.Text = "Editing...";
-                    sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtCILicenseNumber.Text + "' ", Misc.getConn());
+                    if (actionState == "e") {
+                        toolStripStatusLabelCI.Text = "Editing...";
+                        sqlcmd = new SqlCommand("SELECT MemberID FROM vwMember WHERE LicenseNumber = '" + txtCILicenseNumber.Text + "' ", Misc.getConn());
+                        Misc.connOpen();
+                        int memberID = (int)sqlcmd.ExecuteScalar();
+
+                        sqlcmd = new SqlCommand("UPDATE Member SET PhoneNumber1 = @PhoneNumber1, PhoneNumber2 = @PhoneNumber2, EmailAddress = @EmailAddress WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                    }
+
+                    sqlcmd.Parameters.AddWithValue("@PhoneNumber1", txtCIPhoneNumber1.Text);
+                    sqlcmd.Parameters.AddWithValue("@PhoneNumber2", txtCIPhoneNumber2.Text);
+                    sqlcmd.Parameters.AddWithValue("@EmailAddress", txtCIEmailAddress.Text);
+
                     Misc.connOpen();
-                    int memberID = (int)sqlcmd.ExecuteScalar();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
 
-                    sqlcmd = new SqlCommand("UPDATE Member SET PhoneNumber1 = @PhoneNumber1, PhoneNumber2 = @PhoneNumber2, EmailAddress = @EmailAddress WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                    actionState = "a";
+
+                    gridControlCI.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    setControlStateCI(false);
+                    BtnCISave.Enabled = false;
+                    BtnCIEdit.Enabled = true;
+                    BtnCIAdd.Enabled = true;
+                    BtnCICancel.Enabled = false;
+                    BtnCISwitch.Enabled = true;
+                    BtnCIRefresh.Enabled = true;
+                    btnPic.Enabled = false;
+
+                    controlNavigatorCI.Buttons.First.Enabled = true;
+                    controlNavigatorCI.Buttons.Next.Enabled = true;
+                    controlNavigatorCI.Buttons.Prev.Enabled = true;
+                    controlNavigatorCI.Buttons.Last.Enabled = true;
+
+                    searchControlCI.Enabled = true;
+                    gridControlCI.Enabled = true;
+                    setTabState(true);
+                    gridControlCI.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    toolStripStatusLabelCI.Text = "Saved";
+
+                } else if (e.Button.Tag.ToString() == "Cancel") {
+                    setControlStateCI(false);
+                    actionState = "a";
+                    BtnCIAdd.Enabled = false;
+                    BtnCIEdit.Enabled = true;
+                    BtnCISave.Enabled = false;
+                    BtnCICancel.Enabled = false;
+                    BtnCISwitch.Enabled = true;
+                    BtnCIRefresh.Enabled = true;
+                    btnPic.Enabled = false;
+
+                    controlNavigatorCI.Buttons.First.Enabled = true;
+                    controlNavigatorCI.Buttons.Next.Enabled = true;
+                    controlNavigatorCI.Buttons.Prev.Enabled = true;
+                    controlNavigatorCI.Buttons.Last.Enabled = true;
+
+                    searchControlCI.Enabled = true;
+                    gridControlCI.Enabled = true;
+                    setTabState(true);
+
+                    toolStripStatusLabelCI.Text = "Done";
+
+                } else if (e.Button.Tag.ToString() == "Refresh") {
+                    toolStripStatusLabelCI.Text = "Refreshing...";
+                    gridControlCI.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
+                    toolStripStatusLabelCI.Text = "Done";
+
+                } else if (e.Button.Tag.ToString() == "Switch") {
+                    if (tableLayoutPanel8.RowStyles[2].Height == 146) {
+                        tableLayoutPanel8.RowStyles[2].Height = 1;
+                    } else {
+                        tableLayoutPanel8.RowStyles[2].Height = 146;
+                    }
                 }
-
-                sqlcmd.Parameters.AddWithValue("@PhoneNumber1", txtCIPhoneNumber1.Text);
-                sqlcmd.Parameters.AddWithValue("@PhoneNumber2", txtCIPhoneNumber2.Text);
-                sqlcmd.Parameters.AddWithValue("@EmailAddress", txtCIEmailAddress.Text);
-
-                Misc.connOpen();
-                sqlcmd.ExecuteNonQuery();
-                sqlcmd.Dispose();
-
-                actionState = "a";
-
-                gridControlCI.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                setControlStateCI(false);
-                BtnCISave.Enabled = false;
-                BtnCIEdit.Enabled = true;
-                BtnCIAdd.Enabled = true;
-                BtnCICancel.Enabled = false;
-                BtnCISwitch.Enabled = true;
-                BtnCIRefresh.Enabled = true;
-                btnPic.Enabled = false;
-
-                controlNavigatorCI.Buttons.First.Enabled = true;
-                controlNavigatorCI.Buttons.Next.Enabled = true;
-                controlNavigatorCI.Buttons.Prev.Enabled = true;
-                controlNavigatorCI.Buttons.Last.Enabled = true;
-
-                searchControlCI.Enabled = true;
-                gridControlCI.Enabled = true;
-                setTabState(true);
-                gridControlCI.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                toolStripStatusLabelCI.Text = "Saved";
-
-            } else if (e.Button.Tag.ToString() == "Cancel") {
-                setControlStateCI(false);
-                actionState = "a";
-                BtnCIAdd.Enabled = false;
-                BtnCIEdit.Enabled = true;
-                BtnCISave.Enabled = false;
-                BtnCICancel.Enabled = false;
-                BtnCISwitch.Enabled = true;
-                BtnCIRefresh.Enabled = true;
-                btnPic.Enabled = false;
-
-                controlNavigatorCI.Buttons.First.Enabled = true;
-                controlNavigatorCI.Buttons.Next.Enabled = true;
-                controlNavigatorCI.Buttons.Prev.Enabled = true;
-                controlNavigatorCI.Buttons.Last.Enabled = true;
-
-                searchControlCI.Enabled = true;
-                gridControlCI.Enabled = true;
-                setTabState(true);
-
-                toolStripStatusLabelCI.Text = "Done";
-
-            } else if (e.Button.Tag.ToString() == "Refresh") {
-                toolStripStatusLabelCI.Text = "Refreshing...";
-                gridControlCI.DataSource = Misc.loadDataSource(sqlQuery, "vwMember");
-                toolStripStatusLabelCI.Text = "Done";
-
-            } else if (e.Button.Tag.ToString() == "Switch") {
-                if (tableLayoutPanel8.RowStyles[2].Height == 146) {
-                    tableLayoutPanel8.RowStyles[2].Height = 1;
-                } else {
-                    tableLayoutPanel8.RowStyles[2].Height = 146;
-                }
-            }
             } catch {
 
             }
@@ -1246,7 +1258,7 @@ namespace LISAGManager {
             txtHometown.Text = "";
             txtLicenseNo.Text = "";
             txtInductionYear.Text = "";
-            cbGoodStanding.Checked = true;
+            cmbStatus.Text = "";
             cbActive.Checked = true;
         }
 
@@ -1367,7 +1379,7 @@ namespace LISAGManager {
             cmbMaritalStatus.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "MaritalStatus").ToString();
             txtHometown.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Hometown").ToString();
             txtInductionYear.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "InductionYear").ToString();
-            cbGoodStanding.Checked = (bool)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "GoodStanding");
+            cmbStatus.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Status").ToString();
             cbActive.Checked = (bool)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Active");
         }
 

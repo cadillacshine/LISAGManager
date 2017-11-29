@@ -56,12 +56,12 @@ namespace LISAGManager {
                     Misc.connOpen();
                     int memberID = (int)sqlcmd.ExecuteScalar();
 
-                    string fName = "", mName = "", lName = "", licenseNumber = "", gender = "", maritalStatus = "", hometown = "", kinName = "", kinContact = "", phoneNumber1 = "", phoneNumber2 = "", region = "", city = "", businessAddress = "", residentialAddress = "", bankbranch = "", bank = "", accountName = "", accountNumber = "", emailAddress = "";
+                    string fName = "", mName = "", lName = "", licenseNumber = "", gender = "", maritalStatus = "", hometown = "", kinName = "", kinContact = "", phoneNumber1 = "", phoneNumber2 = "", region = "", city = "", businessAddress = "", residentialAddress = "", bankbranch = "", bank = "", accountName = "", accountNumber = "", emailAddress = "", status = "";
                     int inductionYear = 0;
                     DateTime dateOfBirth = DateTime.Now;
-                    bool goodStanding = true, active = true;
+                    bool active = true;
 
-                    sqlcmd = new SqlCommand("SELECT FirstName, MiddleName, LastName, LicenseNumber, Gender, DateOfBirth, Hometown, MaritalStatus, KinName, KinContact, phoneNumber1, phoneNumber2, emailAddress, regionName, cityName, businessAddress, residentialAddress, bankBranchName, bankName, accountName, accountNumber, inductionYear, goodStanding, active FROM vwMember WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                    sqlcmd = new SqlCommand("SELECT FirstName, MiddleName, LastName, LicenseNumber, Gender, DateOfBirth, Hometown, MaritalStatus, KinName, KinContact, phoneNumber1, phoneNumber2, emailAddress, regionName, cityName, businessAddress, residentialAddress, bankBranchName, bankName, accountName, accountNumber, inductionYear, Status, active FROM vwMember WHERE MemberID = '" + memberID + "' ", Misc.getConn());
                     Misc.connOpen();
                     SqlDataReader dReader = sqlcmd.ExecuteReader();
 
@@ -88,7 +88,7 @@ namespace LISAGManager {
                         accountName = dReader.GetString(19);
                         accountNumber = dReader.GetString(20);
                         inductionYear = dReader.GetInt32(21);
-                        goodStanding = dReader.GetBoolean(22);
+                        status = dReader.GetString(22);
                         active = dReader.GetBoolean(23);
 
                     }
@@ -117,7 +117,7 @@ namespace LISAGManager {
                         accountName = accountName,
                         accountNumber = accountNumber,
                         inductionYear = inductionYear,
-                        goodStanding = goodStanding,
+                        status = status,
                         active = active
                     };
                     dReader.Close();
