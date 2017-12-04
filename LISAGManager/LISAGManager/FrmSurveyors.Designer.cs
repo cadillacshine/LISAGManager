@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSurveyors));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -33,7 +34,7 @@
             this.colKinName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKinContact = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colInductionYear = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGoodStanding = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
@@ -61,6 +62,7 @@
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.controlNavigator2 = new DevExpress.XtraEditors.ControlNavigator();
             this.controlNavigator1 = new DevExpress.XtraEditors.ControlNavigator();
+            this.sharedImageCollection1 = new DevExpress.Utils.SharedImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -88,15 +90,17 @@
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.gridControl1.Location = new System.Drawing.Point(2, 33);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
@@ -120,7 +124,7 @@
             this.colKinName,
             this.colKinContact,
             this.colInductionYear,
-            this.colGoodStanding,
+            this.colStatus,
             this.colActive});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -199,15 +203,14 @@
             this.colInductionYear.VisibleIndex = 5;
             this.colInductionYear.Width = 102;
             // 
-            // colGoodStanding
+            // colStatus
             // 
-            this.colGoodStanding.Caption = "Good Standing";
-            this.colGoodStanding.ColumnEdit = this.repositoryItemCheckEdit2;
-            this.colGoodStanding.FieldName = "GoodStanding";
-            this.colGoodStanding.Name = "colGoodStanding";
-            this.colGoodStanding.Visible = true;
-            this.colGoodStanding.VisibleIndex = 6;
-            this.colGoodStanding.Width = 199;
+            this.colStatus.Caption = "Status";
+            this.colStatus.FieldName = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.Visible = true;
+            this.colStatus.VisibleIndex = 6;
+            this.colStatus.Width = 199;
             // 
             // repositoryItemCheckEdit2
             // 
@@ -238,7 +241,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel9, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -253,7 +256,7 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 156F));
@@ -273,7 +276,7 @@
             this.tableLayoutPanel3.Controls.Add(this.lblLicenseNumber, 1, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.263158F));
@@ -287,7 +290,7 @@
             this.pbProfilePicture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbProfilePicture.Image = global::LISAGManager.Properties.Resources.User;
             this.pbProfilePicture.Location = new System.Drawing.Point(104, 10);
-            this.pbProfilePicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbProfilePicture.Margin = new System.Windows.Forms.Padding(2);
             this.pbProfilePicture.Name = "pbProfilePicture";
             this.pbProfilePicture.Size = new System.Drawing.Size(137, 119);
             this.pbProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -318,7 +321,7 @@
             this.tableLayoutPanel4.Controls.Add(this.groupControl2, 0, 4);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 158);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 5;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -336,11 +339,11 @@
             this.tableLayoutPanel6.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(2, 82);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 113F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(319, 76);
             this.tableLayoutPanel6.TabIndex = 5;
             // 
@@ -352,7 +355,7 @@
             this.groupControl1.Controls.Add(this.lblContactInformation);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(2, 2);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(315, 72);
             this.groupControl1.TabIndex = 0;
@@ -377,11 +380,11 @@
             this.tableLayoutPanel7.Controls.Add(this.groupControl4, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(2, 162);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 113F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(319, 76);
             this.tableLayoutPanel7.TabIndex = 6;
             // 
@@ -391,7 +394,7 @@
             this.groupControl4.Controls.Add(this.lblBusinessAddress);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(2, 2);
-            this.groupControl4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl4.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(315, 72);
             this.groupControl4.TabIndex = 0;
@@ -416,11 +419,11 @@
             this.tableLayoutPanel8.Controls.Add(this.groupControl3, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(2, 242);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 113F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(319, 76);
             this.tableLayoutPanel8.TabIndex = 7;
             // 
@@ -430,7 +433,7 @@
             this.groupControl3.Controls.Add(this.lblResidentialAddress);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(2, 2);
-            this.groupControl3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(315, 72);
             this.groupControl3.TabIndex = 0;
@@ -455,7 +458,7 @@
             this.groupControl5.Controls.Add(this.lblPersonalInformation);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl5.Location = new System.Drawing.Point(2, 2);
-            this.groupControl5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl5.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.Size = new System.Drawing.Size(319, 76);
             this.groupControl5.TabIndex = 8;
@@ -479,7 +482,7 @@
             this.groupControl2.Controls.Add(this.lblBankDetails);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(2, 322);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(319, 79);
             this.groupControl2.TabIndex = 9;
@@ -507,7 +510,7 @@
             this.tableLayoutPanel9.Controls.Add(this.controlNavigator1, 0, 2);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(333, 2);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 3;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
@@ -526,7 +529,7 @@
             this.tableLayoutPanel10.Controls.Add(this.controlNavigator2, 2, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -538,7 +541,7 @@
             this.searchControl1.Client = this.gridControl1;
             this.searchControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchControl1.Location = new System.Drawing.Point(2, 2);
-            this.searchControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchControl1.Margin = new System.Windows.Forms.Padding(2);
             this.searchControl1.Name = "searchControl1";
             this.searchControl1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchControl1.Properties.Appearance.Options.UseFont = true;
@@ -569,7 +572,7 @@
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 12, true, true, "Refresh", "Refresh")});
             this.controlNavigator2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.controlNavigator2.Location = new System.Drawing.Point(694, 2);
-            this.controlNavigator2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlNavigator2.Margin = new System.Windows.Forms.Padding(2);
             this.controlNavigator2.Name = "controlNavigator2";
             this.controlNavigator2.Size = new System.Drawing.Size(29, 23);
             this.controlNavigator2.TabIndex = 2;
@@ -590,7 +593,7 @@
             this.controlNavigator1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.controlNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.controlNavigator1.Location = new System.Drawing.Point(2, 530);
-            this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2);
             this.controlNavigator1.Name = "controlNavigator1";
             this.controlNavigator1.NavigatableControl = this.gridControl1;
             this.controlNavigator1.Size = new System.Drawing.Size(725, 31);
@@ -599,13 +602,27 @@
             this.controlNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
             this.controlNavigator1.TextStringFormat = "{0} of {1}";
             // 
+            // sharedImageCollection1
+            // 
+            // 
+            // 
+            // 
+            this.sharedImageCollection1.ImageSource.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("sharedImageCollection1.ImageSource.ImageStream")));
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(0, "add_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(1, "edit_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(2, "save_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(3, "cancel_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(4, "switchrowcolumn_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(5, "refresh_16x16.png");
+            this.sharedImageCollection1.ParentControl = this;
+            // 
             // FrmSurveyors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 567);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(913, 480);
             this.Name = "FrmSurveyors";
             this.Text = "LISAG - Surveyors";
@@ -638,6 +655,8 @@
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -669,7 +688,7 @@
         private DevExpress.XtraEditors.ControlNavigator controlNavigator1;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colInductionYear;
-        private DevExpress.XtraGrid.Columns.GridColumn colGoodStanding;
+        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
         private DevExpress.XtraGrid.Columns.GridColumn colActive;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
@@ -681,5 +700,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.Label lblBankDetails;
+        private DevExpress.Utils.SharedImageCollection sharedImageCollection1;
     }
 }

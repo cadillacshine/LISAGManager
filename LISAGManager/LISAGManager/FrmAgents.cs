@@ -20,6 +20,9 @@ namespace LISAGManager {
 
         private void FrmAgents_Load(object sender, EventArgs e) {
             gridControl1.DataSource = Misc.loadDataSource(sqlquery, "vwAgent");
+
+            controlNavigator1.Buttons.ImageList = sharedImageCollection1;
+            controlNavigator1.Buttons.CustomButtons[0].ImageIndex = 5;
         }
 
         private void controlNavigator2_ButtonClick(object sender, DevExpress.XtraEditors.NavigatorButtonClickEventArgs e) {

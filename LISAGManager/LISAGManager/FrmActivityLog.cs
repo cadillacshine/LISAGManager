@@ -16,6 +16,9 @@ namespace LISAGManager {
         }
 
         private void FrmActivityLog_Load(object sender, EventArgs e) {
+            controlNavigator1.Buttons.ImageList = sharedImageCollection1;
+            controlNavigator1.Buttons.CustomButtons[0].ImageIndex = 5;
+
             gridControl1.DataSource = Misc.loadDataSource("SELECT Username, Activity, ActivityTime FROM vwActivityLog ORDER BY ActivityTime DESC", "vwActivityLog");
         }
 

@@ -23,11 +23,11 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMe));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.controlNavigator1 = new DevExpress.XtraEditors.ControlNavigator();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,6 +40,9 @@
             this.txtInductionYear = new System.Windows.Forms.TextBox();
             this.txtLicenseNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnPicture = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -77,15 +80,15 @@
             this.txtEmailAddress = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnPicture = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.sharedImageCollection1 = new DevExpress.Utils.SharedImageCollection(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
@@ -100,7 +103,8 @@
             this.groupControl1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -113,7 +117,7 @@
             this.tableLayoutPanel1.Controls.Add(this.statusStrip1, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
@@ -146,7 +150,7 @@
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 12, true, true, "Refresh", "Refresh")});
             this.controlNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.controlNavigator1.Location = new System.Drawing.Point(2, 2);
-            this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2);
             this.controlNavigator1.Name = "controlNavigator1";
             this.controlNavigator1.Size = new System.Drawing.Size(865, 30);
             this.controlNavigator1.TabIndex = 8;
@@ -163,24 +167,12 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel9, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 36);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(865, 156);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::LISAGManager.Properties.Resources.User;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(183, 118);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // groupControl2
             // 
@@ -188,7 +180,7 @@
             this.groupControl2.Controls.Add(this.tableLayoutPanel3);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(195, 2);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(668, 152);
             this.groupControl2.TabIndex = 2;
@@ -211,7 +203,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 23);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.99912F));
@@ -278,7 +270,7 @@
             // 
             this.txtFirstName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(129, 2);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(391, 24);
             this.txtFirstName.TabIndex = 1;
@@ -288,7 +280,7 @@
             this.txtMiddleName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMiddleName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMiddleName.Location = new System.Drawing.Point(129, 27);
-            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(2);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(533, 24);
             this.txtMiddleName.TabIndex = 2;
@@ -298,7 +290,7 @@
             this.txtLastName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLastName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(129, 52);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(533, 24);
             this.txtLastName.TabIndex = 3;
@@ -308,7 +300,7 @@
             this.txtInductionYear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtInductionYear.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInductionYear.Location = new System.Drawing.Point(129, 77);
-            this.txtInductionYear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInductionYear.Margin = new System.Windows.Forms.Padding(2);
             this.txtInductionYear.Name = "txtInductionYear";
             this.txtInductionYear.Size = new System.Drawing.Size(533, 24);
             this.txtInductionYear.TabIndex = 4;
@@ -318,7 +310,7 @@
             this.txtLicenseNo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLicenseNo.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLicenseNo.Location = new System.Drawing.Point(129, 102);
-            this.txtLicenseNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLicenseNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtLicenseNo.Name = "txtLicenseNo";
             this.txtLicenseNo.Size = new System.Drawing.Size(533, 24);
             this.txtLicenseNo.TabIndex = 5;
@@ -336,6 +328,45 @@
             this.label1.Text = "First Name:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 1;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel9.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.btnPicture, 0, 1);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 2;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(187, 150);
+            this.tableLayoutPanel9.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::LISAGManager.Properties.Resources.User;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(183, 118);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnPicture
+            // 
+            this.btnPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPicture.Location = new System.Drawing.Point(3, 125);
+            this.btnPicture.Name = "btnPicture";
+            this.btnPicture.Size = new System.Drawing.Size(181, 22);
+            this.btnPicture.TabIndex = 2;
+            this.btnPicture.Text = "Picture";
+            this.btnPicture.UseVisualStyleBackColor = true;
+            this.btnPicture.Click += new System.EventHandler(this.btnPicture_Click);
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
@@ -346,7 +377,7 @@
             this.tableLayoutPanel4.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 196);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 4;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 106F));
@@ -362,7 +393,7 @@
             this.groupControl5.Controls.Add(this.tableLayoutPanel8);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl5.Location = new System.Drawing.Point(2, 438);
-            this.groupControl5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl5.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.Size = new System.Drawing.Size(861, 128);
             this.groupControl5.TabIndex = 3;
@@ -383,7 +414,7 @@
             this.tableLayoutPanel8.Controls.Add(this.cmbBankBranch, 1, 1);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(2, 23);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 4;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.84848F));
@@ -450,7 +481,7 @@
             this.txtAccountName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAccountName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAccountName.Location = new System.Drawing.Point(130, 53);
-            this.txtAccountName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAccountName.Margin = new System.Windows.Forms.Padding(2);
             this.txtAccountName.Name = "txtAccountName";
             this.txtAccountName.Size = new System.Drawing.Size(725, 24);
             this.txtAccountName.TabIndex = 9;
@@ -460,7 +491,7 @@
             this.txtAccountNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAccountNumber.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAccountNumber.Location = new System.Drawing.Point(130, 78);
-            this.txtAccountNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAccountNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtAccountNumber.Name = "txtAccountNumber";
             this.txtAccountNumber.Size = new System.Drawing.Size(725, 24);
             this.txtAccountNumber.TabIndex = 10;
@@ -472,7 +503,7 @@
             this.cmbBankName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBankName.FormattingEnabled = true;
             this.cmbBankName.Location = new System.Drawing.Point(130, 2);
-            this.cmbBankName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbBankName.Margin = new System.Windows.Forms.Padding(2);
             this.cmbBankName.Name = "cmbBankName";
             this.cmbBankName.Size = new System.Drawing.Size(725, 24);
             this.cmbBankName.TabIndex = 11;
@@ -485,7 +516,7 @@
             this.cmbBankBranch.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBankBranch.FormattingEnabled = true;
             this.cmbBankBranch.Location = new System.Drawing.Point(130, 27);
-            this.cmbBankBranch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbBankBranch.Margin = new System.Windows.Forms.Padding(2);
             this.cmbBankBranch.Name = "cmbBankBranch";
             this.cmbBankBranch.Size = new System.Drawing.Size(725, 24);
             this.cmbBankBranch.TabIndex = 12;
@@ -496,7 +527,7 @@
             this.groupControl4.Controls.Add(this.tableLayoutPanel7);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(2, 191);
-            this.groupControl4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl4.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(861, 243);
             this.groupControl4.TabIndex = 2;
@@ -517,7 +548,7 @@
             this.tableLayoutPanel7.Controls.Add(this.cmbCity, 1, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(2, 23);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 4;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.64368F));
@@ -595,7 +626,7 @@
             this.txtBusinessAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBusinessAddress.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusinessAddress.Location = new System.Drawing.Point(132, 55);
-            this.txtBusinessAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBusinessAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusinessAddress.Multiline = true;
             this.txtBusinessAddress.Name = "txtBusinessAddress";
             this.txtBusinessAddress.Size = new System.Drawing.Size(723, 74);
@@ -606,7 +637,7 @@
             this.txtResidentialAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtResidentialAddress.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResidentialAddress.Location = new System.Drawing.Point(132, 133);
-            this.txtResidentialAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtResidentialAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtResidentialAddress.Multiline = true;
             this.txtResidentialAddress.Name = "txtResidentialAddress";
             this.txtResidentialAddress.Size = new System.Drawing.Size(723, 83);
@@ -619,7 +650,7 @@
             this.cmbRegion.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRegion.FormattingEnabled = true;
             this.cmbRegion.Location = new System.Drawing.Point(132, 2);
-            this.cmbRegion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbRegion.Margin = new System.Windows.Forms.Padding(2);
             this.cmbRegion.Name = "cmbRegion";
             this.cmbRegion.Size = new System.Drawing.Size(723, 24);
             this.cmbRegion.TabIndex = 11;
@@ -632,7 +663,7 @@
             this.cmbCity.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCity.FormattingEnabled = true;
             this.cmbCity.Location = new System.Drawing.Point(132, 29);
-            this.cmbCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCity.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCity.Name = "cmbCity";
             this.cmbCity.Size = new System.Drawing.Size(723, 24);
             this.cmbCity.TabIndex = 12;
@@ -643,7 +674,7 @@
             this.groupControl3.Controls.Add(this.tableLayoutPanel6);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(2, 108);
-            this.groupControl3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(861, 79);
             this.groupControl3.TabIndex = 1;
@@ -660,7 +691,7 @@
             this.tableLayoutPanel6.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(2, 23);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.86364F));
@@ -687,7 +718,7 @@
             this.txtKinName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtKinName.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKinName.Location = new System.Drawing.Point(133, 2);
-            this.txtKinName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKinName.Margin = new System.Windows.Forms.Padding(2);
             this.txtKinName.Name = "txtKinName";
             this.txtKinName.Size = new System.Drawing.Size(722, 24);
             this.txtKinName.TabIndex = 9;
@@ -697,7 +728,7 @@
             this.txtKinContact.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtKinContact.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKinContact.Location = new System.Drawing.Point(133, 28);
-            this.txtKinContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKinContact.Margin = new System.Windows.Forms.Padding(2);
             this.txtKinContact.Name = "txtKinContact";
             this.txtKinContact.Size = new System.Drawing.Size(722, 24);
             this.txtKinContact.TabIndex = 10;
@@ -721,7 +752,7 @@
             this.groupControl1.Controls.Add(this.tableLayoutPanel5);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(2, 2);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(861, 102);
             this.groupControl1.TabIndex = 0;
@@ -740,7 +771,7 @@
             this.tableLayoutPanel5.Controls.Add(this.txtEmailAddress, 1, 2);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(2, 23);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.5F));
@@ -793,7 +824,7 @@
             this.txtPhoneNumber1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPhoneNumber1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber1.Location = new System.Drawing.Point(131, 2);
-            this.txtPhoneNumber1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhoneNumber1.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhoneNumber1.Name = "txtPhoneNumber1";
             this.txtPhoneNumber1.Size = new System.Drawing.Size(724, 24);
             this.txtPhoneNumber1.TabIndex = 6;
@@ -803,7 +834,7 @@
             this.txtPhoneNumber2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPhoneNumber2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber2.Location = new System.Drawing.Point(131, 27);
-            this.txtPhoneNumber2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhoneNumber2.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhoneNumber2.Name = "txtPhoneNumber2";
             this.txtPhoneNumber2.Size = new System.Drawing.Size(724, 24);
             this.txtPhoneNumber2.TabIndex = 7;
@@ -813,7 +844,7 @@
             this.txtEmailAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEmailAddress.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailAddress.Location = new System.Drawing.Point(131, 52);
-            this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(724, 24);
             this.txtEmailAddress.TabIndex = 8;
@@ -836,36 +867,23 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(35, 13);
             this.toolStripStatusLabel1.Text = "Done";
             // 
-            // tableLayoutPanel9
-            // 
-            this.tableLayoutPanel9.ColumnCount = 1;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel9.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.btnPicture, 0, 1);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 2;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(187, 150);
-            this.tableLayoutPanel9.TabIndex = 3;
-            // 
-            // btnPicture
-            // 
-            this.btnPicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPicture.Location = new System.Drawing.Point(3, 125);
-            this.btnPicture.Name = "btnPicture";
-            this.btnPicture.Size = new System.Drawing.Size(181, 22);
-            this.btnPicture.TabIndex = 2;
-            this.btnPicture.Text = "Picture";
-            this.btnPicture.UseVisualStyleBackColor = true;
-            this.btnPicture.Click += new System.EventHandler(this.btnPicture_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // sharedImageCollection1
+            // 
+            // 
+            // 
+            // 
+            this.sharedImageCollection1.ImageSource.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("sharedImageCollection1.ImageSource.ImageStream")));
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(0, "add_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(1, "edit_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(2, "save_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(3, "cancel_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(4, "switchrowcolumn_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(5, "refresh_16x16.png");
+            this.sharedImageCollection1.ParentControl = this;
             // 
             // FrmMe
             // 
@@ -873,7 +891,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 612);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(885, 838);
             this.MinimizeBox = false;
@@ -884,11 +902,12 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
@@ -908,7 +927,8 @@
             this.tableLayoutPanel5.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.tableLayoutPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -971,5 +991,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Button btnPicture;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private DevExpress.Utils.SharedImageCollection sharedImageCollection1;
     }
 }

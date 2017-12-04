@@ -23,6 +23,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMyAgents));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -39,6 +41,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.controlNavigator2 = new DevExpress.XtraEditors.ControlNavigator();
+            this.sharedImageCollection1 = new DevExpress.Utils.SharedImageCollection(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -47,6 +50,8 @@
             this.statusStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -59,27 +64,28 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1865, 1066);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1069, 573);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 55);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl1.Location = new System.Drawing.Point(2, 36);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemCheckEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(1859, 932);
+            this.gridControl1.Size = new System.Drawing.Size(1065, 486);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -176,10 +182,11 @@
             this.controlNavigator1.Buttons.Remove.Visible = false;
             this.controlNavigator1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.controlNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlNavigator1.Location = new System.Drawing.Point(3, 993);
+            this.controlNavigator1.Location = new System.Drawing.Point(2, 526);
+            this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.controlNavigator1.Name = "controlNavigator1";
             this.controlNavigator1.NavigatableControl = this.gridControl1;
-            this.controlNavigator1.Size = new System.Drawing.Size(1859, 39);
+            this.controlNavigator1.Size = new System.Drawing.Size(1065, 25);
             this.controlNavigator1.TabIndex = 2;
             this.controlNavigator1.Text = "controlNavigator1";
             this.controlNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
@@ -190,49 +197,46 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1036);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 553);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1865, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(1069, 20);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(55, 25);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(35, 15);
             this.toolStripStatusLabel1.Text = "Done";
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 14F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.45614F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.54386F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel2.Controls.Add(this.searchControl1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.controlNavigator2, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 5);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1857, 42);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1063, 28);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // searchControl1
             // 
             this.searchControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchControl1.Location = new System.Drawing.Point(18, 5);
-            this.searchControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchControl1.Location = new System.Drawing.Point(12, 3);
             this.searchControl1.Name = "searchControl1";
             this.searchControl1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchControl1.Properties.Appearance.Options.UseFont = true;
             this.searchControl1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.searchControl1.Size = new System.Drawing.Size(752, 30);
+            this.searchControl1.Size = new System.Drawing.Size(427, 22);
             this.searchControl1.TabIndex = 0;
             // 
             // controlNavigator2
@@ -252,21 +256,33 @@
             this.controlNavigator2.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
             new DevExpress.XtraEditors.NavigatorCustomButton(12)});
             this.controlNavigator2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlNavigator2.Location = new System.Drawing.Point(1809, 5);
-            this.controlNavigator2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.controlNavigator2.Location = new System.Drawing.Point(1031, 3);
             this.controlNavigator2.Name = "controlNavigator2";
-            this.controlNavigator2.Size = new System.Drawing.Size(44, 32);
+            this.controlNavigator2.Size = new System.Drawing.Size(29, 22);
             this.controlNavigator2.TabIndex = 1;
             this.controlNavigator2.Text = "controlNavigator2";
             this.controlNavigator2.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.controlNavigator2_ButtonClick);
             // 
+            // sharedImageCollection1
+            // 
+            // 
+            // 
+            // 
+            this.sharedImageCollection1.ImageSource.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("sharedImageCollection1.ImageSource.ImageStream")));
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(0, "add_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(1, "edit_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(2, "save_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(3, "cancel_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(4, "switchrowcolumn_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(5, "refresh_16x16.png");
+            this.sharedImageCollection1.ParentControl = this;
+            // 
             // FrmMyAgents
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1865, 1066);
+            this.ClientSize = new System.Drawing.Size(1069, 573);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmMyAgents";
             this.Text = "LISAG - My Agents";
             this.Load += new System.EventHandler(this.FrmMyAgents_Load);
@@ -280,6 +296,8 @@
             this.statusStrip1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -302,5 +320,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraEditors.SearchControl searchControl1;
         private DevExpress.XtraEditors.ControlNavigator controlNavigator2;
+        private DevExpress.Utils.SharedImageCollection sharedImageCollection1;
     }
 }

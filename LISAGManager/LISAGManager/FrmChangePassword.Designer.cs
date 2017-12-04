@@ -23,6 +23,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmChangePassword));
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.controlNavigator1 = new DevExpress.XtraEditors.ControlNavigator();
             this.label3 = new System.Windows.Forms.Label();
@@ -35,10 +37,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.sharedImageCollection1 = new DevExpress.Utils.SharedImageCollection(this.components);
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripStatusLabel1
@@ -70,7 +75,7 @@
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 12, true, false, "Refresh", "Refresh")});
             this.controlNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.controlNavigator1.Location = new System.Drawing.Point(2, 2);
-            this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2);
             this.controlNavigator1.Name = "controlNavigator1";
             this.controlNavigator1.Size = new System.Drawing.Size(726, 28);
             this.controlNavigator1.TabIndex = 7;
@@ -96,7 +101,7 @@
             this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(148, 30);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(552, 23);
@@ -120,7 +125,7 @@
             this.txtConfirmPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPassword.Location = new System.Drawing.Point(148, 58);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(552, 23);
@@ -140,7 +145,7 @@
             this.tableLayoutPanel3.Controls.Add(this.cmbUsername, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -171,7 +176,7 @@
             this.cmbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUsername.FormattingEnabled = true;
             this.cmbUsername.Location = new System.Drawing.Point(148, 2);
-            this.cmbUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbUsername.Margin = new System.Windows.Forms.Padding(2);
             this.cmbUsername.Name = "cmbUsername";
             this.cmbUsername.Size = new System.Drawing.Size(552, 24);
             this.cmbUsername.TabIndex = 21;
@@ -181,7 +186,7 @@
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 34);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(726, 85);
             this.panel1.TabIndex = 0;
@@ -207,7 +212,7 @@
             this.tableLayoutPanel1.Controls.Add(this.statusStrip1, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
@@ -216,13 +221,27 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(730, 145);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
+            // sharedImageCollection1
+            // 
+            // 
+            // 
+            // 
+            this.sharedImageCollection1.ImageSource.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("sharedImageCollection1.ImageSource.ImageStream")));
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(0, "add_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(1, "edit_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(2, "save_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(3, "cancel_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(4, "switchrowcolumn_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(5, "refresh_16x16.png");
+            this.sharedImageCollection1.ParentControl = this;
+            // 
             // FrmChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 145);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(746, 184);
             this.MinimumSize = new System.Drawing.Size(746, 184);
@@ -236,6 +255,8 @@
             this.statusStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,5 +275,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private DevExpress.Utils.SharedImageCollection sharedImageCollection1;
     }
 }

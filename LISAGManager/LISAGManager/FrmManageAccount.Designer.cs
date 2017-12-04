@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageAccount));
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tabPersonalInformation = new DevExpress.XtraTab.XtraTabPage();
@@ -313,6 +314,7 @@
             this.colARDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colARAccess = new DevExpress.XtraGrid.Columns.GridColumn();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.sharedImageCollection1 = new DevExpress.Utils.SharedImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tabPersonalInformation.SuspendLayout();
@@ -451,6 +453,8 @@
             this.groupControl13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlARAccessRights)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewARAccessRights)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -4388,6 +4392,20 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // sharedImageCollection1
+            // 
+            // 
+            // 
+            // 
+            this.sharedImageCollection1.ImageSource.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("sharedImageCollection1.ImageSource.ImageStream")));
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(0, "add_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(1, "edit_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(2, "save_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(3, "cancel_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(4, "switchrowcolumn_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(5, "refresh_16x16.png");
+            this.sharedImageCollection1.ParentControl = this;
+            // 
             // FrmManageAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4571,6 +4589,8 @@
             this.groupControl13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlARAccessRights)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewARAccessRights)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4866,5 +4886,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colARAccess;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ComboBox cmbStatus;
+        private DevExpress.Utils.SharedImageCollection sharedImageCollection1;
     }
 }

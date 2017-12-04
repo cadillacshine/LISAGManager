@@ -113,6 +113,11 @@ namespace LISAGManager {
         private void FrmChangePassword_Load(object sender, EventArgs e) {
             loadForm();
             setControlValues();
+
+            controlNavigator1.Buttons.ImageList = sharedImageCollection1;
+            controlNavigator1.Buttons.CustomButtons[0].ImageIndex = 1;
+            controlNavigator1.Buttons.CustomButtons[1].ImageIndex = 2;
+            controlNavigator1.Buttons.CustomButtons[2].ImageIndex = 3;
         }
 
         private void loadForm() {

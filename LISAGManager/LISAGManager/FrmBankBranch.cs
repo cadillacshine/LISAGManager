@@ -26,6 +26,14 @@ namespace LISAGManager {
 
         private void FrmBankBranch_Load(object sender, EventArgs e) {
             loadForm();
+
+            controlNavigator1.Buttons.ImageList = sharedImageCollection1;
+            controlNavigator1.Buttons.CustomButtons[0].ImageIndex = 0;
+            controlNavigator1.Buttons.CustomButtons[1].ImageIndex = 1;
+            controlNavigator1.Buttons.CustomButtons[2].ImageIndex = 2;
+            controlNavigator1.Buttons.CustomButtons[3].ImageIndex = 3;
+            controlNavigator1.Buttons.CustomButtons[4].ImageIndex = 4;
+            controlNavigator1.Buttons.CustomButtons[5].ImageIndex = 5;
         }
 
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {

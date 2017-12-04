@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 namespace LISAGManager {
     public partial class FrmSurveyors: Form {
 
-        private string sqlquery = "SELECT Name, DateOfBirth, Hometown, KinName, KinContact, LicenseNumber, InductionYear, GoodStanding, Active FROM vwMember";
+        private string sqlquery = "SELECT Name, DateOfBirth, Hometown, KinName, KinContact, LicenseNumber, InductionYear, Status, Active FROM vwMember";
         private string tableOrView = "vwMember";
 
         public FrmSurveyors() {
@@ -21,6 +21,9 @@ namespace LISAGManager {
 
         private void FrmSurveyors_Load(object sender, EventArgs e) {
             gridControl1.DataSource = Misc.loadDataSource(sqlquery, tableOrView);
+
+            controlNavigator2.Buttons.ImageList = sharedImageCollection1;
+            controlNavigator2.Buttons.CustomButtons[0].ImageIndex = 5;
         }
 
         private void setControlValues() {

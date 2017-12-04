@@ -23,6 +23,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBankBranch));
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.controlNavigator1 = new DevExpress.XtraEditors.ControlNavigator();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -47,6 +49,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
+            this.sharedImageCollection1 = new DevExpress.Utils.SharedImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
@@ -57,6 +60,8 @@
             this.statusStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripStatusLabel1
@@ -84,7 +89,7 @@
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 12, true, true, "Refresh", "Refresh")});
             this.controlNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.controlNavigator1.Location = new System.Drawing.Point(2, 2);
-            this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2);
             this.controlNavigator1.Name = "controlNavigator1";
             this.controlNavigator1.NavigatableControl = this.gridControl1;
             this.controlNavigator1.Size = new System.Drawing.Size(1015, 28);
@@ -97,10 +102,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.gridControl1.Location = new System.Drawing.Point(2, 166);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
@@ -174,7 +179,7 @@
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 62);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1015, 100);
             this.panel1.TabIndex = 0;
@@ -195,7 +200,7 @@
             this.tableLayoutPanel3.Controls.Add(this.cmbBank, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -226,7 +231,7 @@
             this.cbActive.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbActive.Location = new System.Drawing.Point(93, 77);
-            this.cbActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbActive.Margin = new System.Windows.Forms.Padding(2);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(896, 21);
             this.cbActive.TabIndex = 18;
@@ -237,7 +242,7 @@
             this.txtBankBranch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBankBranch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBankBranch.Location = new System.Drawing.Point(93, 27);
-            this.txtBankBranch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBankBranch.Margin = new System.Windows.Forms.Padding(2);
             this.txtBankBranch.Name = "txtBankBranch";
             this.txtBankBranch.Size = new System.Drawing.Size(896, 23);
             this.txtBankBranch.TabIndex = 20;
@@ -274,7 +279,7 @@
             this.txtShortName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtShortName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtShortName.Location = new System.Drawing.Point(93, 52);
-            this.txtShortName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtShortName.Margin = new System.Windows.Forms.Padding(2);
             this.txtShortName.Name = "txtShortName";
             this.txtShortName.Size = new System.Drawing.Size(896, 23);
             this.txtShortName.TabIndex = 21;
@@ -300,7 +305,7 @@
             this.cmbBank.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBank.FormattingEnabled = true;
             this.cmbBank.Location = new System.Drawing.Point(93, 2);
-            this.cmbBank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbBank.Margin = new System.Windows.Forms.Padding(2);
             this.cmbBank.Name = "cmbBank";
             this.cmbBank.Size = new System.Drawing.Size(896, 24);
             this.cmbBank.TabIndex = 19;
@@ -316,7 +321,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
@@ -349,7 +354,7 @@
             this.tableLayoutPanel2.Controls.Add(this.searchControl1, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 34);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -375,7 +380,7 @@
             this.searchControl1.Client = this.gridControl1;
             this.searchControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchControl1.Location = new System.Drawing.Point(119, 2);
-            this.searchControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchControl1.Margin = new System.Windows.Forms.Padding(2);
             this.searchControl1.Name = "searchControl1";
             this.searchControl1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchControl1.Properties.Appearance.Options.UseFont = true;
@@ -386,13 +391,27 @@
             this.searchControl1.Size = new System.Drawing.Size(835, 24);
             this.searchControl1.TabIndex = 8;
             // 
+            // sharedImageCollection1
+            // 
+            // 
+            // 
+            // 
+            this.sharedImageCollection1.ImageSource.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("sharedImageCollection1.ImageSource.ImageStream")));
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(0, "add_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(1, "edit_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(2, "save_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(3, "cancel_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(4, "switchrowcolumn_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(5, "refresh_16x16.png");
+            this.sharedImageCollection1.ParentControl = this;
+            // 
             // FrmBankBranch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 558);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmBankBranch";
             this.Text = "LISAG - Bank Branch";
             this.Load += new System.EventHandler(this.FrmBankBranch_Load);
@@ -410,6 +429,8 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -440,5 +461,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.SearchControl searchControl1;
+        private DevExpress.Utils.SharedImageCollection sharedImageCollection1;
     }
 }

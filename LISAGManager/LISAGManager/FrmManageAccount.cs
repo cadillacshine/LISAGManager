@@ -36,6 +36,70 @@ namespace LISAGManager {
 
         private void FrmManageAccount_Load(object sender, EventArgs e) {
             loadForm();
+
+            controlNavigator1.Buttons.ImageList = sharedImageCollection1;
+            controlNavigator1.Buttons.CustomButtons[0].ImageIndex = 0;
+            controlNavigator1.Buttons.CustomButtons[1].ImageIndex = 1;
+            controlNavigator1.Buttons.CustomButtons[2].ImageIndex = 2;
+            controlNavigator1.Buttons.CustomButtons[3].ImageIndex = 3;
+            controlNavigator1.Buttons.CustomButtons[4].ImageIndex = 4;
+            controlNavigator1.Buttons.CustomButtons[5].ImageIndex = 5;
+
+            controlNavigatorCI.Buttons.ImageList = sharedImageCollection1;
+            controlNavigatorCI.Buttons.CustomButtons[0].ImageIndex = 0;
+            controlNavigatorCI.Buttons.CustomButtons[1].ImageIndex = 1;
+            controlNavigatorCI.Buttons.CustomButtons[2].ImageIndex = 2;
+            controlNavigatorCI.Buttons.CustomButtons[3].ImageIndex = 3;
+            controlNavigatorCI.Buttons.CustomButtons[4].ImageIndex = 4;
+            controlNavigatorCI.Buttons.CustomButtons[5].ImageIndex = 5;
+
+            controlNavigatorAD.Buttons.ImageList = sharedImageCollection1;
+            controlNavigatorAD.Buttons.CustomButtons[0].ImageIndex = 0;
+            controlNavigatorAD.Buttons.CustomButtons[1].ImageIndex = 1;
+            controlNavigatorAD.Buttons.CustomButtons[2].ImageIndex = 2;
+            controlNavigatorAD.Buttons.CustomButtons[3].ImageIndex = 3;
+            controlNavigatorAD.Buttons.CustomButtons[4].ImageIndex = 4;
+            controlNavigatorAD.Buttons.CustomButtons[5].ImageIndex = 5;
+
+            controlNavigatorKD.Buttons.ImageList = sharedImageCollection1;
+            controlNavigatorKD.Buttons.CustomButtons[0].ImageIndex = 0;
+            controlNavigatorKD.Buttons.CustomButtons[1].ImageIndex = 1;
+            controlNavigatorKD.Buttons.CustomButtons[2].ImageIndex = 2;
+            controlNavigatorKD.Buttons.CustomButtons[3].ImageIndex = 3;
+            controlNavigatorKD.Buttons.CustomButtons[4].ImageIndex = 4;
+            controlNavigatorKD.Buttons.CustomButtons[5].ImageIndex = 5;
+
+            controlNavigatorLoc.Buttons.ImageList = sharedImageCollection1;
+            controlNavigatorLoc.Buttons.CustomButtons[0].ImageIndex = 0;
+            controlNavigatorLoc.Buttons.CustomButtons[1].ImageIndex = 1;
+            controlNavigatorLoc.Buttons.CustomButtons[2].ImageIndex = 2;
+            controlNavigatorLoc.Buttons.CustomButtons[3].ImageIndex = 3;
+            controlNavigatorLoc.Buttons.CustomButtons[4].ImageIndex = 4;
+            controlNavigatorLoc.Buttons.CustomButtons[5].ImageIndex = 5;
+
+            controlNavigatorBD.Buttons.ImageList = sharedImageCollection1;
+            controlNavigatorBD.Buttons.CustomButtons[0].ImageIndex = 0;
+            controlNavigatorBD.Buttons.CustomButtons[1].ImageIndex = 1;
+            controlNavigatorBD.Buttons.CustomButtons[2].ImageIndex = 2;
+            controlNavigatorBD.Buttons.CustomButtons[3].ImageIndex = 3;
+            controlNavigatorBD.Buttons.CustomButtons[4].ImageIndex = 4;
+            controlNavigatorBD.Buttons.CustomButtons[5].ImageIndex = 5;
+
+            controlNavigatorAD.Buttons.ImageList = sharedImageCollection1;
+            controlNavigatorAD.Buttons.CustomButtons[0].ImageIndex = 0;
+            controlNavigatorAD.Buttons.CustomButtons[1].ImageIndex = 1;
+            controlNavigatorAD.Buttons.CustomButtons[2].ImageIndex = 2;
+            controlNavigatorAD.Buttons.CustomButtons[3].ImageIndex = 3;
+            controlNavigatorAD.Buttons.CustomButtons[4].ImageIndex = 4;
+            controlNavigatorAD.Buttons.CustomButtons[5].ImageIndex = 5;
+
+            controlNavigatorAR.Buttons.ImageList = sharedImageCollection1;
+            controlNavigatorAR.Buttons.CustomButtons[0].ImageIndex = 0;
+            controlNavigatorAR.Buttons.CustomButtons[1].ImageIndex = 1;
+            controlNavigatorAR.Buttons.CustomButtons[2].ImageIndex = 2;
+            controlNavigatorAR.Buttons.CustomButtons[3].ImageIndex = 3;
+            controlNavigatorAR.Buttons.CustomButtons[4].ImageIndex = 4;
+            controlNavigatorAR.Buttons.CustomButtons[5].ImageIndex = 5;
         }
 
         private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e) {
@@ -112,7 +176,7 @@ namespace LISAGManager {
                 if (e.Button.Tag.ToString() == "Add") {
                     toolStripStatusLabel1.Text = "Adding...";
                     if (tableLayoutPanel2.RowStyles[2].Height == 1)
-                        tableLayoutPanel2.RowStyles[2].Height = 143;
+                        tableLayoutPanel2.RowStyles[2].Height = 149;
                     actionState = "a";
                     setTabState(false);
                     setControlState(true);
@@ -139,7 +203,7 @@ namespace LISAGManager {
 
                 } else if (e.Button.Tag.ToString() == "Edit") {
                     if (tableLayoutPanel2.RowStyles[2].Height == 1)
-                        tableLayoutPanel2.RowStyles[2].Height = 143;
+                        tableLayoutPanel2.RowStyles[2].Height = 149;
                     actionState = "e";
                     setControlState(true);
 
@@ -321,10 +385,10 @@ namespace LISAGManager {
                     toolStripStatusLabel1.Text = "Done";
 
                 } else if (e.Button.Tag.ToString() == "Switch") {
-                    if (tableLayoutPanel2.RowStyles[2].Height == 143) {
+                    if (tableLayoutPanel2.RowStyles[2].Height == 149) {
                         tableLayoutPanel2.RowStyles[2].Height = 1;
                     } else {
-                        tableLayoutPanel2.RowStyles[2].Height = 143;
+                        tableLayoutPanel2.RowStyles[2].Height = 149;
                     }
                 }
             //} catch {
@@ -745,7 +809,7 @@ namespace LISAGManager {
         }
 
         private void controlNavigatorAD_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            try {
+            //try {
 
                 if (e.Button.Tag.ToString() == "Edit") {
                     if (tableLayoutPanel52.RowStyles[2].Height == 1)
@@ -883,15 +947,15 @@ namespace LISAGManager {
                     toolStripStatusLabelAD.Text = "Done";
 
                 } else if (e.Button.Tag.ToString() == "Switch") {
-                    if (tableLayoutPanel51.RowStyles[2].Height == 144) {
-                        tableLayoutPanel51.RowStyles[2].Height = 1;
+                    if (tableLayoutPanel52.RowStyles[2].Height == 144) {
+                        tableLayoutPanel52.RowStyles[2].Height = 1;
                     } else {
-                        tableLayoutPanel51.RowStyles[2].Height = 144;
+                        tableLayoutPanel52.RowStyles[2].Height = 144;
                     }
                 }
-            } catch {
+            //} catch {
 
-            }
+            //}
         }
 
         private void gridViewAD_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
