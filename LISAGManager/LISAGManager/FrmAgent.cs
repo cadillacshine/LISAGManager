@@ -14,6 +14,10 @@ namespace LISAGManager {
     public partial class FrmAgent: Form {
 
         NavigatorCustomButton BtnAdd, BtnEdit, BtnSave, BtnCancel, BtnSwitch, BtnRefresh;
+        NavigatorCustomButton BtnADAdd, BtnADEdit, BtnADSave, BtnADCancel, BtnADSwitch, BtnADRefresh;
+
+        SqlCommand sqlcmd = new SqlCommand();
+
         private string actionState = "a";
         private string sqlQuery = "SELECT Name, AgentNumber, SurveyorName, LicenseNumber, Active FROM vwAgent ORDER BY Name";
         private string tableOrView = "vwAgent";
@@ -25,6 +29,17 @@ namespace LISAGManager {
 
         private void FrmAgent_Load(object sender, EventArgs e) {
             loadForm();
+        }
+
+        private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e) {
+            if (xtraTabControl1.SelectedTabPage.Text == "Personal Information") {
+                searchControl1.Text = "";
+            } else if (xtraTabControl1.SelectedTabPage.Text == "Account Details") {
+                searchControlAD.Text = "";
+                loadAccountDetails();
+                sqlQuery = "SELECT Name, AgentNumber, Username, SurveyorName, AccountActive FROM vwAgent ORDER BY Name";
+                gridControlAD.DataSource = Misc.loadDataSource(sqlQuery, "vwAgent");
+            } 
         }
 
         private void loadForm() {
@@ -51,8 +66,30 @@ namespace LISAGManager {
             setControlState(false);
         }
 
+        private void loadAccountDetails() {
+            BtnADAdd = controlNavigatorAD.Buttons.CustomButtons[0];
+            BtnADEdit = controlNavigatorAD.Buttons.CustomButtons[1];
+            BtnADSave = controlNavigatorAD.Buttons.CustomButtons[2];
+            BtnADCancel = controlNavigatorAD.Buttons.CustomButtons[3];
+            BtnADSwitch = controlNavigatorAD.Buttons.CustomButtons[4];
+            BtnADRefresh = controlNavigatorAD.Buttons.CustomButtons[5];
+
+            BtnADAdd.Enabled = false;
+            BtnADEdit.Enabled = true;
+            BtnADSave.Enabled = false;
+            BtnADCancel.Enabled = false;
+            BtnADSwitch.Enabled = true;
+            BtnADRefresh.Enabled = true;
+        }
+
+        private void setTabState(bool status) {
+            // enable/disable tab page selection
+            xtraTabControl1.TabPages[0].PageEnabled = status;
+            xtraTabControl1.TabPages[1].PageEnabled = status;
+        }
+
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            SqlCommand sqlcmd = new SqlCommand();
+            
             int surveyorID = 0;
 
             if (e.Button.Tag.ToString() == "Add") {
@@ -240,6 +277,16 @@ namespace LISAGManager {
             }
         }
 
+        private void gridViewAD_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
+            selectionChangedAD();
+            setControlValuesAD();
+        }
+
+        private void gridViewAD_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
+            selectionChangedAD();
+            setControlValuesAD();
+        }
+
         private void setControlState(bool status) {
             // enable/disable all other controls
             cmbSurveyor.Enabled = status;
@@ -251,6 +298,13 @@ namespace LISAGManager {
             txtEmailAddress.Enabled = status;
             txtAgentNumber.Enabled = status;
             cbActive.Enabled = status;
+        }
+
+        private void setControlStateAD(bool status) {
+            txtADUsername.Enabled = status;
+            txtADPassword.Enabled = status;
+            txtADConfirmPassword.Enabled = status;
+            cbADAccountActive.Enabled = status;
         }
 
         private void emptyControls() {
@@ -285,6 +339,18 @@ namespace LISAGManager {
             btnPicture.Enabled = false;
         }
 
+        private void selectionChangedAD() {
+            setTabState(true);
+            setControlStateAD(false);
+
+            BtnADAdd.Enabled = false;
+            BtnADEdit.Enabled = true;
+            BtnADSave.Enabled = false;
+            BtnADCancel.Enabled = false;
+            BtnADSwitch.Enabled = true;
+            BtnADRefresh.Enabled = true;
+        }
+
         private void setControlValues() {
             string name = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Name").ToString();
             cmbSurveyor.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "SurveyorName").ToString();
@@ -311,6 +377,32 @@ namespace LISAGManager {
             }
             dReader.Close();
             pictureBox1.Image = Misc.loadAgentImage(txtAgentNumber.Text);
+        }
+
+        private void setControlValuesAD() {
+            string firstName = "";
+            string middleName = "";
+            string lastName = "";
+            string agentNumber = gridViewAD.GetRowCellValue(gridViewAD.FocusedRowHandle, "AgentNumber").ToString();
+            sqlcmd = new SqlCommand("SELECT FirstName, MiddleName, LastName FROM Agent WHERE AgentNumber = '" + agentNumber + "' ", Misc.getConn());
+            SqlDataReader dReader = sqlcmd.ExecuteReader();
+            Misc.connOpen();
+            while (dReader.Read()) {
+                firstName = dReader.GetString(0);
+                middleName = dReader.GetString(1);
+                lastName = dReader.GetString(2);
+            }
+            dReader.Close();
+
+            pictureBoxAD.Image = Misc.loadImage(agentNumber);
+            txtADFirstName.Text = firstName;
+            txtADMiddleName.Text = middleName;
+            txtADLastName.Text = lastName;
+            txtADLicenseNumber.Text = agentNumber;
+            txtADUsername.Text = gridViewAD.GetRowCellValue(gridViewAD.FocusedRowHandle, "Username").ToString();
+            txtADPassword.Text = "ThisIsMyPassword";
+            txtADConfirmPassword.Text = "ThisIsMyPassword";
+            cbADAccountActive.Checked = (bool)gridViewAD.GetRowCellValue(gridViewAD.FocusedRowHandle, "AccountActive");
         }
 
         private void verifyInput() {

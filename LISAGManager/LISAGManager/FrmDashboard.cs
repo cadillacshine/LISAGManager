@@ -276,7 +276,13 @@ namespace LISAGManager {
         }
 
         private void FrmDashboard_Load(object sender, EventArgs e) {
-            
+            foreach (Control control in this.Controls) {
+                MdiClient client = control as MdiClient;
+                if (!(client == null)) {
+                    client.BackColor = Color.Beige;
+                    break;
+                }
+            }
         }
 
         private void nbiSurveyors_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {

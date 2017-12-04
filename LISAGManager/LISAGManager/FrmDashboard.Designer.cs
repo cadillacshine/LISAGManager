@@ -69,7 +69,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 43);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(201, 512);
+            this.panel1.Size = new System.Drawing.Size(201, 571);
             this.panel1.TabIndex = 0;
             // 
             // navBarControl1
@@ -110,7 +110,7 @@
             this.navBarControl1.Margin = new System.Windows.Forms.Padding(2);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 201;
-            this.navBarControl1.Size = new System.Drawing.Size(201, 512);
+            this.navBarControl1.Size = new System.Drawing.Size(201, 571);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             this.navBarControl1.Click += new System.EventHandler(this.navBarControl1_Click);
@@ -156,7 +156,6 @@
             // navBarGroup1
             // 
             this.navBarGroup1.Caption = "Me";
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsText;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiMyProfile),
@@ -221,7 +220,6 @@
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "Surveyors";
-            this.navBarGroup2.Expanded = true;
             this.navBarGroup2.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsText;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiSurveyors),
@@ -260,6 +258,7 @@
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Setups";
+            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsText;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiSetupAgent),
@@ -339,7 +338,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1064, 43);
+            this.panel2.Size = new System.Drawing.Size(1149, 43);
             this.panel2.TabIndex = 1;
             // 
             // label2
@@ -362,7 +361,7 @@
             this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblUsername.Location = new System.Drawing.Point(764, 9);
+            this.lblUsername.Location = new System.Drawing.Point(849, 9);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(253, 26);
@@ -374,7 +373,7 @@
             // 
             this.pbProfilePic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbProfilePic.Image = global::LISAGManager.Properties.Resources.User;
-            this.pbProfilePic.Location = new System.Drawing.Point(1023, 2);
+            this.pbProfilePic.Location = new System.Drawing.Point(1108, 2);
             this.pbProfilePic.Margin = new System.Windows.Forms.Padding(2);
             this.pbProfilePic.Name = "pbProfilePic";
             this.pbProfilePic.Size = new System.Drawing.Size(40, 39);
@@ -387,7 +386,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = global::LISAGManager.Properties.Resources.LISAG2;
-            this.pictureBox1.Location = new System.Drawing.Point(916, 513);
+            this.pictureBox1.Location = new System.Drawing.Point(1001, 572);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(146, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -398,17 +397,17 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkGreen;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 555);
+            this.panel3.Location = new System.Drawing.Point(0, 614);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1064, 12);
+            this.panel3.Size = new System.Drawing.Size(1149, 12);
             this.panel3.TabIndex = 3;
             // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 567);
+            this.ClientSize = new System.Drawing.Size(1149, 626);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
