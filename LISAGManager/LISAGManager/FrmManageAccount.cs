@@ -253,8 +253,13 @@ namespace LISAGManager {
                         sqlcmd.Dispose();
 
                         string image = openFileDialog1.FileName;
-                        Misc.updateImage(memberID, image);
 
+                        if (image.Equals("") || image == null) {
+                        return;
+                        } else {
+                        Misc.updateImage(memberID, image);
+                        }
+                        
                     } else if (actionState == "a") {
                         toolStripStatusLabel1.Text = "Saving...";
 
@@ -297,6 +302,8 @@ namespace LISAGManager {
 
                         Misc.connOpen();
                         string image = openFileDialog1.FileName;
+
+                 
                         Misc.saveImage(memberID, image);
 
                         sqlcmd = new SqlCommand("INSERT INTO UserAccount (MemberID, Username, Password, Administrator, Active) VALUES (@MemberID, @Username, @Password, @Administrator, @Active)", Misc.getConn());
