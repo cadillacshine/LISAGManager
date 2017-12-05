@@ -1350,7 +1350,7 @@ namespace LISAGManager {
             BtnCancel.Enabled = false;
             BtnSwitch.Enabled = true;
             BtnRefresh.Enabled = true;
-            btnPic.Enabled = true;
+            btnPic.Enabled = false;
         }
 
         private void selectionChangedCI() {
@@ -1363,7 +1363,7 @@ namespace LISAGManager {
             BtnCICancel.Enabled = false;
             BtnCISwitch.Enabled = true;
             BtnCIRefresh.Enabled = true;
-            btnPic.Enabled = true;
+            btnPic.Enabled = false;
         }
 
         private void selectionChangedKD() {
@@ -1376,7 +1376,7 @@ namespace LISAGManager {
             BtnKDCancel.Enabled = false;
             BtnKDSwitch.Enabled = true;
             BtnKDRefresh.Enabled = true;
-            btnPic.Enabled = true;
+            btnPic.Enabled = false;
         }
 
         private void selectionChangedLoc() {
@@ -1389,7 +1389,7 @@ namespace LISAGManager {
             BtnLocCancel.Enabled = false;
             BtnLocSwitch.Enabled = true;
             BtnLocRefresh.Enabled = true;
-            btnPic.Enabled = true;
+            btnPic.Enabled = false;
         }
 
         private void selectionChangedBD() {
@@ -1402,7 +1402,7 @@ namespace LISAGManager {
             BtnBDCancel.Enabled = false;
             BtnBDSwitch.Enabled = true;
             BtnBDRefresh.Enabled = true;
-            btnPic.Enabled = true;
+            btnPic.Enabled = false;
         }
 
         private void selectionChangedAD() {
@@ -1415,7 +1415,7 @@ namespace LISAGManager {
             BtnADCancel.Enabled = false;
             BtnADSwitch.Enabled = true;
             BtnADRefresh.Enabled = true;
-            btnPic.Enabled = true;
+            btnPic.Enabled = false;
         }
 
         private void selectionChangedAR() {
@@ -1428,7 +1428,7 @@ namespace LISAGManager {
             BtnARCancel.Enabled = false;
             BtnARSwitch.Enabled = true;
             BtnARRefresh.Enabled = true;
-            btnPic.Enabled = true;
+            btnPic.Enabled = false;
         }
 
         private void setControlValues() {
