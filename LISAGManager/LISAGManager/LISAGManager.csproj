@@ -168,6 +168,9 @@
     <EmbeddedResource Include="FrmCity.resx">
       <DependentUpon>FrmCity.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDashboard.aa-DJ.resx">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </EmbeddedResource>
