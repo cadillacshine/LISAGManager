@@ -51,7 +51,17 @@ namespace LISAGManager {
 
             dReader.Close();
 
-            lblPersonalInformation.Text = name + "\n" + gender + " || " + maritalStatus;
+            sqlcmd = new SqlCommand("SELECT COUNT(*) FROM vwAgent WHERE LicenseNumber = '" + licenseNo + "' ", Misc.getConn());
+            Misc.connOpen();
+            int count = (int)sqlcmd.ExecuteScalar();
+            string agentCount = "";
+
+            if (count == 1) 
+                agentCount = count + " agent";
+             else 
+                agentCount = count + " agents";
+
+            lblPersonalInformation.Text = name + "\n" + gender + " || " + maritalStatus + "\n" + agentCount;
             lblContactInformation.Text = phoneNumber2 == "" ? phoneNumber1 + "\n" + emailAddress : phoneNumber1 + "\n" + phoneNumber2 + "\n" + emailAddress;
             lblBusinessAddress.Text = businessAddress;
             lblResidentialAddress.Text = residentialAddress;

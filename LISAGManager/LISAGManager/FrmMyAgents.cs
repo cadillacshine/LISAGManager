@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace LISAGManager {
     public partial class FrmMyAgents : Form {
 
-        private string sqlquery = "SELECT Name, PhoneNumber1, PhoneNumber2, EmailAddress, Active FROM vwAgent WHERE licenseNumber = " + Misc.getUser().licenseNumber;
+        private string sqlquery = "SELECT Name, AgentNumber, PhoneNumber1, PhoneNumber2, EmailAddress, Active FROM vwAgent WHERE licenseNumber = " + Misc.getUser().licenseNumber;
         private string tableOrView = "vwAgent";
 
         public FrmMyAgents() {
@@ -31,6 +31,15 @@ namespace LISAGManager {
                 gridControl1.DataSource = Misc.loadDataSource(sqlquery, tableOrView);
                 toolStripStatusLabel1.Text = "Done";
             }
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
+            setControlValues();
+        }
+
+        private void setControlValues() {
+            string agentNumber = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "AgentNumber").ToString();
+            pictureBox1.Image = Misc.loadAgentImage(agentNumber);
         }
     }
 }

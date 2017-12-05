@@ -23,6 +23,8 @@ namespace LISAGManager {
         private string tableOrView = "vwAgent";
         int myAgentID = 0;
 
+        private string query = "";
+
         public FrmAgent() {
             InitializeComponent();
         }
@@ -37,6 +39,8 @@ namespace LISAGManager {
             controlNavigator1.Buttons.CustomButtons[3].ImageIndex = 3;
             controlNavigator1.Buttons.CustomButtons[4].ImageIndex = 4;
             controlNavigator1.Buttons.CustomButtons[5].ImageIndex = 5;
+
+           
         }
 
         private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e) {
@@ -51,7 +55,16 @@ namespace LISAGManager {
         }
 
         private void loadForm() {
-            cmbSurveyor.DataSource = Misc.loadDataSource("SELECT Name FROM vwMember WHERE Active = 'True' ORDER BY Name", "vwMember");
+            
+            if (Misc.getUser().administrator) {
+                query = "SELECT Name FROM vwMember WHERE Active = 'True' ORDER BY Name";
+                sqlQuery = "SELECT Name, AgentNumber, SurveyorName, LicenseNumber, Active FROM vwAgent ORDER BY Name";
+            } else {
+                query = "SELECT Name FROM vwMember WHERE MemberID = '" + Misc.getUser().appUserID + "' AND Active = 'True' ORDER BY Name";
+                sqlQuery = "SELECT Name, AgentNumber, SurveyorName, LicenseNumber, Active FROM vwAgent WHERE LicenseNumber = '" + Misc.getUser().licenseNumber + "' ORDER BY Name";
+            }
+
+            cmbSurveyor.DataSource = Misc.loadDataSource(query, "vwMember");
             cmbSurveyor.DisplayMember = "Name";
 
             gridControl1.DataSource = Misc.loadDataSource(sqlQuery, tableOrView);
@@ -107,6 +120,10 @@ namespace LISAGManager {
                 actionState = "a";
                 setControlState(true);
                 emptyControls();
+
+                cmbSurveyor.DataSource = Misc.loadDataSource(query, "vwMember");
+                cmbSurveyor.DisplayMember = "Name";
+
                 txtFirstName.Focus();
 
                 pictureBox1.Image = Properties.Resources.User;

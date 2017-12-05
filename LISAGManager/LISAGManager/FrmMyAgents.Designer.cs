@@ -42,6 +42,9 @@
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.controlNavigator2 = new DevExpress.XtraEditors.ControlNavigator();
             this.sharedImageCollection1 = new DevExpress.Utils.SharedImageCollection(this.components);
+            this.colAgentNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -52,24 +55,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.gridControl1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.controlNavigator1, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.statusStrip1, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.gridControl1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.controlNavigator1, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.statusStrip1, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 116F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1069, 573);
             this.tableLayoutPanel1.TabIndex = 1;
@@ -77,15 +83,15 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gridControl1.Location = new System.Drawing.Point(2, 36);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.gridControl1.Location = new System.Drawing.Point(2, 152);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemCheckEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(1065, 486);
+            this.gridControl1.Size = new System.Drawing.Size(1065, 370);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -98,6 +104,7 @@
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colName,
+            this.colAgentNumber,
             this.colPhoneNumber1,
             this.colPhoneNumber,
             this.colEmailAddress,
@@ -112,6 +119,7 @@
             this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
             this.gridView1.OptionsView.EnableAppearanceOddRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // colName
             // 
@@ -120,7 +128,7 @@
             this.colName.Name = "colName";
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
-            this.colName.Width = 222;
+            this.colName.Width = 326;
             // 
             // colPhoneNumber1
             // 
@@ -128,8 +136,8 @@
             this.colPhoneNumber1.FieldName = "PhoneNumber1";
             this.colPhoneNumber1.Name = "colPhoneNumber1";
             this.colPhoneNumber1.Visible = true;
-            this.colPhoneNumber1.VisibleIndex = 1;
-            this.colPhoneNumber1.Width = 122;
+            this.colPhoneNumber1.VisibleIndex = 2;
+            this.colPhoneNumber1.Width = 183;
             // 
             // colPhoneNumber
             // 
@@ -137,8 +145,8 @@
             this.colPhoneNumber.FieldName = "PhoneNumber2";
             this.colPhoneNumber.Name = "colPhoneNumber";
             this.colPhoneNumber.Visible = true;
-            this.colPhoneNumber.VisibleIndex = 2;
-            this.colPhoneNumber.Width = 119;
+            this.colPhoneNumber.VisibleIndex = 3;
+            this.colPhoneNumber.Width = 177;
             // 
             // colEmailAddress
             // 
@@ -146,8 +154,8 @@
             this.colEmailAddress.FieldName = "EmailAddress";
             this.colEmailAddress.Name = "colEmailAddress";
             this.colEmailAddress.Visible = true;
-            this.colEmailAddress.VisibleIndex = 3;
-            this.colEmailAddress.Width = 107;
+            this.colEmailAddress.VisibleIndex = 4;
+            this.colEmailAddress.Width = 159;
             // 
             // colActive
             // 
@@ -156,8 +164,8 @@
             this.colActive.FieldName = "Active";
             this.colActive.Name = "colActive";
             this.colActive.Visible = true;
-            this.colActive.VisibleIndex = 4;
-            this.colActive.Width = 55;
+            this.colActive.VisibleIndex = 5;
+            this.colActive.Width = 88;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -183,7 +191,7 @@
             this.controlNavigator1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.controlNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.controlNavigator1.Location = new System.Drawing.Point(2, 526);
-            this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2);
             this.controlNavigator1.Name = "controlNavigator1";
             this.controlNavigator1.NavigatableControl = this.gridControl1;
             this.controlNavigator1.Size = new System.Drawing.Size(1065, 25);
@@ -212,9 +220,9 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.45614F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.54386F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.97645F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.023552F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel2.Controls.Add(this.searchControl1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.controlNavigator2, 3, 0);
@@ -229,14 +237,14 @@
             // searchControl1
             // 
             this.searchControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchControl1.Location = new System.Drawing.Point(12, 3);
+            this.searchControl1.Location = new System.Drawing.Point(45, 3);
             this.searchControl1.Name = "searchControl1";
             this.searchControl1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchControl1.Properties.Appearance.Options.UseFont = true;
             this.searchControl1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.searchControl1.Size = new System.Drawing.Size(427, 22);
+            this.searchControl1.Size = new System.Drawing.Size(941, 22);
             this.searchControl1.TabIndex = 0;
             // 
             // controlNavigator2
@@ -254,10 +262,11 @@
             this.controlNavigator2.Buttons.Remove.Visible = false;
             this.controlNavigator2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.controlNavigator2.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
-            new DevExpress.XtraEditors.NavigatorCustomButton(12)});
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 12, true, true, "Refresh", "Refresh")});
             this.controlNavigator2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.controlNavigator2.Location = new System.Drawing.Point(1031, 3);
             this.controlNavigator2.Name = "controlNavigator2";
+            this.controlNavigator2.NavigatableControl = this.gridControl1;
             this.controlNavigator2.Size = new System.Drawing.Size(29, 22);
             this.controlNavigator2.TabIndex = 1;
             this.controlNavigator2.Text = "controlNavigator2";
@@ -276,6 +285,41 @@
             this.sharedImageCollection1.ImageSource.Images.SetKeyName(4, "switchrowcolumn_16x16.png");
             this.sharedImageCollection1.ImageSource.Images.SetKeyName(5, "refresh_16x16.png");
             this.sharedImageCollection1.ParentControl = this;
+            // 
+            // colAgentNumber
+            // 
+            this.colAgentNumber.Caption = "Agent Number";
+            this.colAgentNumber.FieldName = "AgentNumber";
+            this.colAgentNumber.Name = "colAgentNumber";
+            this.colAgentNumber.Visible = true;
+            this.colAgentNumber.VisibleIndex = 1;
+            this.colAgentNumber.Width = 123;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 37);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1063, 110);
+            this.tableLayoutPanel3.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::LISAGManager.Properties.Resources.User;
+            this.pictureBox1.Location = new System.Drawing.Point(462, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(139, 104);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmMyAgents
             // 
@@ -298,6 +342,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,5 +367,8 @@
         private DevExpress.XtraEditors.SearchControl searchControl1;
         private DevExpress.XtraEditors.ControlNavigator controlNavigator2;
         private DevExpress.Utils.SharedImageCollection sharedImageCollection1;
+        private DevExpress.XtraGrid.Columns.GridColumn colAgentNumber;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

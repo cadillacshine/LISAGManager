@@ -106,7 +106,7 @@
             this.repositoryItemCheckEdit1,
             this.repositoryItemCheckEdit2,
             this.repositoryItemDateEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(725, 493);
+            this.gridControl1.Size = new System.Drawing.Size(827, 560);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -178,7 +178,7 @@
             // 
             // colKinName
             // 
-            this.colKinName.Caption = "KinName";
+            this.colKinName.Caption = "Kin Name";
             this.colKinName.FieldName = "KinName";
             this.colKinName.Name = "colKinName";
             this.colKinName.Visible = true;
@@ -187,7 +187,7 @@
             // 
             // colKinContact
             // 
-            this.colKinContact.Caption = "KinContact";
+            this.colKinContact.Caption = "Kin Contact";
             this.colKinContact.FieldName = "KinContact";
             this.colKinContact.Name = "colKinContact";
             this.colKinContact.Visible = true;
@@ -245,7 +245,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1064, 567);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1166, 634);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -263,7 +263,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(327, 563);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(327, 630);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -300,7 +300,7 @@
             // lblLicenseNumber
             // 
             this.lblLicenseNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLicenseNumber.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblLicenseNumber.Location = new System.Drawing.Point(104, 131);
             this.lblLicenseNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -329,7 +329,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(323, 403);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(323, 470);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // tableLayoutPanel6
@@ -338,13 +338,13 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(2, 82);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(2, 96);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(319, 76);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(319, 90);
             this.tableLayoutPanel6.TabIndex = 5;
             // 
             // groupControl1
@@ -357,7 +357,7 @@
             this.groupControl1.Location = new System.Drawing.Point(2, 2);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(315, 72);
+            this.groupControl1.Size = new System.Drawing.Size(315, 86);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "CONTACT INFORMATION";
             // 
@@ -368,7 +368,7 @@
             this.lblContactInformation.Location = new System.Drawing.Point(2, 23);
             this.lblContactInformation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContactInformation.Name = "lblContactInformation";
-            this.lblContactInformation.Size = new System.Drawing.Size(311, 47);
+            this.lblContactInformation.Size = new System.Drawing.Size(311, 61);
             this.lblContactInformation.TabIndex = 4;
             this.lblContactInformation.Text = "0244980443\r\n0244010419\r\na.boat@hotmail.com\r\n";
             this.lblContactInformation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -379,13 +379,13 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Controls.Add(this.groupControl4, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(2, 162);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(2, 190);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(319, 76);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(319, 90);
             this.tableLayoutPanel7.TabIndex = 6;
             // 
             // groupControl4
@@ -396,7 +396,7 @@
             this.groupControl4.Location = new System.Drawing.Point(2, 2);
             this.groupControl4.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(315, 72);
+            this.groupControl4.Size = new System.Drawing.Size(315, 86);
             this.groupControl4.TabIndex = 0;
             this.groupControl4.Text = "BUSINESS ADDRESS";
             // 
@@ -407,7 +407,7 @@
             this.lblBusinessAddress.Location = new System.Drawing.Point(2, 23);
             this.lblBusinessAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBusinessAddress.Name = "lblBusinessAddress";
-            this.lblBusinessAddress.Size = new System.Drawing.Size(311, 47);
+            this.lblBusinessAddress.Size = new System.Drawing.Size(311, 61);
             this.lblBusinessAddress.TabIndex = 5;
             this.lblBusinessAddress.Text = "DANIEL PREKO LICENSED SURVEYOR\r\nP.O. BOX WJ 935 NEW WEIJA - ACCRA";
             this.lblBusinessAddress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -418,13 +418,13 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.Controls.Add(this.groupControl3, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(2, 242);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(2, 284);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(319, 76);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(319, 90);
             this.tableLayoutPanel8.TabIndex = 7;
             // 
             // groupControl3
@@ -435,7 +435,7 @@
             this.groupControl3.Location = new System.Drawing.Point(2, 2);
             this.groupControl3.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(315, 72);
+            this.groupControl3.Size = new System.Drawing.Size(315, 86);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "RESIDENTIAL ADDRESS";
             // 
@@ -446,7 +446,7 @@
             this.lblResidentialAddress.Location = new System.Drawing.Point(2, 23);
             this.lblResidentialAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblResidentialAddress.Name = "lblResidentialAddress";
-            this.lblResidentialAddress.Size = new System.Drawing.Size(311, 47);
+            this.lblResidentialAddress.Size = new System.Drawing.Size(311, 61);
             this.lblResidentialAddress.TabIndex = 6;
             this.lblResidentialAddress.Text = "NO. 4 FLOWER STREET MILE 11 NEW BORTIANOR";
             this.lblResidentialAddress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -460,7 +460,7 @@
             this.groupControl5.Location = new System.Drawing.Point(2, 2);
             this.groupControl5.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(319, 76);
+            this.groupControl5.Size = new System.Drawing.Size(319, 90);
             this.groupControl5.TabIndex = 8;
             this.groupControl5.Text = "PERSONAL INFORMATION";
             // 
@@ -471,7 +471,7 @@
             this.lblPersonalInformation.Location = new System.Drawing.Point(2, 23);
             this.lblPersonalInformation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPersonalInformation.Name = "lblPersonalInformation";
-            this.lblPersonalInformation.Size = new System.Drawing.Size(315, 51);
+            this.lblPersonalInformation.Size = new System.Drawing.Size(315, 65);
             this.lblPersonalInformation.TabIndex = 1;
             this.lblPersonalInformation.Text = "Kwadwo A. Boateng\r\nMale || Married\r\n";
             this.lblPersonalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -481,10 +481,10 @@
             this.groupControl2.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl2.CaptionImage")));
             this.groupControl2.Controls.Add(this.lblBankDetails);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(2, 322);
+            this.groupControl2.Location = new System.Drawing.Point(2, 378);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(319, 79);
+            this.groupControl2.Size = new System.Drawing.Size(319, 90);
             this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "BANK DETAILS";
             // 
@@ -495,7 +495,7 @@
             this.lblBankDetails.Location = new System.Drawing.Point(2, 23);
             this.lblBankDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBankDetails.Name = "lblBankDetails";
-            this.lblBankDetails.Size = new System.Drawing.Size(315, 54);
+            this.lblBankDetails.Size = new System.Drawing.Size(315, 65);
             this.lblBankDetails.TabIndex = 6;
             this.lblBankDetails.Text = "DANIEL PREKO\r\n0333014428153201\r\nECOBANK\r\nWEIJA";
             this.lblBankDetails.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -516,7 +516,7 @@
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(729, 563);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(831, 630);
             this.tableLayoutPanel9.TabIndex = 2;
             // 
             // tableLayoutPanel10
@@ -533,7 +533,7 @@
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(725, 27);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(827, 27);
             this.tableLayoutPanel10.TabIndex = 0;
             // 
             // searchControl1
@@ -549,7 +549,7 @@
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
             this.searchControl1.Properties.Client = this.gridControl1;
-            this.searchControl1.Size = new System.Drawing.Size(626, 22);
+            this.searchControl1.Size = new System.Drawing.Size(728, 22);
             this.searchControl1.TabIndex = 1;
             // 
             // controlNavigator2
@@ -571,7 +571,7 @@
             this.controlNavigator2.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 12, true, true, "Refresh", "Refresh")});
             this.controlNavigator2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlNavigator2.Location = new System.Drawing.Point(694, 2);
+            this.controlNavigator2.Location = new System.Drawing.Point(796, 2);
             this.controlNavigator2.Margin = new System.Windows.Forms.Padding(2);
             this.controlNavigator2.Name = "controlNavigator2";
             this.controlNavigator2.Size = new System.Drawing.Size(29, 23);
@@ -592,11 +592,11 @@
             this.controlNavigator1.Buttons.Remove.Visible = false;
             this.controlNavigator1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.controlNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlNavigator1.Location = new System.Drawing.Point(2, 530);
+            this.controlNavigator1.Location = new System.Drawing.Point(2, 597);
             this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2);
             this.controlNavigator1.Name = "controlNavigator1";
             this.controlNavigator1.NavigatableControl = this.gridControl1;
-            this.controlNavigator1.Size = new System.Drawing.Size(725, 31);
+            this.controlNavigator1.Size = new System.Drawing.Size(827, 31);
             this.controlNavigator1.TabIndex = 1;
             this.controlNavigator1.Text = "controlNavigator1";
             this.controlNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
@@ -620,7 +620,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 567);
+            this.ClientSize = new System.Drawing.Size(1166, 634);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(913, 480);
