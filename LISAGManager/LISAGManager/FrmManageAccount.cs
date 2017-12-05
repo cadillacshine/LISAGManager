@@ -1028,6 +1028,11 @@ namespace LISAGManager {
             }
         }
 
+        private void txtInductionYear_KeyPress(object sender, KeyPressEventArgs e) {
+            const char Delete = (char)8;
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != Delete;
+        }
+
         private void gridViewAD_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
             selectionChangedAD();
             setControlValuesAD();
@@ -1763,8 +1768,19 @@ namespace LISAGManager {
                 txtInductionYear.Focus();
                 return false;
             }
-            return true;
+            
+            if (Convert.ToInt32(txtInductionYear.Text) > DateTime.Now.Year) {
+                MessageBox.Show("Induction year cannot be more than current year", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtInductionYear.Focus();
+                return false;
+            }          
 
+            if (Convert.ToInt32(txtInductionYear.Text) < deDOB.DateTime.Year) {
+                MessageBox.Show("Induction year cannot be less than birth year", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtInductionYear.Focus();
+                return false;
+            }
+            return true;
         }
 
     }

@@ -784,6 +784,7 @@
             this.txtInductionYear.Name = "txtInductionYear";
             this.txtInductionYear.Size = new System.Drawing.Size(444, 24);
             this.txtInductionYear.TabIndex = 8;
+            this.txtInductionYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInductionYear_KeyPress);
             // 
             // tableLayoutPanel6
             // 

@@ -61,6 +61,13 @@ namespace LISAGManager {
                     actionState = "e";
                     setControlState(true);
 
+                    // these fields need to be disabled even on edit
+                    txtFirstName.Enabled = false;
+                    txtMiddleName.Enabled = false;
+                    txtLastName.Enabled = false;
+                    txtInductionYear.Enabled = false;
+                    txtLicenseNo.Enabled = false;
+
                     txtFirstName.Focus();
                     BtnAdd.Enabled = false;
                     BtnEdit.Enabled = false;

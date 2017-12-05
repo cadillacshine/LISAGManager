@@ -622,8 +622,8 @@
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.96868F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.03132F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.92373F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.07627F));
             this.tableLayoutPanel7.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.cmbSurveyor, 1, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -642,7 +642,7 @@
             this.label1.Location = new System.Drawing.Point(2, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 26);
+            this.label1.Size = new System.Drawing.Size(118, 26);
             this.label1.TabIndex = 20;
             this.label1.Text = "Lic. Surveyor:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -651,13 +651,12 @@
             // 
             this.cmbSurveyor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbSurveyor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSurveyor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbSurveyor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSurveyor.FormattingEnabled = true;
-            this.cmbSurveyor.Location = new System.Drawing.Point(114, 2);
+            this.cmbSurveyor.Location = new System.Drawing.Point(124, 2);
             this.cmbSurveyor.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSurveyor.Name = "cmbSurveyor";
-            this.cmbSurveyor.Size = new System.Drawing.Size(828, 24);
+            this.cmbSurveyor.Size = new System.Drawing.Size(818, 24);
             this.cmbSurveyor.TabIndex = 19;
             // 
             // tableLayoutPanel3

@@ -60,8 +60,9 @@ namespace LISAGManager {
                     int inductionYear = 0;
                     DateTime dateOfBirth = DateTime.Now;
                     bool active = true;
+                    bool administrator = false;
 
-                    sqlcmd = new SqlCommand("SELECT FirstName, MiddleName, LastName, LicenseNumber, Gender, DateOfBirth, Hometown, MaritalStatus, KinName, KinContact, phoneNumber1, phoneNumber2, emailAddress, regionName, cityName, businessAddress, residentialAddress, bankBranchName, bankName, accountName, accountNumber, inductionYear, Status, active FROM vwMember WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                    sqlcmd = new SqlCommand("SELECT FirstName, MiddleName, LastName, LicenseNumber, Gender, DateOfBirth, Hometown, MaritalStatus, KinName, KinContact, phoneNumber1, phoneNumber2, emailAddress, regionName, cityName, businessAddress, residentialAddress, bankBranchName, bankName, accountName, accountNumber, inductionYear, Status, administrator, active FROM vwMember WHERE MemberID = '" + memberID + "' ", Misc.getConn());
                     Misc.connOpen();
                     SqlDataReader dReader = sqlcmd.ExecuteReader();
 
@@ -89,8 +90,8 @@ namespace LISAGManager {
                         accountNumber = dReader.GetString(20);
                         inductionYear = dReader.GetInt32(21);
                         status = dReader.GetString(22);
-                        active = dReader.GetBoolean(23);
-
+                        administrator = dReader.GetBoolean(23);
+                        active = dReader.GetBoolean(24);
                     }
 
                     AppUser appUser = new AppUser() {
@@ -118,6 +119,7 @@ namespace LISAGManager {
                         accountNumber = accountNumber,
                         inductionYear = inductionYear,
                         status = status,
+                        administrator = administrator,
                         active = active
                     };
                     dReader.Close();

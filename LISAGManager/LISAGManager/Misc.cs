@@ -355,6 +355,7 @@ namespace LISAGManager {
         public int inductionYear { get; set; }
         public string status { get; set; }
         public Access access { get; set; }
+        public bool administrator { get; set; }
         public bool active { get; set; }
     }
 
