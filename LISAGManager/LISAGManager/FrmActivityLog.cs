@@ -19,7 +19,7 @@ namespace LISAGManager {
             controlNavigator1.Buttons.ImageList = sharedImageCollection1;
             controlNavigator1.Buttons.CustomButtons[0].ImageIndex = 5;
 
-            gridControl1.DataSource = Misc.loadDataSource("SELECT Username, Activity, ActivityTime FROM vwActivityLog ORDER BY ActivityTime DESC", "vwActivityLog");
+            gridControl1.DataSource = Misc.loadDataSource("SELECT Name, Activity, ActivityTime FROM vwActivityLog ORDER BY ActivityTime DESC", "vwActivityLog");
         }
 
         private void controlNavigator1_ButtonClick(object sender, DevExpress.XtraEditors.NavigatorButtonClickEventArgs e) {
@@ -27,7 +27,7 @@ namespace LISAGManager {
                 if (e.Button.Tag.ToString() == "Refresh") {
                     toolStripStatusLabel1.Text = "Refreshing...";
                     searchControl1.Text = "";
-                    gridControl1.DataSource = Misc.loadDataSource("SELECT Username, Activity, ActivityTime FROM vwActivityLog ORDER BY ActivityTime DESC", "vwActivityLog");
+                    gridControl1.DataSource = Misc.loadDataSource("SELECT Name, Activity, ActivityTime FROM vwActivityLog ORDER BY ActivityTime DESC", "vwActivityLog");
                     toolStripStatusLabel1.Text = "Done";
                 }
             } catch {

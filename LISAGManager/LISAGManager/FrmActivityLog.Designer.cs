@@ -30,7 +30,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colUsername = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActivity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActivityTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -107,7 +107,7 @@
             this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colUsername,
+            this.colName,
             this.colActivity,
             this.colActivityTime});
             this.gridView1.GridControl = this.gridControl1;
@@ -117,14 +117,14 @@
             this.gridView1.OptionsView.EnableAppearanceOddRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // colUsername
+            // colName
             // 
-            this.colUsername.Caption = "Username";
-            this.colUsername.FieldName = "Username";
-            this.colUsername.Name = "colUsername";
-            this.colUsername.Visible = true;
-            this.colUsername.VisibleIndex = 0;
-            this.colUsername.Width = 475;
+            this.colName.Caption = "Name";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            this.colName.Width = 475;
             // 
             // colActivity
             // 
@@ -276,7 +276,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraEditors.SearchControl searchControl1;
         private DevExpress.XtraEditors.ControlNavigator controlNavigator1;
-        private DevExpress.XtraGrid.Columns.GridColumn colUsername;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colActivity;
         private DevExpress.XtraGrid.Columns.GridColumn colActivityTime;
         private DevExpress.XtraEditors.ControlNavigator controlNavigator2;

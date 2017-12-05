@@ -53,8 +53,8 @@ namespace LISAGManager {
         }
 
         public static void logActivity(int memberID, string activity) {
-            SqlCommand sqlcmd = new SqlCommand("INSERT INTO ActivityLog(UserAccountID, ActivityTime, Activity) VALUES(@UserAccountID, @ActivityTime, @Activity)", Misc.getConn());
-            sqlcmd.Parameters.AddWithValue("@UserAccountID", memberID);
+            SqlCommand sqlcmd = new SqlCommand("INSERT INTO ActivityLog(MemberID, ActivityTime, Activity) VALUES(@MemberID, @ActivityTime, @Activity)", Misc.getConn());
+            sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
             sqlcmd.Parameters.AddWithValue("ActivityTime", DateTime.Now);
             sqlcmd.Parameters.AddWithValue("@Activity", activity);
             sqlcmd.ExecuteNonQuery();
