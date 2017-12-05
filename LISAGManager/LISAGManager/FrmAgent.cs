@@ -29,6 +29,14 @@ namespace LISAGManager {
 
         private void FrmAgent_Load(object sender, EventArgs e) {
             loadForm();
+
+            controlNavigator1.Buttons.ImageList = sharedImageCollection1;
+            controlNavigator1.Buttons.CustomButtons[0].ImageIndex = 0;
+            controlNavigator1.Buttons.CustomButtons[1].ImageIndex = 1;
+            controlNavigator1.Buttons.CustomButtons[2].ImageIndex = 2;
+            controlNavigator1.Buttons.CustomButtons[3].ImageIndex = 3;
+            controlNavigator1.Buttons.CustomButtons[4].ImageIndex = 4;
+            controlNavigator1.Buttons.CustomButtons[5].ImageIndex = 5;
         }
 
         private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e) {
@@ -95,7 +103,7 @@ namespace LISAGManager {
             if (e.Button.Tag.ToString() == "Add") {
                 toolStripStatusLabel1.Text = "Adding...";
                 if (tableLayoutPanel1.RowStyles[2].Height == 1)
-                    tableLayoutPanel1.RowStyles[2].Height = 159;
+                    tableLayoutPanel1.RowStyles[2].Height = 155;
                 actionState = "a";
                 setControlState(true);
                 emptyControls();
@@ -124,7 +132,7 @@ namespace LISAGManager {
                 // agentID has been set in setControlValues()
 
                 if (tableLayoutPanel1.RowStyles[2].Height == 1)
-                    tableLayoutPanel1.RowStyles[2].Height = 159;
+                    tableLayoutPanel1.RowStyles[2].Height = 155;
                 actionState = "e";
                 setControlState(true);
 
@@ -152,8 +160,15 @@ namespace LISAGManager {
                 if (actionState == "e") {
                     toolStripStatusLabel1.Text = "Editing...";
 
-                    string image = openFileDialog1.FileName;
-                    Misc.updateAgentImage(myAgentID, image);
+                    string imageName = openFileDialog1.FileName;
+
+                    Misc.connOpen();
+                    if (imageName.Equals("openFileDialog1")) {
+                        Misc.updateAgentImage(myAgentID, pictureBox1.Image);
+                    } else {
+                        Misc.updateAgentImage(myAgentID, imageName);
+                    }
+
 
                     sqlcmd = new SqlCommand("UPDATE Agent SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, AgentNumber = @AgentNumber, PhoneNumber1 = @PhoneNumber1, PhoneNumber2 = @PhoneNumber2, EmailAddress = @EmailAddress, MemberID = @MemberID, Active = @Active WHERE AgentID = '" + myAgentID + "' ", Misc.getConn());
 
@@ -197,8 +212,12 @@ namespace LISAGManager {
                     myAgentID = (int)sqlcmd.ExecuteScalar();
 
                     Misc.connOpen();
-                    string image = openFileDialog1.FileName;
-                    Misc.saveAgentImage(myAgentID, image);
+                    string imageName = openFileDialog1.FileName;
+                    if (imageName.Equals("openFileDialog1")) {
+                        Misc.saveAgentImage(myAgentID, pictureBox1.Image);
+                    } else {
+                        Misc.saveAgentImage(myAgentID, imageName);
+                    }
                 }
 
                 actionState = "a";
@@ -249,10 +268,10 @@ namespace LISAGManager {
                 toolStripStatusLabel1.Text = "Done";
 
             } else if (e.Button.Tag.ToString() == "Switch") {
-                if (tableLayoutPanel1.RowStyles[2].Height == 159) {
+                if (tableLayoutPanel1.RowStyles[2].Height == 155) {
                     tableLayoutPanel1.RowStyles[2].Height = 1;
                 } else {
-                    tableLayoutPanel1.RowStyles[2].Height = 159;
+                    tableLayoutPanel1.RowStyles[2].Height = 155;
                 }
             }
             //} catch {

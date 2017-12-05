@@ -192,15 +192,37 @@ namespace LISAGManager {
             sqlcmd.ExecuteNonQuery();
         }
 
-        public static void saveAgentImage(int memberID, string image) {
+        public static void saveImage(int memberID, Image image) {
+            MemoryStream stream = new MemoryStream();
+            image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+            byte[] pic = stream.ToArray();
+            SqlCommand sqlcmd = new SqlCommand("INSERT INTO MemberImage(MemberID, MemberImage) values(@MemberID, @MemberImage)", Misc.getConn());
+            sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
+            sqlcmd.Parameters.AddWithValue("@MemberImage", pic);
+            Misc.connOpen();
+            sqlcmd.ExecuteNonQuery();
+        }
+
+        public static void saveAgentImage(int agentID, string image) {
             Bitmap bmp = new Bitmap(image);
             FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read);
             byte[] bimage = new byte[fs.Length];
             fs.Read(bimage, 0, Convert.ToInt32(fs.Length));
             fs.Close();
             SqlCommand sqlcmd = new SqlCommand("INSERT INTO AgentImage(AgentID, AgentImage) values(@AgentID, @AgentImage)", Misc.getConn());
-            sqlcmd.Parameters.AddWithValue("@AgentID", memberID);
+            sqlcmd.Parameters.AddWithValue("@AgentID", agentID);
             sqlcmd.Parameters.AddWithValue("@AgentImage", SqlDbType.Image).Value = bimage;
+            Misc.connOpen();
+            sqlcmd.ExecuteNonQuery();
+        }
+
+        public static void saveAgentImage(int agentID, Image image) {
+            MemoryStream stream = new MemoryStream();
+            image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+            byte[] pic = stream.ToArray();
+            SqlCommand sqlcmd = new SqlCommand("INSERT INTO AgentImage(AgentID, AgentImage) values(@AgentID, @AgentImage)", Misc.getConn());
+            sqlcmd.Parameters.AddWithValue("@AgentID", agentID);
+            sqlcmd.Parameters.AddWithValue("@AgentImage", pic);
             Misc.connOpen();
             sqlcmd.ExecuteNonQuery();
         }
@@ -218,6 +240,17 @@ namespace LISAGManager {
             sqlcmd.ExecuteNonQuery();
         }
 
+        public static void updateImage(int memberID, Image image) {
+            MemoryStream stream = new MemoryStream();
+            image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+            byte[] pic = stream.ToArray();
+            SqlCommand sqlcmd = new SqlCommand("UPDATE MemberImage SET MemberImage = @MemberImage WHERE MemberID = @MemberID", Misc.getConn());
+            sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
+            sqlcmd.Parameters.AddWithValue("@MemberImage", pic);
+            Misc.connOpen();
+            sqlcmd.ExecuteNonQuery();
+        }
+
         public static void updateAgentImage(int agentID, string image) {
             Bitmap bmp = new Bitmap(image);
             FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read);
@@ -227,6 +260,17 @@ namespace LISAGManager {
             SqlCommand sqlcmd = new SqlCommand("UPDATE AgentImage SET AgentImage = @AgentImage WHERE AgentID = @AgentID", Misc.getConn());
             sqlcmd.Parameters.AddWithValue("@AgentID", agentID);
             sqlcmd.Parameters.AddWithValue("@AgentImage", SqlDbType.Image).Value = bimage;
+            Misc.connOpen();
+            sqlcmd.ExecuteNonQuery();
+        }
+
+        public static void updateAgentImage(int agentID, Image image) {
+            MemoryStream stream = new MemoryStream();
+            image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+            byte[] pic = stream.ToArray();
+            SqlCommand sqlcmd = new SqlCommand("UPDATE AgentImage SET AgentImage = @AgentImage WHERE AgentID = @AgentID", Misc.getConn());
+            sqlcmd.Parameters.AddWithValue("@AgentID", agentID);
+            sqlcmd.Parameters.AddWithValue("@AgentImage", pic);
             Misc.connOpen();
             sqlcmd.ExecuteNonQuery();
         }

@@ -115,9 +115,9 @@ namespace LISAGManager {
             setControlValues();
 
             controlNavigator1.Buttons.ImageList = sharedImageCollection1;
-            controlNavigator1.Buttons.CustomButtons[0].ImageIndex = 1;
-            controlNavigator1.Buttons.CustomButtons[1].ImageIndex = 2;
-            controlNavigator1.Buttons.CustomButtons[2].ImageIndex = 3;
+            controlNavigator1.Buttons.CustomButtons[1].ImageIndex = 1;
+            controlNavigator1.Buttons.CustomButtons[2].ImageIndex = 2;
+            controlNavigator1.Buttons.CustomButtons[3].ImageIndex = 3;
         }
 
         private void loadForm() {

@@ -48,115 +48,121 @@ namespace LISAGManager {
         }
 
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-             try {
+            try {
 
-            SqlCommand sqlcmd = new SqlCommand();
+                SqlCommand sqlcmd = new SqlCommand();
 
-            if (e.Button.Tag.ToString() == "Edit") {
+                if (e.Button.Tag.ToString() == "Edit") {
 
-                sqlcmd = new SqlCommand("SELECT MemberID FROM Member WHERE LicenseNumber = '" + txtLicenseNo.Text + "' ", Misc.getConn());
-                Misc.connOpen();
-                memberID = (int)sqlcmd.ExecuteScalar();
+                    sqlcmd = new SqlCommand("SELECT MemberID FROM Member WHERE LicenseNumber = '" + txtLicenseNo.Text + "' ", Misc.getConn());
+                    Misc.connOpen();
+                    memberID = (int)sqlcmd.ExecuteScalar();
 
-                actionState = "e";
-                setControlState(true);
+                    actionState = "e";
+                    setControlState(true);
 
-                txtFirstName.Focus();
-                BtnAdd.Enabled = false;
-                BtnEdit.Enabled = false;
-                BtnSave.Enabled = true;
-                BtnCancel.Enabled = true;
-                BtnSwitch.Enabled = false;
-                BtnRefresh.Enabled = false;
+                    txtFirstName.Focus();
+                    BtnAdd.Enabled = false;
+                    BtnEdit.Enabled = false;
+                    BtnSave.Enabled = true;
+                    BtnCancel.Enabled = true;
+                    BtnSwitch.Enabled = false;
+                    BtnRefresh.Enabled = false;
 
-                controlNavigator1.Buttons.First.Enabled = false;
-                controlNavigator1.Buttons.Next.Enabled = false;
-                controlNavigator1.Buttons.Prev.Enabled = false;
-                controlNavigator1.Buttons.Last.Enabled = false;
+                    controlNavigator1.Buttons.First.Enabled = false;
+                    controlNavigator1.Buttons.Next.Enabled = false;
+                    controlNavigator1.Buttons.Prev.Enabled = false;
+                    controlNavigator1.Buttons.Last.Enabled = false;
 
-            } else if (e.Button.Tag.ToString() == "Save") {
+                } else if (e.Button.Tag.ToString() == "Save") {
 
-                verifyInput();
+                    verifyInput();
 
-                sqlcmd = new SqlCommand("SELECT RegionID FROM Region WHERE Name = '" + cmbRegion.Text + "' ", Misc.getConn());
-                int regionID = (int)sqlcmd.ExecuteScalar();
+                    sqlcmd = new SqlCommand("SELECT RegionID FROM Region WHERE Name = '" + cmbRegion.Text + "' ", Misc.getConn());
+                    int regionID = (int)sqlcmd.ExecuteScalar();
 
-                sqlcmd = new SqlCommand("SELECT CityID FROM City WHERE RegionID = '" + regionID + "' ", Misc.getConn());
-                int cityID = (int)sqlcmd.ExecuteScalar();
+                    sqlcmd = new SqlCommand("SELECT CityID FROM City WHERE RegionID = '" + regionID + "' ", Misc.getConn());
+                    int cityID = (int)sqlcmd.ExecuteScalar();
 
-                sqlcmd = new SqlCommand("SELECT LISAGBankID FROM LISAGBank WHERE AccountName = '" + txtAccountName.Text + "' AND AccountNumber = '" + txtAccountNumber.Text + "' ", Misc.getConn());
-                int lisagBankID = (int)sqlcmd.ExecuteScalar();
+                    sqlcmd = new SqlCommand("SELECT LISAGBankID FROM LISAGBank WHERE AccountName = '" + txtAccountName.Text + "' AND AccountNumber = '" + txtAccountNumber.Text + "' ", Misc.getConn());
+                    int lisagBankID = (int)sqlcmd.ExecuteScalar();
 
 
-                if (actionState == "e") {
-                    toolStripStatusLabel1.Text = "Editing...";
+                    if (actionState == "e") {
+                        toolStripStatusLabel1.Text = "Editing...";
 
-                    sqlcmd = new SqlCommand("UPDATE Member SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, InductionYear = @InductionYear, LicenseNumber = @LicenseNumber, PhoneNumber1 = @PhoneNumber1, PhoneNumber2 = @PhoneNumber2, EmailAddress = @EmailAddress, KinName = @KinName, KinContact = @KinContact, CityID = @CityID, BusinessAddress = @BusinessAddress, ResidentialAddress = @ResidentialAddress, LISAGBankID = @LISAGBankID WHERE MemberID = '" + memberID + "' ", Misc.getConn());
-                } 
+                        sqlcmd = new SqlCommand("UPDATE Member SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, InductionYear = @InductionYear, LicenseNumber = @LicenseNumber, PhoneNumber1 = @PhoneNumber1, PhoneNumber2 = @PhoneNumber2, EmailAddress = @EmailAddress, KinName = @KinName, KinContact = @KinContact, CityID = @CityID, BusinessAddress = @BusinessAddress, ResidentialAddress = @ResidentialAddress, LISAGBankID = @LISAGBankID WHERE MemberID = '" + memberID + "' ", Misc.getConn());
+                    }
 
-                sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
-                sqlcmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
-                sqlcmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
-                sqlcmd.Parameters.AddWithValue("@InductionYear", txtInductionYear.Text);
-                sqlcmd.Parameters.AddWithValue("@LicenseNumber", txtLicenseNo.Text);
-                sqlcmd.Parameters.AddWithValue("PhoneNumber1", txtPhoneNumber1.Text);
-                sqlcmd.Parameters.AddWithValue("@PhoneNumber2", txtPhoneNumber2.Text);
-                sqlcmd.Parameters.AddWithValue("@EmailAddress", txtEmailAddress.Text);
-                sqlcmd.Parameters.AddWithValue("@KinName", txtKinName.Text);
-                sqlcmd.Parameters.AddWithValue("@KinContact", txtKinContact.Text);
-                sqlcmd.Parameters.AddWithValue("@CityID", cityID);
-                sqlcmd.Parameters.AddWithValue("@BusinessAddress", txtBusinessAddress.Text);
-                sqlcmd.Parameters.AddWithValue("@ResidentialAddress", txtResidentialAddress.Text);
-                sqlcmd.Parameters.AddWithValue("@LISAGBankID", lisagBankID);
+                    sqlcmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
+                    sqlcmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
+                    sqlcmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
+                    sqlcmd.Parameters.AddWithValue("@InductionYear", txtInductionYear.Text);
+                    sqlcmd.Parameters.AddWithValue("@LicenseNumber", txtLicenseNo.Text);
+                    sqlcmd.Parameters.AddWithValue("PhoneNumber1", txtPhoneNumber1.Text);
+                    sqlcmd.Parameters.AddWithValue("@PhoneNumber2", txtPhoneNumber2.Text);
+                    sqlcmd.Parameters.AddWithValue("@EmailAddress", txtEmailAddress.Text);
+                    sqlcmd.Parameters.AddWithValue("@KinName", txtKinName.Text);
+                    sqlcmd.Parameters.AddWithValue("@KinContact", txtKinContact.Text);
+                    sqlcmd.Parameters.AddWithValue("@CityID", cityID);
+                    sqlcmd.Parameters.AddWithValue("@BusinessAddress", txtBusinessAddress.Text);
+                    sqlcmd.Parameters.AddWithValue("@ResidentialAddress", txtResidentialAddress.Text);
+                    sqlcmd.Parameters.AddWithValue("@LISAGBankID", lisagBankID);
 
-                Misc.connOpen();
-                sqlcmd.ExecuteNonQuery();
-                sqlcmd.Dispose();
+                    Misc.connOpen();
+                    sqlcmd.ExecuteNonQuery();
+                    sqlcmd.Dispose();
 
-                string image = openFileDialog1.FileName;
-                Misc.updateImage(memberID, image);
+                    Misc.connOpen();
+                    string imageName = openFileDialog1.FileName;
 
-                actionState = "a";
+                    if (imageName.Equals("openFileDialog1")) {
+                        Misc.updateImage(memberID, pictureBox1.Image);
+                    } else {
+                        Misc.updateImage(memberID, imageName);
+                    }               
 
-                setControlState(false);
-                BtnSave.Enabled = false;
-                BtnEdit.Enabled = true;
-                BtnAdd.Enabled = true;
-                BtnCancel.Enabled = false;
-                BtnSwitch.Enabled = true;
-                BtnRefresh.Enabled = true;
+                    actionState = "a";
 
-                controlNavigator1.Buttons.First.Enabled = true;
-                controlNavigator1.Buttons.Next.Enabled = true;
-                controlNavigator1.Buttons.Prev.Enabled = true;
-                controlNavigator1.Buttons.Last.Enabled = true;
+                    setControlState(false);
+                    BtnSave.Enabled = false;
+                    BtnEdit.Enabled = true;
+                    BtnAdd.Enabled = true;
+                    BtnCancel.Enabled = false;
+                    BtnSwitch.Enabled = true;
+                    BtnRefresh.Enabled = true;
 
-                updateAppUser();
-                toolStripStatusLabel1.Text = "Saved";
+                    controlNavigator1.Buttons.First.Enabled = true;
+                    controlNavigator1.Buttons.Next.Enabled = true;
+                    controlNavigator1.Buttons.Prev.Enabled = true;
+                    controlNavigator1.Buttons.Last.Enabled = true;
 
-            } else if (e.Button.Tag.ToString() == "Cancel") {
-                setControlState(false);
-                actionState = "a";
-                BtnAdd.Enabled = true;
-                BtnEdit.Enabled = true;
-                BtnSave.Enabled = false;
-                BtnCancel.Enabled = false;
-                BtnSwitch.Enabled = true;
-                BtnRefresh.Enabled = true;
+                    updateAppUser();
+                    toolStripStatusLabel1.Text = "Saved";
 
-                controlNavigator1.Buttons.First.Enabled = true;
-                controlNavigator1.Buttons.Next.Enabled = true;
-                controlNavigator1.Buttons.Prev.Enabled = true;
-                controlNavigator1.Buttons.Last.Enabled = true;
+                } else if (e.Button.Tag.ToString() == "Cancel") {
+                    setControlState(false);
+                    actionState = "a";
+                    BtnAdd.Enabled = true;
+                    BtnEdit.Enabled = true;
+                    BtnSave.Enabled = false;
+                    BtnCancel.Enabled = false;
+                    BtnSwitch.Enabled = true;
+                    BtnRefresh.Enabled = true;
 
-                toolStripStatusLabel1.Text = "Done";
+                    controlNavigator1.Buttons.First.Enabled = true;
+                    controlNavigator1.Buttons.Next.Enabled = true;
+                    controlNavigator1.Buttons.Prev.Enabled = true;
+                    controlNavigator1.Buttons.Last.Enabled = true;
 
-            } else if (e.Button.Tag.ToString() == "Refresh") {
-                toolStripStatusLabel1.Text = "Refreshing...";
-                cmbRegion.DataSource = Misc.loadDataSource(sqlQueryRegion, regionTableOrView);
-                cmbBankName.DataSource = Misc.loadDataSource(sqlQueryBankName, bankTableOrView);
-                toolStripStatusLabel1.Text = "Done";
-            }
+                    toolStripStatusLabel1.Text = "Done";
+
+                } else if (e.Button.Tag.ToString() == "Refresh") {
+                    toolStripStatusLabel1.Text = "Refreshing...";
+                    cmbRegion.DataSource = Misc.loadDataSource(sqlQueryRegion, regionTableOrView);
+                    cmbBankName.DataSource = Misc.loadDataSource(sqlQueryBankName, bankTableOrView);
+                    toolStripStatusLabel1.Text = "Done";
+                }
             } catch {
 
             }

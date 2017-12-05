@@ -252,12 +252,12 @@ namespace LISAGManager {
                         sqlcmd.ExecuteNonQuery();
                         sqlcmd.Dispose();
 
-                        string image = openFileDialog1.FileName;
+                        string imageName = openFileDialog1.FileName;
 
-                        if (image.Equals("") || image == null) {
-                        return;
-                        } else {
-                        Misc.updateImage(memberID, image);
+                        if (imageName.Equals("openFileDialog1")) {
+                        Misc.updateImage(memberID, pictureBoxPI.Image);
+                    } else {
+                        Misc.updateImage(memberID, imageName);
                         }
                         
                     } else if (actionState == "a") {
@@ -301,11 +301,13 @@ namespace LISAGManager {
                         memberID = (int)sqlcmd.ExecuteScalar();
 
                         Misc.connOpen();
-                        string image = openFileDialog1.FileName;
-
+                        string imageName = openFileDialog1.FileName;
+                    if (imageName.Equals("openFileDialog1")) {
+                        Misc.saveImage(memberID, pictureBoxPI.Image);
+                    } else {
+                        Misc.saveImage(memberID, imageName);
+                    }
                  
-                        Misc.saveImage(memberID, image);
-
                         sqlcmd = new SqlCommand("INSERT INTO UserAccount (MemberID, Username, Password, Administrator, Active) VALUES (@MemberID, @Username, @Password, @Administrator, @Active)", Misc.getConn());
                         sqlcmd.Parameters.AddWithValue("@MemberID", memberID);
                         sqlcmd.Parameters.AddWithValue("@Username", txtFirstName.Text + "." + txtLastName.Text);

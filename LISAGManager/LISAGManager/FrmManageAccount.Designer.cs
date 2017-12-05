@@ -65,10 +65,10 @@
             this.colDOB = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHometown = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colInductionYear = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGoodStanding = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.Status = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
@@ -328,8 +328,8 @@
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -574,7 +574,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.07692F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.92308F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 446F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 447F));
             this.tableLayoutPanel5.Controls.Add(this.label10, 2, 4);
             this.tableLayoutPanel5.Controls.Add(this.label9, 2, 3);
             this.tableLayoutPanel5.Controls.Add(this.label8, 2, 2);
@@ -614,7 +614,7 @@
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(319, 109);
+            this.label10.Location = new System.Drawing.Point(318, 109);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(145, 32);
@@ -627,7 +627,7 @@
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(319, 82);
+            this.label9.Location = new System.Drawing.Point(318, 82);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(145, 27);
@@ -640,7 +640,7 @@
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(319, 54);
+            this.label8.Location = new System.Drawing.Point(318, 54);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(145, 28);
@@ -653,7 +653,7 @@
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(319, 27);
+            this.label7.Location = new System.Drawing.Point(318, 27);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(145, 27);
@@ -666,7 +666,7 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(319, 0);
+            this.label6.Location = new System.Drawing.Point(318, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 27);
@@ -681,7 +681,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(100, 2);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(215, 24);
+            this.txtFirstName.Size = new System.Drawing.Size(214, 24);
             this.txtFirstName.TabIndex = 0;
             // 
             // txtMiddleName
@@ -691,7 +691,7 @@
             this.txtMiddleName.Location = new System.Drawing.Point(100, 29);
             this.txtMiddleName.Margin = new System.Windows.Forms.Padding(2);
             this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(215, 24);
+            this.txtMiddleName.Size = new System.Drawing.Size(214, 24);
             this.txtMiddleName.TabIndex = 1;
             // 
             // txtLastName
@@ -701,17 +701,17 @@
             this.txtLastName.Location = new System.Drawing.Point(100, 56);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(215, 24);
+            this.txtLastName.Size = new System.Drawing.Size(214, 24);
             this.txtLastName.TabIndex = 2;
             // 
             // txtHometown
             // 
             this.txtHometown.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtHometown.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHometown.Location = new System.Drawing.Point(468, 29);
+            this.txtHometown.Location = new System.Drawing.Point(467, 29);
             this.txtHometown.Margin = new System.Windows.Forms.Padding(2);
             this.txtHometown.Name = "txtHometown";
-            this.txtHometown.Size = new System.Drawing.Size(443, 24);
+            this.txtHometown.Size = new System.Drawing.Size(444, 24);
             this.txtHometown.TabIndex = 6;
             // 
             // cmbGender
@@ -726,7 +726,7 @@
             this.cmbGender.Location = new System.Drawing.Point(100, 84);
             this.cmbGender.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(215, 24);
+            this.cmbGender.Size = new System.Drawing.Size(214, 24);
             this.cmbGender.TabIndex = 3;
             // 
             // deDOB
@@ -745,17 +745,17 @@
             this.deDOB.Properties.DisplayFormat.FormatString = "D";
             this.deDOB.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.deDOB.Properties.Mask.EditMask = "D";
-            this.deDOB.Size = new System.Drawing.Size(215, 22);
+            this.deDOB.Size = new System.Drawing.Size(214, 22);
             this.deDOB.TabIndex = 4;
             // 
             // txtLicenseNo
             // 
             this.txtLicenseNo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLicenseNo.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLicenseNo.Location = new System.Drawing.Point(468, 56);
+            this.txtLicenseNo.Location = new System.Drawing.Point(467, 56);
             this.txtLicenseNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtLicenseNo.Name = "txtLicenseNo";
-            this.txtLicenseNo.Size = new System.Drawing.Size(443, 24);
+            this.txtLicenseNo.Size = new System.Drawing.Size(444, 24);
             this.txtLicenseNo.TabIndex = 7;
             // 
             // cmbMaritalStatus
@@ -768,10 +768,10 @@
             "Single",
             "Married",
             "Divorced"});
-            this.cmbMaritalStatus.Location = new System.Drawing.Point(468, 2);
+            this.cmbMaritalStatus.Location = new System.Drawing.Point(467, 2);
             this.cmbMaritalStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMaritalStatus.Name = "cmbMaritalStatus";
-            this.cmbMaritalStatus.Size = new System.Drawing.Size(443, 24);
+            this.cmbMaritalStatus.Size = new System.Drawing.Size(444, 24);
             this.cmbMaritalStatus.TabIndex = 5;
             this.cmbMaritalStatus.SelectedIndexChanged += new System.EventHandler(this.cmbMaritalStatus_SelectedIndexChanged);
             // 
@@ -779,10 +779,10 @@
             // 
             this.txtInductionYear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtInductionYear.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInductionYear.Location = new System.Drawing.Point(468, 84);
+            this.txtInductionYear.Location = new System.Drawing.Point(467, 84);
             this.txtInductionYear.Margin = new System.Windows.Forms.Padding(2);
             this.txtInductionYear.Name = "txtInductionYear";
-            this.txtInductionYear.Size = new System.Drawing.Size(443, 24);
+            this.txtInductionYear.Size = new System.Drawing.Size(444, 24);
             this.txtInductionYear.TabIndex = 8;
             // 
             // tableLayoutPanel6
@@ -790,17 +790,17 @@
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.96552F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.03448F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel6.Controls.Add(this.cbActive, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.label11, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.cmbStatus, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(468, 111);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(467, 111);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(443, 28);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(444, 28);
             this.tableLayoutPanel6.TabIndex = 9;
             // 
             // cbActive
@@ -813,7 +813,7 @@
             this.cbActive.Location = new System.Drawing.Point(406, 2);
             this.cbActive.Margin = new System.Windows.Forms.Padding(2);
             this.cbActive.Name = "cbActive";
-            this.cbActive.Size = new System.Drawing.Size(35, 24);
+            this.cbActive.Size = new System.Drawing.Size(36, 24);
             this.cbActive.TabIndex = 10;
             this.cbActive.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbActive.UseVisualStyleBackColor = true;
@@ -964,7 +964,7 @@
             this.colDOB,
             this.colHometown,
             this.colInductionYear,
-            this.colGoodStanding,
+            this.Status,
             this.colActive});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -1029,20 +1029,14 @@
             this.colInductionYear.VisibleIndex = 5;
             this.colInductionYear.Width = 231;
             // 
-            // colGoodStanding
+            // Status
             // 
-            this.colGoodStanding.Caption = "Good Standing";
-            this.colGoodStanding.ColumnEdit = this.repositoryItemCheckEdit1;
-            this.colGoodStanding.FieldName = "GoodStanding";
-            this.colGoodStanding.Name = "colGoodStanding";
-            this.colGoodStanding.Visible = true;
-            this.colGoodStanding.VisibleIndex = 6;
-            this.colGoodStanding.Width = 180;
-            // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.Status.Caption = "Status";
+            this.Status.FieldName = "Status";
+            this.Status.Name = "Status";
+            this.Status.Visible = true;
+            this.Status.VisibleIndex = 6;
+            this.Status.Width = 180;
             // 
             // colActive
             // 
@@ -1058,6 +1052,11 @@
             // 
             this.repositoryItemCheckEdit2.AutoHeight = false;
             this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
             // tableLayoutPanel7
             // 
@@ -4432,8 +4431,8 @@
             this.tableLayoutPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
@@ -4840,7 +4839,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDOB;
         private DevExpress.XtraGrid.Columns.GridColumn colHometown;
         private DevExpress.XtraGrid.Columns.GridColumn colInductionYear;
-        private DevExpress.XtraGrid.Columns.GridColumn colGoodStanding;
+        private DevExpress.XtraGrid.Columns.GridColumn Status;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn colActive;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;

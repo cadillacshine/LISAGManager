@@ -120,6 +120,46 @@
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="groupControl1.CaptionImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAADJ0RVh0VGl0
+        bGUAQ3VzdG9tZXI7RW1wbG95ZWU7UGVyc29uO0NvbnRhY3Q7VXNlcjtDbGllbnR+ETboAAADKElEQVQ4
+        T3WSWUxTQRSGB0tV4hpfNGoIIigBArRWbCliuXahGoSmqaaNxBUURBEou7iArBZaUAQMBNGQgoBC1CDE
+        irjErWDcI2qixI0HiUtcosbfGUTTPniTP3fmnPN/99yZQwD8099HJpO5RMgieHK5nK/iVHylTOlKYzwW
+        Z3knj+NGp9Mx8zhbgcbPboru6Mtbcfd0OoeGWMkD02rBwQSFYEZkZKSLo8cJoFKpxp3NUUX2m6I+vOne
+        g2FbIUaulGGwOQ3n8lcjQ+7dq+bUro4eJwBt2bXDGP70eZ0WXTlq9Fu0uGdehb70UHQmSpCyzBPKcCXf
+        0eME4DiO3xgn+d6cGIrhRz3oKo9HhUGIwmg/WDQ+v7ZJ3L8rFIr/A+Rhcn6ZLnCoap0YP94/wI93d/Dp
+        9iE8s25HrtILm4Wzh9jBOnpI8cml/0TpPKN8QWnFWvG3Ly968PO1DR9vmPCkKR67lZ5f9X4zq2iXPEeP
+        E4Degoubm9tUy1rx5cFTWfhst+DtmQzcqtBjn9rrJsuxmoJWKSk4ISX7W6R/AEXtS8mrz+2kMZ5j1zwh
+        Lcp/W1uKAo8aYvGwbiOatkoQt2xuEs1N3L98Drn+MpvsPi4mucfEhOQ3S0meNYQZ2ZDwEg8ECbNqxfbW
+        Yh0O6YUwa/1Rvl6EFLOwPybbN5h9gNWxemONiJBdR5fQNeHtMAtC02sXny5qUcDSpkVnyybYrcnoMsWg
+        xBiM1HJ/5NSHIMEU2GNIX6gcA41OJm+7WZBTZI3AmQEjbr3KR+vAGqRWByIm1wP6zDmIK5mHml4O7XcM
+        ONy9EsbDIhgyfYqpdzwDjN9aGjBse5yKjvsGNNqXo/6GDEeuhaHmqhRVl8SovBgMywURym1CHOwNQdUF
+        DvqshSPUO5kBJqzP88VeazAKO0UoObsIlX0iWHoXocwmgOl8EEp7AlHSHYDcE/7IPO6LpGpfaFO96RCQ
+        KQzAU8d6hEfvmF+pSfayaZK972nTvGmBFzQpVMlUO+cjimplwryH6i0effIN7rWS6Flq6h39hdHTH9tM
+        pJpExchTqaaNafrYm8VY225UfEKIy2/De9bj8XcgTgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="groupControl2.CaptionImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAD3RFWHRUaXRsZQBFbXBsb3ll
+        ZTtEDFjDAAACx0lEQVQ4T2WRa0iTUQCGF1j+SHSfZblmWmZqqNl0jTJQx7zMvDbnMrLhhrfCtQTTykyc
+        M8VbSmstl5ehIBik1bQsM00zqawktMgi7UdlGeIlWhq8nYnBNj944HvPed73z6EBMKNJZk+rO05xtWn2
+        WrWUmqwRU5NliZS2WEDnFkbTV/mrDuoyKO49VeL70d5GzP34jFnCq/sNaC4UjZ8Jt+Na+mbBSG0apR3r
+        a8TfhTeY/1iDL4/j8ekuHw9Uh5AVTK+z9M2CEZV407cuTR7qZQFQRjujIJyJMiETagkDmfvpU5a+WTBS
+        IXIxPKkPxURvAmZGEvF9MBIvdRzcyHVFOosyWPpmwUgWzyn6SjL7d60sCoooN+SFuEAR4w6Zn73hoKuN
+        yNI3C8sHNBqlSg0eeNfXjukXaoy1nUJrLg9J7jbD5I65yv//Iy/RGctWBOdMAbelTZmCwaYC6IsiURq5
+        A+G7tnaQOy+CtVCabT6w8lkzt7n7HJUXDfJTa1GSnYHqI/4oifHCsYgQ7EsoBV+YMmJHOQQRdz1hjemA
+        lZsXmyVXaKafj4wjRKJGlaYRT29XokUpgVCSBf/YQnR0DyBOfHKOcmDwSGed6YBdfEpu062Hz/BncQnB
+        STXQd/cjp7ASUnk+qq41wYefh9bOHhRUaODN4elJZ7PpgJM0p2JifOIrfs7MIkBUjpG3HzD0ehSPhoah
+        7x2EJ+80dDc7obxcD1Zg3BTpeJgOuJ0ouGqYm/+F5Lw78D+sw25BLTwjqrE9uBhbOOew0UcONv8sKq43
+        gxUkWCIdlvnABbVhdn5huZxWPgSxsh8J+T2IyelCmFwPbkY7bHdKcVHdAO8DMYuk42M6sDE0PkWbfl4F
+        PxERYjVwD7sEl0AFGOxcbPCWge6RCls3CXyD4sFw9W0mHUfTAeP7OxCM7+y/ApuwdwWOCXsIjoS1AGj/
+        AP2QK1JAgKBfAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="sharedImageCollection1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>133, 17</value>
   </metadata>
@@ -224,9 +264,8 @@
   </metadata>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="SharedImageCollection.Timestamp" type="System.DateTime, mscorlib">
-    <value>12/04/2017 12:19:20</value>
+    <value>12/05/2017 13:28:58</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="SharedImageCollection.ImageSize" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
   </data>
