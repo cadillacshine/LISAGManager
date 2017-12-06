@@ -120,7 +120,6 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(388, 23);
             this.txtPassword.TabIndex = 3;
-            this.txtPassword.Text = "Passw0rd";
             // 
             // label1
             // 
@@ -155,7 +154,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(388, 23);
             this.txtUsername.TabIndex = 2;
-            this.txtUsername.Text = "King.Kong";
             // 
             // panel1
             // 
