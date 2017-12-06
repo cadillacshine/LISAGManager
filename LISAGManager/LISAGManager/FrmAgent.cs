@@ -40,7 +40,7 @@ namespace LISAGManager {
             controlNavigator1.Buttons.CustomButtons[4].ImageIndex = 4;
             controlNavigator1.Buttons.CustomButtons[5].ImageIndex = 5;
 
-           
+            xtraTabControl1.TabPages[1].PageVisible = false;
         }
 
         private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e) {

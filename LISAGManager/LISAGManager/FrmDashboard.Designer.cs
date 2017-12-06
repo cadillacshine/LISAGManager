@@ -64,23 +64,19 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.navBarControl1);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // navBarControl1
             // 
-            resources.ApplyResources(this.navBarControl1, "navBarControl1");
             this.navBarControl1.ActiveGroup = this.navBarGroup4;
             this.navBarControl1.Appearance.Background.BackColor = ((System.Drawing.Color)(resources.GetObject("navBarControl1.Appearance.Background.BackColor")));
             this.navBarControl1.Appearance.Background.Font = ((System.Drawing.Font)(resources.GetObject("navBarControl1.Appearance.Background.Font")));
-            this.navBarControl1.Appearance.Background.FontSizeDelta = ((int)(resources.GetObject("navBarControl1.Appearance.Background.FontSizeDelta")));
-            this.navBarControl1.Appearance.Background.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarControl1.Appearance.Background.FontStyleDelta")));
-            this.navBarControl1.Appearance.Background.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarControl1.Appearance.Background.GradientMode")));
-            this.navBarControl1.Appearance.Background.Image = ((System.Drawing.Image)(resources.GetObject("navBarControl1.Appearance.Background.Image")));
             this.navBarControl1.Appearance.Background.Options.UseBackColor = true;
             this.navBarControl1.Appearance.Background.Options.UseFont = true;
             this.navBarControl1.BackColor = System.Drawing.Color.Green;
+            resources.ApplyResources(this.navBarControl1, "navBarControl1");
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup4,
             this.navBarGroup1,
@@ -107,7 +103,6 @@
             this.nbiSetupAgent,
             this.navBarSeparatorItem6});
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.CollapsedWidth = ((int)(resources.GetObject("resource.CollapsedWidth")));
             this.navBarControl1.OptionsNavPane.ExpandedWidth = ((int)(resources.GetObject("resource.ExpandedWidth")));
             this.navBarControl1.Click += new System.EventHandler(this.navBarControl1_Click);
             // 
@@ -130,22 +125,6 @@
             // 
             // navBarSeparatorItem3
             // 
-            this.navBarSeparatorItem3.Appearance.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem3.Appearance.FontSizeDelta")));
-            this.navBarSeparatorItem3.Appearance.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem3.Appearance.FontStyleDelta")));
-            this.navBarSeparatorItem3.Appearance.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem3.Appearance.GradientMode")));
-            this.navBarSeparatorItem3.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem3.Appearance.Image")));
-            this.navBarSeparatorItem3.AppearanceDisabled.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem3.AppearanceDisabled.FontSizeDelta")));
-            this.navBarSeparatorItem3.AppearanceDisabled.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem3.AppearanceDisabled.FontStyleDelta")));
-            this.navBarSeparatorItem3.AppearanceDisabled.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem3.AppearanceDisabled.GradientMode")));
-            this.navBarSeparatorItem3.AppearanceDisabled.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem3.AppearanceDisabled.Image")));
-            this.navBarSeparatorItem3.AppearanceHotTracked.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem3.AppearanceHotTracked.FontSizeDelta")));
-            this.navBarSeparatorItem3.AppearanceHotTracked.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem3.AppearanceHotTracked.FontStyleDelta")));
-            this.navBarSeparatorItem3.AppearanceHotTracked.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem3.AppearanceHotTracked.GradientMode")));
-            this.navBarSeparatorItem3.AppearanceHotTracked.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem3.AppearanceHotTracked.Image")));
-            this.navBarSeparatorItem3.AppearancePressed.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem3.AppearancePressed.FontSizeDelta")));
-            this.navBarSeparatorItem3.AppearancePressed.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem3.AppearancePressed.FontStyleDelta")));
-            this.navBarSeparatorItem3.AppearancePressed.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem3.AppearancePressed.GradientMode")));
-            this.navBarSeparatorItem3.AppearancePressed.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem3.AppearancePressed.Image")));
             this.navBarSeparatorItem3.CanDrag = false;
             this.navBarSeparatorItem3.Enabled = false;
             resources.ApplyResources(this.navBarSeparatorItem3, "navBarSeparatorItem3");
@@ -186,22 +165,6 @@
             // 
             // navBarSeparatorItem2
             // 
-            this.navBarSeparatorItem2.Appearance.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem2.Appearance.FontSizeDelta")));
-            this.navBarSeparatorItem2.Appearance.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem2.Appearance.FontStyleDelta")));
-            this.navBarSeparatorItem2.Appearance.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem2.Appearance.GradientMode")));
-            this.navBarSeparatorItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem2.Appearance.Image")));
-            this.navBarSeparatorItem2.AppearanceDisabled.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem2.AppearanceDisabled.FontSizeDelta")));
-            this.navBarSeparatorItem2.AppearanceDisabled.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem2.AppearanceDisabled.FontStyleDelta")));
-            this.navBarSeparatorItem2.AppearanceDisabled.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem2.AppearanceDisabled.GradientMode")));
-            this.navBarSeparatorItem2.AppearanceDisabled.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem2.AppearanceDisabled.Image")));
-            this.navBarSeparatorItem2.AppearanceHotTracked.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem2.AppearanceHotTracked.FontSizeDelta")));
-            this.navBarSeparatorItem2.AppearanceHotTracked.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem2.AppearanceHotTracked.FontStyleDelta")));
-            this.navBarSeparatorItem2.AppearanceHotTracked.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem2.AppearanceHotTracked.GradientMode")));
-            this.navBarSeparatorItem2.AppearanceHotTracked.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem2.AppearanceHotTracked.Image")));
-            this.navBarSeparatorItem2.AppearancePressed.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem2.AppearancePressed.FontSizeDelta")));
-            this.navBarSeparatorItem2.AppearancePressed.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem2.AppearancePressed.FontStyleDelta")));
-            this.navBarSeparatorItem2.AppearancePressed.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem2.AppearancePressed.GradientMode")));
-            this.navBarSeparatorItem2.AppearancePressed.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem2.AppearancePressed.Image")));
             this.navBarSeparatorItem2.CanDrag = false;
             this.navBarSeparatorItem2.Enabled = false;
             resources.ApplyResources(this.navBarSeparatorItem2, "navBarSeparatorItem2");
@@ -217,22 +180,6 @@
             // 
             // navBarSeparatorItem4
             // 
-            this.navBarSeparatorItem4.Appearance.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem4.Appearance.FontSizeDelta")));
-            this.navBarSeparatorItem4.Appearance.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem4.Appearance.FontStyleDelta")));
-            this.navBarSeparatorItem4.Appearance.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem4.Appearance.GradientMode")));
-            this.navBarSeparatorItem4.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem4.Appearance.Image")));
-            this.navBarSeparatorItem4.AppearanceDisabled.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem4.AppearanceDisabled.FontSizeDelta")));
-            this.navBarSeparatorItem4.AppearanceDisabled.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem4.AppearanceDisabled.FontStyleDelta")));
-            this.navBarSeparatorItem4.AppearanceDisabled.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem4.AppearanceDisabled.GradientMode")));
-            this.navBarSeparatorItem4.AppearanceDisabled.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem4.AppearanceDisabled.Image")));
-            this.navBarSeparatorItem4.AppearanceHotTracked.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem4.AppearanceHotTracked.FontSizeDelta")));
-            this.navBarSeparatorItem4.AppearanceHotTracked.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem4.AppearanceHotTracked.FontStyleDelta")));
-            this.navBarSeparatorItem4.AppearanceHotTracked.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem4.AppearanceHotTracked.GradientMode")));
-            this.navBarSeparatorItem4.AppearanceHotTracked.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem4.AppearanceHotTracked.Image")));
-            this.navBarSeparatorItem4.AppearancePressed.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem4.AppearancePressed.FontSizeDelta")));
-            this.navBarSeparatorItem4.AppearancePressed.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem4.AppearancePressed.FontStyleDelta")));
-            this.navBarSeparatorItem4.AppearancePressed.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem4.AppearancePressed.GradientMode")));
-            this.navBarSeparatorItem4.AppearancePressed.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem4.AppearancePressed.Image")));
             this.navBarSeparatorItem4.CanDrag = false;
             this.navBarSeparatorItem4.Enabled = false;
             resources.ApplyResources(this.navBarSeparatorItem4, "navBarSeparatorItem4");
@@ -265,22 +212,6 @@
             // 
             // navBarSeparatorItem5
             // 
-            this.navBarSeparatorItem5.Appearance.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem5.Appearance.FontSizeDelta")));
-            this.navBarSeparatorItem5.Appearance.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem5.Appearance.FontStyleDelta")));
-            this.navBarSeparatorItem5.Appearance.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem5.Appearance.GradientMode")));
-            this.navBarSeparatorItem5.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem5.Appearance.Image")));
-            this.navBarSeparatorItem5.AppearanceDisabled.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem5.AppearanceDisabled.FontSizeDelta")));
-            this.navBarSeparatorItem5.AppearanceDisabled.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem5.AppearanceDisabled.FontStyleDelta")));
-            this.navBarSeparatorItem5.AppearanceDisabled.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem5.AppearanceDisabled.GradientMode")));
-            this.navBarSeparatorItem5.AppearanceDisabled.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem5.AppearanceDisabled.Image")));
-            this.navBarSeparatorItem5.AppearanceHotTracked.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem5.AppearanceHotTracked.FontSizeDelta")));
-            this.navBarSeparatorItem5.AppearanceHotTracked.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem5.AppearanceHotTracked.FontStyleDelta")));
-            this.navBarSeparatorItem5.AppearanceHotTracked.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem5.AppearanceHotTracked.GradientMode")));
-            this.navBarSeparatorItem5.AppearanceHotTracked.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem5.AppearanceHotTracked.Image")));
-            this.navBarSeparatorItem5.AppearancePressed.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem5.AppearancePressed.FontSizeDelta")));
-            this.navBarSeparatorItem5.AppearancePressed.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem5.AppearancePressed.FontStyleDelta")));
-            this.navBarSeparatorItem5.AppearancePressed.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem5.AppearancePressed.GradientMode")));
-            this.navBarSeparatorItem5.AppearancePressed.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem5.AppearancePressed.Image")));
             this.navBarSeparatorItem5.CanDrag = false;
             this.navBarSeparatorItem5.Enabled = false;
             resources.ApplyResources(this.navBarSeparatorItem5, "navBarSeparatorItem5");
@@ -316,22 +247,6 @@
             // 
             // navBarSeparatorItem6
             // 
-            this.navBarSeparatorItem6.Appearance.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem6.Appearance.FontSizeDelta")));
-            this.navBarSeparatorItem6.Appearance.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem6.Appearance.FontStyleDelta")));
-            this.navBarSeparatorItem6.Appearance.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem6.Appearance.GradientMode")));
-            this.navBarSeparatorItem6.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem6.Appearance.Image")));
-            this.navBarSeparatorItem6.AppearanceDisabled.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem6.AppearanceDisabled.FontSizeDelta")));
-            this.navBarSeparatorItem6.AppearanceDisabled.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem6.AppearanceDisabled.FontStyleDelta")));
-            this.navBarSeparatorItem6.AppearanceDisabled.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem6.AppearanceDisabled.GradientMode")));
-            this.navBarSeparatorItem6.AppearanceDisabled.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem6.AppearanceDisabled.Image")));
-            this.navBarSeparatorItem6.AppearanceHotTracked.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem6.AppearanceHotTracked.FontSizeDelta")));
-            this.navBarSeparatorItem6.AppearanceHotTracked.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem6.AppearanceHotTracked.FontStyleDelta")));
-            this.navBarSeparatorItem6.AppearanceHotTracked.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem6.AppearanceHotTracked.GradientMode")));
-            this.navBarSeparatorItem6.AppearanceHotTracked.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem6.AppearanceHotTracked.Image")));
-            this.navBarSeparatorItem6.AppearancePressed.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem6.AppearancePressed.FontSizeDelta")));
-            this.navBarSeparatorItem6.AppearancePressed.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem6.AppearancePressed.FontStyleDelta")));
-            this.navBarSeparatorItem6.AppearancePressed.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem6.AppearancePressed.GradientMode")));
-            this.navBarSeparatorItem6.AppearancePressed.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem6.AppearancePressed.Image")));
             this.navBarSeparatorItem6.CanDrag = false;
             this.navBarSeparatorItem6.Enabled = false;
             resources.ApplyResources(this.navBarSeparatorItem6, "navBarSeparatorItem6");
@@ -353,22 +268,6 @@
             // 
             // navBarSeparatorItem1
             // 
-            this.navBarSeparatorItem1.Appearance.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem1.Appearance.FontSizeDelta")));
-            this.navBarSeparatorItem1.Appearance.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem1.Appearance.FontStyleDelta")));
-            this.navBarSeparatorItem1.Appearance.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem1.Appearance.GradientMode")));
-            this.navBarSeparatorItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem1.Appearance.Image")));
-            this.navBarSeparatorItem1.AppearanceDisabled.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem1.AppearanceDisabled.FontSizeDelta")));
-            this.navBarSeparatorItem1.AppearanceDisabled.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem1.AppearanceDisabled.FontStyleDelta")));
-            this.navBarSeparatorItem1.AppearanceDisabled.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem1.AppearanceDisabled.GradientMode")));
-            this.navBarSeparatorItem1.AppearanceDisabled.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem1.AppearanceDisabled.Image")));
-            this.navBarSeparatorItem1.AppearanceHotTracked.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem1.AppearanceHotTracked.FontSizeDelta")));
-            this.navBarSeparatorItem1.AppearanceHotTracked.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem1.AppearanceHotTracked.FontStyleDelta")));
-            this.navBarSeparatorItem1.AppearanceHotTracked.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem1.AppearanceHotTracked.GradientMode")));
-            this.navBarSeparatorItem1.AppearanceHotTracked.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem1.AppearanceHotTracked.Image")));
-            this.navBarSeparatorItem1.AppearancePressed.FontSizeDelta = ((int)(resources.GetObject("navBarSeparatorItem1.AppearancePressed.FontSizeDelta")));
-            this.navBarSeparatorItem1.AppearancePressed.FontStyleDelta = ((System.Drawing.FontStyle)(resources.GetObject("navBarSeparatorItem1.AppearancePressed.FontStyleDelta")));
-            this.navBarSeparatorItem1.AppearancePressed.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("navBarSeparatorItem1.AppearancePressed.GradientMode")));
-            this.navBarSeparatorItem1.AppearancePressed.Image = ((System.Drawing.Image)(resources.GetObject("navBarSeparatorItem1.AppearancePressed.Image")));
             this.navBarSeparatorItem1.CanDrag = false;
             this.navBarSeparatorItem1.Enabled = false;
             resources.ApplyResources(this.navBarSeparatorItem1, "navBarSeparatorItem1");
@@ -390,11 +289,11 @@
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.DarkGreen;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.lblUsername);
             this.panel2.Controls.Add(this.pbProfilePic);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // label2
@@ -426,8 +325,8 @@
             // 
             // panel3
             // 
-            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.BackColor = System.Drawing.Color.DarkGreen;
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
             // 
             // FrmDashboard
