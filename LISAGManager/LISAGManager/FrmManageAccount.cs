@@ -1190,6 +1190,7 @@ namespace LISAGManager {
             txtADPassword.Enabled = status;
             txtADConfirmPassword.Enabled = status;
             cbADAdministrator.Enabled = status;
+            cbADChangePassword.Enabled = status;
             cbADAccountActive.Enabled = status;
         }
 
