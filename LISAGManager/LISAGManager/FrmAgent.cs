@@ -110,7 +110,7 @@ namespace LISAGManager {
         }
 
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
-            
+            try {
             int surveyorID = 0;
 
             if (e.Button.Tag.ToString() == "Add") {
@@ -291,9 +291,9 @@ namespace LISAGManager {
                     tableLayoutPanel1.RowStyles[2].Height = 155;
                 }
             }
-            //} catch {
+        } catch {
 
-            //}
+            }
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {

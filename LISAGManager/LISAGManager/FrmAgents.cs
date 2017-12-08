@@ -26,16 +26,16 @@ namespace LISAGManager {
         }
 
         private void controlNavigator2_ButtonClick(object sender, DevExpress.XtraEditors.NavigatorButtonClickEventArgs e) {
-           // try {
+            try {
                 if (e.Button.Tag.ToString() == "Refresh") {
                     toolStripStatusLabel1.Text = "Refreshing...";
                     gridControl1.DataSource = Misc.loadDataSource(sqlquery, tableOrView);
                     toolStripStatusLabel1.Text = "Done";
                 }
-            //} catch {
+            } catch {
 
                 
-            //}
+            }
         }
 
         private void gridControl1_Click(object sender, EventArgs e) {

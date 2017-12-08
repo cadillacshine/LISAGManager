@@ -20,7 +20,7 @@ namespace LISAGManager {
         }
 
         private void FrmLogin_Load(object sender, EventArgs e) {
-
+            txtUsername.Focus();
             Misc.setConn("Production");
 
             //DateTime expiryDate = new DateTime(2017, 12, 9);

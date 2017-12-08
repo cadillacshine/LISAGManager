@@ -80,8 +80,12 @@ namespace LISAGManager {
         }
 
         private void controlNavigator2_ButtonClick(object sender, DevExpress.XtraEditors.NavigatorButtonClickEventArgs e) {
+            try { 
             if (e.Button.Tag.ToString() == "Refresh") {
                 gridControl1.DataSource = Misc.loadDataSource(sqlquery, tableOrView);
+            }
+            } catch {
+
             }
         }
     }
