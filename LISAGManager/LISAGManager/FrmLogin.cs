@@ -20,7 +20,30 @@ namespace LISAGManager {
         }
 
         private void FrmLogin_Load(object sender, EventArgs e) {
+
             Misc.setConn("Production");
+
+            //DateTime expiryDate = new DateTime(2017, 12, 9);
+
+            //SqlCommand sqlcmd = new SqlCommand("INSERT INTO Registration(LicenseDate, ExpiryDate) VALUES(" + DateTime.Now + ", " + new DateTime(2017, 12, DateTime.Now.Day + 7) + ")", Misc.getConn());
+            //Misc.connOpen();
+            //sqlcmd.ExecuteNonQuery();
+            //sqlcmd.Dispose();
+
+            //if ((expiryDate.Day - DateTime.Now.Day) == 1) {
+            //    label4.Text = "Trial: " + (expiryDate.Day - DateTime.Now.Day) + " day remaining...";
+            //    label4.ForeColor = Color.Red;
+            //} else {
+            //    label4.Text = "Trial: " + (expiryDate.Day - DateTime.Now.Day) + " day(s) remaining...";
+            //    label4.ForeColor = Color.Green;
+            //}
+
+            //if (DateTime.Now.Date.Equals(expiryDate)) {
+            //    txtUsername.Enabled = false;
+            //    txtPassword.Enabled = false;
+            //    btnLogin.Enabled = false;
+            //    return;
+            //}
         }
 
         private void btnLogin_Click(object sender, EventArgs e) {
