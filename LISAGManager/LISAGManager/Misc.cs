@@ -22,9 +22,11 @@ namespace LISAGManager {
 
         public static void setConn(string connection) {
             if (connection == "Production")
-                conn = new SqlConnection(@"data source=FIVE\FIVE14;initial catalog=dbLISAG;integrated security=True");
+                //conn = new SqlConnection(@"data source=FIVE\FIVE14;initial catalog=dbLISAG;integrated security=True");
+                conn = new SqlConnection(@"data source=DESKTOP-O216PR4P\FIVE14;initial catalog=dbLISAG;integrated security=False; user id=devfive; password=dev5root5;");
             else
-                conn = new SqlConnection(@"data source=FIVE\FIVE14;initial catalog=dbLISAG;integrated security=True");
+                //conn = new SqlConnection(@"data source=FIVE\FIVE14;initial catalog=dbLISAG;integrated security=True");
+                conn = new SqlConnection(@"data source=DESKTOP-O216PR4P\FIVE14;initial catalog=dbLISAG;integrated security=False; user id=devfive; password=dev5root5;");
         }
 
         public static SqlConnection getConn() {
